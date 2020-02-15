@@ -1,4 +1,4 @@
-var debugSkipToGame = false;
+var debugSkipToGame = true;
 
 // Characters //
 
@@ -145,7 +145,7 @@ function imageLoadingDoneSoStartGame() {
     saveGame.loadData();
   }
   canvas.addEventListener('mousedown', handleMouseClick);
-  backgroundMusic.loopSong("mainMenu");
+  backgroundMusic.loopSong("hauntedHoedownSound");
   if (debugSkipToGame) {
     console.log("Debug Mode is on, skip directly to game");
   }

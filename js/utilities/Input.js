@@ -74,7 +74,7 @@ function updateMousePos(evt) {
 
 }
 
-function calculateMousePos(evt) { //// this will move to Input.js
+function calculateMousePos(evt) { 
   var rect = canvas.getBoundingClientRect();
   var root = document.documentElement;
   var mouseX = evt.clientX - rect.left - root.scrollLeft;

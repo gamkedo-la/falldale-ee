@@ -187,7 +187,7 @@ function loadImages() {
 
     { tileType: TILE_HEALER_FW_LS, theFile: "shopHealer/frontwallleftside.png" },
     { tileType: TILE_HEALER_FW_RS, theFile: "shopHealer/frontwallrightside.png" },
-    { tileType: TILE_HEALER_FW_WINDOW, theFile: "shopHealer/frontwallwindow.png" },
+    { tileType: TILE_HEALER_FW_WINDOW, theFile: "houseWindow.png" },
     { tileType: TILE_HEALER_LW, theFile: "shopHealer/leftwall.png" },
     { tileType: TILE_HEALER_RW, theFile: "shopHealer/rightwall.png" },
     { tileType: TILE_BS_BW, theFile: "shopBlacksmith/backwall.png" },
@@ -201,7 +201,7 @@ function loadImages() {
     { tileType: TILE_BS_FW_LS, theFile: "shopBlacksmith/frontwallleftside.png" },
     { tileType: TILE_BS_FW_RS, theFile: "shopBlacksmith/frontwallrightside.png" },
     { tileType: TILE_BS_LW, theFile: "shopBlacksmith/leftwall.png" },
-    { tileType: TILE_HOUSE_FRONT_WALL, theFile: "House1/solidwall.png" },
+    { tileType: TILE_HOUSE_FRONT_WALL, theFile: "houseWall.png" },
     { tileType: TILE_HOUSE_FRONT_WALL_DAMAGED, theFile: "House1/solidwall2.png" },
     { tileType: TILE_HOUSE_FRONT_WALL_BROKEN, theFile: "House1/brokenwall.png" },
     { tileType: TILE_HOUSE_FRONT_WINDOW, theFile: "House1/window.png" },
