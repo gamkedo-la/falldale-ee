@@ -1,0 +1,41 @@
+body {
+	background-color: orange;
+	margin:0; padding:0; border:0;
+	overflow:hidden;
+}
+
+div {
+	background-color: lightblue;
+	border-style: solid;	
+	border-color: darkblue;
+	border-radius: 5px;
+	width: 250px;
+}
+
+#narrative {
+	text-align: center;
+	position: relative;
+	width: 300x;
+	float: left;
+}
+
+#inventory {
+	text-align: center;
+	position: relative;
+	width: 300px;
+	float: right;
+	
+}
+
+#gameCanvas {
+	position:absolute;
+	top:0px; left:0px;
+	margin:0; padding:0; border:0;
+}
+
+#reset {
+	text-align: center;
+	position: relative;
+	width: 300px;
+	float: left;
+}
