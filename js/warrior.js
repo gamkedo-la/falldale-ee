@@ -894,9 +894,6 @@ function warriorClass(whichPlayerPic) {
       case TILE_GRAVE_4:
         dialogManager.setDialogWithCountdown("I need to avenge my friend.  The Skeleton King and his army of the dead must be destroyed!.");
         break;
-      case TILE_FOUNTAIN:
-        dialogManager.setDialogWithCountdown("What a beautiful fountain.");
-        break;
       case TILE_SPIKES:
         this.impaledOnFreshSpikes(walkIntoTileIndex, nextX, nextY);
         break;
