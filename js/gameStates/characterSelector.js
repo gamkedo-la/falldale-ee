@@ -8,46 +8,35 @@ var warrior = {
   portrait: warriorProfilePic,
 };
 
-var biggy = {
-  name : "Biggy",
-  sprites : biggyPic,
-  sprite_width : 50,
+var wizard = {
+  name : "Wizard",
+  sprites : warriorPic,
+  sprite_width : 40,
   sprite_height : 50,
-  sprite_frames : 6,
-  portrait: biggyProfilePic,
+  sprite_frames : 4,
+  portrait: warriorProfilePic,
 };
 
-var smally = {
-  name : "Smally",
-  sprites : smallyPic,
-  sprite_width : 50,
+var rogue = {
+  name : "Rogue",
+  sprites : warriorPic,
+  sprite_width : 40,
   sprite_height : 50,
-  sprite_frames : 6,
-  portrait: smallyProfilePic,
-	
+  sprite_frames : 4,
+  portrait: warriorProfilePic,
 };
 
-var teeny = {
-  name : "Teeny",
-  sprites : teenyPic,
-  sprite_width : 50,
+var cleric = {
+  name : "Cleric",
+  sprites : warriorPic,
+  sprite_width : 40,
   sprite_height : 50,
-  sprite_frames : 6,
-  portrait: teenyProfilePic,
-	
+  sprite_frames : 4,
+  portrait: warriorProfilePic,
 };
 
-var weeny = {
-  name : "Weeny",
-  sprites : weenyPic,
-  sprite_width : 50,
-  sprite_height : 50,
-  sprite_frames : 6,
-  portrait: weeyProfilePic,
-	
-};
 
-var characters = [ warrior, biggy, smally, teeny, weeny ]; 
+var characters = [ warrior, wizard, rogue, cleric]; 
 var characterSelectedIndex = 0;
 var characterSelected = null;
 var firstTimeCharacterSelection = true;
