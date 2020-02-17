@@ -269,7 +269,7 @@ function loadImages() {
 
     { varName: muteMusicPic, theFile: "muteMusic.png" },
     { varName: muteSFXPic, theFile: "muteSFX.png" },
-    { varName: warriorPic, theFile: "warrior.png" },
+    { varName: warriorPic, theFile: "warrior1.png" },
     { varName: warriorProfilePic, theFile: "warrior-portrait.png" },
     { varName: swordPic, theFile: "Weapons/basicSword.png" },
     { varName: magicSwordPic, theFile: "Weapons/magicSword.png" },
