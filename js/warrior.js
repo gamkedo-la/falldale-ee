@@ -1008,7 +1008,7 @@ function warriorClass(whichPlayerPic) {
       case TILE_GRAVEYARD_FENCE_BL:
       case TILE_GRAVEYARD_FENCE_TL:
       case TILE_WATER:
-      case TILE_TREE:
+      case TILE_BUSH:
       case TILE_TREE2TOPHALF:
       case TILE_TREE2BOTTOMHALF:
       case TILE_TREE3TOPHALF:
