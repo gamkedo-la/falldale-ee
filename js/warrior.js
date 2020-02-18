@@ -1043,6 +1043,7 @@ function warriorClass(whichPlayerPic) {
 	  case TILE_WIZARD_BOTTOM_R:
 	  case TILE_WIZARD_FIREPLACE_TS:
 	  case TILE_WIZARD_FIREPLACE_BS:
+	  case TILE_CLIFF:
 
         return false;
       case TILE_GRAVEYARD_YELLOW_GATE:

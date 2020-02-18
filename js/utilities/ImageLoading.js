@@ -284,7 +284,11 @@ function loadImages() {
 	{ tileType: TILE_WIZARD_BOTTOM_R, theFile: "wizardsLayer/bottomright.png" },
 	{ tileType: TILE_WIZARD_FIREPLACE_TS, theFile: "wizardsLayer/fireplace.png" },
 	{ tileType: TILE_WIZARD_FIREPLACE_BS, theFile: "wizardsLayer/fireplacebottom.png" },
-
+	{ tileType: TILE_CLIFF, theFile: "cliff.png" },
+	{ tileType: TILE_CLIFF_RIGHT_EDGE, theFile: "cliffRight.png" },
+	{ tileType: TILE_CLIFF_RIGHT_CORNOR, theFile: "cliffRightCorner.png" },
+	{ tileType: TILE_CLIFF_TOP_EDGE, theFile: "cliffTop.png" },
+	
     { varName: muteMusicPic, theFile: "muteMusic.png" },
     { varName: muteSFXPic, theFile: "muteSFX.png" },
     { varName: warriorPic, theFile: "warrior1.png" },
