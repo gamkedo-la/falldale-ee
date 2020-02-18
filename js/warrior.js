@@ -42,7 +42,7 @@ function warriorClass(whichPlayerPic) {
   this.waitTime = 0;
   this.walkIntoTileIndex = 0;
   this.previousTileType = -1;
-  this.sx = 40;
+  this.sx = 50;
   this.sy = 0;
   this.tickCount = 0;
   this.frameIndex = 0;
@@ -350,7 +350,7 @@ function warriorClass(whichPlayerPic) {
       this.tickCount++;
       let currentTileIndex = getTileIndexAtPixelCoord(this.x, this.y);
       let currentTileType = roomGrid[currentTileIndex];
-      console.log(currentTileIndex, currentTileType);
+      //console.log(currentTileIndex, currentTileType);
       if (groundFootsteps.currentTime > groundFootsteps.duration - 0.2) {
         groundFootsteps.currentTime = 0;
       }
@@ -423,6 +423,7 @@ function warriorClass(whichPlayerPic) {
 
   this.drawWarriorAndShadow = function () {
     canvasContext.drawImage(shadowPic, this.x - 16, this.y + 32);
+	this.width = 50; //temp solution until discovering what is overriding this.width????
     canvasContext.drawImage(this.myWarriorPic, this.sx, this.sy, this.width, this.height, Math.round(this.x), Math.round(this.y), this.width, this.height);
 
     // for (var i = 0; i < PARTICLES_PER_TICK; i++) {
@@ -437,6 +438,7 @@ function warriorClass(whichPlayerPic) {
     this.updateTickCountAndFrameIndex();
 
     this.sx = this.frameIndex * this.width;
+	console.log(this.sx);
 
     if ((this.direction == "north") || (this.direction == "west")) {
       this.mySword.draw(this);

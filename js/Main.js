@@ -658,7 +658,7 @@ var guiOffsetX = 0;
   }
 }
 
-
+/////// To do:  Change if/else statements to a gameState condition
 function drawAll() {
 
   frameCounter++;
