@@ -137,7 +137,7 @@ function imageLoadingDoneSoStartGame() {
 
   setupInput();
   console.log("setupInput should run - Main.js");
-  OverlayFX.nightMode = true;
+  OverlayFX.nightMode = false;
   // levelNow = 3; // Use this line to skip to level being worked on.
   if (continueGame === false) {
     redWarrior.initialize("Red warrior");
