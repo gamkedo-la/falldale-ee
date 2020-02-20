@@ -98,7 +98,7 @@ function batClass() {
       case TILE_WALL:
         return 0;
       case TILE_BUSH:
-      case TILE_TREE2TOPHALF:
+      case TILE_BUSH:
       case TILE_TREE2BOTTOMHALF:
       case TILE_TREE3TOPHALF:
       case TILE_TREE3BOTTOMHALF:
@@ -225,7 +225,7 @@ function batClass() {
       case TILE_GABRIEL:
       case TILE_FENTON:
       case TILE_BUSH:
-      case TILE_TREE2TOPHALF:
+      case TILE_BUSH:
       case TILE_TREE2BOTTOMHALF:
       case TILE_TREE3TOPHALF:
       case TILE_TREE3BOTTOMHALF:

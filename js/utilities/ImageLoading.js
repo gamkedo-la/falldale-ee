@@ -165,7 +165,7 @@ function loadImages() {
     { tileType: TILE_ROOF_FRONTLEFT, theFile: "House1/rooffrontleft.png" },
     { tileType: TILE_ROOF_FRONT, theFile: "House1/rooffront.png" },
     { tileType: TILE_ROOF_CENTER, theFile: "House1/roofcenter.png" },
-	{ tileType: TILE_TREE2TOPHALF, theFile: "Trees/tree2tophalf.png" },
+	{ tileType: TILE_BUSH, theFile: "Trees/bush.png" },
     { tileType: TILE_TREE2BOTTOMHALF, theFile: "Trees/tree2bottomhalf.png" },
     { tileType: TILE_TREE3TOPHALF, theFile: "Trees/tree3tophalf.png" },
     { tileType: TILE_TREE3BOTTOMHALF, theFile: "Trees/tree3bottomhalf.png" },

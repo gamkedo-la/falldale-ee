@@ -6,6 +6,8 @@ var fallDaleRooftops = [ // x1,y1,x2,y2
                          //rooftops for the town area
 
   [ 3, 3, 9, 6 ], // player's house
+  [17,16,23,24 ], // blacksmith
+  
 ];
 
 var orcKingforestRoofTops = [

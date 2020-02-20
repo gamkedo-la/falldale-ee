@@ -95,7 +95,7 @@ function warriorClass(whichPlayerPic) {
   this.controlKeySword;
 
   this.isInsideAnyBuilding = false;
-  this.lastOpenDoorIndex = rowColToArrayIndex(4, 4);
+  this.lastOpenDoorIndex = rowColToArrayIndex(4, 7);
   this.lastOpenDoorTile = TILE_FRONTDOOR_YELLOW;
 
   this.savePrefix = "player_";
@@ -995,7 +995,7 @@ function warriorClass(whichPlayerPic) {
       case TILE_GRAVEYARD_FENCE_TL:
       case TILE_WATER:
       case TILE_BUSH:
-      case TILE_TREE2TOPHALF:
+      case TILE_BUSH:
       case TILE_TREE2BOTTOMHALF:
       case TILE_TREE3TOPHALF:
       case TILE_TREE3BOTTOMHALF:
