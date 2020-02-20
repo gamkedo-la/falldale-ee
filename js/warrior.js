@@ -94,7 +94,7 @@ function warriorClass(whichPlayerPic) {
   this.controlKeyLeft;
   this.controlKeySword;
 
-  this.isInsideAnyBuilding = true;
+  this.isInsideAnyBuilding = false;
   this.lastOpenDoorIndex = rowColToArrayIndex(4, 4);
   this.lastOpenDoorTile = TILE_FRONTDOOR_YELLOW;
 
@@ -138,20 +138,6 @@ function warriorClass(whichPlayerPic) {
     }
   };
 
-  this.positionWarriorAtStartAndReplaceStartTile = function () {
-    for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) {
-      for (var eachCol = 0; eachCol < ROOM_COLS; eachCol++) {
-        var arrayIndex = rowColToArrayIndex(eachCol, eachRow);
-        if (roomGrid[ arrayIndex ] == TILE_PLAYERSTART) {
-          roomGrid[ arrayIndex ] = TILE_ROAD;
-          this.x = eachCol * TILE_W + TILE_W / 2;
-          this.y = eachRow * TILE_H + TILE_H / 2;
-          return;
-        } // end of Player Start if
-      } //end of col row for
-    } // end of row for
-  };
-
   this.initialize = function (warriorName) {
     this.name = warriorName;
     this.yellowKeysHeld = 0;
@@ -163,8 +149,6 @@ function warriorClass(whichPlayerPic) {
     this.mySword.reset();
     this.myArrow.reset();
     this.myRock.reset();
-
-    this.positionWarriorAtStartAndReplaceStartTile();
   }; // end of warrior initialize function
 
   this.storePos = function () {
@@ -1044,6 +1028,14 @@ function warriorClass(whichPlayerPic) {
 	  case TILE_WIZARD_FIREPLACE_TS:
 	  case TILE_WIZARD_FIREPLACE_BS:
 	  case TILE_CLIFF:
+	  case TILE_CLIFF_EDGE_TOP_LEFT_CORNOR:
+	  case TILE_CLIFF_EDGE_TOP:
+	  case TILE_CLIFF_EDGE_TOP_RIGHT_CORNOR:
+	  case TILE_CLIFF_EDGE_RIGHT:
+	  case TILE_CLIFF_EDGE_BOTTOM_RIGHT_CORNOR:
+	  case TILE_CLIFF_EDGE_BOTTOM:
+	  case TILE_CLIFF_EDGE_BOTTOM_LEFT_CORNOR:
+	  case TILE_CLIFF_EDGE_LEFT:
 
         return false;
       case TILE_GRAVEYARD_YELLOW_GATE:
