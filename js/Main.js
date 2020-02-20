@@ -47,6 +47,8 @@ var gamePaused = false;
 var muteInputCycle = 0;
 var saveGame = new SaveGame();
 var continueGame = false;
+var instructions = false;
+var movementInstructionsShown = false;
 
 // Sounds //
 
@@ -723,6 +725,11 @@ function drawAll() {
       drawRooftops(fallDaleRooftops); // FIXME: hardcoded for main town area only
       // this is now rendered inside depthSortedDraw right after floor tiles
       //OverlayFX.draw(); // night mode, light glows, detail decals, footsteps etc
+      if (! movementInstructionsShown ) {
+        instructions = true;
+        movementInstructionsShown = true;
+      }
+      
     } else if (levelNow == 0) {
       drawRooftops(orcKingforestRoofTops);
     } else if (levelNow == 6) {
@@ -768,5 +775,21 @@ function drawAll() {
       drawTextWithShadowCentered("Game Paused", canvas.width / 2, canvas.height / 2 - 20, "white", "20px endorregular");
       drawTextWithShadowCentered("Press 'P' to resume", canvas.width / 2, canvas.height / 2 + 15, "white", "12px endorregular");
     }
+    if(instructions) {
+      const seconds = 6;
+      const interval = seconds * 1000;
+      drawInstructionPrompt("Press UP DOWN RIGHT LEFT ARROWS To Move");
+      setInterval( function() { instructions = false; }, interval );
+    }
+  }
+  function drawInstructionPrompt( message ) {
+    const messageX = 400;
+    const messageY = 400;
+    const boxOffsetX = 160;
+    const boxOffsetY = 15;
+    const boxWidth = 320;
+    const boxHeight = 30;
+    colorRect(messageX - boxOffsetX, messageY - boxOffsetY, boxWidth, boxHeight, 'white' );
+    drawTextWithShadowCentered( message, messageX, messageY, 'black');
   }
 }
