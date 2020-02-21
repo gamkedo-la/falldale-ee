@@ -8,9 +8,9 @@ function goblinClass() {
   this.speed = goblinMoveSpeed;
   this.maxhealth = 4;
   this.myMelee = new clubClass();
-  this.width = 28;
-  this.numberOfFrames = 6;
-  this.height = 43;
+  this.width = 42;
+  this.numberOfFrames = 1;
+  this.height = 51;
   this.ticksPerFrame = 5;
   this.treasureAvailable = true;
   this.chanceToProvideTreasure = 1;

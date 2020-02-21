@@ -94,6 +94,7 @@ var miniMapPlayerEast = document.createElement("img");
 var miniMapPlayerWest = document.createElement("img");
 var playerMiniMap = document.createElement("img");
 var waterScrollImg = document.createElement("img");
+var waterFallsImg = document.createElement("img");
 var decorationsImg = document.createElement("img");
 
 var worldPics = [];
@@ -147,6 +148,7 @@ function loadImages() {
     { tileType: TILE_GRASS, theFile: "grass.png" },
     { tileType: TILE_TREASURE, theFile: "treasure.png" },
     { tileType: TILE_WATER, theFile: "water_scroll.png" },
+	{ tileType: TILE_WATERFALLS, theFile: "waterfalls.png" },
     { tileType: TILE_GRAVE_YARD_PORTAL, theFile: "worldRoad.png" },
     { tileType: TILE_HOME_VILLAGE_PORTAL, theFile: "worldRoad.png" },
     { tileType: TILE_THROWINGROCKS, theFile: "throwingRocks.png" },
@@ -165,7 +167,15 @@ function loadImages() {
     { tileType: TILE_ROOF_FRONTLEFT, theFile: "House1/rooffrontleft.png" },
     { tileType: TILE_ROOF_FRONT, theFile: "House1/rooffront.png" },
     { tileType: TILE_ROOF_CENTER, theFile: "House1/roofcenter.png" },
+	{ tileType: TILE_TREE_1_NW, theFile: "Trees/tree1.png" },
+	{ tileType: TILE_TREE_1_NE, theFile: "Trees/tree2.png" },
+	{ tileType: TILE_TREE_1_SW, theFile: "Trees/tree3.png" },
+	{ tileType: TILE_TREE_1_SE, theFile: "Trees/tree4.png" },
 	{ tileType: TILE_BUSH, theFile: "Trees/bush.png" },
+	
+	
+	
+	
     { tileType: TILE_TREE2BOTTOMHALF, theFile: "Trees/tree2bottomhalf.png" },
     { tileType: TILE_TREE3TOPHALF, theFile: "Trees/tree3tophalf.png" },
     { tileType: TILE_TREE3BOTTOMHALF, theFile: "Trees/tree3bottomhalf.png" },
@@ -369,6 +379,7 @@ function loadImages() {
     { varName: fireballPic, theFile: "Weapons/fireball.png" },
     { varName: rockPic, theFile: "Weapons/rock.png" },
     { varName: playerMiniMap, theFile: "playerMiniMap.png" },
+    { varName: waterFallsImg, theFile: "waterFalls.png" },	
     { varName: waterScrollImg, theFile: "water_scroll.png" },
     { varName: decorationsImg, theFile: "decorations.png" },
     { varName: questGUIPic, theFile: "questGUI.png" }

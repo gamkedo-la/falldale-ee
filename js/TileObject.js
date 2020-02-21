@@ -46,6 +46,19 @@ function TileObject(index) {
           this.x, this.y,		        // dst x,y
           TILE_W, TILE_H);        	// dst w,h
     }
+	
+	if(this.type == TILE_WATERFALLS){
+		
+		var offset = TILE_H - ((frameCounter * 0.5) % (TILE_H));
+		 
+		canvasContext.drawImage(waterFallsImg,
+          0, offset, 					// src x,y
+          TILE_W, TILE_H,	            // src w,h
+          this.x, this.y,		        // dst x,y
+          TILE_W, TILE_H);        	// dst w,h
+		  particleFX(this.x, this.y, 10, "white", .5, .5, 500, 5);
+		  particleFX(200, 300, 30, 'white');
+	}
 
   };
 

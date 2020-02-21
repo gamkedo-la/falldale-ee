@@ -232,10 +232,10 @@ function loadLevel() {
         newEnemy.initialize('Zombie2', zombiePic2, 6);
       } else if (roomGrid[ arrayIndex ] == TILE_ZOMBIE3) {
         newEnemy = new zombieClass();
-        newEnemy.initialize('Zombie3', zombiePic3, 6);
+        newEnemy.initialize('Zombie3', zombiePic3, 4);
       } else if (roomGrid[ arrayIndex ] == TILE_GOBLIN) {
         newEnemy = new goblinClass();
-        newEnemy.initialize('Goblin', goblinPic, 6);
+        newEnemy.initialize('Goblin', goblinPic, 4);
       } else if (roomGrid[ arrayIndex ] == TILE_GREEN_ORC_SWORD) {
         newEnemy = new orcClass();
         newEnemy.initialize('Orc - Sword', orcPic, 6);
@@ -355,6 +355,7 @@ function moveAll() {
         redWarrior.checkWarriorandWeaponCollisionAgainst(enemyList[ i ]);
       }
     }
+	updateParticles();
     camera.follow(redWarrior);
   }
 }
@@ -593,6 +594,7 @@ function depthSortedDraw() {
   for (let i = 0; i < flyingEnemies.length; i++) {
     flyingEnemies[ i ].draw();
   }
+  drawParticles();
 }
 
 function drawQuestGUI() {
