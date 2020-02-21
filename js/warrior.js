@@ -30,7 +30,6 @@ function warriorClass(whichPlayerPic) {
   this.isEnemyCollision = false;
   this.myWarriorPic = null; // which picture to use
   this.name = "Untitled warrior";
-  this.keysHeld = 0;
   this.woodAx = 0;
   this.goldpieces = 10;
   this.experience = 0;
@@ -140,10 +139,11 @@ function warriorClass(whichPlayerPic) {
 
   this.initialize = function (warriorName) {
     this.name = warriorName;
-    this.yellowKeysHeld = 0;
-    this.greenKeysHeld = 0;
-    this.blueKeysHeld = 0;
-    this.redKeysHeld = 0;
+    this.keysHeld = {"yellow": 0,
+                      "green": 0,
+                      "blue": 0,
+                      "red": 0,
+                    };
     this.health = 4;
 
     this.mySword.reset();
@@ -422,7 +422,7 @@ function warriorClass(whichPlayerPic) {
     this.updateTickCountAndFrameIndex();
 
     this.sx = this.frameIndex * this.width;
-	console.log(this.sx);
+	  //console.log(this.sx);
 
     if ((this.direction == "north") || (this.direction == "west")) {
       this.mySword.draw(this);
@@ -479,24 +479,7 @@ function warriorClass(whichPlayerPic) {
   };
 
   this.setDirection = function (nextX, nextY) {
-
-    if (nextX > this.prevX) {
-      this.direction = "east";
-      this.sx = 0;
-      this.sy = this.height * 3;
-    } else if (nextX < this.prevX) {
-      this.direction = "west";
-      this.sx = 0;
-      this.sy = this.height * 2;
-    } else if (nextY < this.prevY) {
-      this.direction = "north";
-      this.sx = 0;
-      this.sy = 0;
-    } else if (nextY > this.prevY) {
-      this.direction = "south";
-      this.sx = 0;
-      this.sy = this.height;
-    } else if (this.keyHeld_WalkWest) {
+    if (this.keyHeld_WalkWest) {
       this.direction = "west";
       this.sx = 0;
       this.sy = this.height * 2;
@@ -626,49 +609,25 @@ function warriorClass(whichPlayerPic) {
     if (sound != null) {
       sound.play();
     }
-
     setNewTypeForTileObjectAtIndex(aTileType, aTileIndex);
     roomGrid[ aTileIndex ] = aTileType;
   };
 
-  this.tryToOpenYellowDoor = function (tileIndex) {
-    if (this.yellowKeysHeld > 0 || debugMode) {
-      this.yellowKeysHeld--; // one less key
-      this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, TILE_ROAD, doorSound);
-      dialogManager.setDialogWithCountdown("I've used a yellow key.");
-    } else {
-      dialogManager.setDialogWithCountdown("I need a yellow key to open this door.");
-    }
-  };
+  this.unlockDoor = function (tileIndex, color) {
+    if (this.keysHeld[color] || debugMode) {
+      this.keysHeld[color]--; // one less key
 
-  this.tryToOpenGreenDoor = function (tileIndex) {
-    if (this.greenKeysHeld > 0 || debugMode) {
-      this.greenKeysHeld--; // one less key
-      this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, TILE_ROAD, doorSound);
-      dialogManager.setDialogWithCountdown("I've used a green key.");
-    } else {
-      dialogManager.setDialogWithCountdown("I need a green key to open this door.");
-    }
-  };
+      for (let t of tileList) {
+        if (t.index === tileIndex && t.type != TILE_ROAD) {
+          tileList.splice(tileList.indexOf(t), 1);
+          break;
+        }
+      }
 
-  this.tryToOpenRedDoor = function (tileIndex) {
-    if (this.redKeysHeld > 0 || debugMode) {
-      this.redKeysHeld--; // one less key
       this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, TILE_ROAD, doorSound);
-      dialogManager.setDialogWithCountdown("I've used a red key.");
+      dialogManager.setDialogWithCountdown("I've used a " + color + " key.");
     } else {
-      dialogManager.setDialogWithCountdown("I need a red key to open this door.");
-    }
-
-  };
-
-  this.tryToOpenBlueDoor = function (tileIndex) {
-    if (this.blueKeysHeld > 0 || debugMode) {
-      this.blueKeysHeld--; // one less key
-      this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, TILE_ROAD, doorSound);
-      dialogManager.setDialogWithCountdown("I've used a blue key.");
-    } else {
-      dialogManager.setDialogWithCountdown("I need a blue key to open this door.");
+      dialogManager.setDialogWithCountdown("I need a " + color + " key to open this door.");
     }
   };
 
@@ -690,29 +649,17 @@ function warriorClass(whichPlayerPic) {
     }
   };
 
-  this.pickUpYellowKey = function (tileIndex) {
-    this.yellowKeysHeld++; // one more key
+  this.pickUpKey = function (tileIndex, color) {
+    this.keysHeld[color]++; // one more key
+    for (let t of tileList) {
+      if (t.index === tileIndex && t.type != TILE_ROAD) {
+        tileList.splice(tileList.indexOf(t), 1);
+        break;
+      }
+    }
     this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, TILE_ROAD, keySound);
-    dialogManager.setDialogWithCountdown("I've found a yellow key.");
-  };
-
-  this.pickUpRedKey = function (tileIndex) {
-    this.redKeysHeld++; // one more key
-    this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, TILE_ROAD, keySound);
-    dialogManager.setDialogWithCountdown("I've found a red key.");
-  };
-
-  this.pickUpBlueKey = function (tileIndex) {
-    this.blueKeysHeld++; // one more key
-    this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, TILE_ROAD, keySound);
-    dialogManager.setDialogWithCountdown("I've found a blue key.");
-  };
-
-  this.pickUpGreenKey = function (tileIndex) {
-    this.greenKeysHeld++; // one more key
-    this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, TILE_ROAD, keySound);
-    dialogManager.setDialogWithCountdown("I've found a green key.");
-  };
+    dialogManager.setDialogWithCountdown("I've found a " + color + " key.");
+  }
 
   this.pickUpMap = function (tileIndex) {
     this.haveMap = true; // treasure map found
@@ -720,15 +667,15 @@ function warriorClass(whichPlayerPic) {
     dialogManager.setDialogWithCountdown("So this is what this place looks like.  [PRESS 3] for map");
   };
 
-  this.tryToGetTreasureWithYellowKey = function (tileIndex) {
-    if (this.yellowKeysHeld > 0) {
-      this.yellowKeysHeld--; // one less key
-      this.goldpieces = this.goldpieces + 50;
+  this.unlockTreasure = function (tileIndex, color) {
+    if (this.keysHeld[color]) {
+      this.keysHeld[color]--;
+      this.goldpieces += 50;
       this.myArrow.quantity += 5;
       this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, TILE_ROAD, null);
-      dialogManager.setDialogWithCountdown("I've used a yellow key and found 50 gold pieces, and 5 arrows");
+      dialogManager.setDialogWithCountdown("I've used a " + color + " key and found 50 gold pieces, and 5 arrows");
     } else {
-      dialogManager.setDialogWithCountdown("I need a yellow key to open this treasure chest.");
+      dialogManager.setDialogWithCountdown("I need a " + color + " key to open this treasure chest.");
     }
   };
 
@@ -746,7 +693,7 @@ function warriorClass(whichPlayerPic) {
 
   this.impaledOnFreshSpikes = function (tileIndex, nextX, nextY) {
     this.setSpeedAndPosition(this.speed, nextX, nextY);
-    this.health = this.health - 0.5;
+    this.health -= 0.5;
     this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, TILE_SPIKES_BLOODY, spikeSound);
   };
 
@@ -830,41 +777,41 @@ function warriorClass(whichPlayerPic) {
               "This place smells nice.  Is that lavender?");
         return;
       case TILE_YELLOW_DOOR:
-        this.tryToOpenYellowDoor(walkIntoTileIndex);
+        this.unlockDoor(walkIntoTileIndex, "yellow");
         break;
       case TILE_GREEN_DOOR:
-        this.tryToOpenGreenDoor(walkIntoTileIndex);
+        this.unlockDoor(walkIntoTileIndex, "green");
         break;
       case TILE_FRONTDOOR_YELLOW:
         if (this.lastOpenDoorIndex = -1)
           this.tryOpenDoor(walkIntoTileIndex, TILE_FRONTDOOR_YELLOW);
         return;
       case TILE_RED_DOOR:
-        this.tryToOpenRedDoor(walkIntoTileIndex);
+        this.unlockDoor(walkIntoTileIndex, "red");
         break;
       case TILE_BLUE_DOOR:
-        this.tryToOpenBlueDoor(walkIntoTileIndex);
+        this.unlockDoor(walkIntoTileIndex, "blue");
         break;
       case TILE_YELLOW_KEY:
-        this.pickUpYellowKey(walkIntoTileIndex);
+        this.pickUpKey(walkIntoTileIndex, "yellow");
         break;
       case TILE_RED_KEY:
-        this.pickUpRedKey(walkIntoTileIndex);
+        this.pickUpKey(walkIntoTileIndex, "red");
         break;
       case TILE_BLUE_KEY:
-        this.pickUpBlueKey(walkIntoTileIndex);
+        this.pickUpKey(walkIntoTileIndex, "blue");
         break;
       case TILE_GREEN_KEY:
-        this.pickUpGreenKey(walkIntoTileIndex);
+        this.pickUpKey(walkIntoTileIndex, "green");
         break;
       case TILE_MAP:
         this.pickUpMap(walkIntoTileIndex);
         break;
       case TILE_GRAVEYARD_YELLOW_GATE:
-        this.tryToOpenYellowDoor(walkIntoTileIndex);
+        this.unlockDoor(walkIntoTileIndex, "yellow");
         break;
       case TILE_TREASURE:
-        this.tryToGetTreasureWithYellowKey(walkIntoTileIndex);
+        this.unlockTreasure(walkIntoTileIndex, "yellow");
         break;
       case TILE_THROWINGROCKS:
         this.pickUpThrowingRocks(walkIntoTileIndex);
@@ -921,9 +868,13 @@ function warriorClass(whichPlayerPic) {
       case TILE_WALL:
       case TILE_DOOR:
       case TILE_YELLOW_DOOR:
+        if (this.keysHeld["yellow"]) return true;
       case TILE_GREEN_DOOR:
+        if (this.keysHeld["green"]) return true;
       case TILE_BLUE_DOOR:
+        if (this.keysHeld["blue"]) return true;
       case TILE_RED_DOOR:
+        if (this.keysHeld["red"]) return true;
       case TILE_ROOF_FRONTRIGHT:
       case TILE_ROOF_SIDERIGHT:
       case TILE_ROOF_BACKRIGHT:
@@ -1004,10 +955,6 @@ function warriorClass(whichPlayerPic) {
       case TILE_TREE5FALLEN_TOP:
       case TILE_TREE5FALLEN_BOTTOM:
       case TILE_TREE5FALLEN_BOTTOM_GRASS:
-      case TILE_YELLOW_DOOR:
-      case TILE_GREEN_DOOR:
-      case TILE_BLUE_DOOR:
-      case TILE_RED_DOOR:
 	  case TILE_ORC_HOUSE_FL:
 	  case TILE_ORC_HOUSE_FR:
 	  case TILE_ORC_HOUSE_BL:
@@ -1036,16 +983,15 @@ function warriorClass(whichPlayerPic) {
 	  case TILE_CLIFF_EDGE_BOTTOM:
 	  case TILE_CLIFF_EDGE_BOTTOM_LEFT_CORNOR:
 	  case TILE_CLIFF_EDGE_LEFT:
-
         return false;
-      case TILE_GRAVEYARD_YELLOW_GATE:
-        if (this.yellowKeysHeld > 0) {
-          return true;
-        } else {
-          return false;
-        }
-      default:
+    case TILE_GRAVEYARD_YELLOW_GATE:
+      if (this.keysHeld["yellow"]) {
         return true;
+      } else {
+        return false;
+      }
+    default:
+      return true;
     }
   }
 
