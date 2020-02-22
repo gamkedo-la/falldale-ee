@@ -139,11 +139,7 @@ function warriorClass(whichPlayerPic) {
 
   this.initialize = function (warriorName) {
     this.name = warriorName;
-    this.keysHeld = {"yellow": 0,
-                      "green": 0,
-                      "blue": 0,
-                      "red": 0,
-                    };
+    this.keysHeld = {"yellow": 0, "green": 0, "blue": 0, "red": 0};
     this.health = 4;
 
     this.mySword.reset();
@@ -294,29 +290,13 @@ function warriorClass(whichPlayerPic) {
     }
   };
 
-  this.swordSwing = function () {
-    if (this.mySword.isReady()) {
-      this.recentWeapon = this.mySword;
-      this.mySword.shootFrom(this);
-      swordSwingSound.play();
+  this.useWeapon = function(weapon, sound) {
+    if (weapon.isReady()) {
+      this.recentWeapon = weapon;
+      weapon.shootFrom(this, this.direction);
+      sound.play();
     }
-  };
-
-  this.shotArrow = function () {
-    if (this.myArrow.isReady()) {
-      this.recentWeapon = this.myArrow;
-      this.myArrow.shootFrom(this, this.direction);
-      arrowShotSound.play();
-    }
-  };
-
-  this.shotRock = function () {
-    if (this.myRock.isReady()) {
-      this.recentWeapon = this.myRock;
-      this.myRock.shootFrom(this, this.direction);
-      rockThrowSound1.play();
-    }
-  };
+  }
 
   this.takeDamage = function (howMuch) {
     this.health -= howMuch / 10;
@@ -375,12 +355,9 @@ function warriorClass(whichPlayerPic) {
   };
 
   this.drawFlashingWarriorAndHealth = function () {
-    if (this.isTakingDamage) {
-      if (this.warriorDisplayHealthCountdown % 10 >= 4) {
-        this.drawWarriorAndShadow();
-      }
-    }
-    else {
+    if (this.isTakingDamage && this.warriorDisplayHealthCountdown % 10 >= 4) {
+      this.drawWarriorAndShadow();
+    } else {
       this.drawWarriorAndShadow();
     }
 
@@ -631,18 +608,9 @@ function warriorClass(whichPlayerPic) {
     }
   };
 
-  this.tryToRemoveFallenTreeOnRoad = function (tileIndex) {
-    if (this.woodAx > 0 || debugMode) {
-      this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, TILE_ROAD);
-      dialogManager.setDialogWithCountdown("Chop Chop");
-    } else {
-      dialogManager.setDialogWithCountdown("This tree is in my way.  If I only had an Ax.");
-    }
-  };
-
-  this.tryToRemoveFallenTreeOnGrass = function (tileIndex) {
-    if (this.woodAx > 0 || debugMode) {
-      this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, TILE_GRASS);
+  this.removeFallenTree = function (tileIndex, groundTile) {
+    if (this.woodAx || debugMode) {
+      this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, groundTile);
       dialogManager.setDialogWithCountdown("Chop Chop");
     } else {
       dialogManager.setDialogWithCountdown("This tree is in my way.  If I only had an Ax.");
@@ -661,11 +629,25 @@ function warriorClass(whichPlayerPic) {
     dialogManager.setDialogWithCountdown("I've found a " + color + " key.");
   }
 
-  this.pickUpMap = function (tileIndex) {
-    this.haveMap = true; // treasure map found
-    this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, TILE_GRASS, null);
-    dialogManager.setDialogWithCountdown("So this is what this place looks like.  [PRESS 3] for map");
-  };
+  this.pickupItem = function(item, tileIndex, groundTile) {
+    let message = "";
+    switch(item) {
+      case "map":
+        this.haveMap = true; // treasure map found
+        message = "So this is what this place looks like.  [PRESS 3] for map";
+        break;
+      case "rocks":
+        this.myRock.quantity += 5;
+        message = "What luck!  I can use these rocks for throwing at enemies.";
+        break;
+      case "arrows":
+        this.myArrow.quantity += 5;
+        message = "I'll add these 5 arrows to my inventory.";
+        break;
+    }
+    this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, groundTile, null);
+    dialogManager.setDialogWithCountdown(message);
+  }
 
   this.unlockTreasure = function (tileIndex, color) {
     if (this.keysHeld[color]) {
@@ -677,18 +659,6 @@ function warriorClass(whichPlayerPic) {
     } else {
       dialogManager.setDialogWithCountdown("I need a " + color + " key to open this treasure chest.");
     }
-  };
-
-  this.pickUpThrowingRocks = function (tileIndex) {
-    this.myRock.quantity += 5;
-    this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, TILE_GRASS, null);
-    dialogManager.setDialogWithCountdown("What luck!  I can use these rocks for throwing at enemies.");
-  };
-
-  this.pickUpArrows = function (tileIndex) {
-    this.myArrow.quantity += 5;
-    this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, TILE_GRASS, null);
-    dialogManager.setDialogWithCountdown("I'll add these 5 arrows to my inventory.");
   };
 
   this.impaledOnFreshSpikes = function (tileIndex, nextX, nextY) {
@@ -703,7 +673,6 @@ function warriorClass(whichPlayerPic) {
   };
 
   this.tryOpenDoor = function (walkIntoTileIndex, doorTileType, message) {
-
     if (this.isInsideAnyBuilding || this.lastOpenDoorIndex > 0)
       return;
 
@@ -765,11 +734,11 @@ function warriorClass(whichPlayerPic) {
 
     switch (walkIntoTileType) {
       case TILE_TREE5FALLEN_BOTTOM:
-        this.tryToRemoveFallenTreeOnRoad(walkIntoTileIndex);
+        this.removeFallenTree(walkIntoTileIndex. TILE_ROAD);
         break;
       case TILE_TREE5FALLEN_TOP:
       case TILE_TREE5FALLEN_BOTTOM_GRASS:
-        this.tryToRemoveFallenTreeOnGrass(walkIntoTileIndex);
+        this.removeFallenTree(walkIntoTileIndex, TILE_GRASS);
         break;
       case TILE_HEALER_FRONTDOOR:
         if (this.lastOpenDoorIndex = -1)
@@ -805,7 +774,7 @@ function warriorClass(whichPlayerPic) {
         this.pickUpKey(walkIntoTileIndex, "green");
         break;
       case TILE_MAP:
-        this.pickUpMap(walkIntoTileIndex);
+        this.pickupItem("map", walkIntoTileIndex, TILE_GRASS);
         break;
       case TILE_GRAVEYARD_YELLOW_GATE:
         this.unlockDoor(walkIntoTileIndex, "yellow");
@@ -814,10 +783,10 @@ function warriorClass(whichPlayerPic) {
         this.unlockTreasure(walkIntoTileIndex, "yellow");
         break;
       case TILE_THROWINGROCKS:
-        this.pickUpThrowingRocks(walkIntoTileIndex);
+        this.pickupItem("rock", walkIntoTileIndex, TILE_GRASS);
         break;
       case TILE_ARROWS:
-        this.pickUpArrows(walkIntoTileIndex);
+        this.pickupItem("arrows", walkIntoTileIndex, TILE_GRASS);
         break;
       case TILE_GRAVE_1:
       case TILE_GRAVE_2:
@@ -955,43 +924,43 @@ function warriorClass(whichPlayerPic) {
       case TILE_TREE5FALLEN_TOP:
       case TILE_TREE5FALLEN_BOTTOM:
       case TILE_TREE5FALLEN_BOTTOM_GRASS:
-	  case TILE_ORC_HOUSE_FL:
-	  case TILE_ORC_HOUSE_FR:
-	  case TILE_ORC_HOUSE_BL:
-	  case TILE_ORC_HOUSE_BR:
-	  case TILE_ORC_HOUSE_WALL:
-	  case TILE_ORC_HOUSE_LS:
-	  case TILE_ORC_HOUSE_RS:
-	  case TILE_ORC_HOUSE_WINDOW:
-	  case TILE_WIZARD_BW_TS:
-	  case TILE_WIZARD_BW_BS:
-	  case TILE_WIZARD_BW_LC_TS:
-	  case TILE_WIZARD_BW_RC_TS:
-	  case TILE_WIZARD_LW:
-	  case TILE_WIZARD_RW:
-	  case TILE_WIZARD_BOTTOM_W:
-	  case TILE_WIZARD_BOTTOM_L:
-	  case TILE_WIZARD_BOTTOM_R:
-	  case TILE_WIZARD_FIREPLACE_TS:
-	  case TILE_WIZARD_FIREPLACE_BS:
-	  case TILE_CLIFF:
-	  case TILE_CLIFF_EDGE_TOP_LEFT_CORNOR:
-	  case TILE_CLIFF_EDGE_TOP:
-	  case TILE_CLIFF_EDGE_TOP_RIGHT_CORNOR:
-	  case TILE_CLIFF_EDGE_RIGHT:
-	  case TILE_CLIFF_EDGE_BOTTOM_RIGHT_CORNOR:
-	  case TILE_CLIFF_EDGE_BOTTOM:
-	  case TILE_CLIFF_EDGE_BOTTOM_LEFT_CORNOR:
-	  case TILE_CLIFF_EDGE_LEFT:
-        return false;
-    case TILE_GRAVEYARD_YELLOW_GATE:
-      if (this.keysHeld["yellow"]) {
+      case TILE_ORC_HOUSE_FL:
+      case TILE_ORC_HOUSE_FR:
+      case TILE_ORC_HOUSE_BL:
+      case TILE_ORC_HOUSE_BR:
+      case TILE_ORC_HOUSE_WALL:
+      case TILE_ORC_HOUSE_LS:
+      case TILE_ORC_HOUSE_RS:
+      case TILE_ORC_HOUSE_WINDOW:
+      case TILE_WIZARD_BW_TS:
+      case TILE_WIZARD_BW_BS:
+      case TILE_WIZARD_BW_LC_TS:
+      case TILE_WIZARD_BW_RC_TS:
+      case TILE_WIZARD_LW:
+      case TILE_WIZARD_RW:
+      case TILE_WIZARD_BOTTOM_W:
+      case TILE_WIZARD_BOTTOM_L:
+      case TILE_WIZARD_BOTTOM_R:
+      case TILE_WIZARD_FIREPLACE_TS:
+      case TILE_WIZARD_FIREPLACE_BS:
+      case TILE_CLIFF:
+      case TILE_CLIFF_EDGE_TOP_LEFT_CORNOR:
+      case TILE_CLIFF_EDGE_TOP:
+      case TILE_CLIFF_EDGE_TOP_RIGHT_CORNOR:
+      case TILE_CLIFF_EDGE_RIGHT:
+      case TILE_CLIFF_EDGE_BOTTOM_RIGHT_CORNOR:
+      case TILE_CLIFF_EDGE_BOTTOM:
+      case TILE_CLIFF_EDGE_BOTTOM_LEFT_CORNOR:
+      case TILE_CLIFF_EDGE_LEFT:
+          return false;
+      case TILE_GRAVEYARD_YELLOW_GATE:
+        if (this.keysHeld["yellow"]) {
+          return true;
+        } else {
+          return false;
+        }
+      default:
         return true;
-      } else {
-        return false;
-      }
-    default:
-      return true;
     }
   }
 

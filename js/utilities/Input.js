@@ -174,11 +174,11 @@ function keyPressed(evt) {
   } else {
     keySet(evt, redWarrior, true);
     if (evt.keyCode == redWarrior.controlKeySword) {
-      redWarrior.swordSwing();
+      redWarrior.useWeapon(redWarrior.mySword, swordSwingSound);
     } else if (evt.keyCode == redWarrior.controlKeyArrow) {
-      redWarrior.shotArrow();
+      redWarrior.useWeapon(redWarrior.myArrow, arrowShotSound);
     } else if (evt.keyCode == redWarrior.controlKeyRock) {
-      redWarrior.shotRock();
+      redWarrior.useWeapon(redWarrior.myRock, rockThrowSound1);
     } else if (evt.keyCode == redWarrior.controlKeyInventory) {
       inventoryScreen = !inventoryScreen
     } else if (evt.keyCode == redWarrior.controlKeyStats) {
