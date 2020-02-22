@@ -1,4 +1,4 @@
-var goblinMoveSpeed = 0.5;
+var goblinMoveSpeed = 2;
 const GOBLIN_TIME_BETWEEN_CHANGE_DIR = 100;
 var goblinsKilled = 0;
 
