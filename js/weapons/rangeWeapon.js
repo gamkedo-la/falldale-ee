@@ -11,43 +11,21 @@ function rangedWeaponClass() {
   this.quantity = 5;
   this.direction = direction; // take initial direction from global direction var
   this.superClassMove = this.move;
+  this.length = 4;
+  this.width = 20;
+  
   this.move = function () {
     this.superClassMove();
-    if (this.direction == "north") {
-      this.xv = 0;
-      this.yv = -this.speed;
-      this.length = 20;
-      this.width = 4;
+    this.xv = this.direction.x * this.speed;
+    this.yv = this.direction.y * this.speed;
 
-      this.checkCollision();
-    } else if (this.direction == "south") {
-      this.xv = 0;
-      this.yv = this.speed;
-      this.length = 20;
-      this.width = 4;
-
-      this.checkCollision();
-    } else if (this.direction == "west") {
-      this.xv = -this.speed;
-      this.yv = 0;
-      this.length = 4;
-      this.width = 20;
-
-      this.checkCollision();
-    } else if (this.direction == "east") {
-      this.xv = this.speed;
-      this.yv = 0;
-      this.length = 4;
-      this.width = 20;
-
-      this.checkCollision();
-    }
+    this.checkCollision();
 
     this.x += this.xv;
     this.y += this.yv;
   };
 
-  this.shootFrom = function (warriorAttack, dir = direction) {
+  this.shootFrom = function (wielder, dir = direction) {
   	if (this.quantity <= 0) {
   		dialogManager.setDialogWithCountdown("I need to find more " + this.pluralName + "!");
   		return;
@@ -58,7 +36,7 @@ function rangedWeaponClass() {
     }
     this.direction = dir;
 
-    this.setPositionForDirection(dir, warriorAttack);
+    this.setPositionForDirection(wielder, dir);
 
     this.life = this.baseLife;
   };
@@ -72,7 +50,12 @@ function rangedWeaponClass() {
 
   this.draw = function () {
     if (this.life > 0) {
-      colorRect(this.x, this.y, this.width, this.length, this.color);
+      let dir = Math.atan2(this.direction.y, this.direction.x);
+      canvasContext.translate(this.x, this.y);
+      canvasContext.rotate(dir);
+      colorRect(0, 0, this.width, this.length, this.color);
+      canvasContext.rotate(-dir);
+      canvasContext.translate(-this.x, -this.y);
     }
   };
 
@@ -95,21 +78,9 @@ function rangedWeaponClass() {
     }
   };
 
-  this.setPositionForDirection = function (dir, warriorAttack) {
-    if (dir == "north") {
-      this.x = warriorAttack.x + 25;
-      this.y = warriorAttack.y + 25;
-    } else if (dir == "south") {
-      this.x = warriorAttack.x + 5;
-      this.y = warriorAttack.y + 25;
-    } else if (dir == "west") {
-      this.x = warriorAttack.x;
-      this.y = warriorAttack.y + 30;
-      console.log(this.x, this.y);
-    } else if (dir == "east") {
-      this.x = warriorAttack.x + 15;
-      this.y = warriorAttack.y + 30;
-    }
+  this.setPositionForDirection = function (origin, dir) {
+    this.x = origin.centerX + dir.x * 25;
+    this.y = origin.centerY + dir.y * 25;
   };
 
   this.setDialogForQuanitity = function () {

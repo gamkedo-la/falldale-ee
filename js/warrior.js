@@ -1,7 +1,7 @@
 // TODO: Probably want to set direction per object instead of
 //       putting it in a global variable
 // this also doesn't allow diagonal movement
-var direction = "south";
+var direction = {x: 0, y: 1};
 
 const PLAYER_SPEED = 6.0;
 const PLAYER_SPEED_DEBUFF = 4.0;
@@ -9,6 +9,8 @@ const PLAYER_SPEED_DEBUFF = 4.0;
 var levelExperienceArray = [ 500, 2000, 4000, 6000, 10000, 16000, 26000, 42000, 68000 ];
 
 function warriorClass(whichPlayerPic) {
+  this.direction = {x: 0, y: 1};
+  this.rotation = this.direction;
   this.mySword = new swordClass();
   this.myArrow = new arrowClass(direction);
   this.myRock = new rockClass();
@@ -161,7 +163,7 @@ function warriorClass(whichPlayerPic) {
     this.playerMove = !this.isFrozen && (this.keyHeld_WalkNorth || this.keyHeld_WalkSouth || this.keyHeld_WalkWest || this.keyHeld_WalkEast);
 
     this.storePos();
-
+    this.setDirection();
     var { nextX, nextY } = this.nextPosWithInput(nextY, nextX);
 
     const tileC = pixelXtoTileCol(nextX);
@@ -175,7 +177,6 @@ function warriorClass(whichPlayerPic) {
 
     if (this.prevX != nextX || this.prevY != nextY) {
       let collision = this.collisionCheck(nextX, nextY);
-      this.setDirection(collision.x, collision.y);
       this.updatePosition(collision.x, collision.y);
     }
 
@@ -202,21 +203,11 @@ function warriorClass(whichPlayerPic) {
         // TODO: Find a better way to determine the chance?
         if (this.tickCount * 12 % 10 == 0 && Math.random() + Math.random() > 2.0 - chance) {
           var monsterInstance = new monsterClass('Papyrus', monsterPic, frameCount);
-          if (dir == "north") {
-            y -= 2 * TILE_H;
-          }
-          if (dir == "south") {
-            y += 2 * TILE_H;
-          }
-          if (dir == "west") {
-            x -= 2 * TILE_W;
-          }
-          if (dir == "east") {
-            x += 2 * TILE_W;
-          }
+          x += dir * 2 * TILE_W;
+          y += dir * 2 * TILE_H;
           monsterInstance.reset(x, y);
           enemyList.push(monsterInstance);
-		  monsterInstance.initialize('Skeleton1', skeletonPic, frameCount);
+		      monsterInstance.initialize('Skeleton1', skeletonPic, frameCount);
           return;
         }
       }
@@ -293,7 +284,7 @@ function warriorClass(whichPlayerPic) {
   this.useWeapon = function(weapon, sound) {
     if (weapon.isReady()) {
       this.recentWeapon = weapon;
-      weapon.shootFrom(this, this.direction);
+      weapon.shootFrom(this, this.rotation);
       sound.play();
     }
   }
@@ -401,7 +392,7 @@ function warriorClass(whichPlayerPic) {
     this.sx = this.frameIndex * this.width;
 	  //console.log(this.sx);
 
-    if ((this.direction == "north") || (this.direction == "west")) {
+    if (this.rotation.y < 0 || this.rotation.x < 0) {
       this.mySword.draw(this);
     }
 
@@ -415,7 +406,7 @@ function warriorClass(whichPlayerPic) {
       this.drawDebug();
     }
 
-    if ((this.direction == "south") || (this.direction == "east")) {
+    if (this.rotation.y > 0 || this.rotation.x > 0) {
       this.mySword.draw(this);
     }
 
@@ -426,52 +417,39 @@ function warriorClass(whichPlayerPic) {
 
   this.getWalkSpeed = function () {
 
-    let xSpeed = 0;
-    let ySpeed = 0;
-
-    if (this.keyHeld_WalkWest) {
-      xSpeed = -this.speed;
-    }
-
-    if (this.keyHeld_WalkEast) {
-      xSpeed = this.speed;
-    }
-
-    if (this.keyHeld_WalkNorth) {
-      ySpeed = -this.speed;
-    }
-
-    if (this.keyHeld_WalkSouth) {
-      ySpeed = this.speed;
-    }
-
-    // reduce diagonal speed
-    if ((this.keyHeld_WalkWest || this.keyHeld_WalkEast) &&
-        (this.keyHeld_WalkNorth || this.keyHeld_WalkSouth)) {
-      xSpeed *= 0.85; // sin 45
-      ySpeed *= 0.85;
-    }
+    let xSpeed = this.direction.x * this.speed,
+        ySpeed = this.direction.y * this.speed;
 
     return { x: xSpeed, y: ySpeed };
   };
 
-  this.setDirection = function (nextX, nextY) {
+  this.setDirection = function () {
+    let dirX = dirY = 0;
     if (this.keyHeld_WalkWest) {
-      this.direction = "west";
-      this.sx = 0;
-      this.sy = this.height * 2;
-    } else if (this.keyHeld_WalkEast) {
-      this.direction = "east";
-      this.sx = 0;
-      this.sy = this.height * 3;
-    } else if (this.keyHeld_WalkNorth) {
-      this.direction = "north";
-      this.sx = 0;
-      this.sy = 0;
-    } else if (this.keyHeld_WalkSouth) {
-      this.direction = "south";
-      this.sx = 0;
-      this.sy = this.height;
+      dirX -= 1;
+    } if (this.keyHeld_WalkEast) {
+      dirX += 1;
+    } if (this.keyHeld_WalkNorth) {
+      dirY -= 1;
+    } if (this.keyHeld_WalkSouth) {
+      dirY += 1;
+    }
+  
+    this.direction = {x: dirX, y: dirY};
+
+    if (dirX != 0 || dirY != 0) {
+      this.rotation = this.direction;
+      if (dirY > 0) this.sy = this.height;
+      else if (dirY < 0) this.sy = 0;
+    
+      if (dirX > 0) this.sy = this.height * 3;
+      else if (dirX < 0) this.sy = this.height * 2;
+    
+      //normalize direction vector
+      if (dirX != 0 && dirY != 0) {
+        dirX *= 0.85;
+        dirY *= 0.85;
+      }
     }
   };
 

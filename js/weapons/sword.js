@@ -8,8 +8,6 @@ var damageUIVisibilityCountdown = 0;
 swordClass.prototype = new weaponClass();
 
 function swordClass() {
-  this.xv = 5;
-  this.yv = 5;
   this.life = SWORD_LIFE;
   this.coolDownTime = 0;
   this.isMagic = false;
@@ -58,41 +56,14 @@ function swordClass() {
 
     let enemyRect = adversary;
     let weaponRect = {};
-    let warriorWidth = 50;
-    let swordLength = 30;
-    let swordWidth = 30;
+    let swordLength = 50;
+    let swordWidth = 50;
 
-    if (redWarrior.direction == "north") {// warrior facing North
+    weaponRect.width = swordLength;
+    weaponRect.height = swordWidth;
 
-      weaponRect.x = this.x + warriorWidth - swordWidth;
-      weaponRect.width = swordWidth;
-      weaponRect.y = this.y - swordLength;
-      weaponRect.height = swordLength;
-
-    } else if (redWarrior.direction == "south") {// warrior facing South
-
-      weaponRect.x = this.x;
-      weaponRect.width = swordWidth;
-      weaponRect.y = this.y + warriorWidth;
-      weaponRect.height = swordLength;
-
-    } else if (redWarrior.direction == "west") {// warrior facing West
-
-      weaponRect.x = this.x - swordLength;
-      weaponRect.width = swordLength;
-      weaponRect.y = this.y + warriorWidth - swordWidth;
-      weaponRect.height = swordWidth;
-
-    } else if (redWarrior.direction == "east") {// warrior facing East
-
-      weaponRect.x = this.x + warriorWidth;
-      weaponRect.width = swordLength;
-      weaponRect.y = this.y + warriorWidth - swordWidth;
-      weaponRect.height = swordWidth;
-
-    } else {
-      return false;
-    }
+    weaponRect.x = wielder.x + (swordLength - 20) * wielder.rotation.x;
+    weaponRect.y = wielder.y + (swordWidth - 30) * wielder.rotation.y;
 
     if (this.rangeTest(weaponRect, enemyRect))
       this.checkhit(adversary)
@@ -106,37 +77,16 @@ function swordClass() {
   };
 
   this.draw = function (wielder) {
-
     var swordWidth = 10;
-    var swordLength = 40;
-    var swordXLocation = wielder.x;
-    var swordYLocation = wielder.y;
-    var rotation = 0;
-
-    if (redWarrior.direction == "north") {
-      swordWidth = 10;
-      swordLength = 20;
-      swordXLocation = wielder.centerX + 5;
-      swordYLocation = wielder.y - swordLength + 10;
-    } else if (redWarrior.direction == "south") {
-      swordWidth = 10;
-      swordLength = 40;
-      swordXLocation = wielder.centerX - 5;
-      swordYLocation = wielder.centerY + 35;
-      rotation = Math.PI;
-    } else if (redWarrior.direction == "west") {
-      swordWidth = 40;
-      swordLength = 10;
-      swordXLocation = wielder.x - swordWidth + 30;
-      swordYLocation = wielder.centerY;
-      rotation = -Math.PI / 2;
-    } else if (redWarrior.direction == "east") {
-      swordWidth = 40;
-      swordLength = 10;
-      swordXLocation = wielder.x + 60;
-      swordYLocation = wielder.centerY + 30;
-      rotation = Math.PI / 2;
-    }
+    var swordLength = 30;
+    var rotation = Math.atan2(wielder.rotation.y, wielder.rotation.x);
+    var swordXLocation = wielder.centerX + Math.cos(rotation) * swordLength;
+    var swordYLocation = wielder.centerY  + Math.sin(rotation) * swordLength + swordWidth;
+    rotation += + Math.PI * 0.5;//Account for rotation of source image
+    
+    weaponRectX = wielder.x + (30) * wielder.rotation.x;
+    weaponRectY = wielder.y + (20) * wielder.rotation.y;
+    //colorRect(weaponRectX, weaponRectY, 50, 50, 'red');
 
     if (this.life > 0) {
       if (this.isMagic) {
@@ -145,14 +95,9 @@ function swordClass() {
         this.mySwordPic = swordPic;
       }
       canvasContext.save();
-      if (rotation != 0) {
-        canvasContext.translate(swordXLocation, swordYLocation);
-        canvasContext.rotate(rotation);
-        canvasContext.drawImage(this.mySwordPic, -swordWidth / 2, -swordLength / 2);
-      } else {
-        canvasContext.drawImage(this.mySwordPic, swordXLocation, swordYLocation);
-      }
-
+      canvasContext.translate(swordXLocation, swordYLocation);
+      canvasContext.rotate(rotation);
+      canvasContext.drawImage(this.mySwordPic, -this.mySwordPic.width/2, -this.mySwordPic.height/2);
       canvasContext.restore();
     }
   }
