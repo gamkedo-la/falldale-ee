@@ -1373,15 +1373,22 @@ function drawMiniMap(miniMapPosX,miniMapPosY, width,height, miniMapTileSize) {
 }
 
 function getMiniMapPlayerIcon() {
-	if (redWarrior.keyHeld_WalkNorth) {
+	if (redWarrior.keyHeld_WalkNorth && redWarrior.keyHeld_WalkEast)
+		return 225 * (Math.PI/180);
+	else if (redWarrior.keyHeld_WalkNorth && redWarrior.keyHeld_WalkWest)
+		return 135 * (Math.PI/180);
+	else if (redWarrior.keyHeld_WalkSouth && redWarrior.keyHeld_WalkEast)
+		return 315 * (Math.PI/180);
+	else if (redWarrior.keyHeld_WalkSouth && redWarrior.keyHeld_WalkWest)
+		return 45 * (Math.PI/180);
+	else if (redWarrior.keyHeld_WalkNorth)
 		return 180 * (Math.PI/180);
-	} else if (redWarrior.keyHeld_WalkEast) {
+	else if (redWarrior.keyHeld_WalkEast)
 		return 270 * (Math.PI/180);
-	} else if (redWarrior.keyHeld_WalkWest) {
+	else if (redWarrior.keyHeld_WalkWest)
 		return 90 * (Math.PI/180);
-	} else if (redWarrior.keyHeld_WalkSouth){
+	else if (redWarrior.keyHeld_WalkSouth)
 		return 0;
-	}
 }
 function tileIsAFloor(tileKind) {
 	return (tileKind <= TERRAIN_TILE_NUM_MAX);
