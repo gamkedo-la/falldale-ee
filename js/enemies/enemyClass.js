@@ -631,6 +631,8 @@ function enemyClass() {
       case TILE_HOUSE_DRESSER_BOTTOM:
       case TILE_BAR_CABINET:
       case TILE_BAR:
+	  case TILE_TREE_1_SW:
+	  case TILE_TREE_1_SE:
       case TILE_BAR_TOP:
       case TILE_CHAIR:
       case TILE_MAUSOLEUM_TL:

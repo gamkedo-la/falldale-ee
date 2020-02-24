@@ -305,6 +305,9 @@ function loadImages() {
 	{ tileType: TILE_CLIFF_EDGE_LEFT, theFile: "cliffLeft.png" },
 	{ tileType: TILE_CLIFF_SHADOW_CORNOR, theFile: "cliffShadow.png" },
 	{ tileType: TILE_CLIFF_SHADOW, theFile: "cliffFullShadow.png" },
+	{ tileType: TILE_BLACK_SMITH_SIGN_1, theFile: "blacksmith.png" },
+	{ tileType: TILE_BLACK_SMITH_SIGN_2, theFile: "blacksmith1.png" },
+	
 	
 
     { varName: muteMusicPic, theFile: "muteMusic.png" },

@@ -894,6 +894,8 @@ function warriorClass(whichPlayerPic) {
       case TILE_WATER:
       case TILE_BUSH:
       case TILE_BUSH:
+	  case TILE_TREE_1_SW:
+	  case TILE_TREE_1_SE:
       case TILE_TREE2BOTTOMHALF:
       case TILE_TREE3TOPHALF:
       case TILE_TREE3BOTTOMHALF:
