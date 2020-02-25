@@ -12,9 +12,9 @@ function npcClass(npcName, npcPic) {
 
   this.tickCount = 0;
   this.frameIndex = 0;
-  this.width = 36;
-  this.numberOfFrames = 6;
-  this.height = 52;
+  this.width = 50;
+  this.numberOfFrames = 4;
+  this.height = 51;
   this.ticksPerFrame = 5;
   this.npcMove = true;
   this.npcTimeBetweenChangeDir = 100;
