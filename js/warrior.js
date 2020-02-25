@@ -43,14 +43,14 @@ function warriorClass(whichPlayerPic) {
   this.waitTime = 0;
   this.walkIntoTileIndex = 0;
   this.previousTileType = -1;
-  this.sx = 50;
-  this.sy = 0;
   this.tickCount = 0;
   this.frameIndex = 0;
   this.width = 50;
   this.numberOfFrames = 6;
   this.height = 50;
   this.ticksPerFrame = 5;
+  this.sx = 50;
+  this.sy = this.height;
   this.playerMove = false;
   this.strength = 0;
   this.dexterity = 0;
@@ -434,11 +434,8 @@ function warriorClass(whichPlayerPic) {
     } if (this.keyHeld_WalkSouth) {
       dirY += 1;
     }
-  
-    this.direction = {x: dirX, y: dirY};
 
     if (dirX != 0 || dirY != 0) {
-      this.rotation = this.direction;
       if (dirY > 0) this.sy = this.height;
       else if (dirY < 0) this.sy = 0;
     
@@ -450,7 +447,11 @@ function warriorClass(whichPlayerPic) {
         dirX *= 0.85;
         dirY *= 0.85;
       }
+
+      this.rotation = {x: dirX, y: dirY};
     }
+
+    this.direction = {x: dirX, y: dirY};
   };
 
   this.nextPosWithInput = function () {
