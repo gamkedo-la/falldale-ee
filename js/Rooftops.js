@@ -7,6 +7,12 @@ var fallDaleRooftops = [ // x1,y1,x2,y2
 
   [ 3, 3, 9, 6 ], // player's house
   [17,19,23,24 ], // blacksmith
+  [ 7,36,11,43  ], // Dodd / Taran
+  [27,19,33,24  ], // Healer
+  [28,29,34,32  ], // Delkan
+  [38,13,48,20  ], // Bar
+  [39,33,43,37  ], // Addy
+  [46,30,55,35  ], // Gabriel, Princess, Fenton
   
 ];
 
