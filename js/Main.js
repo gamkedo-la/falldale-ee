@@ -238,13 +238,13 @@ function loadLevel() {
         newEnemy.initialize('Goblin', goblinPic, 4);
       } else if (roomGrid[ arrayIndex ] == TILE_GREEN_ORC_SWORD) {
         newEnemy = new orcClass();
-        newEnemy.initialize('Orc - Sword', orcPic, 6);
+        newEnemy.initialize('Orc - Sword', orcPic, 4);
       } else if (roomGrid[ arrayIndex ] == TILE_GREEN_ORC_CLUB) {
         newEnemy = new orcClass();
-        newEnemy.initialize('Orc - Club2', orcPic2, 6);
+        newEnemy.initialize('Orc - Club2', orcPic2, 4);
       } else if (roomGrid[ arrayIndex ] == TILE_GREEN_ORC_AX) {
         newEnemy = new orcClass();
-        newEnemy.initialize('Orc - Ax', orcPic3, 6);
+        newEnemy.initialize('Orc - Ax', orcPic3, 4);
       } else if (roomGrid[ arrayIndex ] == TILE_ARCHER) {
         newEnemy = new archerClass();
         newEnemy.initialize('Archer', archerPic3, 4);

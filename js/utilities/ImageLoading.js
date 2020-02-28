@@ -307,7 +307,9 @@ function loadImages() {
 	{ tileType: TILE_CLIFF_SHADOW, theFile: "cliffFullShadow.png" },
 	{ tileType: TILE_BLACK_SMITH_SIGN_1, theFile: "blacksmith.png" },
 	{ tileType: TILE_BLACK_SMITH_SIGN_2, theFile: "blacksmith1.png" },
-	
+	{ tileType: TILE_ALCHEMIST_SIGN_1, theFile: "alchemist.png" },
+	{ tileType: TILE_ALCHEMIST_SIGN_2, theFile: "alchemist1.png" },
+	{ tileType: TILE_PUB_SIGN, theFile: "pub.png" },
 	
 
     { varName: muteMusicPic, theFile: "muteMusic.png" },
