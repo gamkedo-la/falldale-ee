@@ -79,9 +79,10 @@ function calculateMousePos(evt) {
   var root = document.documentElement;
   var mouseX = evt.clientX - rect.left - root.scrollLeft;
   var mouseY = evt.clientY - rect.top - root.scrollTop;
+  var scaleFactor = canvas.clientHeight / canvas.height;
   return {
-    x: mouseX,
-    y: mouseY
+    x: mouseX/scaleFactor,
+    y: mouseY/scaleFactor
   };
 }
 

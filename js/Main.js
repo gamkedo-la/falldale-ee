@@ -99,10 +99,10 @@ const DIALOG_BOX_HEIGHT = 50;
 
 
 function resizeCanvas() {
-  canvas.width = window.innerWidth;
+  /*canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   stateScreenOffsetX = canvas.width / 2 - 400;
-  stateScreenOffsetY = canvas.height / 2 - 300;
+  stateScreenOffsetY = canvas.height / 2 - 300; */
 }
 
 window.onload = function () {
@@ -449,7 +449,7 @@ function statsDraw() {
 
 function drawMenuScreen() {
   canvasContext.save();
-  canvasContext.translate(stateScreenOffsetX, stateScreenOffsetY);
+  //canvasContext.translate(stateScreenOffsetX, stateScreenOffsetY);
   canvasContext.drawImage(titlepagePic, 0, 0); // blanks out the screen
   colorRect(150, 225, 250, 315, "midnightblue");
   canvasContext.fillStyle = "white";
@@ -514,13 +514,13 @@ function drawCredits() {
     ];
   canvasContext.save();
   canvasContext.font = "12px Sans";
-  canvasContext.translate(stateScreenOffsetX, stateScreenOffsetY);
+  //canvasContext.translate(stateScreenOffsetX, stateScreenOffsetY);
   canvasContext.drawImage(titlepagePic, 0, 0); // blanks out the screen
    canvasContext.globalAlpha=0.7;
   colorRect(0, 0, titlepagePic.width, titlepagePic.height, "midnightblue");
   canvasContext.globalAlpha=1.0;
 
-    canvasContext.fillStyle = "white";
+  canvasContext.fillStyle = "white";
   for(var i=0;i<creditsArray.length;i++) {    
     canvasContext.fillText(creditsArray[i], 8, 12+i*16);
   }
