@@ -18,7 +18,7 @@ function orcClass() {
   this.frameIndex = 0;
   this.width = 61;
   this.numberOfFrames = 6;
-  this.height = 71;
+  this.height = 75;
   this.ticksPerFrame = 5;
   this.shadowXOffset = 4;
   this.shadowYOffset = 56;
