@@ -21,7 +21,7 @@ function drawCreationScreen() {
 
   canvasContext.save();
   canvasContext.translate(stateScreenOffsetX, stateScreenOffsetY);
-  canvasContext.drawImage(storeFrontPic, 0, 0);  // replace with a Creation Screen background
+  canvasContext.drawImage(characterCreationBackgroundPic, 0, 0);  // replace with a Creation Screen background
   // drawTextWithShadowCentered(gameKeeperFeedback, 0.40 * canvas.width, 50, "white", "35px sans-serif");
   colorText("Character Creation", 25, 50, "black");
   colorText("Strength: " + redWarrior.strength, 50, 100, "black");
