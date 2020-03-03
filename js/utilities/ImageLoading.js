@@ -5,6 +5,7 @@ var healerStorePic = document.createElement("img");
 var muteMusicPic = document.createElement("img");
 var muteSFXPic = document.createElement("img");
 var questGUIPic = document.createElement("img");
+var characterCreationBackgroundPic = document.createElement("img");
 
 //player Pictures
 var warriorPic = document.createElement("img");
@@ -311,7 +312,7 @@ function loadImages() {
 	{ tileType: TILE_ALCHEMIST_SIGN_2, theFile: "alchemist1.png" },
 	{ tileType: TILE_PUB_SIGN, theFile: "pub.png" },
 	
-
+    { varName: characterCreationBackgroundPic, theFile: "characterCreation.png" },
     { varName: muteMusicPic, theFile: "muteMusic.png" },
     { varName: muteSFXPic, theFile: "muteSFX.png" },
     { varName: warriorPic, theFile: "warrior1.png" },
