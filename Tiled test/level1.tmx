@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="left-down" compressionlevel="0" width="50" height="50" tilewidth="50" tileheight="50" infinite="0" nextlayerid="4" nextobjectid="1">
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="left-down" compressionlevel="0" width="50" height="50" tilewidth="50" tileheight="50" infinite="0" nextlayerid="5" nextobjectid="7">
  <tileset firstgid="1" name="Backgrounds" tilewidth="50" tileheight="50" tilecount="100" columns="10">
   <image source="tiles.png" width="500" height="500"/>
  </tileset>
@@ -226,4 +226,24 @@
 </data>
  </layer>
  <objectgroup id="3" name="Items"/>
+ <objectgroup id="4" name="NPCs">
+  <object id="1" name="Skeleton" type="skeleton" x="650" y="400">
+   <point/>
+  </object>
+  <object id="2" name="Goblin" type="goblin" x="650" y="500">
+   <point/>
+  </object>
+  <object id="3" name="Zombie" type="zombie" x="650" y="600">
+   <point/>
+  </object>
+  <object id="4" name="Orc" type="orc" x="750" y="500">
+   <point/>
+  </object>
+  <object id="5" name="Archer" type="archer" x="750" y="400">
+   <point/>
+  </object>
+  <object id="6" name="Wizard" type="wizard" x="750" y="600">
+   <point/>
+  </object>
+ </objectgroup>
 </map>

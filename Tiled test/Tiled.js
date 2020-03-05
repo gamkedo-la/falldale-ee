@@ -1,5 +1,6 @@
 let canvas, ctx, tileBuffer;
 let tileSheets = {};
+let objects = [];
 
 window.onload = function() {
 	initCanvas()
@@ -7,18 +8,6 @@ window.onload = function() {
 	for (let l of tm) {
 		let level = TileMaps[l];
 		loadTileSets(level.tilesets);
-
-		for (let layer of level.layers) {
-			switch(layer.type){
-				case "tilelayer":
-					drawTileLayer(layer);
-					break;
-				case "objectgroup":
-					break;
-				default:
-					break;
-			}
-		}
 	}
 	ctx.translate(0, -300);
 	setTimeout(drawTiledMap, 500);
@@ -34,11 +23,15 @@ function drawTiledMap() {
 					drawTileLayer(layer);
 					break;
 				case "objectgroup":
+					loadObjects(layer);
 					break;
 				default:
 					break;
 			}
 		}
+	}
+	for (s of objects) {
+		s.draw();
 	}
 }
 
@@ -121,4 +114,33 @@ function loadTileList(sheet) {
 		newSheet.tileList.push(tileImage);
 	}
 	tileSheets[sheet.name] = newSheet;
+}
+
+function loadObjects(objectgroup) {
+	switch(objectgroup.name) {
+		case "Items":
+			spawnItems(objectgroup);
+			break;
+		case "NPCs":
+			spawnNPCs(objectgroup);
+			break;
+		default:
+			break;
+	}
+}
+
+function spawnItems(objectgroup) {
+	let items = objectgroup.objects;
+	for (item of items) {
+		console.log(item.type);
+	}
+}
+
+function spawnNPCs(objectgroup) {
+	let npcs = objectgroup.objects;
+	for (character of npcs) {
+		let newNPC = new NPC_TYPES[character.type](character.x, character.y);
+		newNPC.name = character.type;
+		objects.push(newNPC);
+	}
 }
