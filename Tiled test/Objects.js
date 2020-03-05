@@ -79,3 +79,57 @@ const NPC_TYPES = 	{
     "druid": Druid,
     "wizard": Wizard,
     }
+
+class Item {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.name = item;
+    }
+
+    draw() {
+        ctx.fillStyle = 'lightgreen';
+        ctx.fillRect(this.x - 25, this.y - 25, 50, 50);
+        ctx.fillStyle = 'black';
+        ctx.textAlign = 'center';
+        ctx.fillText(this.name, this.x, this.y);
+    }
+}
+
+class Arrows extends Item {
+    constructor(x, y) {
+        super(x, y);
+    }
+}
+
+class ThrowingRocks extends Item {
+    constructor(x, y) {
+        super(x, y);
+    }
+}
+
+class MapItem extends Item {
+    constructor(x, y) {
+        super(x, y);
+    }
+}
+
+class Treasure extends Item {
+    constructor(x, y) {
+        super(x, y);
+    }
+}
+
+class Key extends Item {
+    constructor(x, y) {
+        super(x, y);
+    }
+}
+
+const ITEM_TYPES = {
+    "arrows": Arrows,
+    "throwingrocks": ThrowingRocks,
+    "map": MapItem,
+    "treasure": Treasure,
+    "key": Key,
+    }

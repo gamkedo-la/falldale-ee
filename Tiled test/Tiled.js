@@ -5,34 +5,12 @@ let objects = [];
 window.onload = function() {
 	initCanvas()
 	let tm = Object.getOwnPropertyNames(TileMaps)
-	for (let l of tm) {
-		let level = TileMaps[l];
-		loadTileSets(level.tilesets);
+	for (let m of tm) {
+		let map = TileMaps[m];
+		loadTiledMap(map);
 	}
 	ctx.translate(0, -300);
-	setTimeout(drawTiledMap, 500);
-}
-
-function drawTiledMap() {
-	let tm = Object.getOwnPropertyNames(TileMaps)
-	for (let l of tm) {
-		let level = TileMaps[l];
-		for (let layer of level.layers) {
-			switch(layer.type){
-				case "tilelayer":
-					drawTileLayer(layer);
-					break;
-				case "objectgroup":
-					loadObjects(layer);
-					break;
-				default:
-					break;
-			}
-		}
-	}
-	for (s of objects) {
-		s.draw();
-	}
+	setTimeout(drawTiledMap, 500, TileMaps[tm[0]]);
 }
 
 function initCanvas() {
@@ -45,6 +23,22 @@ function initCanvas() {
 	tileBuffer.height = 50;
 }
 
+function loadTiledMap(map) {
+	loadTileSets(map.tilesets);
+	for (let layer of map.layers) {
+		if (layer.type === "objectgroup") loadObjects(layer);
+	}
+}
+
+function drawTiledMap(map) {
+	for (let layer of map.layers) {
+		if (layer.type === "tilelayer") drawTileLayer(layer);
+	}
+	for (let o of objects) {
+		o.draw();
+	}
+}
+
 function drawTileLayer(layer) {
 	let ts = Object.getOwnPropertyNames(tileSheets)
 	for (let y = 0; y < layer.height; y++) {
@@ -55,7 +49,7 @@ function drawTileLayer(layer) {
 			if (tile === 0) continue;
 
 			let sheet = "";
-			for (s of ts) {
+			for (let s of ts) {
 				if (tile >= tileSheets[s].firstgid) {
 					sheet = s;
 				}
@@ -71,12 +65,12 @@ function getTile(tileID, sheet) {
 		return sheet.tileList[tileID - sheet.firstgid - 1];
 	}
 	let index = tileID - sheet.firstgid;
-	let width = sheet.width/50;
-	let height = sheet.height/50;
-	let tX = index % 10;
-	let tY = (index - tX) / 10;
+	let width = sheet.tileWidth;
+	let height = sheet.tileHeight;
+	let tX = index % (sheet.width/width);
+	let tY = (index - tX) / (sheet.width/width);
 
-	tileBuffer.ctx.drawImage(sheet, tX * 50, tY * 50, 50, 50, 0, 0, 50, 50);
+	tileBuffer.ctx.drawImage(sheet, tX * width, tY * height, width, height, 0, 0, width, height);
 	return tileBuffer;
 }
 
@@ -95,17 +89,19 @@ function loadTileSets(tileset) {
 }
 
 function loadTileSheet(sheet) {
-	let tileSheet = document.createElement("img");
-	//sheet.firstgid is the starting index for the tile sheet
-	//sheet.firstgid + tile index = index used in map layer
-	tileSheet.firstgid = sheet.firstgid;
-	tileSheet.src = sheet.image;
-	tileSheets[sheet.image] = tileSheet;
+	let newSheet = document.createElement("img");
+	newSheet.firstgid = sheet.firstgid;
+	newSheet.src = sheet.image;
+	newSheet.tileHeight = sheet.tileheight;
+	newSheet.tileWidth = sheet.tilewidth;
+	tileSheets[sheet.image] = newSheet;
 }
 
 function loadTileList(sheet) {
 	let newSheet = {}
 	newSheet.firstgid = sheet.firstgid;
+	newSheet.tileHeight = sheet.tileheight;
+	newSheet.tileWidth = sheet.tilewidth;
 	newSheet.tileList = [];
 	for (let t = 0; t < sheet.tiles.length; t++) {
 		let tile = sheet.tiles[t];
@@ -132,7 +128,9 @@ function loadObjects(objectgroup) {
 function spawnItems(objectgroup) {
 	let items = objectgroup.objects;
 	for (item of items) {
-		console.log(item.type);
+		let newItem = new ITEM_TYPES[item.type](item.x, item.y);
+		newItem.name = item.type;
+		objects.push(newItem);
 	}
 }
 
