@@ -252,7 +252,7 @@ function loadImages() {
     { tileType: TILE_GRAVEYARD_FENCE, theFile: "graves/fence.png" },
     { tileType: TILE_GRAVE_1, theFile: "graves/1 grave.png" },
     { tileType: TILE_GRAVE_2, theFile: "graves/2 graves.png" },
-    { tileType: TILE_GRAVE_3, theFile: "graves/large grave.png" },
+    { tileType: TILE_GRAVE_3, theFile: "graves/grave_3.png" },
     { tileType: TILE_GRAVE_4, theFile: "graves/oblisk grave.png" },
     { tileType: TILE_GRAVEYARD_FENCE_SIDE, theFile: "graves/fenceside.png" },
     { tileType: TILE_GRAVEYARD_FENCE_TR, theFile: "graves/fencetoprightpost.png" },
