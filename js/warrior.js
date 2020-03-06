@@ -159,6 +159,17 @@ function warriorClass(whichPlayerPic) {
     this.y = this.prevY;
   };
 
+  this.checkIfInBar = function (xPos, yPos) {
+	  if(xPos > (38 * TILE_W) && xPos < (48 * TILE_W) &&
+		 yPos > (13 * TILE_H) && yPos < (20 * TILE_H))
+	  {
+		  backgroundMusic.loopSong("have-a-nice-beer");
+	  } else { 
+		  backgroundMusic.loopSong("goblinRaid");
+	  }
+  }
+
+
   this.move = function () {
     this.playerMove = !this.isFrozen && (this.keyHeld_WalkNorth || this.keyHeld_WalkSouth || this.keyHeld_WalkWest || this.keyHeld_WalkEast);
 
@@ -185,7 +196,10 @@ function warriorClass(whichPlayerPic) {
     this.myRock.move();
 
     this.tryToTriggerMonsterSpawnAt(skeletonClass, skeletonPic, skeletonSpawnTiles, this.x + this.width / 2, this.y + this.height / 2, direction, 6);
-  };
+	if(levelNow == 7){
+		this.checkIfInBar(this.x, this.y);
+	}
+};
 
   this.freeze = function (duration) {
     this.isFrozen = true;

@@ -72,7 +72,7 @@ function drawRooftops(rooftops) {
     var mx = Math.round((mouseX + camera.x - TILE_W / 2) / TILE_W);
     var my = Math.round((mouseY + camera.y - TILE_H / 2) / TILE_H);
     if (mx >= firstCol && mx <= lastCol && my >= firstRow && my <= lastRow) {
-      mouseInsideBuilding = true;
+    //  mouseInsideBuilding = true;
     }
 
     if (!playerInsideBuilding) {
