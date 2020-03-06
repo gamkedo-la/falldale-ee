@@ -707,7 +707,16 @@ function warriorClass(whichPlayerPic) {
 
     switch (walkIntoTileTypeFeet) {
       case TILE_GRASS:
-      case TILE_GARDEN_1:
+      case TILE_GARDEN:
+	  case TILE_GARDEN_1:
+	  case TILE_GARDEN_2:
+	  case TILE_GARDEN_3:
+	  case TILE_GARDEN_4:
+	  case TILE_GARDEN_5:
+	  case TILE_GARDEN_6:
+	  case TILE_GARDEN_7:
+	  case TILE_GARDEN_6:
+	  case TILE_GARDEN_7:
         this.setSpeedAndPosition(PLAYER_SPEED_DEBUFF, nextX, nextY);
         break;
       default:

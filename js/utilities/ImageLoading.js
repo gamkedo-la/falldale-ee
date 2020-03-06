@@ -173,10 +173,15 @@ function loadImages() {
 	{ tileType: TILE_TREE_1_SW, theFile: "Trees/tree3.png" },
 	{ tileType: TILE_TREE_1_SE, theFile: "Trees/tree4.png" },
 	{ tileType: TILE_BUSH, theFile: "Trees/bush.png" },
-	
-	
-	
-	
+	{ tileType: TILE_GARDEN_1, theFile: "garden_1.png" },
+	{ tileType: TILE_GARDEN_2, theFile: "garden_2.png" },
+	{ tileType: TILE_GARDEN_3, theFile: "garden_3.png" },
+	{ tileType: TILE_GARDEN_4, theFile: "garden_4.png" },
+	{ tileType: TILE_GARDEN_5, theFile: "garden_5.png" },
+	{ tileType: TILE_GARDEN_6, theFile: "garden_6.png" },
+	{ tileType: TILE_GARDEN_7, theFile: "garden_7.png" },
+	{ tileType: TILE_GARDEN_8, theFile: "garden_8.png" },
+	{ tileType: TILE_GARDEN_9, theFile: "garden_9.png" },
     { tileType: TILE_TREE2BOTTOMHALF, theFile: "Trees/tree2bottomhalf.png" },
     { tileType: TILE_TREE3TOPHALF, theFile: "Trees/tree3tophalf.png" },
     { tileType: TILE_TREE3BOTTOMHALF, theFile: "Trees/tree3bottomhalf.png" },
@@ -227,7 +232,7 @@ function loadImages() {
     { tileType: TILE_HOUSE_LS_BED_BOTTOM, theFile: "House1/bedleftsidets.png" },
     { tileType: TILE_HOUSE_DRESSER_TOP, theFile: "House1/dressertop.png" },
     { tileType: TILE_HOUSE_DRESSER_BOTTOM, theFile: "House1/dresserbottom.png" },
-    { tileType: TILE_GARDEN_1, theFile: "House1/garden1.png" },
+    { tileType: TILE_GARDEN, theFile: "House1/garden1.png" },
     { tileType: TILE_BAR_CABINET, theFile: "bar/cabinet.png" },
     { tileType: TILE_BAR, theFile: "bar/bar2.png" },
     { tileType: TILE_BAR_TOP, theFile: "bar/barTopEnd.png" },
