@@ -229,7 +229,7 @@ function loadImages() {
     { tileType: TILE_HOUSE_DRESSER_BOTTOM, theFile: "House1/dresserbottom.png" },
     { tileType: TILE_GARDEN_1, theFile: "House1/garden1.png" },
     { tileType: TILE_BAR_CABINET, theFile: "bar/cabinet.png" },
-    { tileType: TILE_BAR, theFile: "bar/bar.png" },
+    { tileType: TILE_BAR, theFile: "bar/bar2.png" },
     { tileType: TILE_BAR_TOP, theFile: "bar/barTopEnd.png" },
     { tileType: TILE_CHAIR, theFile: "bar/chair.png" },
     { tileType: TILE_MAP, theFile: "map.png" },
