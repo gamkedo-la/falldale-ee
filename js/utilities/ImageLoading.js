@@ -312,6 +312,7 @@ function loadImages() {
 	{ tileType: TILE_ALCHEMIST_SIGN_2, theFile: "alchemist1.png" },
 	{ tileType: TILE_PUB_SIGN, theFile: "pub.png" },
 	{ tileType: TILE_BAR_TABLE, theFile: "bar/table.png" },
+	{ tileType: TILE_BAR_STOOL, theFile: "bar/stool.png" },
 	
     { varName: characterCreationBackgroundPic, theFile: "characterCreation.png" },
     { varName: muteMusicPic, theFile: "muteMusic.png" },
