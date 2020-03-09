@@ -305,7 +305,11 @@ function loadLevel() {
           newTile.setNewType(TILE_GRASS);
           tileList.push(newTile);
           newTile = new TileObject(arrayIndex);
-        }
+        } else if (tileTypeHasBarFloorTransparency(newTile.type)) {
+          newTile.setNewType(TILE_BAR_FLOOR1);
+          tileList.push(newTile);
+          newTile = new TileObject(arrayIndex);
+		}
 
         tileList.push(newTile);
         arrayIndex++;
