@@ -476,15 +476,14 @@ function npcSuperClass() {
       case TILE_BAR:
       case TILE_BAR_TOP:
       case TILE_CHAIR:
-      case TILE_MAUSOLEUM_TL:
-      case TILE_MAUSOLEUM_TM:
-      case TILE_MAUSOLEUM_TR:
-      case TILE_MAUSOLEUM_ML:
-      case TILE_MAUSOLEUM_MM:
-      case TILE_MAUSOLEUM_MR:
-      case TILE_MAUSOLEUM_BL:
-      case TILE_MAUSOLEUM_BM:
-      case TILE_MAUSOLEUM_BR:
+      case TILE_MAUSOLEUM_1:
+      case TILE_MAUSOLEUM_2:
+      case TILE_MAUSOLEUM_3:
+      case TILE_MAUSOLEUM_4:
+	  case TILE_MAUSOLEUM_B_1:
+      case TILE_MAUSOLEUM_B_2:
+      case TILE_MAUSOLEUM_B_3:
+      case TILE_MAUSOLEUM_B_4:
       case TILE_ZOMBIE:
       case TILE_ZOMBIE2:
       case TILE_ZOMBIE3:
