@@ -1,3 +1,4 @@
+//This is just a practice commit. Will remove after. hello! -CathySL
 //Player discovers the Druid Queen has gone insane and can't be trusted with her Crystal
 //Player goes on a quest to kill the Druid Queen and return the Crystal to the Princess
 //Player discovers the Wizard in the Tower is the master mind behind the Druid going crazy 
