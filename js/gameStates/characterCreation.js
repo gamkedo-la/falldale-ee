@@ -21,8 +21,7 @@ function drawCreationScreen() {
 
   canvasContext.save();
   canvasContext.translate(stateScreenOffsetX, stateScreenOffsetY);
-  canvasContext.drawImage(characterCreationBackgroundPic, 0, 0);  // replace with a Creation Screen background
-  // drawTextWithShadowCentered(gameKeeperFeedback, 0.40 * canvas.width, 50, "white", "35px sans-serif");
+  canvasContext.drawImage(characterCreationBackgroundPic, 0, 0);  
   colorText("Character Creation", 25, 50, "black");
   colorText("Strength: " + redWarrior.strength, 50, 100, "black");
   colorText("Dexterity: " + redWarrior.dexterity, 50, 120, "black");
@@ -30,11 +29,11 @@ function drawCreationScreen() {
   colorText("Intelligence: " + redWarrior.intelligence, 50, 160, "black");
   colorText("Wisdom: " + redWarrior.wisdom, 50, 180, "black");
   colorText("Charisma: " + redWarrior.charisma, 50, 200, "black");
-  colorRect(15, 260, 200, 50, 'blue');
+  canvasContext.drawImage(blueButtonPic, 15, 260);  
   colorText(rollCharacterButtonText, 40, 290, "white");
 
   if (hasRolledDice) {
-    colorRect(15, 325, 200, 50, 'green');
+	canvasContext.drawImage(greenButtonPic, 15, 325);  
     colorText('Play  >>', 80, 355, "white");
   }
 

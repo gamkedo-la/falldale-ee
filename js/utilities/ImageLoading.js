@@ -6,6 +6,8 @@ var muteMusicPic = document.createElement("img");
 var muteSFXPic = document.createElement("img");
 var questGUIPic = document.createElement("img");
 var characterCreationBackgroundPic = document.createElement("img");
+var blueButtonPic = document.createElement("img");
+var greenButtonPic = document.createElement("img");
 
 //player Pictures
 var warriorPic = document.createElement("img");
@@ -410,9 +412,9 @@ function loadImages() {
     { varName: waterFallsImg, theFile: "waterFalls.png" },	
     { varName: waterScrollImg, theFile: "water_scroll.png" },
     { varName: decorationsImg, theFile: "decorations.png" },
-    { varName: questGUIPic, theFile: "questGUI.png" }
-
-
+    { varName: questGUIPic, theFile: "questGUI.png" },
+	{ varName: blueButtonPic, theFile: "blueButton.png" },
+	{ varName: greenButtonPic, theFile: "greenButton.png" },
   ];
 
   picsToLoad = imageList.length;
