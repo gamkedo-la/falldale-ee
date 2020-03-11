@@ -223,7 +223,7 @@ function loadLevel() {
         newEnemy.initialize("bat", batPic, 4);
       } else if (roomGrid[ arrayIndex ] == TILE_SKELETON) {
         newEnemy = new skeletonClass();
-		newEnemy.initialize('Skeleton1', skeletonPic, 6);
+		newEnemy.initialize('Skeleton1', skeletonPic, 4);
       } else if (roomGrid[ arrayIndex ] == TILE_ZOMBIE) {
         newEnemy = new zombieClass();
         newEnemy.initialize('Zombie', zombiePic, 4);

@@ -7,8 +7,8 @@ skeletonClass.prototype = new enemyClass();
 function skeletonClass() {
   this.speed = SKELETON_SPEED;
   this.maxhealth = 20;
-  this.width = 31;
-  this.numberOfFrames = 6;
+  this.width = 43;
+  this.numberOfFrames = 4;
   this.height = 52;
   this.ticksPerFrame = 5;
   this.timeBetweenChangeDir = 700;
