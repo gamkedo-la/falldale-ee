@@ -26,10 +26,7 @@ function skeletonClass() {
   this.superClassInitialize = this.initialize;
   this.initialize = function (enemyName, enemyPic, numberOfFrames) {
     this.superClassInitialize(enemyName, enemyPic, numberOfFrames);
-	this.originalNumberOfFrames = this.numberOfFrames;
-    this.myBite.baseBiteLife = 30;	//Skeletons bite, but they're not very good at it
-    this.myBite.baseBiteCooldown = 10;
-    this.pather = new Pathfinder3();
+    this.originalNumberOfFrames = this.numberOfFrames;
   };
 
 
@@ -98,8 +95,7 @@ function skeletonClass() {
     this.myMelee.x = this.x;
     this.myMelee.y = this.y;
   };
-
-
+  
   this.superClassIsOverlappingPoint = this.isOverlappingPoint;
   this.isOverlappingPoint = function () {
     if (this.superClassIsOverlappingPoint()) {

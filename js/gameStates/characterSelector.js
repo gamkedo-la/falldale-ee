@@ -8,46 +8,7 @@ var warrior = {
   portrait: warriorProfilePic,
 };
 
-var biggy = {
-  name : "Biggy",
-  sprites : biggyPic,
-  sprite_width : 50,
-  sprite_height : 50,
-  sprite_frames : 6,
-  portrait: biggyProfilePic,
-};
-
-var smally = {
-  name : "Smally",
-  sprites : smallyPic,
-  sprite_width : 50,
-  sprite_height : 50,
-  sprite_frames : 6,
-  portrait: smallyProfilePic,
-	
-};
-
-var teeny = {
-  name : "Teeny",
-  sprites : teenyPic,
-  sprite_width : 50,
-  sprite_height : 50,
-  sprite_frames : 6,
-  portrait: teenyProfilePic,
-	
-};
-
-var weeny = {
-  name : "Weeny",
-  sprites : weenyPic,
-  sprite_width : 50,
-  sprite_height : 50,
-  sprite_frames : 6,
-  portrait: weeyProfilePic,
-	
-};
-
-var characters = [ warrior, biggy, smally, teeny, weeny ]; 
+var characters = [ warrior ]; 
 var characterSelectedIndex = 0;
 var characterSelected = null;
 var firstTimeCharacterSelection = true;

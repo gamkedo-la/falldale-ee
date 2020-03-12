@@ -12,54 +12,43 @@ var greenButtonPic = document.createElement("img");
 //player Pictures
 var warriorPic = document.createElement("img");
 var warriorProfilePic = document.createElement("img");
-var biggyPic = document.createElement("img");
-var biggyProfilePic = document.createElement("img");
-var smallyPic = document.createElement("img");
-var smallyProfilePic = document.createElement("img");
-var teenyPic = document.createElement("img");
-var teenyProfilePic = document.createElement("img");
-var weenyPic = document.createElement("img");
-var weeyProfilePic = document.createElement("img");
 var swordPic = document.createElement("img");
 var clubPic = document.createElement("img");
 var bitePic = document.createElement("img");
 var magicSwordPic = document.createElement("img");
 var rockPic = document.createElement("img");
+var archerPic = document.createElement("img");
+var archerPic2 = document.createElement("img");
+var archerPic3 = document.createElement("img");
+var deadArcherPic = document.createElement("img");
 
-
+//NPCs
+//Monsters
 var skeletonPic = document.createElement("img");
 var skeletonPic2 = document.createElement("img");
 var skeletonPic3 = document.createElement("img");
 var deadSkeletonPic = document.createElement("img");
-
 var zombiePic = document.createElement("img");
 var zombiePic2 = document.createElement("img");
 var zombiePic3 = document.createElement("img");
 var deadZombiePic = document.createElement("img");
-
 var batPic = document.createElement("img");
 var deadBatPic = document.createElement("img");
-
 var goblinPic = document.createElement("img");
 var goblinPic2 = document.createElement("img");
 var goblinPic3 = document.createElement("img");
 var goblinPic4 = document.createElement("img");
 var deadGoblinPic = document.createElement("img");
-
 var orcPic = document.createElement("img");
 var orcPic2 = document.createElement("img");
 var orcPic3 = document.createElement("img");
 var deadOrcPic = document.createElement("img");
-
 var bullywugPic = document.createElement("img");
-
-
 var druidPic = document.createElement("img");
 var orcBossPic = document.createElement("img");
 var deadOrcBossPic = document.createElement("img");
-
 var wizardPic = document.createElement("img");
-
+//Town folk
 var addyPic = document.createElement("img");
 var delkonPic = document.createElement("img");
 var doddPic = document.createElement("img");
@@ -73,11 +62,6 @@ var catPic = document.createElement("img");
 var aryaPic = document.createElement("img");
 var lawrencePic = document.createElement("img");
 var rowanPic = document.createElement("img");
-
-var archerPic = document.createElement("img");
-var archerPic2 = document.createElement("img");
-var archerPic3 = document.createElement("img");
-var deadArcherPic = document.createElement("img");
 
 var dicePic = document.createElement("img");
 var twentySidedDicePic = document.createElement("img");
@@ -341,14 +325,6 @@ function loadImages() {
     { varName: muteSFXPic, theFile: "muteSFX.png" },
     { varName: warriorPic, theFile: "warrior1.png" },
     { varName: warriorProfilePic, theFile: "warrior-portrait.png" },
-    { varName: biggyPic, theFile: "Sprites/player/BIggy/biggy.png" },
-    { varName: biggyProfilePic, theFile: "Sprites/player/BIggy/Biggy-portrait.png" },
-	{ varName: teenyPic, theFile: "Sprites/player/Teeny/teeny.png" },
-	{ varName: teenyProfilePic, theFile: "Sprites/player/Teeny/teeny-portrait.png" },
-	{ varName: weeyProfilePic, theFile: "Sprites/player/Weeny/weenyProfile.png" },
-	{ varName: weenyPic, theFile: "Sprites/player/Weeny/Weeny.png" },
-    { varName: smallyPic, theFile: "Sprites/player/smally/smally.png" },
-    { varName: smallyProfilePic, theFile: "Sprites/player/smally/smally-portrait.png" },
     { varName: swordPic, theFile: "Weapons/basicSword.png" },
     { varName: magicSwordPic, theFile: "Weapons/magicSword.png" },
     { varName: clubPic, theFile: "Weapons/club.png" },

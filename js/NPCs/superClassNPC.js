@@ -457,21 +457,6 @@ function npcSuperClass() {
       case TILE_BS_FW_LS:
       case TILE_BS_LW:
       case TILE_BS_FW_RS:
-//            case TILE_HOUSE_FRONT_WALL:
-//            case TILE_HOUSE_FRONT_WALL_DAMAGED:
-//            case TILE_HOUSE_FRONT_WALL_BROKEN:
-//            case TILE_HOUSE_FRONT_WINDOW:
-//            case TILE_HOUSE_FRONT_WINDOW_BROKEN:
-//            case TILE_HOUSE_FW_RS:
-//            case TILE_HOUSE_FW_LS:
-//            case TILE_HOUSE_BW:
-//            case TILE_HOUSE_BW_LS:
-//            case TILE_HOUSE_BW_RS:
-//            case TILE_HOUSE_BW_WINDOW:
-//            case TILE_HOUSE_LS_BED_TOP:
-//            case TILE_HOUSE_LS_BED_BOTTOM:
-//            case TILE_HOUSE_DRESSER_TOP:
-//            case TILE_HOUSE_DRESSER_BOTTOM:
       case TILE_BAR_CABINET:
       case TILE_BAR:
       case TILE_BAR_TOP:
@@ -519,42 +504,6 @@ function npcSuperClass() {
       case TILE_WATER:
       case TILE_FOUNTAIN:
         return false;
-        /*
-         case TILE_HOUSE_FRONT_WALL:
-         case TILE_HOUSE_FRONT_WALL_DAMAGED:
-         case TILE_HOUSE_FRONT_WALL_BROKEN:
-         case TILE_HOUSE_FRONT_WINDOW:
-         case TILE_HOUSE_FRONT_WINDOW_BROKEN:
-         case TILE_HOUSE_FW_RS:
-         case TILE_HOUSE_FW_LS:
-         case TILE_HOUSE_BW:
-         case TILE_HOUSE_BW_LS:
-         case TILE_HOUSE_BW_RS:
-         case TILE_HOUSE_BW_WINDOW:
-         case TILE_HOUSE_LS_BED_TOP:
-         case TILE_HOUSE_LS_BED_BOTTOM:
-         case TILE_HOUSE_DRESSER_TOP:
-         case TILE_HOUSE_DRESSER_BOTTOM:
-
-         case TILE_PLAYERSTART:
-         case TILE_ROAD:
-         case TILE_BRIDGE_UPPER:
-         case TILE_BRIDGE_LOWER:
-         case TILE_FOREST_PORTAL:
-         case TILE_GRASS:
-         case TILE_GRAVE_YARD_PORTAL:
-         case TILE_HOME_VILLAGE_PORTAL:
-         case TILE_ARROWS:
-         case TILE_THROWINGROCKS:
-         case TILE_KEY:
-         case TILE_YELLOW_KEY:
-         case TILE_GREEN_KEY:
-         case TILE_BLUE_KEY:
-         case TILE_RED_KEY:
-         case TILE_TREASURE:
-         case TILE_MAP:
-         case TILE_BAT:
-         return true;*/
       default:
         return true;
     }
