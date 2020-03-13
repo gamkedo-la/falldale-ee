@@ -1493,6 +1493,6 @@ function resetLevel() {
 	loadLevel()
 }
 
-pather = new Pathfinder3();
+pather = new pathFinder();
 //pather.calculateDistancesFromIndex(400);
 //pather.pathFrom_To_(164, 384);

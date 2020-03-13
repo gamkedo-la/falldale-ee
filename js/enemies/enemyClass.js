@@ -530,7 +530,7 @@ function enemyClass() {
   };
 
   this.reset = function (resetX, resetY) {
-    this.pather = new Pathfinder3();
+    this.pather = new pathFinder();
     this.changeDirection();
     this.x = resetX;
     this.y = resetY;

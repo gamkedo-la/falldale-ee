@@ -381,7 +381,7 @@ function npcSuperClass() {
   };
 
   this.reset = function (resetX, resetY, direction) {
-    this.pather = new Pathfinder3();
+    this.pather = new pathFinder();
     this.changeDirection(direction);
     this.x = resetX;
     this.y = resetY;
