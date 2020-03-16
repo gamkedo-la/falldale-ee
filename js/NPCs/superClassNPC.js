@@ -407,6 +407,8 @@ function npcSuperClass() {
       case TILE_BRIDGE_UPPER:
       case TILE_BRIDGE_LOWER:
       case TILE_ROAD:
+	  case TILE_BAR_FLOOR1:
+	  case TILE_BAR_FLOOR2:
         return 1;
       default:
         return this.speedMult;

@@ -322,8 +322,33 @@ function loadLevel() {
       resetY = (eachRow * TILE_H) + offsetY;
       newEnemy.reset(resetX, resetY, newEnemy.direction);
       enemyList.push(newEnemy);
-      roomGrid[ arrayIndex ] = TILE_ROAD;
-      tileList.push(new TileObject(arrayIndex));
+	  /*for(i = 0; i < npcList.length; i++){
+		  console.log("RG: " + roomGrid[arrayIndex] + " i: " + i);
+		  if(roomGrid[ arrayIndex ] == npcList[i]){
+			  roomGrid[ arrayIndex ] = TILE_BAR_FLOOR1;
+		  } else {
+			roomGrid[ arrayIndex ] = TILE_ROAD;
+		  }
+	  }*/
+	  if(	roomGrid[ arrayIndex ] == TILE_SHOPKEEPER ||
+			roomGrid[ arrayIndex ] == TILE_HEALER ||
+			roomGrid[ arrayIndex ] == TILE_PRINCESS ||
+			roomGrid[ arrayIndex ] == TILE_DODD ||
+			roomGrid[ arrayIndex ] == TILE_TARAN ||
+			roomGrid[ arrayIndex ] == TILE_DELKON ||
+			roomGrid[ arrayIndex ] == TILE_ADDY ||
+			roomGrid[ arrayIndex ] == TILE_GABRIEL ||
+			roomGrid[ arrayIndex ] == TILE_FENTON ||
+			//roomGrid[ arrayIndex ] == TILE_ARYA ||
+			roomGrid[ arrayIndex ] == TILE_LAWRENCE ||
+			roomGrid[ arrayIndex ] == TILE_CAT ||
+			roomGrid[ arrayIndex ] == TILE_ROWAN ) 
+			{	
+			roomGrid[ arrayIndex ] = TILE_BAR_FLOOR1;
+	  } else {
+			roomGrid[ arrayIndex ] = TILE_ROAD;
+      }	
+	  tileList.push(new TileObject(arrayIndex));
       arrayIndex++;
     } //end of col for
   } // end of row for
