@@ -230,6 +230,7 @@ function loadImages() {
     { tileType: TILE_BAR_STOOL, theFile: "bar/stool.png" },
     { tileType: TILE_BAR_FLOOR1, theFile: "bar/lflagstone1.png" },
     { tileType: TILE_BAR_FLOOR2, theFile: "bar/lflagstone2.png" },
+    { tileType: TILE_BAR_WALL_WDW, theFile: "bar/woodwall_wdw_tc.png" },
     { tileType: TILE_BAR_WALL_BL, theFile: "bar/woodwall_bl.png" },
     { tileType: TILE_BAR_WALL_BC, theFile: "bar/woodwall_bc.png" },
     { tileType: TILE_BAR_WALL_BR, theFile: "bar/woodwall_br.png" },
