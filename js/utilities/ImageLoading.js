@@ -162,6 +162,8 @@ function loadImages() {
 	{ tileType: TILE_TREE_2_NE, theFile: "Trees/treeA2.png" },
 	{ tileType: TILE_TREE_2_SW, theFile: "Trees/treeA3.png" },
 	{ tileType: TILE_TREE_2_SE, theFile: "Trees/treeA4.png" },
+	{ tileType: TILE_TREE_PINE_L, theFile: "forest/tree_pine_l.png" },
+	{ tileType: TILE_TREE_PINE_R, theFile: "forest/tree_pine_r.png" },
 	{ tileType: TILE_BUSH, theFile: "Trees/bush.png" },
 	{ tileType: TILE_GARDEN_1, theFile: "garden_1.png" },
 	{ tileType: TILE_GARDEN_2, theFile: "garden_2.png" },
