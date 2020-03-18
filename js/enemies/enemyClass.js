@@ -589,19 +589,10 @@ function enemyClass() {
       case TILE_ROOF_FRONTLEFT:
       case TILE_ROOF_FRONT:
       case TILE_ROOF_CENTER:
-      case TILE_HEALER_BW:
       case TILE_HEALER_BW_CABINET_POTIONS:
-      case TILE_HEALER_BW_CABINET_LH:
-      case TILE_HEALER_BW_CABINET_EMPTY:
-      case TILE_HEALER_BW_LS:
-      case TILE_HEALER_BW_RS:
       case TILE_HEALER_DESK:
       case TILE_HEALER_FRONTDOOR:
-      case TILE_HEALER_FW_LS:
-      case TILE_HEALER_FW_WINDOW:
-      case TILE_HEALER_LW:
-      case TILE_HEALER_RW:
-      case TILE_HEALER_FW_RS:
+	  case TILE_CABINET_LH:
       case TILE_BS_BW:
       case TILE_BS_BW_CABINET_POTIONS:
       case TILE_BS_BW_CABINET_EMPTY:
