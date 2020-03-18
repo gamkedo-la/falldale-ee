@@ -582,7 +582,6 @@ function enemyClass() {
       case TILE_ROOF_SIDERIGHT:
       case TILE_ROOF_BACKRIGHT:
       case TILE_FRONTWALL_WINDOW:
-      case TILE_FRONTWALL_SOLID:
       case TILE_FRONTDOOR_YELLOW:
       case TILE_ROOF_BACKSIDE:
       case TILE_ROOF_BACKLEFT:
@@ -606,17 +605,15 @@ function enemyClass() {
       case TILE_BS_BW:
       case TILE_BS_BW_CABINET_POTIONS:
       case TILE_BS_BW_CABINET_EMPTY:
-      case TILE_BS_BW_LS:
-      case TILE_BS_BW_RS:
+      case TILE_BRICK_TL:
+      case TILE_BRICK_TR:
       case TILE_BS_DESK:
-      case TILE_BS_BW_WEAPONSRACK:
-      case TILE_BS_BW_WEAPONSRACKBOTTOM:
+      case TILE_BRICK_BW_WEAPONSRACK:
+      case TILE_BRICK_BW_WEAPONSRACKBOTTOM:
       case TILE_BS_FW_LS:
       case TILE_BS_LW:
       case TILE_BS_FW_RS:
       case TILE_HOUSE_FRONT_WALL:
-      case TILE_HOUSE_FRONT_WALL_DAMAGED:
-      case TILE_HOUSE_FRONT_WALL_BROKEN:
       case TILE_HOUSE_FRONT_WINDOW:
       case TILE_HOUSE_FRONT_WINDOW_BROKEN:
       case TILE_HOUSE_FW_RS:
