@@ -1,5 +1,6 @@
 var titlepagePic = document.createElement("img");
 var scrollBackgroundPic = document.createElement("img");
+var questOnePic = document.createElement("img");
 var storeFrontPic = document.createElement("img");
 var healerStorePic = document.createElement("img");
 var muteMusicPic = document.createElement("img");
@@ -308,6 +309,7 @@ function loadImages() {
 	{ tileType: TILE_PUB_SIGN, theFile: "pub.png" },
 	
     { varName: characterCreationBackgroundPic, theFile: "characterCreation.png" },
+	{ varName: questOnePic, theFile: "Quests/Quest1.png" },
     { varName: muteMusicPic, theFile: "muteMusic.png" },
     { varName: muteSFXPic, theFile: "muteSFX.png" },
     { varName: warriorPic, theFile: "warrior1.png" },
