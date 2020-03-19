@@ -154,6 +154,8 @@ function keyPressed(evt) {
 
   if (isInShop) {
     shopInput(evt.keyCode);
+  } else if (isInAlchemyShop) {
+    alchemyShopInput(evt.keyCode);
   } else if (isAtHealer) {
     healerInput(evt.keyCode);
   } else if (scrollBackgroundScreen) {

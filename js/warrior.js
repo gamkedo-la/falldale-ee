@@ -76,6 +76,9 @@ function warriorClass(whichPlayerPic) {
   this.questSixActive = false;
   this.questSixComplete = false;
   this.goblinsKilledInFallDale = 0;
+  this.sticks = 0;
+  this.cloths = 0;
+  this.torch = 0;
 
   // side quests
   this.catsMet = 0;

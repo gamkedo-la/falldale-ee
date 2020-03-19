@@ -31,6 +31,7 @@ var scrollBackground = false;
 var characterCreationScreen = false;
 var characterSelectionScreen = false;
 var isInShop = false;
+var isInAlchemyShop = false;
 var isAtHealer = false;
 var lastShopScreenTime = new Date().getTime();
 var firstQuestEnemyList = [];
@@ -693,8 +694,9 @@ var guiOffsetX = 0;
 
 /////// To do:  Change if/else statements to a gameState condition
 function drawAll() {
-
   frameCounter++;
+  console.log(isInAlchemyShop)
+  console.log(redWarrior.cloths, redWarrior.sticks)
   if (menuScreen) {
     if(shownCreditsYet) {
         drawCredits();
@@ -709,6 +711,9 @@ function drawAll() {
     dialogManager.drawDialog();
   } else if (isAtHealer) {
     drawHealerShop();
+    dialogManager.drawDialog();
+  } else if (isInAlchemyShop) {
+    drawAlchemyShop();
     dialogManager.drawDialog();
   } else if (characterCreationScreen) {
     drawCreationScreen(strength);
