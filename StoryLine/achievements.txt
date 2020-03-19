@@ -1,0 +1,21 @@
+Fledgling Warrior - Kill 5 Orcs
+Braveheart - Kill 25 Orcs
+True Warrior - Kill 50 Orcs
+Hero - Kill 100 Orcs
+Bloodthirsty - Kill 500 Orcs
+
+-----
+
+Not Allergic! - Pet 5 Cats
+Cat? I'm a Kitty Cat - Pet 25 Cats
+And I Dance Dance Dance - Pet 50 Cats
+I Like Cats - Pet 100 Cats
+Cat Whisperer - Pet 500 Cats
+
+-----
+
+Baby Steps - Walk 100 Steps
+Wander Over Yonder - Walk 1000 Steps
+Journeyman - Walk 5000 Steps
+The Journy of a Thousand Miles - Walk 10000 Steps
+Not All Who Wander Are Lost - Walk 50000 Steps
