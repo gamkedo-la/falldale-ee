@@ -1110,6 +1110,8 @@ var RANGED_NO_COLLIDE = [TILE_SKELETON, TILE_GOBLIN, TILE_BAT, TILE_ZOMBIE, TILE
 
 function recalulateLevelNow() {
 	previousLevelNow = levelNow;
+	levelRow = 1;
+	levelCol = 1;
 	levelNow = (MAP_WIDTH * levelRow) + levelCol;
 	return levelNow;
 }

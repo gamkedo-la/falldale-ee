@@ -1,6 +1,8 @@
 function npcSuperClass() {
   this.x = 0;
   this.y = 0;
+  this.previousAnswer = -1;
+  this.framesUntilReCalc = 0;
   this.speed = 0.5;
   this.myName = "anNPC";
   this.speedMult = 1.0;
@@ -43,8 +45,14 @@ function npcSuperClass() {
   };
 
   this.pathFindingMove = function (timeBetweenDirChange) {
-    console.log("calling this path finding move from Superclass NPC");
-    if (this.pather == null) {
+    //console.log("calling this path finding move from Superclass NPC");
+	this.framesUntilReCalc--;
+    if(this.framesUntilReCalc > 0){
+		this.framesUntilReCalc = 30;
+		return this.previousAnswer;
+	}
+	
+	if (this.pather == null) {
       return null;
     } //this enemy is not fully initialized yet
     if (this.patrolPoints == null) {
@@ -111,8 +119,8 @@ function npcSuperClass() {
     } else if (nextTile - currentTile == 1) {
       this.changeDirection("east");
     }
-
-    return this.getNewPosition();
+	this.previousAnswer = this.getNewPosition();
+    return this.previousAnswer;
   };
 
   this.randomMove = function (timeBetweenDirChange) {
