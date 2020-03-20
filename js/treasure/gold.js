@@ -17,9 +17,6 @@ function removegold() {
       if (goldList[ i ].available) {
         var distributedGold = redWarrior.goldpieces + goldList[ i ].goldValue;
         redWarrior.goldpieces = distributedGold;
-        console.log(distributedGold);
-        console.log(redWarrior.goldpieces);
-        console.log(goldList[ i ].goldValue);
         goldList[ i ].available = false;
       }
       goldList.splice(i, 1);

@@ -7,7 +7,6 @@ function countGoblinforQuestOne() {
   if (redWarrior.questOneComplete == false) {
     if (levelNow == 7) { // located in Falldale
       goblinsKilledInFallDale++;
-      console.log(goblinsKilledInFallDale);
       checkForQuestOneComplete();
     }
   }

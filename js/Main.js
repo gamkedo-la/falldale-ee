@@ -394,6 +394,10 @@ function updateItems() {
   removeHearts();
   goldReadyToRemove();
   removegold();
+  twigsReadyToRemove();
+  removeTwigs();
+  clothReadyToRemove();
+  removeCloth();
   healingPotionReadyToRemove();
   removeHealingPotion();
 }
@@ -598,6 +602,15 @@ function depthSortedDraw() {
   objectsToDraw = objectsToDraw.concat(goldList.filter(
       gold => camera.canShow(gold.x, gold.y, gold.width, gold.height)
   ));
+  
+  objectsToDraw = objectsToDraw.concat(twigList.filter(
+      gold => camera.canShow(gold.x, gold.y, gold.width, gold.height)
+  ));
+  
+  objectsToDraw = objectsToDraw.concat(clothList.filter(
+      gold => camera.canShow(gold.x, gold.y, gold.width, gold.height)
+  ));
+
 
   objectsToDraw.push(redWarrior);
 

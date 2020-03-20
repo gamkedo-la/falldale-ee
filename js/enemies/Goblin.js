@@ -41,7 +41,7 @@ function goblinClass() {
     var chanceOnTreasure = Math.round(Math.random() * 10);
     if (chanceOnTreasure >= 1) {
       console.log("Treasure Provided");
-      var randomTreasure = Math.round(Math.random() * 4);
+      var randomTreasure = 4;//Math.round(Math.random() * 7);
       switch (randomTreasure) {
         case 1:
           heartsList.push(new heartClass(1, this.x, this.y));
@@ -53,13 +53,20 @@ function goblinClass() {
           healingPotionList.push(new healingPotionClass(1, this.x, this.y));
           break;
         case 4:
-          console.log("Provide Map");
+		  clothList.push(new clothClass(1, this.x, this.y)); 
+		  console.log("Should have Cloth somewhere");
+          break;
+		case 5:
+		twigList.push(new twigClass(1, this.x, this.y));
+          break;
+		case 6:
+		console.log("Provide Map");
           if (redWarrior.haveMap == false) {
             mapList.push(new mapClass(this.x, this.y));
           } else {
             goldList.push(new goldClass(5, this.x, this.y));
           }
-          break;
+		break;
       }
     }
   };
