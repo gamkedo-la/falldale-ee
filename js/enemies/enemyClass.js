@@ -191,6 +191,7 @@ function enemyClass() {
     }
     else {
       let nextPos = this.pathFindingMove(timeBetweenChangeDir, this.speed);
+	  //console.log("Calling Pathfinding Move");
       if (this.currentPath == null) {
         nextPos = this.randomMove(timeBetweenChangeDir, this.speed);
       } else {

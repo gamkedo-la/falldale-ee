@@ -148,7 +148,7 @@ function imageLoadingDoneSoStartGame() {
     saveGame.loadData();
   }
   canvas.addEventListener('mousedown', handleMouseClick);
-  backgroundMusic.loopSong("hauntedHoedownSound");
+  //backgroundMusic.loopSong("hauntedHoedownSound");
   if (debugSkipToGame) {
     console.log("Debug Mode is on, skip directly to game");
   }
@@ -695,8 +695,8 @@ var guiOffsetX = 0;
 /////// To do:  Change if/else statements to a gameState condition
 function drawAll() {
   frameCounter++;
-  console.log(isInAlchemyShop)
-  console.log(redWarrior.cloths, redWarrior.sticks)
+ // console.log(isInAlchemyShop)
+ // console.log(redWarrior.cloths, redWarrior.sticks)
   if (menuScreen) {
     if(shownCreditsYet) {
         drawCredits();
@@ -721,8 +721,8 @@ function drawAll() {
     drawDice(Dice2);
     drawDice(Dice3);
     if (debugSkipToGame) {
-      characterCreationScreenInput(KEY_SPACEBAR);
-      characterCreationScreenInput(ENTER);
+//      characterCreationScreenInput(KEY_SPACEBAR);
+//      characterCreationScreenInput(ENTER);
     }
   } else if (characterSelectionScreen) {
     drawSelectorScreen();
