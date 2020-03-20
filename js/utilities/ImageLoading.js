@@ -22,6 +22,8 @@ var archerPic = document.createElement("img");
 var archerPic2 = document.createElement("img");
 var archerPic3 = document.createElement("img");
 var deadArcherPic = document.createElement("img");
+var twigPic = document.createElement("img");
+var clothPic = document.createElement("img");
 
 //NPCs
 //Monsters
@@ -311,6 +313,8 @@ function loadImages() {
     { varName: characterCreationBackgroundPic, theFile: "characterCreation.png" },
 	{ varName: questOnePic, theFile: "Quests/Quest1.png" },
     { varName: muteMusicPic, theFile: "muteMusic.png" },
+	{ varName: twigPic, theFile: "twigs.png" },
+	{ varName: clothPic, theFile: "cloth.png" },
     { varName: muteSFXPic, theFile: "muteSFX.png" },
     { varName: warriorPic, theFile: "warrior1.png" },
     { varName: warriorProfilePic, theFile: "warrior-portrait.png" },
