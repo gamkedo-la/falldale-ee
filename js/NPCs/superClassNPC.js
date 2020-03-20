@@ -48,7 +48,7 @@ function npcSuperClass() {
     //console.log("calling this path finding move from Superclass NPC");
 	this.framesUntilReCalc--;
     if(this.framesUntilReCalc > 0){
-		this.framesUntilReCalc = 30;
+		this.framesUntilReCalc = 25 + Math.random()*10;
 		return this.previousAnswer;
 	}
 	
