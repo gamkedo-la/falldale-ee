@@ -342,6 +342,7 @@ function loadImages() {
   { tileType: TILE_BONFIRE_L, theFile: "forest/bonfire_l.png" },
   { tileType: TILE_BONFIRE_R, theFile: "forest/bonfire_r.png" },
   { tileType: TILE_BONFIRE_S, theFile: "forest/bonfire_s.png" },
+  { tileType: TILE_BONFIRE_LG, theFile: "forest/bonfire.png" },
   { tileType: TILE_BONFIRE_UNLIT_L, theFile: "forest/bonfire_unlit_l.png" },
   { tileType: TILE_BONFIRE_UNLIT_R, theFile: "forest/bonfire_unlit_r.png" },
   { tileType: TILE_BONFIRE_UNLIT_S, theFile: "forest/bonfire_unlit_s.png" },

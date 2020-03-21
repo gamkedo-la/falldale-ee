@@ -15,6 +15,7 @@ var redWarrior = new warriorClass();
 var enemyList = [];
 var tileList = [];
 var particleList = [];
+var animateList = [];
 const dialogManager = new DialogManager();
 dialogManager.setDialogWithCountdown("H: Hides health, I: Inventory, O: Stats", 3);
 var inventory = " ";
@@ -212,6 +213,7 @@ function loadLevel() {
   }
   enemyList.splice(0, enemyList.length); //Empty enemyList
   tileList.splice(0, tileList.length); //Empty tileList
+  animateList.splice(0, animateList.length); //Empty animateList
   backgroundMusicSelect();
 
   var arrayIndex = 0;
@@ -295,6 +297,34 @@ function loadLevel() {
         newEnemy.numberOfFrames = 6; // six frame walk cycle
         newEnemy.patrolPoints = [ 4, 6, 10, 6 ]; // sidewalk near your house
         newEnemy.spriteSheetRows = 2; // to allow flipping
+
+      // animations
+      } else if ( roomGrid[ arrayIndex ] == TILE_BONFIRE_LG ||
+                  roomGrid[ arrayIndex ] == TILE_BONFIRE_S ) {
+        let tileType = roomGrid[ arrayIndex ];
+        let sprite = worldPics[ tileType ];
+        let resetX = (eachCol * TILE_W);
+        let resetY = (eachRow * TILE_H);
+        if (tileType == TILE_BONFIRE_LG) {
+          resetY -= 50;
+        }
+        newAnim = new animatorClass();
+        newAnim.initialize(sprite, 8);
+        newAnim.reset(resetX, resetY);
+        if (tileType == TILE_BONFIRE_LG) {
+          newAnim.height = 100;
+          newAnim.width = 100;
+          newAnim.sx = 100;
+        }
+        if (tileTypeHasGrassTransparency(tileType)) {
+          newTile = new TileObject(arrayIndex);
+          newTile.setNewType(TILE_GRASS);
+          tileList.push(newTile);
+        }
+        arrayIndex++;
+        continue;//Don't reset or add to enemyList if no enemy tile found
+
+      // tiles
       } else {
         newTile = new TileObject(arrayIndex);
 
@@ -579,6 +609,10 @@ function depthSortedDraw() {
       enemy => camera.canShow(enemy.x, enemy.y, enemy.width, enemy.height)
   );
 
+  let visibleAnims = animateList.filter(
+      anim => camera.canShow(anim.x, anim.y, anim.width, anim.height)
+  );
+
   let flyingEnemies = visibleEnemies.filter(
       enemy => (enemy.isFlying)
   );
@@ -590,6 +624,8 @@ function depthSortedDraw() {
   objectsToDraw = objectsToDraw.concat(visibleEnemies.filter(
       enemy => (!enemy.isFlying && enemy.alive)
   ));
+
+  objectsToDraw = objectsToDraw.concat(visibleAnims);
 
   objectsToDraw = objectsToDraw.concat(heartsList.filter(
       heart => camera.canShow(heart.x, heart.y, heart.width, heart.height)
