@@ -339,6 +339,8 @@ function loadImages() {
   { tileType: TILE_DCLIFF_UC_BTR, theFile: "forest/dcliff_uc_btr.png" },
   { tileType: TILE_DCLIFF_LC_LTB, theFile: "forest/dcliff_lc_ltb.png" },
   { tileType: TILE_DCLIFF_UC_LTB, theFile: "forest/dcliff_uc_ltb.png" },
+  { tileType: TILE_DCLIFF_C_BTL, theFile: "forest/dcliff_c_btl.png" },
+  { tileType: TILE_DCLIFF_C_RTB, theFile: "forest/dcliff_c_rtb.png" },
   { tileType: TILE_BONFIRE_L, theFile: "forest/bonfire_l.png" },
   { tileType: TILE_BONFIRE_R, theFile: "forest/bonfire_r.png" },
   { tileType: TILE_BONFIRE_S, theFile: "forest/bonfire_s.png" },
