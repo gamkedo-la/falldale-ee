@@ -340,7 +340,19 @@ function loadLevel() {
           newTile.setNewType(TILE_BAR_FLOOR1);
           tileList.push(newTile);
           newTile = new TileObject(arrayIndex);
-		}
+        }
+
+        // double height tiles
+        let tileType = roomGrid[ arrayIndex ];
+        if (tileType == TILE_TREE_PINE_L ||
+            tileType == TILE_TREE_PINE_R ||
+            tileType == TILE_TREE_PINE_BLUE_L ||
+            tileType == TILE_TREE_PINE_BLUE_R ||
+            tileType == TILE_TREE_PINE_YELLOW_L ||
+            tileType == TILE_TREE_PINE_YELLOW_R) {
+          newTile.height = 150;
+          newTile.y -= 100;
+        }
 
         tileList.push(newTile);
         arrayIndex++;
