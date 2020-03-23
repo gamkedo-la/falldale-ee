@@ -1,5 +1,3 @@
-//Hello World. A quick comment to test github. Will remove in a sec. Clement
-
 const ARROW_LIFE = 100;
 const ARROW_SPEED = 1.0;
 const ARROW_DAMAGE = 0.5;
