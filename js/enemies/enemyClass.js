@@ -1,4 +1,8 @@
 const AI_VISION_RANGE = 350;//will use pathfinding if within this number
+const GOTO_PLAYER = 0;
+const GOTO_CUTSCENE = 1;
+const GOTO_NONE = 2;
+
 
 function enemyReadyToRemove() {
   for (var i = 0; i < enemyList.length; i++) {
@@ -71,6 +75,10 @@ function enemyClass() {
   this.tickCount = 0;
   this.ticksPerFrame = 5;
   this.scriptID = -1;
+  this.goToX = this.x;
+  this.goToY = this.y;
+  this.goToMode = GOTO_PLAYER;
+  
 
   this.initialize = function (enemyName, enemyPicture, numberOfFrames = 6) {
     this.health = this.maxhealth;
@@ -234,26 +242,43 @@ function enemyClass() {
     if (this.pather == null) {
       return null;
     } //this enemy is not fully initialized yet
+	var distToPlayer = this.nonPathDistance(this.x, this.y, redWarrior.x, redWarrior.y);
+	if(this.goToMode == GOTO_PLAYER){
+	  this.goToX = redWarrior.x;
+	  this.goToY = redWarrior.y;
+	 
+
+      if (distToPlayer > AI_VISION_RANGE || redWarrior.isInsideAnyBuilding) {
+        this.currentPath = null;
+        this.goToMode = GOTO_NONE;
+		return null;
+      }
+	} else if (this.goToMode == GOTO_NONE) {
+		if (distToPlayer < AI_VISION_RANGE && redWarrior.isInsideAnyBuilding == false) {
+			this.goToMode = GOTO_PLAYER;
+		}
+	} else if (this.goToMode == GOTO_CUTSCENE){
+		var distToGoal = this.nonPathDistance(this.x, this.y, this.goToX, this.goToY);
+		if(distToGoal < TILE_W){
+			this.GOTO_NONE;
+			console.log("Mission Complete, reached my goal " + this.scriptID);
+		}
+	}
 
     this.cyclesTilDirectionChange--;
     if ((this.cyclesTilDirectionChange <= 0) || (this.currentPath == null)) {
       this.cyclesTilDirectionChange = timeBetweenDirChange;
       const thisTileIndex = getTileIndexAtPixelCoord(this.x, this.y);
-      const warriorTileIndex = getTileIndexAtPixelCoord(redWarrior.x, redWarrior.y);
 
-      var dist = this.nonPathDistance(this.x, this.y, redWarrior.x, redWarrior.y);
-      //console.log("distance to player is " + dist);
+      var goToTileIndex = getTileIndexAtPixelCoord(this.goToX, this.goToY);
 
-      if (dist > AI_VISION_RANGE || redWarrior.isInsideAnyBuilding) {
-        this.currentPath = null;
-        return null;
-      }
+     
 
-      this.currentPath = this.pather.pathFrom_To_(thisTileIndex, warriorTileIndex, this.isPassableTile);
+      this.currentPath = this.pather.pathFrom_To_(thisTileIndex, goToTileIndex, this.isPassableTile);
       this.currentPathIndex = 0;
 
       if (this.myName == "Bat") {
-//                console.log("Path: " + this.currentPath + ", Warrior Tile: " + warriorTileIndex);
+//                console.log("Path: " + this.currentPath + ", Warrior Tile: " + goToTileIndex);
       }
 
       if (this.currentPath == null) {

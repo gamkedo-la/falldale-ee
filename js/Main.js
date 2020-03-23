@@ -206,10 +206,7 @@ function loadLevel() {
   var whichLevel = levelList[ levelNow ];
   roomGrid = whichLevel.slice();
   if (previousLevelNow == 7 && redWarrior.questOneComplete == false) {
-  	firstQuestEnemyList = [];
-  	for (var e = 0; e < enemyList.length; e++) {
-  		firstQuestEnemyList.push(enemyList[e]);
-  	}
+	startQuestOne();
   }
   
   enemyList.splice(0, enemyList.length); //Empty enemyList
