@@ -70,6 +70,7 @@ function enemyClass() {
   this.frameIndex = 0;
   this.tickCount = 0;
   this.ticksPerFrame = 5;
+  this.scriptID = -1;
 
   this.initialize = function (enemyName, enemyPicture, numberOfFrames = 6) {
     this.health = this.maxhealth;
@@ -114,7 +115,7 @@ function enemyClass() {
       }
 
       if (debugMode) {
-        colorText(this.myName, this.x, this.y - 20, "red");
+        colorText(this.scriptID, this.x, this.y - 20, "red");
         colorText("HP: " + this.health, this.x, this.y - 10, "red");
         colorRect(this.x, this.y, 5, 5, "red");
         colorRect(this.x, this.y + this.height, 5, 5, "red");
@@ -535,6 +536,7 @@ function enemyClass() {
     this.changeDirection();
     this.x = resetX;
     this.y = resetY;
+	this.scriptID = Math.floor(resetX/TILE_W) * 100 + Math.floor(resetY/TILE_H);
     this.health = this.maxhealth;
     if (this.hasOwnProperty("myBite")) {
       this.myBite.reset();
