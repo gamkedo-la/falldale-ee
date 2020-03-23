@@ -997,6 +997,8 @@ const TILE_TREE_PINE_BLUE_L = 326;
 const TILE_TREE_PINE_BLUE_R = 327;
 const TILE_TREE_PINE_YELLOW_L = 328;
 const TILE_TREE_PINE_YELLOW_R = 329;
+const TILE_BUSH_2 = 330;
+const TILE_BUSH_TALL = 331;
 
 
 //graveYard Numbers 350 though 449
@@ -1305,7 +1307,8 @@ function tileTypeHasGrassTransparency(checkTileType) {
 			checkTileType == TILE_ARROWS ||
 			checkTileType == TILE_YELLOW_DOOR ||
 			checkTileType == TILE_TREASURE ||
-			checkTileType == TILE_BUSH ||
+			checkTileType == TILE_BUSH_2 ||
+			checkTileType == TILE_BUSH_TALL ||
 			checkTileType == TILE_TREE2BOTTOMHALF ||
 			checkTileType == TILE_TREE3TOPHALF ||
 			checkTileType == TILE_TREE3BOTTOMHALF ||

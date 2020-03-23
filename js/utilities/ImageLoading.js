@@ -354,6 +354,8 @@ function loadImages() {
   { tileType: TILE_BONFIRE_UNLIT_S, theFile: "forest/bonfire_unlit_s.png" },
   { tileType: TILE_CAMPRING_LG_L, theFile: "forest/campring_lg_l.png" },
   { tileType: TILE_CAMPRING_LG_R, theFile: "forest/campring_lg_r.png" },
+	{ tileType: TILE_BUSH_2, theFile: "forest/bush.png" },
+	{ tileType: TILE_BUSH_TALL, theFile: "forest/bush_tall.png" },
 
     { varName: characterCreationBackgroundPic, theFile: "characterCreation.png" },
 	{ varName: questOnePic, theFile: "Quests/Quest1.png" },
