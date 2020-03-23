@@ -211,6 +211,7 @@ function loadLevel() {
   		firstQuestEnemyList.push(enemyList[e]);
   	}
   }
+  
   enemyList.splice(0, enemyList.length); //Empty enemyList
   tileList.splice(0, tileList.length); //Empty tileList
   animateList.splice(0, animateList.length); //Empty animateList
@@ -238,7 +239,8 @@ function loadLevel() {
         newEnemy.initialize('Zombie3', zombiePic3, 4);
       } else if (roomGrid[ arrayIndex ] == TILE_GOBLIN) {
         newEnemy = new goblinClass();
-        newEnemy.initialize('Goblin', goblinPic, 4);
+		var enemyName = 'Goblin';
+        newEnemy.initialize(enemyName, goblinPic, 4);
       } else if (roomGrid[ arrayIndex ] == TILE_GREEN_ORC_SWORD) {
         newEnemy = new orcClass();
         newEnemy.initialize('Orc - Sword', orcPic, 4);
