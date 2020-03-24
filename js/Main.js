@@ -445,6 +445,7 @@ function updateItems() {
 
 function resetGame() { // @TODO: WIP full game reset, not connected to anything for now
 	levelNow = 7;
+	startQuestOne();
 	loadLevel();
 }
 

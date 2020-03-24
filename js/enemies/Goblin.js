@@ -53,8 +53,7 @@ function goblinClass() {
           healingPotionList.push(new healingPotionClass(1, this.x, this.y));
           break;
         case 4:
-		  clothList.push(new clothClass(1, this.x, this.y)); 
-		  console.log("Should have Cloth somewhere");
+		  clothList.push(new clothClass(1, this.x, this.y)); ;
           break;
 		case 5:
 		twigList.push(new twigClass(1, this.x, this.y));
