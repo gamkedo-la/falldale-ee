@@ -859,13 +859,15 @@ const TILE_GARDEN_9 = 42;
 const TILE_BAR_FLOOR1= 43; 
 const TILE_BAR_FLOOR2= 44;
 
-//portals Number 50 through 99
+
 const TILE_GRAVE_YARD_PORTAL = 50;
 const TILE_HOME_VILLAGE_PORTAL = 51;
 const TILE_FOREST_PORTAL = 52;
+
 //traps Numbers 100 through 149
 const TILE_SPIKES = 100;
 const TILE_SPIKES_BLOODY = 101;
+const TILE_BOX = 102;
 //findable items Number 150 though 199
 const TILE_ARROWS = 150;
 const TILE_THROWINGROCKS = 151;
