@@ -390,6 +390,7 @@ function loadImages() {
     { varName: orcPic, theFile: "Monsters/Orc1.png" },
     { varName: orcPic2, theFile: "Monsters/Orc2.png" }, 
     { varName: orcPic3, theFile: "Monsters/Orc3.png" },
+	{ varName: deadOrcPic, theFile: "Monsters/deadOrc.png" },
     { varName: orcBossPic, theFile: "Monsters/OrcChief.png" },
 	{ varName: deadOrcBossPic, theFile: "Monsters/deadGoblin.png" },  //placeholder.  Need a dead Orc Boss Pic
     { varName: druidPic, theFile: "Monsters/druid.png" },
