@@ -241,6 +241,10 @@ function loadLevel() {
       } else if (roomGrid[ arrayIndex ] == TILE_GREEN_ORC_SWORD) {
         newEnemy = new orcClass();
         newEnemy.initialize('Orc - Sword', orcPic, 4);
+      } else if (roomGrid[ arrayIndex ] == TILE_BOX) {
+        newEnemy = new boxClass();
+		var enemyName = 'Box';
+        newEnemy.initialize(enemyName, boxPic, 1);
       } else if (roomGrid[ arrayIndex ] == TILE_GREEN_ORC_CLUB) {
         newEnemy = new orcClass();
         newEnemy.initialize('Orc - Club2', orcPic2, 4);

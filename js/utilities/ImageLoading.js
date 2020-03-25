@@ -51,6 +51,9 @@ var druidPic = document.createElement("img");
 var orcBossPic = document.createElement("img");
 var deadOrcBossPic = document.createElement("img");
 var wizardPic = document.createElement("img");
+var boxPic = document.createElement("img");
+var brokenBoxPic = document.createElement("img");
+
 //Town folk
 var addyPic = document.createElement("img");
 var delkonPic = document.createElement("img");
@@ -436,6 +439,8 @@ function loadImages() {
     { varName: questGUIPic, theFile: "questGUI.png" },
 	{ varName: blueButtonPic, theFile: "blueButton.png" },
 	{ varName: greenButtonPic, theFile: "greenButton.png" },
+	{ varName: boxPic, theFile: "box.png" },
+	{ varName: brokenBoxPic, theFile: "brokenBox.png" }
   ];
 
   picsToLoad = imageList.length;
