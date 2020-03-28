@@ -363,6 +363,9 @@ function loadImages() {
 	{ tileType: TILE_ORC_HUT_TR, theFile: "forest/orc_hut_tr.png" },
 	{ tileType: TILE_ORC_HUT_BL, theFile: "forest/orc_hut_bl.png" },
 	{ tileType: TILE_ORC_HUT_BR, theFile: "forest/orc_hut_br.png" },
+	{ tileType: TILE_ORC_HUT_BR, theFile: "forest/orc_hut_br.png" },
+	{ tileType: TILE_CART, theFile: "forest/cart.png" },
+	{ tileType: TILE_CART_BROKEN, theFile: "forest/cart_broken.png" },
 
     { varName: characterCreationBackgroundPic, theFile: "characterCreation.png" },
 	{ varName: questOnePic, theFile: "Quests/Quest1.png" },
