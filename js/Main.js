@@ -482,6 +482,7 @@ function damageDraw() {
 }
 
 function inventoryDraw() {
+  
   colorRect(canvas.width - 200, canvas.height - 200, 200, 150, "black");
   colorRect(canvas.width - 195, canvas.height - 195, 190, 140, "white");
   colorText("Arrows: " + redWarrior.myArrow.quantity, canvas.width - 170, canvas.height - 180, "Black");
@@ -491,6 +492,30 @@ function inventoryDraw() {
   colorText("Red Keys: " + redWarrior.redKeysHeld, canvas.width - 170, canvas.height - 100, "Black");
   colorText("Blue Keys: " + redWarrior.blueKeysHeld, canvas.width - 170, canvas.height - 80, "Black");
   colorText("Green Keys: " + redWarrior.greenKeysHeld, canvas.width - 170, canvas.height - 60, "Black");
+  
+  //Beginning of the new inventory. Clément
+  /*
+  colorRect(150, 60, 500, 500, "black");
+  
+  for (var i = 150+12; i < 150 + 500; i+=125) {
+    for (var j = 60+12; j <= 60 + 500; j+=125) {
+      colorRect(i, j, 100, 100, "white");
+      
+      //colorRect(canvas.width - 400, canvas.height - 400, 100, 15, "black");
+      
+      
+      canvasContext.moveto(j,0);
+      canvasContext.lineto(j, 800);
+      canvasContext.stroke();
+
+      canvasContext.moveto(0,i);
+      canvasContext.lineto(400, i);
+      canvasContext.stroke();
+     
+    }
+  //}
+  */
+
 }
 
 function miniMapDraw() {
