@@ -483,6 +483,8 @@ function damageDraw() {
 
 function inventoryDraw() {
   
+  //Old Inventory
+  /*
   colorRect(canvas.width - 200, canvas.height - 200, 200, 150, "black");
   colorRect(canvas.width - 195, canvas.height - 195, 190, 140, "white");
   colorText("Arrows: " + redWarrior.myArrow.quantity, canvas.width - 170, canvas.height - 180, "Black");
@@ -492,30 +494,61 @@ function inventoryDraw() {
   colorText("Red Keys: " + redWarrior.redKeysHeld, canvas.width - 170, canvas.height - 100, "Black");
   colorText("Blue Keys: " + redWarrior.blueKeysHeld, canvas.width - 170, canvas.height - 80, "Black");
   colorText("Green Keys: " + redWarrior.greenKeysHeld, canvas.width - 170, canvas.height - 60, "Black");
-  
-  //Beginning of the new inventory. Clément
-  /*
-  colorRect(150, 60, 500, 500, "black");
-  
-  for (var i = 150+12; i < 150 + 500; i+=125) {
-    for (var j = 60+12; j <= 60 + 500; j+=125) {
-      colorRect(i, j, 100, 100, "white");
-      
-      //colorRect(canvas.width - 400, canvas.height - 400, 100, 15, "black");
-      
-      
-      canvasContext.moveto(j,0);
-      canvasContext.lineto(j, 800);
-      canvasContext.stroke();
-
-      canvasContext.moveto(0,i);
-      canvasContext.lineto(400, i);
-      canvasContext.stroke();
-     
-    }
-  //}
   */
 
+  //Inventory Content
+  var InventoryName   = ["Arrows", "Rocks", "Gold Pieces", "Yellow Keys", "Red Keys", "Blue Keys", "Green Keys"];
+  var InventoryAmount = [redWarrior.myArrow.quantity, redWarrior.myRock.quantity, redWarrior.goldpieces, redWarrior.yellowKeysHeld, redWarrior.redKeysHeld, redWarrior.blueKeysHeld, redWarrior.greenKeysHeld];
+  var InventoryImage  = [swordPic, rockPic, goldPic, clothPic, clothPic, clothPic, clothPic];
+  var InventoryIndex  = 0;
+  var InventoryMaxItems = 7;
+
+  //Variable for display
+  var InventoryWidth    = 250;
+  var InventoryHeight   = 250;
+  var InventoryPosX     = canvas.width - 260;
+  var InventoryPosY     = canvas.height - 310;
+  var InventoryOffsetX  = 12;
+  var InventoryOffsetY  = 12;
+
+  var ItemStartPosX     = InventoryPosX + InventoryOffsetX;
+  var ItemMaxX          = InventoryPosX + InventoryWidth;
+
+  var ItemStartPosY     = InventoryPosY + InventoryOffsetY;
+  var ItemMaxY          = InventoryPosY + InventoryHeight;
+  
+  var ItemWidth         = 60;
+  var ItemHeight        = 60;
+
+  var ItemGapX          = ItemWidth + InventoryOffsetX*2;
+  var ItemGapY          = ItemHeight + InventoryOffsetY*2;
+  
+  colorRect(InventoryPosX, InventoryPosY, InventoryWidth, InventoryHeight, "black");
+  
+  for (var y = ItemStartPosY; y <= ItemMaxY;  y += ItemGapY) {
+    for (var x = ItemStartPosX; x < ItemMaxX; x += ItemGapX) {
+
+      if(InventoryIndex < InventoryMaxItems) {
+        colorRect(x, y, ItemWidth, ItemHeight, "white");
+
+        //Item name display
+        drawTextCentered(InventoryName[InventoryIndex], x+ItemWidth/2, y+ItemHeight-3, "Black", "8px sans-serif");
+
+        //Item amount display
+        var ItemAmount = InventoryAmount[InventoryIndex];
+        if(ItemAmount == null) ItemAmount = "0";
+        drawTextWithShadowCentered(ItemAmount, x+ItemWidth-8, y+ItemHeight-45);
+        
+        //Item icon display
+        ImagePosX = (x+ItemWidth/2)-(InventoryImage[InventoryIndex].width/2);
+        ImagePosY = (y+ItemHeight/2)-(InventoryImage[InventoryIndex].height/2);
+        canvasContext.drawImage(InventoryImage[InventoryIndex], ImagePosX, ImagePosY);
+      } else {
+        emptyRect(x, y, ItemWidth, ItemHeight, 4, "white");
+      }
+      InventoryIndex += 1;
+    }
+  }
 }
 
 function miniMapDraw() {
