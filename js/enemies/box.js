@@ -26,6 +26,7 @@ function boxClass() {
 
     this.superClassMove = this.move;
     this.move = function() {
+		//console.log("Box: " + this.scriptID + " X: " + this.x + " Y: " + this.y);
         //No Movement
     };
 

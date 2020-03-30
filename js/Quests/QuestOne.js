@@ -2,11 +2,11 @@
 
 var goblinsKilledInFallDale = 0;
 var firstQuestLoad = false;
-var barrelOneX = 207, barrelOneY = 405;
-var barrelTwoX = 327, barrelTwoY = 208;
-var barrelThreeX = 100, barrelThreeY = 400;
-var barrelFourX = 200, barrelFourY = 400;
-var barrelFiveX = 300, barrelFiveY = 400;
+var barrelOneX = 100, barrelOneY = 850; //ID:  217
+var barrelTwoX = 300, barrelTwoY = 850; //ID:  617
+var barrelThreeX = 400, barrelThreeY = 850; //ID:  817
+var barrelFourX = 350, barrelFourY = 400; //ID: 708
+var barrelFiveX = 400, barrelFiveY = 700; //ID: 814 
 
 function startQuestOne() {
 	console.log("NOW STARTING QUEST ONE");
@@ -14,6 +14,7 @@ function startQuestOne() {
   	for (var e = 0; e < enemyList.length; e++) {
 		firstQuestEnemyList.push(enemyList[e]);
   	}
+		
 	var cutSceneOrders = [
 	{id: 316, toX: barrelOneX, toY: barrelOneY},
 	{id: 327, toX: barrelTwoX, toY: barrelTwoY},
@@ -32,6 +33,7 @@ function startQuestOne() {
 				foundMatch = true;
 				break;
 			}
+			
 		}
 		if(foundMatch == false){
 			console.log("No Script ID found for " + cutSceneOrders[i].id);
