@@ -17,9 +17,9 @@ function healerInput(whichKeyCode) {
   switch (whichKeyCode) {
     case NUM_1:
       if (redWarrior.goldpieces >= 10) {
-        if (redWarrior.health <= redWarrior.maxHealth - 1) {
+        if (redWarrior.stats.health <= redWarrior.stats.maxHealth - 1) {
           redWarrior.goldpieces = redWarrior.goldpieces - 10;
-          redWarrior.health = redWarrior.health + 1;
+          redWarrior.stats.health = redWarrior.stats.health + 1;
           shopKeeperFeedback = "Healer:  Thank you for your donation.  Please come again.";
         } else {
           shopKeeperFeedback = "Healer:  I can not heal you any more.";
@@ -30,9 +30,9 @@ function healerInput(whichKeyCode) {
       break;
     case NUM_2:
       if (redWarrior.goldpieces >= 40) {
-        if (redWarrior.health <= redWarrior.maxHealth - 5) {
+        if (redWarrior.stats.health <= redWarrior.stats.maxHealth - 5) {
           redWarrior.goldpieces = redWarrior.goldpieces - 40;
-          redWarrior.health = redWarrior.health + 5;
+          redWarrior.stats.health = redWarrior.stats.health + 5;
           shopKeeperFeedback = "Healer:  Thank you for your generous donation.  Please come again.";
         } else {
           shopKeeperFeedback = "Healer:  I can not heal you that much.";

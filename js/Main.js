@@ -572,17 +572,17 @@ function mapDraw() {
 function statsDraw() {
   colorRect(canvas.width - 210, canvas.height - 320, 210, 270, "black");
   colorRect(canvas.width - 205, canvas.height - 315, 200, 265, "white");
-  colorText("Experience Level: " + redWarrior.experienceLevel, canvas.width - 190, canvas.height - 300, "Black");
-  colorText("Level Up at: " + redWarrior.experienceLevel, canvas.width - 190, canvas.height - 280, "Black");
+  colorText("Experience Level: " + redWarrior.stats.experienceLevel, canvas.width - 190, canvas.height - 300, "Black");
+  colorText("Level Up at: " + redWarrior.stats.experienceLevel, canvas.width - 190, canvas.height - 280, "Black");
   colorText("Armor Class: " + redWarrior.armor, canvas.width - 190, canvas.height - 260, "Black");
-  colorText("Hit Point: " + redWarrior.health.toFixed(1), canvas.width - 190, canvas.height - 240, "Black");
-  colorText("Experience: " + redWarrior.experience, canvas.width - 190, canvas.height - 220, "Black");
+  colorText("Hit Point: " + redWarrior.stats.health.toFixed(1), canvas.width - 190, canvas.height - 240, "Black");
+  colorText("Experience: " + redWarrior.stats.experience, canvas.width - 190, canvas.height - 220, "Black");
   colorText("Max Sword Roll: " + redWarrior.mySword.damageDice, canvas.width - 190, canvas.height - 200, "Black");
   colorText("Max Arrow Roll: " + redWarrior.myArrow.damageDice, canvas.width - 190, canvas.height - 180, "Black");
   colorText("Max Stone Roll: " + redWarrior.myRock.damageDice, canvas.width - 190, canvas.height - 160, "Black");
-  colorText("STR: " + redWarrior.strength + "     DEX: " + redWarrior.dexterity, canvas.width - 190, canvas.height - 120, "Black");
-  colorText("CON: " + redWarrior.constitution + "     INT: " + redWarrior.intelligence, canvas.width - 190, canvas.height - 100, "Black");
-  colorText("WIS: " + redWarrior.wisdom + "     CHA: " + redWarrior.charisma, canvas.width - 190, canvas.height - 80, "Black");
+  colorText("STR: " + redWarrior.stats.strength + "     DEX: " + redWarrior.stats.dexterity, canvas.width - 190, canvas.height - 120, "Black");
+  colorText("CON: " + redWarrior.stats.constitution + "     INT: " + redWarrior.stats.intelligence, canvas.width - 190, canvas.height - 100, "Black");
+  colorText("WIS: " + redWarrior.stats.wisdom + "     CHA: " + redWarrior.stats.charisma, canvas.width - 190, canvas.height - 80, "Black");
 }
 
 function drawMenuScreen() {

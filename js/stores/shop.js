@@ -51,7 +51,7 @@ function shopInput(whichKeyCode) {
     case NUM_3:
       if (redWarrior.goldpieces >= 10) {
         redWarrior.goldpieces = redWarrior.goldpieces - 10;
-        redWarrior.health++;
+        redWarrior.stats.health++;
         shopKeeperFeedback = "Shop Keeper:  Thank you for purchase the heart.  Please come again.";
       } else {
         shopKeeperFeedback = "Shop Keeper:  You don't have enough gold pieces";

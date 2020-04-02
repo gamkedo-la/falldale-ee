@@ -9,6 +9,7 @@ const PLAYER_SPEED_DEBUFF = 4.0;
 var levelExperienceArray = [ 500, 2000, 4000, 6000, 10000, 16000, 26000, 42000, 68000 ];
 
 function warriorClass(whichPlayerPic) {
+  this.stats = new Stats();
   this.direction = {x: 0, y: 1};
   this.rotation = this.direction;
   this.mySword = new swordClass();
@@ -29,9 +30,7 @@ function warriorClass(whichPlayerPic) {
   this.name = "Untitled warrior";
   this.woodAx = 0;
   this.goldpieces = 10;
-  this.experience = 0;
-  this.maxHealth = 4;
-  this.health = 4;
+
   this.isTakingDamage = false;
   this.warriorHealthCountdownSeconds = 5;
   this.warriorDisplayHealthCountdown = this.warriorHealthCountdownSeconds * FRAMES_PER_SECOND;
@@ -47,13 +46,8 @@ function warriorClass(whichPlayerPic) {
   this.sx = 50;
   this.sy = this.height;
   this.playerMove = false;
-  this.strength = 0;
-  this.dexterity = 0;
-  this.constitution = 0;
-  this.intelligence = 0;
-  this.wisdom = 0;
-  this.charisma = 0;
-  this.experienceLevel = 1;
+
+  
   this.armor = 10;
   this.healingPotion = 0;
   this.haveMap = false;
@@ -140,7 +134,7 @@ function warriorClass(whichPlayerPic) {
   this.initialize = function (warriorName) {
     this.name = warriorName;
     this.keysHeld = {"yellow": 0, "green": 0, "blue": 0, "red": 0};
-    this.health = 4;
+    this.stats.maxHealth = this.stats.health = 4;
 
     this.mySword.reset();
     this.myArrow.reset();
@@ -227,7 +221,7 @@ function warriorClass(whichPlayerPic) {
   };
 
   this.checkForLevelUp = function () {
-    if (this.experience >= levelExperienceArray[ this.experienceLevel ]) {
+    if (this.stats.experience >= levelExperienceArray[ this.stats.experienceLevel ]) {
       this.levelup();
     }
   };
@@ -235,18 +229,18 @@ function warriorClass(whichPlayerPic) {
   this.levelup = function () {
     // results when player hits certain experience
     var increasedHitPoints = 0;
-    this.experienceLevel++;
+    this.stats.experienceLevel++;
     increasedHitPoints = Math.floor(Math.random() * 6) + 1;
-    this.maxHealth = this.maxHealth + increasedHitPoints;
-    this.health = this.health + increasedHitPoints;
-    if (this.health > this.maxHealth) {
-      this.health = this.maxHealth;
+    this.stats.maxHealth = this.stats.maxHealth + increasedHitPoints;
+    this.stats.health = this.stats.health + increasedHitPoints;
+    if (this.stats.health > this.stats.maxHealth) {
+      this.stats.health = this.stats.maxHealth;
     }
     dialogManager.setDialogWithCountdown("I feel stronger!.  LEVEL UP. I've gained " + increasedHitPoints + " Hit Points");
   };
 
   this.death = function () {
-    this.health = this.maxHealth;
+    this.stats.health = this.stats.maxHealth;
     this.x = this.resetPositionCoords.x;
     this.y = this.resetPositionCoords.y;
     camera.x = this.x - 150;
@@ -302,11 +296,11 @@ function warriorClass(whichPlayerPic) {
   }
 
   this.takeDamage = function (howMuch) {
-    this.health -= howMuch / 10;
+    this.stats.health -= howMuch / 10;
     playerHurtSound.play();
     this.displayHealth = true;
     this.isTakingDamage = true;
-    if (this.health <= 0) {
+    if (this.stats.health <= 0) {
     	this.death();
     	resetLevel();
     }
@@ -366,7 +360,7 @@ function warriorClass(whichPlayerPic) {
 
     colorRect(this.x, this.y - 16, 40, 12, "black");
     colorRect(this.x + 2, this.y - 14, 35, 8, "red");
-    colorRect(this.x + 2, this.y - 14, (this.health / this.maxHealth) * 35, 8, "green");
+    colorRect(this.x + 2, this.y - 14, (this.stats.health / this.stats.maxHealth) * 35, 8, "green");
 
     this.warriorDisplayHealthCountdown--;
     if (this.warriorDisplayHealthCountdown <= 0) {
@@ -654,7 +648,7 @@ function warriorClass(whichPlayerPic) {
 
   this.impaledOnFreshSpikes = function (tileIndex, nextX, nextY) {
     this.setSpeedAndPosition(this.speed, nextX, nextY);
-    this.health -= 0.5;
+    this.stats.health -= 0.5;
     this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, TILE_SPIKES_BLOODY, spikeSound);
   };
 

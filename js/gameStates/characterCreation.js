@@ -23,12 +23,12 @@ function drawCreationScreen() {
   canvasContext.translate(stateScreenOffsetX, stateScreenOffsetY);
   canvasContext.drawImage(characterCreationBackgroundPic, 0, 0);  
   colorText("Character Creation", 25, 50, "black");
-  colorText("Strength: " + redWarrior.strength, 50, 100, "black");
-  colorText("Dexterity: " + redWarrior.dexterity, 50, 120, "black");
-  colorText("Constitution: " + redWarrior.constitution, 50, 140, "black");
-  colorText("Intelligence: " + redWarrior.intelligence, 50, 160, "black");
-  colorText("Wisdom: " + redWarrior.wisdom, 50, 180, "black");
-  colorText("Charisma: " + redWarrior.charisma, 50, 200, "black");
+  colorText("Strength: " + redWarrior.stats.strength, 50, 100, "black");
+  colorText("Dexterity: " + redWarrior.stats.dexterity, 50, 120, "black");
+  colorText("Constitution: " + redWarrior.stats.constitution, 50, 140, "black");
+  colorText("Intelligence: " + redWarrior.stats.intelligence, 50, 160, "black");
+  colorText("Wisdom: " + redWarrior.stats.wisdom, 50, 180, "black");
+  colorText("Charisma: " + redWarrior.stats.charisma, 50, 200, "black");
   canvasContext.drawImage(blueButtonPic, 15, 260);  
   colorText(rollCharacterButtonText, 40, 290, "white");
 
@@ -65,12 +65,12 @@ function drawDice(DiceNumber) {
 function updateCharaterAbilities() {
   characterCreationRolling();
 
-  redWarrior.strength = characterCreationRolling();
-  redWarrior.dexterity = characterCreationRolling();
-  redWarrior.constitution = characterCreationRolling();
-  redWarrior.intelligence = characterCreationRolling();
-  redWarrior.wisdom = characterCreationRolling();
-  redWarrior.charisma = characterCreationRolling();
+  redWarrior.stats.strength = characterCreationRolling();
+  redWarrior.stats.dexterity = characterCreationRolling();
+  redWarrior.stats.constitution = characterCreationRolling();
+  redWarrior.stats.intelligence = characterCreationRolling();
+  redWarrior.stats.wisdom = characterCreationRolling();
+  redWarrior.stats.charisma = characterCreationRolling();
 }
 
 function characterCreationRolling() {

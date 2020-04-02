@@ -13,9 +13,9 @@ function heartsReadyToRemove() {
 function removeHearts() {
   for (var i = heartsList.length - 1; i >= 0; i--) {
     if (heartsList[ i ].readyToRemove) {
-      redWarrior.health = redWarrior.health + heartsList[ i ].heartValue;
-      if (redWarrior.health > redWarrior.maxHealth) {
-        redWarrior.health = redWarrior.maxHealth;
+      redWarrior.stats.health = redWarrior.stats.health + heartsList[ i ].heartValue;
+      if (redWarrior.stats.health > redWarrior.stats.maxHealth) {
+        redWarrior.stats.health = redWarrior.stats.maxHealth;
       }
       redWarrior.displayHealth = true;
       redWarrior.isTakingDamage = false;
