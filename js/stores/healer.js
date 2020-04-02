@@ -16,9 +16,9 @@ function healerInput(whichKeyCode) {
 
   switch (whichKeyCode) {
     case NUM_1:
-      if (redWarrior.goldpieces >= 10) {
+      if (redWarrior.inventory.goldpieces >= 10) {
         if (redWarrior.stats.health <= redWarrior.stats.maxHealth - 1) {
-          redWarrior.goldpieces = redWarrior.goldpieces - 10;
+          redWarrior.inventory.goldpieces = redWarrior.inventory.goldpieces - 10;
           redWarrior.stats.health = redWarrior.stats.health + 1;
           shopKeeperFeedback = "Healer:  Thank you for your donation.  Please come again.";
         } else {
@@ -29,9 +29,9 @@ function healerInput(whichKeyCode) {
       }
       break;
     case NUM_2:
-      if (redWarrior.goldpieces >= 40) {
+      if (redWarrior.inventory.goldpieces >= 40) {
         if (redWarrior.stats.health <= redWarrior.stats.maxHealth - 5) {
-          redWarrior.goldpieces = redWarrior.goldpieces - 40;
+          redWarrior.inventory.goldpieces = redWarrior.inventory.goldpieces - 40;
           redWarrior.stats.health = redWarrior.stats.health + 5;
           shopKeeperFeedback = "Healer:  Thank you for your generous donation.  Please come again.";
         } else {
@@ -42,9 +42,9 @@ function healerInput(whichKeyCode) {
       }
       break;
     case NUM_3:
-      if (redWarrior.goldpieces >= 50) {
-        redWarrior.goldpieces = redWarrior.goldpieces - 50;
-        redWarrior.healingPotion++;
+      if (redWarrior.inventory.goldpieces >= 50) {
+        redWarrior.inventory.goldpieces = redWarrior.inventory.goldpieces - 50;
+        redWarrior.inventory.healingPotion++;
         shopKeeperFeedback = "Healer:  Thank you for your very generous donation.  Enjoy your healing potion when it's needed.";
       } else {
         shopKeeperFeedback = "Shop Keeper:  You don't have enough gold pieces";

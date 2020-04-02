@@ -11,7 +11,7 @@ function drawShop() {
   colorText("3.)  1 Heart 	- 	 10 gp", 50, 140, "white");
   colorText("4.) 'Nothing at this time'", 50, 160, "white");
   colorRect(630, 25, 150, 40, "black");
-  colorText(`Your gold: ${ redWarrior.goldpieces }`, 650, 50, "gold");
+  colorText(`Your gold: ${ redWarrior.inventory.goldpieces }`, 650, 50, "gold");
   canvasContext.restore();
 
   if (!welcomeSpeech) {
@@ -30,8 +30,8 @@ function shopInput(whichKeyCode) {
 
   switch (whichKeyCode) {
     case NUM_1:
-      if (redWarrior.goldpieces >= 10) {
-        redWarrior.goldpieces = redWarrior.goldpieces - 10;
+      if (redWarrior.inventory.goldpieces >= 10) {
+        redWarrior.inventory.goldpieces = redWarrior.inventory.goldpieces - 10;
         redWarrior.myArrow.quantity = redWarrior.myArrow.quantity + 10;
         shopKeeperFeedback = "Shop Keeper:  Thank you for purchasing the arrows.  Please come again.";
       } else {
@@ -40,8 +40,8 @@ function shopInput(whichKeyCode) {
       break;
     case NUM_1:
     case NUM_2:
-      if (redWarrior.goldpieces >= 10) {
-        redWarrior.goldpieces = redWarrior.goldpieces - 10;
+      if (redWarrior.inventory.goldpieces >= 10) {
+        redWarrior.inventory.goldpieces = redWarrior.inventory.goldpieces - 10;
         redWarrior.myRock.quantity = redWarrior.myRock.quantity + 10;
         shopKeeperFeedback = "Shop Keeper:  Thank you for purchasing the throwing rocks.  Please come again.";
       } else {
@@ -49,8 +49,8 @@ function shopInput(whichKeyCode) {
       }
       break;
     case NUM_3:
-      if (redWarrior.goldpieces >= 10) {
-        redWarrior.goldpieces = redWarrior.goldpieces - 10;
+      if (redWarrior.inventory.goldpieces >= 10) {
+        redWarrior.inventory.goldpieces = redWarrior.inventory.goldpieces - 10;
         redWarrior.stats.health++;
         shopKeeperFeedback = "Shop Keeper:  Thank you for purchase the heart.  Please come again.";
       } else {

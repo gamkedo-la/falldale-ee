@@ -9,7 +9,7 @@ function drawAlchemyShop() {
   colorText("1.) Torch - 1 Stick 1 Cloth ", 50, 100, "white");
   colorText("2.) 'Nothing at this time'", 50, 160, "white");
   colorRect(630, 25, 150, 40, "black");
-  colorText(`Sticks: ${ redWarrior.sticks } Cloths: ${ redWarrior.cloths } `, 650, 50, "gold");
+  colorText(`Sticks: ${ redWarrior.inventory.sticks } Cloths: ${ redWarrior.inventory.cloths } `, 650, 50, "gold");
   canvasContext.restore();
 
   if (!welcomeSpeech) {
@@ -25,10 +25,10 @@ function alchemyShopInput(whichKeyCode) {
   switch (whichKeyCode) {
       
     case NUM_1:
-      if (redWarrior.sticks > 0 && redWarrior.cloths > 0 ) {
-        --redWarrior.sticks
-        --redWarrior.cloths
-        ++redWarrior.torch
+      if (redWarrior.inventory.sticks > 0 && redWarrior.inventory.cloths > 0 ) {
+        --redWarrior.inventory.sticks
+        --redWarrior.inventory.cloths
+        ++redWarrior.inventory.torch
         shopKeeperFeedback = "Shop Keeper:  Thank you! Here is your Torch.  Please come again.";
       } else {
         shopKeeperFeedback = "Shop Keeper:  You don't have enough items";

@@ -116,7 +116,7 @@ function npcClass(npcName, npcPic) {
           NPCDialog = "The name is Delkon.  I have 50 gold pieces I can give you if you clear the town of the Goblins!";
           redWarrior.delkonRewardOffer = true;
         } else if (redWarrior.questOneComplete && redWarrior.delkonRewardOffer) {
-          redWarrior.goldpieces = redWarrior.goldpieces + 50;
+          redWarrior.inventory.goldpieces = redWarrior.inventory.goldpieces + 50;
           NPCDialog = "Thank you for clearing the town of those horrible beasts!  Please take this reward of 50 gold pieces";
           redWarrior.delkonRewardOffer = false;
         } else if (redWarrior.questOneComplete) {
@@ -165,8 +165,8 @@ function npcClass(npcName, npcPic) {
         // dialogue handled in shop.js
         isInShop = true;
         humanMaleHi3.play();
-        if (redWarrior.questTwoComplete && redWarrior.woodAx == 0) {
-          redWarrior.woodAx = 1;
+        if (redWarrior.questTwoComplete && redWarrior.inventory.woodAx == 0) {
+          redWarrior.inventory.woodAx = 1;
           redWarrior.questThreeActive = true;
         }
       } else if (this.myName == "Arya") {

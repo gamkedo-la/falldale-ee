@@ -6,10 +6,11 @@ var direction = {x: 0, y: 1};
 const PLAYER_SPEED = 6.0;
 const PLAYER_SPEED_DEBUFF = 4.0;
 
-var levelExperienceArray = [ 500, 2000, 4000, 6000, 10000, 16000, 26000, 42000, 68000 ];
+var levelExperienceArray = [ 0, 500, 2000, 4000, 6000, 10000, 16000, 26000, 42000, 68000 ];
 
 function warriorClass(whichPlayerPic) {
   this.stats = new Stats();
+  this.inventory = new Inventory();
   this.direction = {x: 0, y: 1};
   this.rotation = this.direction;
   this.mySword = new swordClass();
@@ -28,9 +29,7 @@ function warriorClass(whichPlayerPic) {
   this.isEnemyCollision = false;
   this.myWarriorPic = null; // which picture to use
   this.name = "Untitled warrior";
-  this.woodAx = 0;
-  this.goldpieces = 10;
-
+  
   this.isTakingDamage = false;
   this.warriorHealthCountdownSeconds = 5;
   this.warriorDisplayHealthCountdown = this.warriorHealthCountdownSeconds * FRAMES_PER_SECOND;
@@ -49,7 +48,7 @@ function warriorClass(whichPlayerPic) {
 
   
   this.armor = 10;
-  this.healingPotion = 0;
+  
   this.haveMap = false;
   this.questOneActive = true;
   this.delkonRewardOffer = false;
@@ -65,9 +64,7 @@ function warriorClass(whichPlayerPic) {
   this.questSixActive = false;
   this.questSixComplete = false;
   this.goblinsKilledInFallDale = 0;
-  this.sticks = 0;
-  this.cloths = 0;
-  this.torch = 0;
+
 
   // side quests
   this.catsMet = 0;
@@ -183,6 +180,7 @@ function warriorClass(whichPlayerPic) {
       this.updatePosition(collision.x, collision.y);
     }
 
+    this.checkForLevelUp()
     this.mySword.move();
     this.myArrow.move();
     this.myRock.move();
@@ -222,22 +220,11 @@ function warriorClass(whichPlayerPic) {
 
   this.checkForLevelUp = function () {
     if (this.stats.experience >= levelExperienceArray[ this.stats.experienceLevel ]) {
-      this.levelup();
+      this.stats = new LevelUp(this.stats).levelup();
     }
   };
 
-  this.levelup = function () {
-    // results when player hits certain experience
-    var increasedHitPoints = 0;
-    this.stats.experienceLevel++;
-    increasedHitPoints = Math.floor(Math.random() * 6) + 1;
-    this.stats.maxHealth = this.stats.maxHealth + increasedHitPoints;
-    this.stats.health = this.stats.health + increasedHitPoints;
-    if (this.stats.health > this.stats.maxHealth) {
-      this.stats.health = this.stats.maxHealth;
-    }
-    dialogManager.setDialogWithCountdown("I feel stronger!.  LEVEL UP. I've gained " + increasedHitPoints + " Hit Points");
-  };
+
 
   this.death = function () {
     this.stats.health = this.stats.maxHealth;
@@ -594,7 +581,7 @@ function warriorClass(whichPlayerPic) {
   };
 
   this.removeFallenTree = function (tileIndex, groundTile) {
-    if (this.woodAx || debugMode) {
+    if (this.inventory.woodAx || debugMode) {
       this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, groundTile);
       dialogManager.setDialogWithCountdown("Chop Chop");
     } else {
@@ -637,7 +624,7 @@ function warriorClass(whichPlayerPic) {
   this.unlockTreasure = function (tileIndex, color) {
     if (this.keysHeld[color]) {
       this.keysHeld[color]--;
-      this.goldpieces += 50;
+      this.inventory.goldpieces += 50;
       this.myArrow.quantity += 5;
       this.replaceTileAtIndexWithTileOfTypeAndPlaySound(tileIndex, TILE_ROAD, null);
       dialogManager.setDialogWithCountdown("I've used a " + color + " key and found 50 gold pieces, and 5 arrows");

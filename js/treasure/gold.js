@@ -15,8 +15,8 @@ function removegold() {
   for (var i = goldList.length - 1; i >= 0; i--) {
     if (goldList[ i ].readyToRemove) {
       if (goldList[ i ].available) {
-        var distributedGold = redWarrior.goldpieces + goldList[ i ].goldValue;
-        redWarrior.goldpieces = distributedGold;
+        var distributedGold = redWarrior.inventory.goldpieces + goldList[ i ].goldValue;
+        redWarrior.inventory.goldpieces = distributedGold;
         goldList[ i ].available = false;
       }
       goldList.splice(i, 1);

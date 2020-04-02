@@ -15,8 +15,8 @@ function removeTwigs() {
   for (var i = twigList.length - 1; i >= 0; i--) {
     if (twigList[ i ].readyToRemove) {
       if (twigList[ i ].available) {
-        var distributedSticks = redWarrior.sticks + twigList[ i ].twigValue;
-        redWarrior.sticks = distributedSticks;
+        var distributedSticks = redWarrior.inventory.sticks + twigList[ i ].twigValue;
+        redWarrior.inventory.sticks = distributedSticks;
         twigList[ i ].available = false;
       }
       twigList.splice(i, 1);

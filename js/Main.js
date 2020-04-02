@@ -498,7 +498,7 @@ function inventoryDraw() {
 
   //Inventory Content
   var InventoryName   = ["Arrows", "Rocks", "Gold Pieces", "Yellow Keys", "Red Keys", "Blue Keys", "Green Keys"];
-  var InventoryAmount = [redWarrior.myArrow.quantity, redWarrior.myRock.quantity, redWarrior.goldpieces, redWarrior.yellowKeysHeld, redWarrior.redKeysHeld, redWarrior.blueKeysHeld, redWarrior.greenKeysHeld];
+  var InventoryAmount = [redWarrior.myArrow.quantity, redWarrior.myRock.quantity, redWarrior.inventory.goldpieces, redWarrior.yellowKeysHeld, redWarrior.redKeysHeld, redWarrior.blueKeysHeld, redWarrior.greenKeysHeld];
   var InventoryImage  = [swordPic, rockPic, goldPic, clothPic, clothPic, clothPic, clothPic];
   var InventoryIndex  = 0;
   var InventoryMaxItems = 7;
@@ -573,7 +573,8 @@ function statsDraw() {
   colorRect(canvas.width - 210, canvas.height - 320, 210, 270, "black");
   colorRect(canvas.width - 205, canvas.height - 315, 200, 265, "white");
   colorText("Experience Level: " + redWarrior.stats.experienceLevel, canvas.width - 190, canvas.height - 300, "Black");
-  colorText("Level Up at: " + redWarrior.stats.experienceLevel, canvas.width - 190, canvas.height - 280, "Black");
+  colorText("Level Up at: " + levelExperienceArray[ redWarrior.stats.experienceLevel ],
+              canvas.width - 190, canvas.height - 280, "Black");
   colorText("Armor Class: " + redWarrior.armor, canvas.width - 190, canvas.height - 260, "Black");
   colorText("Hit Point: " + redWarrior.stats.health.toFixed(1), canvas.width - 190, canvas.height - 240, "Black");
   colorText("Experience: " + redWarrior.stats.experience, canvas.width - 190, canvas.height - 220, "Black");
@@ -818,8 +819,6 @@ var guiOffsetX = 0;
 /////// To do:  Change if/else statements to a gameState condition
 function drawAll() {
   frameCounter++;
- // console.log(isInAlchemyShop)
- // console.log(redWarrior.cloths, redWarrior.sticks)
   if (menuScreen) {
     if(shownCreditsYet) {
         drawCredits();

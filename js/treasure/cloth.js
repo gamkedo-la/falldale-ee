@@ -15,8 +15,8 @@ function removeCloth() {
   for (var i = clothList.length - 1; i >= 0; i--) {
     if (clothList[ i ].readyToRemove) {
       if (clothList[ i ].available) {
-        var distributedCloth = redWarrior.cloths + clothList[ i ].clothValue;
-        redWarrior.cloths = distributedCloth;
+        var distributedCloth = redWarrior.inventory.cloths + clothList[ i ].clothValue;
+        redWarrior.inventory.cloths = distributedCloth;
         clothList[ i ].available = false;
       }
       clothList.splice(i, 1);
