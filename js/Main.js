@@ -341,16 +341,8 @@ function moveAll() {
   }
 }
 function updateItems() {
-  heartsReadyToRemove();
-  removeHearts();
-  goldReadyToRemove();
-  removegold();
-  twigsReadyToRemove();
-  removeTwigs();
-  clothReadyToRemove();
-  removeCloth();
-  healingPotionReadyToRemove();
-  removeHealingPotion();
+  itemCollision();
+  distributeItems();
 }
 
 function resetGame() { // @TODO: WIP full game reset, not connected to anything for now
@@ -610,26 +602,9 @@ function depthSortedDraw() {
 
   objectsToDraw = objectsToDraw.concat(visibleAnims);
 
-  objectsToDraw = objectsToDraw.concat(heartsList.filter(
-      heart => camera.canShow(heart.x, heart.y, heart.width, heart.height)
+  objectsToDraw = objectsToDraw.concat(itemList.filter(
+      item => camera.canShow(item.x, item.y, item.width, item.height)
   ));
-
-  objectsToDraw = objectsToDraw.concat(healingPotionList.filter(
-      potion => camera.canShow(potion.x, potion.y, potion.width, potion.height)
-  ));
-
-  objectsToDraw = objectsToDraw.concat(goldList.filter(
-      gold => camera.canShow(gold.x, gold.y, gold.width, gold.height)
-  ));
-  
-  objectsToDraw = objectsToDraw.concat(twigList.filter(
-      gold => camera.canShow(gold.x, gold.y, gold.width, gold.height)
-  ));
-  
-  objectsToDraw = objectsToDraw.concat(clothList.filter(
-      gold => camera.canShow(gold.x, gold.y, gold.width, gold.height)
-  ));
-
 
   objectsToDraw.push(redWarrior);
 

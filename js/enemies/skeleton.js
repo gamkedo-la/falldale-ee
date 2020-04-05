@@ -37,13 +37,13 @@ function skeletonClass() {
       var randomTreasure = Math.round(Math.random() * 3);
       switch (randomTreasure) {
         case 1:
-          heartsList.push(new heartClass(1, this.x, this.y));
+          itemList.push(new heartClass(1, this.x, this.y));
           break;
         case 2:
-          goldList.push(new goldClass(5, this.x, this.y));
+          itemList.push(new goldClass(5, this.x, this.y));
           break;
         case 3:
-          healingPotionList.push(new healingPotionClass(1, this.x, this.y));
+          itemList.push(new healingPotionClass(1, this.x, this.y));
           break;
       }
     }
@@ -57,20 +57,20 @@ function skeletonClass() {
       var randomTreasure = Math.round(Math.random() * 4);
       switch (randomTreasure) {
         case 1:
-          heartsList.push(new heartClass(1, this.x, this.y));
+          itemList.push(new heartClass(1, this.x, this.y));
           break;
         case 2:
-          goldList.push(new goldClass(5, this.x, this.y));
+          itemList.push(new goldClass(5, this.x, this.y));
           break;
         case 3:
-          healingPotionList.push(new healingPotionClass(1, this.x, this.y));
+          itemList.push(new healingPotionClass(1, this.x, this.y));
           break;
         case 4:
           console.log("Provide Map");
           if (redWarrior.haveMap == false) {
-            mapList.push(new mapClass(this.x, this.y));
+            itemList.push(new mapClass(this.x, this.y));
           } else {
-            goldList.push(new goldClass(5, this.x, this.y));
+            itemList.push(new goldClass(5, this.x, this.y));
           }
           break;
       }
@@ -113,13 +113,13 @@ function skeletonClass() {
       var randomTreasure = Math.round(Math.random() * 3);
       switch (randomTreasure) {
         case 1:
-          heartsList.push(new heartClass(5, this.x, this.y));
+          itemList.push(new heartClass(5, this.x, this.y));
           break;
         case 2:
-          goldList.push(new goldClass(10, this.x, this.y));
+          itemList.push(new goldClass(10, this.x, this.y));
           break;
         case 3:
-          healingPotionList.push(new healingPotionClass(1, this.x, this.y));
+          itemList.push(new healingPotionClass(1, this.x, this.y));
           break;
       }
 	}

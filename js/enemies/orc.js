@@ -54,13 +54,13 @@ function orcClass() {
       var randomTreasure = Math.round(Math.random() * 3);
       switch (randomTreasure) {
         case 1:
-          heartsList.push(new heartClass(2, this.x, this.y));
+          itemList.push(new heartClass(2, this.x, this.y));
           break;
         case 2:
-          goldList.push(new goldClass(10, this.x, this.y));
+          itemList.push(new goldClass(10, this.x, this.y));
           break;
         case 3:
-          healingPotionList.push(new healingPotionClass(1, this.x, this.y));
+          itemList.push(new healingPotionClass(1, this.x, this.y));
           break;
       }
 	}
