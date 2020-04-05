@@ -3,7 +3,7 @@ const NPC_INTERACTION_DELAY = 1.0;
 
 npcClass.prototype = new enemyClass();
 
-function npcClass(npcName, npcPic) {
+function npcClass(npcName, npcPic, npcFrames) {
   this.speed = NPC_SPEED;
   this.myNPCPic = npcPic; // which picture to use
   this.myName = "Untitled character";
@@ -13,7 +13,7 @@ function npcClass(npcName, npcPic) {
   this.tickCount = 0;
   this.frameIndex = 0;
   this.width = 50;
-  this.numberOfFrames = 4;
+  this.numberOfFrames = npcFrames ? npcFrames : 4;
   this.height = 54;
   this.ticksPerFrame = 5;
   this.npcMove = true;

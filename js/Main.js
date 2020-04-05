@@ -217,94 +217,21 @@ function loadLevel() {
   var arrayIndex = 0;
   for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) {
     for (var eachCol = 0; eachCol < ROOM_COLS; eachCol++) {
+      let tileType = roomGrid[ arrayIndex ];
       var newEnemy;
       var newTile;
-      if (roomGrid[ arrayIndex ] == TILE_BAT) {
-        newEnemy = new batClass();
-        newEnemy.initialize("bat", batPic, 4);
-      } else if (roomGrid[ arrayIndex ] == TILE_SKELETON) {
-        newEnemy = new skeletonClass();
-		newEnemy.initialize('Skeleton1', skeletonPic, 4);
-      } else if (roomGrid[ arrayIndex ] == TILE_ZOMBIE) {
-        newEnemy = new zombieClass();
-        newEnemy.initialize('Zombie', zombiePic, 4);
-      } else if (roomGrid[ arrayIndex ] == TILE_ZOMBIE2) {
-        newEnemy = new zombieClass();
-        newEnemy.initialize('Zombie2', zombiePic2, 6);
-      } else if (roomGrid[ arrayIndex ] == TILE_ZOMBIE3) {
-        newEnemy = new zombieClass();
-        newEnemy.initialize('Zombie3', zombiePic3, 4);
-      } else if (roomGrid[ arrayIndex ] == TILE_GOBLIN) {
-        newEnemy = new goblinClass();
-		var enemyName = 'Goblin';
-        newEnemy.initialize(enemyName, goblinPic, 4);
-      } else if (roomGrid[ arrayIndex ] == TILE_GREEN_ORC_SWORD) {
-        newEnemy = new orcClass();
-        newEnemy.initialize('Orc - Sword', orcPic, 4);
-      } else if (roomGrid[ arrayIndex ] == TILE_BOX) {
-        newEnemy = new boxClass();
-		var enemyName = 'Box';
-        newEnemy.initialize(enemyName, boxPic, 1);
-      } else if (roomGrid[ arrayIndex ] == TILE_GREEN_ORC_CLUB) {
-        newEnemy = new orcClass();
-        newEnemy.initialize('Orc - Club2', orcPic2, 4);
-      } else if (roomGrid[ arrayIndex ] == TILE_GREEN_ORC_AX) {
-        newEnemy = new orcClass();
-        newEnemy.initialize('Orc - Ax', orcPic3, 4);
-      } else if (roomGrid[ arrayIndex ] == TILE_ARCHER) {
-        newEnemy = new archerClass();
-        newEnemy.initialize('Archer', archerPic3, 4);
-      } else if (roomGrid[ arrayIndex ] == TILE_BULLYWUG) {
-        newEnemy = new bullywugClass();
-        newEnemy.initialize('Bullywug', bullywugPic, 0);
-      } else if (roomGrid[ arrayIndex ] == TILE_DRUID) {
-        newEnemy = new druidClass();
-        newEnemy.initialize('Druid', druidPic, 1);
-	      } else if (roomGrid[ arrayIndex ] == TILE_WIZARD) {
-        newEnemy = new wizardClass();
-        newEnemy.initialize('Wizard', wizardPic, 1);
-      } else if (roomGrid[ arrayIndex ] == TILE_ORCBOSS) {
-        newEnemy = new orcBossClass();
-        newEnemy.initialize('Orc Boss', orcBossPic, 8);
-      } else if (roomGrid[ arrayIndex ] == TILE_ADDY) {   // NPC
-        newEnemy = new npcClass('Addy', addyPic);
-      } else if (roomGrid[ arrayIndex ] == TILE_DELKON) {   // NPC
-        newEnemy = new npcClass('Delkon', delkonPic);
-      } else if (roomGrid[ arrayIndex ] == TILE_DODD) {   // NPC
-        newEnemy = new npcClass('Dodd', doddPic);
-      } else if (roomGrid[ arrayIndex ] == TILE_FENTON) {   // NPC
-        newEnemy = new npcClass('Fenton', fentonPic);
-      } else if (roomGrid[ arrayIndex ] == TILE_GABRIEL) {   // NPC
-        newEnemy = new npcClass('Gabriel', gabrielPic);
-        newEnemy.speed = 0;
-        newEnemy.direction = "south";
-        newEnemy.startOffsetX = 5;
-        newEnemy.startOffsetY = -TILE_H / 2;
-        // newEnemy.patrolPoints = [157, 73, 74, 138]; //index of tiles Gabriel cycles through, Not working yet
-      } else if (roomGrid[ arrayIndex ] == TILE_HEALER) {   // NPC
-        newEnemy = new npcClass('Healer', healerPic);
-      } else if (roomGrid[ arrayIndex ] == TILE_PRINCESS) {   // NPC
-        newEnemy = new npcClass('Princess Pauline', princessPic);
-      } else if (roomGrid[ arrayIndex ] == TILE_SHOPKEEPER) {   // NPC
-        newEnemy = new npcClass('Shop Keeper', shopkeeperPic);
-      } else if (roomGrid[ arrayIndex ] == TILE_ARYA) {   // NPC
-        newEnemy = new npcClass('Arya', aryaPic);
-      } else if (roomGrid[ arrayIndex ] == TILE_LAWRENCE) {   // NPC
-        newEnemy = new npcClass('Lawrence', lawrencePic);
-      } else if (roomGrid[ arrayIndex ] == TILE_ROWAN) {   // NPC
-        newEnemy = new npcClass('Rowan', rowanPic);
-      } else if (roomGrid[ arrayIndex ] == TILE_TARAN) {   // NPC
-        newEnemy = new npcClass('Taran', taranPic);
-      } else if (roomGrid[ arrayIndex ] == TILE_CAT) {   // NPC
+      //Enemies and NPCs
+      if (classTileNames[tileType] != undefined) {
+        let type = classTileNames[roomGrid [ arrayIndex ]];
+        newEnemy = loadCharacter(type);
+      } else if (tileType == TILE_CAT) {   // NPC
         newEnemy = new npcClass('Fido', catPic);
         newEnemy.numberOfFrames = 6; // six frame walk cycle
         newEnemy.patrolPoints = [ 4, 6, 10, 6 ]; // sidewalk near your house
         newEnemy.spriteSheetRows = 2; // to allow flipping
-
       // animations
-      } else if ( roomGrid[ arrayIndex ] == TILE_BONFIRE_LG ||
-                  roomGrid[ arrayIndex ] == TILE_BONFIRE_S ) {
-        let tileType = roomGrid[ arrayIndex ];
+      } else if ( tileType == TILE_BONFIRE_LG ||
+                  tileType == TILE_BONFIRE_S ) {
         let sprite = worldPics[ tileType ];
         let resetX = (eachCol * TILE_W);
         let resetY = (eachRow * TILE_H);
@@ -346,7 +273,6 @@ function loadLevel() {
         }
 
         // double height tiles
-        let tileType = roomGrid[ arrayIndex ];
         if (tileType == TILE_TREE_PINE_L ||
             tileType == TILE_TREE_PINE_R ||
             tileType == TILE_TREE_PINE_BLUE_L ||
@@ -368,28 +294,8 @@ function loadLevel() {
       resetY = (eachRow * TILE_H) + offsetY;
       newEnemy.reset(resetX, resetY, newEnemy.direction);
       enemyList.push(newEnemy);
-	  /*for(i = 0; i < npcList.length; i++){
-		  console.log("RG: " + roomGrid[arrayIndex] + " i: " + i);
-		  if(roomGrid[ arrayIndex ] == npcList[i]){
-			  roomGrid[ arrayIndex ] = TILE_BAR_FLOOR1;
-		  } else {
-			roomGrid[ arrayIndex ] = TILE_ROAD;
-		  }
-	  }*/
-	  if(	roomGrid[ arrayIndex ] == TILE_SHOPKEEPER ||
-			roomGrid[ arrayIndex ] == TILE_HEALER ||
-			roomGrid[ arrayIndex ] == TILE_PRINCESS ||
-			roomGrid[ arrayIndex ] == TILE_DODD ||
-			roomGrid[ arrayIndex ] == TILE_TARAN ||
-			roomGrid[ arrayIndex ] == TILE_DELKON ||
-			roomGrid[ arrayIndex ] == TILE_ADDY ||
-			roomGrid[ arrayIndex ] == TILE_GABRIEL ||
-			roomGrid[ arrayIndex ] == TILE_FENTON ||
-			//roomGrid[ arrayIndex ] == TILE_ARYA ||
-			roomGrid[ arrayIndex ] == TILE_LAWRENCE ||
-			roomGrid[ arrayIndex ] == TILE_CAT ||
-			roomGrid[ arrayIndex ] == TILE_ROWAN ) 
-			{	
+
+	  if(npcList.findIndex((element) => element === roomGrid[arrayIndex])) {
 			roomGrid[ arrayIndex ] = TILE_BAR_FLOOR1;
 	  } else {
 			roomGrid[ arrayIndex ] = TILE_ROAD;
