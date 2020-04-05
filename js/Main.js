@@ -1,6 +1,5 @@
 var debugSkipToGame = false;
 
-// practice commit comment, will remove - John
 // Characters //
 
 var canvas, canvasContext;
