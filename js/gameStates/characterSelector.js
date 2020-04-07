@@ -106,7 +106,8 @@ function selectCharacter(index){
 }
 
 function launchGame() {
-  loadLevel();
+  //loadLevel();
+  loadTiledMap(TileMaps['level1']);
   characterSelectionScreen = false;
   scrollBackgroundScreen = true;
 

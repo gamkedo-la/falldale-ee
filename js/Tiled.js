@@ -57,15 +57,23 @@ let objectDefinitions = {
 	'Rowan': npcClass,
 	'Taran': npcClass,
 	'Fido': npcClass,
+	//Bonfire
 }
 
 let objectSprites = {
 	"Bat": batPic, 
 	"Skeleton": skeletonPic,
+	"Skeleton2": skeletonPic,
+	"Skeleton3": skeletonPic,
+	"Skeleton Dead" : deadSkeletonPic,
 	"Zombie": zombiePic,
 	"Zombie2": zombiePic2,
 	"Zombie3": zombiePic3,
+	'Zombie Dead' : deadZombiePic,
 	'Goblin': goblinPic,
+	'Goblin2': goblinPic2,
+	'Goblin3': goblinPic3,
+	'Goblin4': goblinPic4,
 	'OrcSword': orcPic,
 	'OrcAxe': orcPic3,
 	'OrcClub': orcPic2,
@@ -88,6 +96,10 @@ let objectSprites = {
 	'Rowan': rowanPic,
 	'Taran': taranPic,
 	'Fido': catPic,
+	'Bonfire Large' : null,
+	'Bonfire Small' : null,
+	'Waterfall' : waterFallsImg,
+	'River' : waterScrollImg,
 };
 
 let spriteFrames = {
@@ -119,7 +131,130 @@ let spriteFrames = {
 	'Rowan': 4,
 	'Taran': 4,
 	'Fido': 6,
+	'Bonfire Large': 8,
+	'Bonfire Small': 8,
+	'Waterfall' : waterFallsImg,
+	'River' : waterScrollImg,
 };
+
+let levels;
+let tileSheets = {};
+
+function initTiledMaps() {
+	levels = Object.getOwnPropertyNames(TileMaps);
+	for (let l of levels) {
+		let level = TileMaps[l];
+		loadTileSets(level.tilesets);
+	}
+}
+
+function loadTileSets(tileset) {
+	for (let sheet of tileset) {
+		if (sheet.hasOwnProperty('image')) {
+			if (!tileSheets.hasOwnProperty(sheet.image)) { //Only load if not a duplicate tilesheet
+				loadTileSheet(sheet);
+			}
+		} else if (sheet.hasOwnProperty('tiles')) {
+			if (!tileSheets.hasOwnProperty(sheet.name)) { //Only load if not a duplicate tilelist
+				loadTileList(sheet);
+			}
+		}
+	}
+}
+
+function loadTileSheet(sheet) {
+	let newSheet = document.createElement("img");
+	newSheet.firstgid = sheet.firstgid;
+	newSheet.src = sheet.image;
+	newSheet.tileHeight = sheet.tileheight;
+	newSheet.tileWidth = sheet.tilewidth;
+	tileSheets[sheet.image] = newSheet;
+}
+
+function loadTileList(sheet) {
+	let newSheet = {}
+	newSheet.firstgid = sheet.firstgid;
+	newSheet.tileHeight = sheet.tileheight;
+	newSheet.tileWidth = sheet.tilewidth;
+	newSheet.tileList = [];
+	for (let t = 0; t < sheet.tiles.length; t++) {
+		let tile = sheet.tiles[t];
+		let tileImage = document.createElement("img");
+		tileImage.src = tile.image;
+		newSheet.tileList.push(tileImage);
+	}
+	tileSheets[sheet.name] = newSheet;
+}
+
+
+function getTile(tileID) {
+	let ts = Object.getOwnPropertyNames(tileSheets)
+	let sheet;
+	for (let s of ts) {
+		if (tileID >= tileSheets[s].firstgid) {
+			sheet = tileSheets[s];
+		}
+	}
+	if (sheet.hasOwnProperty("tileList")) {
+		return sheet.tileList[tileID - sheet.firstgid];
+	}
+
+	let index = tileID - sheet.firstgid;
+	let width = sheet.tileWidth;
+	let height = sheet.tileHeight;
+	let tX = index % (sheet.width/width);
+	let tY = (index - tX) / (sheet.width/width);
+	let tileBuffer = document.createElement('canvas');
+	tileBuffer.ctx = tileBuffer.getContext('2d');
+
+	tileBuffer.ctx.drawImage(sheet, tX * width, tY * height, width, height, 0, 0, width, height);
+	return tileBuffer;
+}
+
+function loadTiledMap(map) {
+	enemyList.length = 0;
+	tileList.length = 0;
+	for (let layer of map.layers) {
+		if (layer.type === "tilelayer") {
+			createTileObjects(layer);
+			if (layer.name === 'Midground') {
+				roomGrid = layer.data.slice();
+			}
+		}
+		if (layer.type === "objectgroup") loadObjects(layer);
+	}
+}
+
+function createTileObjects(layer) {
+	let type;
+	//Values used for depth sorted draw
+	if (layer.name === 'Background' || layer.name === 'BG Overlay') type = 0;
+	else type = 50;
+
+	let arrayIndex = 0;
+	for (let row = 0; row < layer.height; row++) {
+		for (let col = 0; col < layer.width; col++) {
+			if (layer.data[arrayIndex] > 0) {
+				console.log(layer.data[arrayIndex]);
+				let newTile = new TiledObject(arrayIndex, type, layer.data[arrayIndex]);
+				tileList.push(newTile);
+			}
+			arrayIndex++;
+		}
+	}
+}
+
+function loadObjects(objectgroup) {
+	let objects = objectgroup.objects;
+	for (let object of objects) {
+		if (objectDefinitions[object.type]) {
+			let newObject = loadCharacter(object.type);
+			newObject.x = object.x;
+			newObject.y = object.y;
+			enemyList.push(newObject)
+		}
+	}
+}
 
 function loadCharacter(type) {
 	let sprite = objectSprites[type];

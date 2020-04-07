@@ -131,6 +131,7 @@ window.onload = function () {
 
   colorRect(0, 0, canvas.width, canvas.height, 'orange'); // startup page
   colorText("Loading Images... please wait", 400, 300, 'black');
+  initTiledMaps();
   loadImages(); // Once images are loaded, imageLoadingDoneSoStartGame() is called to setup the rest.
 
 };
@@ -347,7 +348,7 @@ function updateItems() {
 
 function resetGame() { // @TODO: WIP full game reset, not connected to anything for now
 	levelNow = 7;
-	startQuestOne();
+  startQuestOne();
 	loadLevel();
 }
 

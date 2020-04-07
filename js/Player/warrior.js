@@ -85,7 +85,7 @@ function warriorClass(whichPlayerPic) {
   this.controlKeySword;
 
   this.isInsideAnyBuilding = false;
-  this.lastOpenDoorIndex = rowColToArrayIndex(4, 7);
+  this.lastOpenDoorIndex = -1;
   this.lastOpenDoorTile = TILE_FRONTDOOR_YELLOW;
 
   this.savePrefix = "player_";
