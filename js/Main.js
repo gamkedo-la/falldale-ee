@@ -327,17 +327,16 @@ function updateAll() {
 function moveAll() {
 
   if (menuScreen || isAtHealer || tileEditor || gamePaused) {
-    // no movement
+    moveParticles();
   } else if (!gamePaused) {
     redWarrior.move();
-    updateParticles();
+    moveParticles();
     for (var i = 0; i < enemyList.length; i++) {
       enemyList[ i ].move();
       if (enemyList[ i ].health > 0) {
         redWarrior.checkWarriorandWeaponCollisionAgainst(enemyList[ i ]);
       }
     }
-	updateParticles();
     camera.follow(redWarrior);
   }
 }
@@ -483,35 +482,6 @@ function statsDraw() {
   colorText("STR: " + redWarrior.stats.strength + "     DEX: " + redWarrior.stats.dexterity, canvas.width - 190, canvas.height - 120, "Black");
   colorText("CON: " + redWarrior.stats.constitution + "     INT: " + redWarrior.stats.intelligence, canvas.width - 190, canvas.height - 100, "Black");
   colorText("WIS: " + redWarrior.stats.wisdom + "     CHA: " + redWarrior.stats.charisma, canvas.width - 190, canvas.height - 80, "Black");
-}
-
-function drawMenuScreen() {
-  var instructionsXPos = 550;
-  var instructionsYPos = 200;
-  canvasContext.save();
-  //canvasContext.translate(stateScreenOffsetX, stateScreenOffsetY);
-  canvasContext.drawImage(titlepagePic, 0, 0); // blanks out the screen
-  colorRect(instructionsXPos - 20, 225, 250, 315, "midnightblue");
-  canvasContext.fillStyle = "white";
-  canvasContext.font = "45px Georgia";  
-  canvasContext.fillText("Falldale", 180, 200);
-  canvasContext.font = "20px Georgia";
-  colorText("", instructionsXPos, 150, "white");
-  colorText("", instructionsXPos, 200, "white");
-  colorText("", instructionsXPos, 225, "white");
-  colorText("Click anywhere to play", instructionsXPos, 255, "white");
-  canvasContext.font = "15px Georgia";
-  colorText("Move Left - Left Arrow", instructionsXPos, 300, "white");
-  colorText("Move Down - Down Arrow", instructionsXPos, 325, "white");
-  colorText("Move Right - Right Arrow", instructionsXPos, 350, "white");
-  colorText("Move Up - Up Arrow", instructionsXPos, 375, "white");
-  colorText("Sword Attack - Space bar", instructionsXPos, 400, "white");
-  colorText("Shoot Arrow - A", instructionsXPos, 425, "white");
-  colorText("Throw Rock - S", instructionsXPos, 450, "white");
-  colorText("Show Health - H", instructionsXPos, 475, "white");
-  colorText("Show Inventory - I", instructionsXPos, 500, "white");
-  colorText("Show Stats - O", instructionsXPos, 525, "white");
-  canvasContext.restore();
 }
 
 function drawCredits() {

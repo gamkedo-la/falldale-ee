@@ -371,10 +371,7 @@ function warriorClass(whichPlayerPic) {
 	this.width = 50; //temp solution until discovering what is overriding this.width????
     canvasContext.drawImage(this.myWarriorPic, this.sx, this.sy, this.width, this.height, Math.round(this.x), Math.round(this.y), this.width, this.height);
 
-    // for (var i = 0; i < PARTICLES_PER_TICK; i++) {
-    //   var tempParticle = new particleClass(this.x + 20, this.y, 'lime');
-    //   particle.push(tempParticle);
-    // }
+
 
     OverlayFX.maybeLeaveFootprint(this);
   };

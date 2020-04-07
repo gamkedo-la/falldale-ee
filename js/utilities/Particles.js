@@ -1,82 +1,96 @@
 const MIN_DECAY_TIME = .25;
-const MAX_DECAY_TIME = .50;
+const MAX_DECAY_TIME = 3;
 const MIN_PARTICLE_SPEED = .1;
-const MAX_PARTICLE_SPEED = 1;
-const PARTICLE_SIZE = 1;
+const MAX_PARTICLE_SPEED = 3;
+const PARTICLE_SIZE = 5;
 const DEFAULT_GRAVITY = .03;
 const PARTICLES_PER_TICK = 3;
 const TIME_PER_TICK = 5;
 
-var particle = [];
+var remX = 0,
+    remY = 0;
+var remW = 800,
+    remH = 600;
 
-function particleClass(posX, posY, color, optionalVelX, optionalVelY, optionalLifespan, optionalGravity) {
+function particleClass() {
+    this.x = 75;
+    this.y = 75;
+    this.velX = 5;
+    this.velY = -7;
+    this.amountOfParticles = 100;
+    this.readyToRemove = false;
+    this.cyclesLeft = 300;
+    this.myColor;
 
-  var x = posX;
-  var y = posY;
-  var size = PARTICLE_SIZE;
-  var decayTimer = MIN_DECAY_TIME + Math.random() * MAX_DECAY_TIME;
-  var speed = MIN_PARTICLE_SPEED + Math.random() * MAX_PARTICLE_SPEED;
-  var angle = (Math.random() * Math.PI * 2);
-  var velX = optionalVelX || Math.cos(angle) * speed;
-  var velY = optionalVelY || Math.sin(angle) * speed;
-  var color = color;
-  var gravity = DEFAULT_GRAVITY;
+    this.move = function() {
+        this.cyclesLeft--;
 
-  // maybe override defaults
-  if (optionalVelX != undefined) velX = optionalVelX;
-  if (optionalVelY != undefined) velY = optionalVelY;
-  if (optionalLifespan != undefined) decayTimer = optionalLifespan;
-  if (optionalGravity != undefined) gravity = optionalGravity;
+        if (this.cyclesLeft < 0) {
+            this.readyToRemove = true;
+        }
 
-  // var red = Math.round(Math.random() * 255);
-  // var blue = Math.round(Math.random() * 255);
-  // var green = Math.round(Math.random() * 255);
-  // var color = "rgb(" + red + "," + blue + "," + green + ")";
+        this.x += this.velX;
+        this.y += this.velY;
 
-
-  this.remove = false;
-
-  this.update = function () {
-    decayTimer -= TIME_PER_TICK;
-    if (decayTimer <= 0) {
-      this.remove = true;
     }
 
-
-    x += velX;
-    y += velY;
-    velY += gravity;
-  };
-
-  this.draw = function () {
-    colorRect(x, y, size, size, color);
-  }
+    this.draw = function() {
+        colorCircle(this.x, this.y, (20 * this.cyclesLeft / 130.0), this.myColor);
+    }
 }
 
-function updateParticles() {
-  for (var i = 0; i < particle.length; i++) {
-    particle[ i ].update();
-  }
-  for (var i = particle.length - 1; i >= 0; i--) {
-    particle[ i ].update();
-    if (particle[ i ].remove) {
-      particle.splice(i, 1);
+var smokeList = [];
+
+function addParticle(particleX, particleY, amount) {
+    var tempSmoke;
+
+    tempParticle = new particleClass();
+    tempParticle.x = particleX;
+    tempParticle.y = particleY;
+    tempParticle.velX = getRndInteger(-1, 1);
+    tempParticle.velY = getRndInteger(-7, 1);
+    tempParticle.cyclesLeft = 30 + Math.floor(Math.random() * 20);
+    tempParticle.amountOfParticles = amount;
+
+    var colorOptions = Math.random();
+    if (colorOptions < 0.25) {
+        tempParticle.myColor = "white";
+    } else if (colorOptions >= 0.25 && colorOptions <= 0.5) {
+        tempParticle.myColor = "rgba(100,149,237,.2)";
+    } else if (colorOptions > 0.5 && colorOptions <= 0.6) {
+        tempParticle.myColor = "rgba(100,149,237,.4)";
+    } else {
+        tempParticle.myColor = "rgba(100,149,237,.2)";
     }
-  }
+
+    particleList.push(tempParticle);
+}
+
+function removeSmoke() {
+    for (var i = 0; i < particleList.length; i++) {
+        if (particleList[i].x > remX &&
+            particleList[i].x < remX + remW &&
+            particleList[i].y > remY &&
+            particleList[i].y < remY + remH) {
+
+            particleList[i].readyToRemove = true;
+        }
+    }
+}
+
+function moveParticles() {
+    for (var i = 0; i < particleList.length; i++) {
+        particleList[i].move();
+    }
+    for (var i = particleList.length - 1; i >= 0; i--) {
+        if (particleList[i].readyToRemove) {
+            particleList.splice(i, 1);
+        }
+    }
 }
 
 function drawParticles() {
-  for (var i = 0; i < particle.length; i++) {
-    particle[ i ].draw();
-  }
-}
-
-// spawn multiple particles
-function particleFX(x, y, num, color, optionalVelX, optionalVelY, optionalLifespan, optionalGravity, optionalVelocityRandomness) {
-  optionalVelocityRandomness = optionalVelocityRandomness || 0;
-  for (var i = 0; i < num; i++) {
-    var wobbleX = optionalVelX + (Math.random() * optionalVelocityRandomness - (optionalVelocityRandomness / 2));
-    var wobbleY = optionalVelY + (Math.random() * optionalVelocityRandomness - (optionalVelocityRandomness / 2));
-    particle.push(new particleClass(x, y, color, optionalVelX ? wobbleX : optionalVelX, optionalVelY ? wobbleY : optionalVelY, optionalLifespan, optionalGravity));
-  }
+    for (var i = 0; i < particleList.length; i++) {
+        particleList[i].draw();
+    }
 }
