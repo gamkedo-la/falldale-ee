@@ -1,12 +1,3 @@
-const MIN_DECAY_TIME = .25;
-const MAX_DECAY_TIME = 3;
-const MIN_PARTICLE_SPEED = .1;
-const MAX_PARTICLE_SPEED = 3;
-const PARTICLE_SIZE = 5;
-const DEFAULT_GRAVITY = .03;
-const PARTICLES_PER_TICK = 3;
-const TIME_PER_TICK = 5;
-
 var remX = 0,
     remY = 0;
 var remW = 800,
@@ -15,8 +6,8 @@ var remW = 800,
 function particleClass() {
     this.x = 75;
     this.y = 75;
-    this.velX = 5;
-    this.velY = -7;
+    this.velX = 2;
+    this.velY = -2;
     this.amountOfParticles = 100;
     this.readyToRemove = false;
     this.cyclesLeft = 300;
@@ -48,7 +39,7 @@ function addParticle(particleX, particleY, amount) {
     tempParticle.x = particleX;
     tempParticle.y = particleY;
     tempParticle.velX = getRndInteger(-1, 1);
-    tempParticle.velY = getRndInteger(-7, 1);
+    tempParticle.velY = getRndInteger(-2, 1);
     tempParticle.cyclesLeft = 30 + Math.floor(Math.random() * 20);
     tempParticle.amountOfParticles = amount;
 

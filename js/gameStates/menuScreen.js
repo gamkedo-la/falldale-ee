@@ -1,6 +1,9 @@
+var cloud1X = 750;
+
 function drawMenuScreen() {
   var instructionsXPos = 550;
   var instructionsYPos = 550;
+  
   canvasContext.save();
   //canvasContext.translate(stateScreenOffsetX, stateScreenOffsetY);
   canvasContext.drawImage(titlepagePic, 0, 0); // blanks out the screen
@@ -13,6 +16,9 @@ function drawMenuScreen() {
   colorText("", instructionsXPos, 200, "white");
   colorText("", instructionsXPos, 225, "white");
   colorText("Click anywhere to play", instructionsXPos, 530, "white");
+  canvasContext.drawImage(cloudPic, cloud1X, 0);
+  canvasContext.drawImage(cloudPic, cloud1X + 900, 0);
+  moveCloud();
   addParticle(470, 290, 10);
   addParticle(480, 290, 10);
   addParticle(490, 290, 10);
@@ -28,4 +34,8 @@ function drawMenuScreen() {
   
   drawParticles();
   canvasContext.restore();
+}
+
+function moveCloud(){
+	cloud1X = cloud1X - 0.2;
 }

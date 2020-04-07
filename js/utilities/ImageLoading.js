@@ -10,6 +10,7 @@ var questGUIPic = document.createElement("img");
 var characterCreationBackgroundPic = document.createElement("img");
 var blueButtonPic = document.createElement("img");
 var greenButtonPic = document.createElement("img");
+var cloudPic = document.createElement("img");
 
 //player Pictures
 var warriorPic = document.createElement("img");
@@ -385,6 +386,7 @@ function loadImages() {
   { tileType: TILE_CASTLE_BATTLEMENT_BR, theFile: "castle/castle_battlement_br.png" },
 
     { varName: characterCreationBackgroundPic, theFile: "characterCreation.png" },
+	{ varName: cloudPic, theFile: "cloud.png" },
 	{ varName: questOnePic, theFile: "Quests/Quest1.png" },
     { varName: muteMusicPic, theFile: "muteMusic.png" },
 	{ varName: twigPic, theFile: "twigs.png" },
