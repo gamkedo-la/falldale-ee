@@ -1,4 +1,5 @@
 var titlepagePic = document.createElement("img");
+var wakingUpPic = document.createElement("img");
 var scrollBackgroundPic = document.createElement("img");
 var questOnePic = document.createElement("img");
 var storeFrontPic = document.createElement("img");
@@ -459,7 +460,8 @@ function loadImages() {
 	{ varName: blueButtonPic, theFile: "blueButton.png" },
 	{ varName: greenButtonPic, theFile: "greenButton.png" },
 	{ varName: boxPic, theFile: "box.png" },
-	{ varName: brokenBoxPic, theFile: "brokenBox.png" }
+	{ varName: brokenBoxPic, theFile: "brokenBox.png" },
+	{ varName: wakingUpPic, theFile: "wakingUp.png" }
   ];
 
   picsToLoad = imageList.length;
