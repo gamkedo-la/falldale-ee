@@ -1,0 +1,3 @@
+class Friend extends NPC {
+  
+}
