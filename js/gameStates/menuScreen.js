@@ -1,16 +1,21 @@
 var cloud1X = 750;
-var waterfallY = 165;
 var velWaterfallY = 2;
 var velRiverY = 0.5;
 var waterfallY = [165, 200, 235, 270];
+var waterFallPFX = [];
 var riverY = [290, 330, 370, 400, 450, 500, 550, 600]; 
-var warriorEyeNotSet = true;
+var isMenuSetUp = true;
 
 function drawMenuScreen() {
   var instructionsXPos = 550;
   var instructionsYPos = 550;
   
   canvasContext.save();
+  if(isMenuSetUp){
+	  warriorEyes = new eyesAnimationClass(338, 395, 0, animatedEyesPic);
+	  setUpWaterFall();
+	  isMenuSetUp = false;
+  }
   //canvasContext.translate(stateScreenOffsetX, stateScreenOffsetY);
   canvasContext.drawImage(titlepagePic, 0, 0); // blanks out the screen
  // colorRect(instructionsXPos - 20, 550, 250, 50, "midnightblue");
@@ -22,29 +27,18 @@ function drawMenuScreen() {
   canvasContext.drawImage(cloudPic, cloud1X, 0);
   canvasContext.drawImage(cloudPic, cloud1X + 900, 0);
   moveCloud();
-  addWaterFall();
+  drawWaterFall();
   moveWaterFall();
   addRiver();
   moveRiver();  
-  addParticle(470, 290, 10);
-  addParticle(480, 290, 10);
-  addParticle(490, 290, 10);
-  addParticle(500, 290, 10);
-  addParticle(510, 290, 10);
-  addParticle(520, 290, 10);
-  addParticle(530, 290, 10);
-  addParticle(540, 290, 10);
-  addParticle(550, 290, 10);
-  addParticle(560, 290, 10);
-  addParticle(570, 290, 10);
-  addParticle(580, 290, 10);
+  var baseOfWaterFallSplashY = 290;
+  for(var i = 0; i < 11; i++){
+	addParticle(470 + i * 10, baseOfWaterFallSplashY, 10);
+  }
   canvasContext.drawImage(falldalePic, 190, 100);
 
   drawParticles();
-  if(warriorEyeNotSet){
-	  warriorEyes = new eyesAnimationClass(338, 395, 0, animatedEyesPic);
-	  warriorEyeNotSet = false;
-  }
+
   warriorEyes.draw();
   canvasContext.restore();
 }
@@ -69,27 +63,32 @@ function moveCloud(){
 	cloud1X = cloud1X - 0.2;
 }
 
-function addWaterFall(x, y, width, height){
-	for(var i = 0; i < waterfallY.length; i++){
-		colorRect(490, waterfallY[i], 2, 15, "white");
-		colorRect(500, waterfallY[i]-10, 3, 13, "white");
-		colorRect(510, waterfallY[i], 3, 13, "white");
-		colorRect(520, waterfallY[i]-15, 2, 15, "white");
-		colorRect(530, waterfallY[i]-20, 3, 13, "white");
-		colorRect(540, waterfallY[i]-10, 3, 13, "white");
-		colorRect(550, waterfallY[i]-15, 2, 15, "white");
-		colorRect(560, waterfallY[i]-5, 3, 13, "white");
-		colorRect(570, waterfallY[i]-10, 3, 13, "white");
-		colorRect(580, waterfallY[i], 3, 13, "white");
+function setUpWaterFall(){
+	var waterFallLeftX = 490; 
+	var waterFallRightX = 580;
+	var waterFallTopY = 165;
+	var waterFallBottomY = 270;
+	waterFallPFX = [];
+	var waterFallAmount = 50;
+	for(var i = 0; i < waterFallAmount; i++){
+		waterFallPFX.push({x: randomIntFromInterval(waterFallLeftX,waterFallRightX), y:randomIntFromInterval(waterFallTopY,waterFallBottomY)})
+	}
+	
+}
+
+function drawWaterFall(x, y, width, height){
+	
+	for(var i = 0; i < waterFallPFX.length; i++){
+		colorRect(waterFallPFX[i].x, waterFallPFX[i].y, 2, 15, "white");
 	}	
 	colorRect(470,145, 110, 20, "rgba(112,146,191,1)");
 }
 
 function moveWaterFall(){
-	for(var i = 0; i < waterfallY.length; i++){
-		waterfallY[i] += velWaterfallY;
-		if(waterfallY[i] > 290){
-			waterfallY[i] = 165;
+	for(var i = 0; i < waterFallPFX.length; i++){
+		waterFallPFX[i].y += velWaterfallY;
+		if(waterFallPFX[i].y > 290){
+			waterFallPFX[i].y = 165;
 		}
 	}
 }
