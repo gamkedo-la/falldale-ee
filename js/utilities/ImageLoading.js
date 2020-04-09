@@ -1,4 +1,5 @@
 var titlepagePic = document.createElement("img");
+var falldalePic = document.createElement("img");
 var wakingUpPic = document.createElement("img");
 var scrollBackgroundPic = document.createElement("img");
 var questOnePic = document.createElement("img");
@@ -11,10 +12,9 @@ var characterCreationBackgroundPic = document.createElement("img");
 var blueButtonPic = document.createElement("img");
 var greenButtonPic = document.createElement("img");
 var cloudPic = document.createElement("img");
-
-//player Pictures
 var warriorPic = document.createElement("img");
 var warriorProfilePic = document.createElement("img");
+var animatedEyesPic = document.createElement("img");
 var swordPic = document.createElement("img");
 var clubPic = document.createElement("img");
 var bitePic = document.createElement("img");
@@ -385,8 +385,9 @@ function loadImages() {
   { tileType: TILE_CASTLE_BATTLEMENT_BC, theFile: "castle/castle_battlement_bc.png" },
   { tileType: TILE_CASTLE_BATTLEMENT_BR, theFile: "castle/castle_battlement_br.png" },
 
-    { varName: characterCreationBackgroundPic, theFile: "characterCreation.png" },
-	{ varName: cloudPic, theFile: "cloud.png" },
+    { varName: characterCreationBackgroundPic, theFile: "gameStates/characterCreation.png" },
+	{ varName: cloudPic, theFile: "gameStates/cloud.png" },
+	{ varName: falldalePic, theFile: "gameStates/falldale.png" },
 	{ varName: questOnePic, theFile: "Quests/Quest1.png" },
     { varName: muteMusicPic, theFile: "muteMusic.png" },
 	{ varName: twigPic, theFile: "twigs.png" },
@@ -431,7 +432,7 @@ function loadImages() {
     { varName: dicePic, theFile: "dice.png" },
     { varName: twentySidedDicePic, theFile: "20sided.png" },
     { varName: scrollBackgroundPic, theFile: "scrollBackground.png" },
-    { varName: titlepagePic, theFile: "background.png" },
+    { varName: titlepagePic, theFile: "gameStates/background.png" },
     { varName: shadowPic, theFile: "shadow.png" },
     { varName: shinyPic, theFile: "shiny.png" },
     { varName: falldaleMap, theFile: "falldaleMap.png" },
@@ -463,7 +464,9 @@ function loadImages() {
 	{ varName: greenButtonPic, theFile: "greenButton.png" },
 	{ varName: boxPic, theFile: "box.png" },
 	{ varName: brokenBoxPic, theFile: "brokenBox.png" },
-	{ varName: wakingUpPic, theFile: "wakingUp.png" }
+	{ varName: wakingUpPic, theFile: "Quests/wakingUp.png" },
+	{ varName: animatedEyesPic, theFile: "gameStates/eyes_original.png" }
+	
   ];
 
   picsToLoad = imageList.length;
