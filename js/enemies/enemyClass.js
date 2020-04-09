@@ -3,7 +3,6 @@ const GOTO_PLAYER = 0;
 const GOTO_CUTSCENE = 1;
 const GOTO_NONE = 2;
 
-
 function enemyReadyToRemove() {
     for (var i = 0; i < enemyList.length; i++) {
         if (enemyList[i].health <= 0) {
@@ -79,7 +78,6 @@ function enemyClass() {
     this.goToY = this.y;
     this.goToMode = GOTO_PLAYER;
 
-
     this.initialize = function(enemyName, enemyPicture, numberOfFrames = 6) {
         this.health = this.maxhealth;
         this.alive = this.health > 0;
@@ -88,6 +86,8 @@ function enemyClass() {
         this.myBite = new biteClass();
         this.displayHealthCountdown = this.healthCountdownSeconds * FRAMES_PER_SECOND;
         this.numberOfFrames = numberOfFrames;
+        // if enemy doesn't have a custom range use default
+        this.aiVisionRange = this.aiVisionRange || AI_VISION_RANGE
     };
 
     this.draw = function() {
@@ -245,17 +245,19 @@ function enemyClass() {
         if (this.goToMode == GOTO_PLAYER) {
             this.goToX = redWarrior.x;
             this.goToY = redWarrior.y;
+            this.speed = this.aggroSpeed || this.defaultSpeed
 
-            if (distToPlayer > AI_VISION_RANGE || redWarrior.isInsideAnyBuilding) {
+            if (distToPlayer > this.aiVisionRange || redWarrior.isInsideAnyBuilding) {
                 this.currentPath = null;
                 this.goToMode = GOTO_NONE;
+                this.speed = this.defaultSpeed
 				if(this.scriptID == 316){
 					console.log(this.myName + this.scriptID + " is no longer tracking player");
 				}
                 return null;
             }
         } else if (this.goToMode == GOTO_NONE) {
-            if (distToPlayer < AI_VISION_RANGE && !redWarrior.isInsideAnyBuilding) {
+            if (distToPlayer < this.aiVisionRange && !redWarrior.isInsideAnyBuilding) {
                 this.goToMode = GOTO_PLAYER;
 				if(this.scriptID == 316){
 					console.log(this.myName + this.scriptID + " is tracking the player.");

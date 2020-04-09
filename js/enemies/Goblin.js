@@ -1,11 +1,13 @@
-var goblinMoveSpeed = 2;
 const GOBLIN_TIME_BETWEEN_CHANGE_DIR = 100;
 var goblinsKilled = 0;
 
 goblinClass.prototype = new enemyClass();
 
 function goblinClass() {
-  this.speed = goblinMoveSpeed;
+  this.aiVisionRange = 360
+  this.defaultSpeed = 2
+  this.aggroSpeed = 5
+  this.speed = this.defaultSpeed;
   this.maxhealth = 4;
   this.myMelee = new clubClass();
   this.width = 42;
@@ -21,6 +23,8 @@ function goblinClass() {
   this.faceSouthMul = 0;
   this.shadowXOffset = 16;
   this.shadowYOffset = 20;
+  this.debugMovement = true
+  this.pather = new pathFinder()
 
   this.superClassInitialize = this.initialize;
   this.initialize = function (enemyName, enemyPic, numberOfFrames) {
