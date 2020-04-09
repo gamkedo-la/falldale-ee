@@ -43,7 +43,7 @@ function drawMenuScreen() {
   drawParticles();
   if(warriorEyeNotSet){
 	  warriorEyes = new eyesAnimationClass(338, 395, 0, animatedEyesPic);
-	  warriorEyeNotSet = true;
+	  warriorEyeNotSet = false;
   }
   warriorEyes.draw();
   canvasContext.restore();
@@ -98,7 +98,7 @@ function eyesAnimationClass(xPos,yPos, startFrame, whichPic){
 	this.x = xPos;
 	this.y = yPos;
 	this.eyesPicHeight = 20;
-	this.eyesPicWidth = 57;
+	this.eyesPicWidth = 60;
 	this.eyesFrames = 5;
 	this.animCycle = 0;
 	this.animCycleAdvance = startFrame;
@@ -108,14 +108,14 @@ function eyesAnimationClass(xPos,yPos, startFrame, whichPic){
 	this.draw = function(){
 		if(this.blink == false){
 			var toBlink = Math.random();
-			if(toBlink > .005){
+			if(toBlink < .005){
 				this.blink = true;
 			} else {
 				this.blink = false;
 			}
 		}
 
-		//if(this.blink){
+		if(this.blink){
 			this.animCycle++;
 			console.log(this.animCycle);
 			if(this.animCycle > 6){
@@ -126,7 +126,7 @@ function eyesAnimationClass(xPos,yPos, startFrame, whichPic){
 				this.animCycleAdvance = 0;
 				this.blink = false;
 			}
-		//}
+		}
 
 
 
