@@ -16,7 +16,7 @@
  "margin":0,
  "name":"tiles",
  "spacing":0,
- "tilecount":342,
+ "tilecount":334,
  "tiledversion":"1.3.3",
  "tileheight":150,
  "tiles":[
@@ -1095,42 +1095,6 @@
          "imagewidth":50
         }, 
         {
-         "id":219,
-         "image":"..\/images\/tiles\/castle_base_bc.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":220,
-         "image":"..\/images\/tiles\/castle_base_bl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":221,
-         "image":"..\/images\/tiles\/castle_base_br.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":222,
-         "image":"..\/images\/tiles\/castle_base_mc.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":223,
-         "image":"..\/images\/tiles\/castle_base_ml.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":224,
-         "image":"..\/images\/tiles\/castle_base_mr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
          "id":225,
          "image":"..\/images\/tiles\/castle_basea_b.png",
          "imageheight":50,
@@ -1317,24 +1281,6 @@
          "imagewidth":50
         }, 
         {
-         "id":256,
-         "image":"..\/images\/tiles\/castle_battlement_bc.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":257,
-         "image":"..\/images\/tiles\/castle_battlement_bl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":258,
-         "image":"..\/images\/tiles\/castle_battlement_br.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
          "id":259,
          "image":"..\/images\/tiles\/castle_battlement_btl.png",
          "imageheight":50,
@@ -1371,18 +1317,6 @@
          "imagewidth":50
         }, 
         {
-         "id":265,
-         "image":"..\/images\/tiles\/castle_battlement_ml.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":266,
-         "image":"..\/images\/tiles\/castle_battlement_mr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
          "id":267,
          "image":"..\/images\/tiles\/castle_battlement_r.png",
          "imageheight":50,
@@ -1403,24 +1337,6 @@
         {
          "id":270,
          "image":"..\/images\/tiles\/castle_battlement_t.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":271,
-         "image":"..\/images\/tiles\/castle_battlement_tc.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":272,
-         "image":"..\/images\/tiles\/castle_battlement_tl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":273,
-         "image":"..\/images\/tiles\/castle_battlement_tr.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -2007,12 +1923,6 @@
          "imagewidth":50
         }, 
         {
-         "id":371,
-         "image":"..\/images\/tiles\/castle_wall_int_tc2.png",
-         "imageheight":55,
-         "imagewidth":50
-        }, 
-        {
          "id":372,
          "image":"..\/images\/tiles\/castle_wall_int_tc2_b.png",
          "imageheight":50,
@@ -2022,12 +1932,6 @@
          "id":373,
          "image":"..\/images\/tiles\/castle_wall_int_tc2_t.png",
          "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":374,
-         "image":"..\/images\/tiles\/castle_wall_int_tc3.png",
-         "imageheight":62,
          "imagewidth":50
         }, 
         {
@@ -2069,6 +1973,54 @@
         {
          "id":381,
          "image":"..\/images\/tiles\/castle_window_int_t.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":382,
+         "image":"..\/images\/tiles\/castle_wall_int_ltt.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":383,
+         "image":"..\/images\/tiles\/castle_battlement_l2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":384,
+         "image":"..\/images\/tiles\/castle_battlement_ltt2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":385,
+         "image":"..\/images\/tiles\/castle_battlement_r2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":386,
+         "image":"..\/images\/tiles\/castle_battlement_ttr2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":387,
+         "image":"..\/images\/tiles\/castle_battlement_mc2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":388,
+         "image":"..\/images\/tiles\/castle_battlement_mc3.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":389,
+         "image":"..\/images\/tiles\/castle_battlement_mc4.png",
          "imageheight":50,
          "imagewidth":50
         }],
