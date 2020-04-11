@@ -181,7 +181,7 @@ function loadTileList(sheet) {
 		let tile = sheet.tiles[t];
 		let tileImage = document.createElement("img");
 		tileImage.src = tile.image;
-		newSheet.tileList.push(tileImage);
+		newSheet.tileList[tile.id] = tileImage;
 	}
 	tileSheets[sheet.name] = newSheet;
 }
@@ -235,7 +235,6 @@ function createTileObjects(layer) {
 	for (let row = 0; row < layer.height; row++) {
 		for (let col = 0; col < layer.width; col++) {
 			if (layer.data[arrayIndex] > 0) {
-				console.log(layer.data[arrayIndex]);
 				let newTile = new TiledObject(arrayIndex, type, layer.data[arrayIndex]);
 				tileList.push(newTile);
 			}
@@ -247,7 +246,12 @@ function createTileObjects(layer) {
 function loadObjects(objectgroup) {
 	let objects = objectgroup.objects;
 	for (let object of objects) {
-		if (objectDefinitions[object.type]) {
+		if (object.type === 'Rooftop') {
+			let newRoof = new Roof(object.x, object.y, object.height, object.width);
+			newRoof.type = 50;
+			tileList.push(newRoof);
+		}
+		else if (objectDefinitions[object.type]) {
 			let newObject = loadCharacter(object.type);
 			newObject.x = object.x;
 			newObject.y = object.y;
