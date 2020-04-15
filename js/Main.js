@@ -23,6 +23,8 @@ var inventoryScreen = false;
 var mapShow = false;
 var statsScreen = false;
 var scrollBackgroundScreen = true;
+var sprites = {};
+var zones = {};
 
 // Game States //
 
@@ -132,11 +134,21 @@ window.onload = function () {
   colorRect(0, 0, canvas.width, canvas.height, 'orange'); // startup page
   colorText("Loading Images... please wait", 400, 300, 'black');
   initTiledMaps();
+  sprites = new Sprites();
+  zones = new Zones();
+  sprites.Load(() => {
+    console.log("sprites done loading");
+    zones.Load(() => {
+        console.log("zones done loading");
+        imageLoadingDoneSoStartGame();
+    })
+  });
   loadImages(); // Once images are loaded, imageLoadingDoneSoStartGame() is called to setup the rest.
 
 };
 
 function imageLoadingDoneSoStartGame() {
+  console.log("starting game...");
   colorRect(0, 0, canvas.width, canvas.height, 'orange');
   setInterval(updateAll, 1000 / FRAMES_PER_SECOND);
 

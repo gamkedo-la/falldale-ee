@@ -5,7 +5,13 @@ function TiledObject(index, type, tile) {
 	this.y = Math.floor(index / ROOM_COLS) * this.height;
 	this.index = index;
 	this.type = type;
-	this.image = getTile(tile);
+	if (tile > 0) {
+		this.sprite = sprites.get(tile-1);
+		if (this.sprite) {
+			this.image = this.sprite.img;
+		}
+	}
+	//this.image = getTile(tile);
 
 	// add special fx for tiles that need it (glows, water, etc)
 	this.drawTileFX = function () {
@@ -43,6 +49,7 @@ function TiledObject(index, type, tile) {
 	};
 
 	this.draw = function () {
+		if (!this.image) return;
 		// draw the tile
 		canvasContext.drawImage(this.image, this.x, this.y);
 

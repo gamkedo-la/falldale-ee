@@ -16,7 +16,7 @@
  "margin":0,
  "name":"tiles",
  "spacing":0,
- "tilecount":351,
+ "tilecount":315,
  "tiledversion":"1.3.3",
  "tileheight":150,
  "tiles":[
@@ -1095,1034 +1095,818 @@
          "imagewidth":50
         }, 
         {
-         "id":225,
-         "image":"..\/images\/tiles\/castle_basea_b.png",
+         "id":407,
+         "image":"..\/images\/tiles\/castle_door_lr1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":226,
-         "image":"..\/images\/tiles\/castle_basea_btl.png",
+         "id":408,
+         "image":"..\/images\/tiles\/castle_door_lr2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":227,
-         "image":"..\/images\/tiles\/castle_basea_btr.png",
+         "id":409,
+         "image":"..\/images\/tiles\/castle_door_lr3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":228,
-         "image":"..\/images\/tiles\/castle_basea_l1.png",
+         "id":410,
+         "image":"..\/images\/tiles\/castle_door_lr4.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":229,
-         "image":"..\/images\/tiles\/castle_basea_l2.png",
+         "id":411,
+         "image":"..\/images\/tiles\/castle_door_lr5.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":230,
-         "image":"..\/images\/tiles\/castle_basea_l3.png",
+         "id":412,
+         "image":"..\/images\/tiles\/castle_door_lr6.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":231,
-         "image":"..\/images\/tiles\/castle_basea_l4.png",
+         "id":413,
+         "image":"..\/images\/tiles\/castle_door_lr7.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":232,
-         "image":"..\/images\/tiles\/castle_basea_ltb.png",
+         "id":414,
+         "image":"..\/images\/tiles\/castle_door_lr8.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":233,
-         "image":"..\/images\/tiles\/castle_basea_mc.png",
+         "id":415,
+         "image":"..\/images\/tiles\/castle_door_lr9.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":234,
-         "image":"..\/images\/tiles\/castle_basea_r1.png",
+         "id":416,
+         "image":"..\/images\/tiles\/castle_door_lr10.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":235,
-         "image":"..\/images\/tiles\/castle_basea_r2.png",
+         "id":417,
+         "image":"..\/images\/tiles\/castle_door_lr11.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":236,
-         "image":"..\/images\/tiles\/castle_basea_r3.png",
+         "id":418,
+         "image":"..\/images\/tiles\/castle_door_lr12.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":237,
-         "image":"..\/images\/tiles\/castle_basea_r4.png",
+         "id":419,
+         "image":"..\/images\/tiles\/castle_door_lr13.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":238,
-         "image":"..\/images\/tiles\/castle_basea_rtb.png",
+         "id":420,
+         "image":"..\/images\/tiles\/castle_door_lr14.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":239,
-         "image":"..\/images\/tiles\/castle_basea_window.png",
+         "id":421,
+         "image":"..\/images\/tiles\/castle_door_lr15.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":240,
-         "image":"..\/images\/tiles\/castle_baseb_b.png",
+         "id":422,
+         "image":"..\/images\/tiles\/castle_door_lr16.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":241,
-         "image":"..\/images\/tiles\/castle_baseb_btl.png",
+         "id":423,
+         "image":"..\/images\/tiles\/castle_door_t1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":242,
-         "image":"..\/images\/tiles\/castle_baseb_btr.png",
+         "id":424,
+         "image":"..\/images\/tiles\/castle_door_t2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":243,
-         "image":"..\/images\/tiles\/castle_baseb_l1.png",
+         "id":425,
+         "image":"..\/images\/tiles\/castle_wall_b1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":244,
-         "image":"..\/images\/tiles\/castle_baseb_l2.png",
+         "id":426,
+         "image":"..\/images\/tiles\/castle_wall_b2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":245,
-         "image":"..\/images\/tiles\/castle_baseb_l3.png",
+         "id":427,
+         "image":"..\/images\/tiles\/castle_wall_b3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":246,
-         "image":"..\/images\/tiles\/castle_baseb_l4.png",
+         "id":428,
+         "image":"..\/images\/tiles\/castle_wall_btl1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":247,
-         "image":"..\/images\/tiles\/castle_baseb_ltb.png",
+         "id":429,
+         "image":"..\/images\/tiles\/castle_wall_btl2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":248,
-         "image":"..\/images\/tiles\/castle_baseb_mc.png",
+         "id":430,
+         "image":"..\/images\/tiles\/castle_wall_btl3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":249,
-         "image":"..\/images\/tiles\/castle_baseb_r1.png",
+         "id":431,
+         "image":"..\/images\/tiles\/castle_wall_btl4.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":250,
-         "image":"..\/images\/tiles\/castle_baseb_r2.png",
+         "id":432,
+         "image":"..\/images\/tiles\/castle_wall_btl5.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":251,
-         "image":"..\/images\/tiles\/castle_baseb_r3.png",
+         "id":433,
+         "image":"..\/images\/tiles\/castle_wall_btr1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":252,
-         "image":"..\/images\/tiles\/castle_baseb_r4.png",
+         "id":434,
+         "image":"..\/images\/tiles\/castle_wall_btr2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":253,
-         "image":"..\/images\/tiles\/castle_baseb_rtb.png",
+         "id":435,
+         "image":"..\/images\/tiles\/castle_wall_btr3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":254,
-         "image":"..\/images\/tiles\/castle_baseb_window.png",
+         "id":436,
+         "image":"..\/images\/tiles\/castle_wall_lr1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":255,
-         "image":"..\/images\/tiles\/castle_battlement_b.png",
+         "id":437,
+         "image":"..\/images\/tiles\/castle_wall_lr2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":259,
+         "id":438,
+         "image":"..\/images\/tiles\/castle_wall_lr3.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":439,
+         "image":"..\/images\/tiles\/castle_wall_lr4.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":440,
+         "image":"..\/images\/tiles\/castle_wall_lr5.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":441,
+         "image":"..\/images\/tiles\/castle_wall_lr6.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":442,
+         "image":"..\/images\/tiles\/castle_wall_lr7.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":443,
+         "image":"..\/images\/tiles\/castle_wall_lr8.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":444,
+         "image":"..\/images\/tiles\/castle_wall_ltb1.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":445,
+         "image":"..\/images\/tiles\/castle_wall_ltb2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":446,
+         "image":"..\/images\/tiles\/castle_wall_ltb3.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":447,
+         "image":"..\/images\/tiles\/castle_wall_ltt1.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":448,
+         "image":"..\/images\/tiles\/castle_wall_ltt2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":449,
+         "image":"..\/images\/tiles\/castle_wall_rtb1.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":450,
+         "image":"..\/images\/tiles\/castle_wall_rtb2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":451,
+         "image":"..\/images\/tiles\/castle_wall_rtb3.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":452,
+         "image":"..\/images\/tiles\/castle_wall_rtb4.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":453,
+         "image":"..\/images\/tiles\/castle_wall_rtb5.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":454,
+         "image":"..\/images\/tiles\/castle_wall_rtt1.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":455,
+         "image":"..\/images\/tiles\/castle_wall_rtt2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":456,
+         "image":"..\/images\/tiles\/castle_wall_rtt3.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":457,
+         "image":"..\/images\/tiles\/castle_wall_rtt4.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":458,
+         "image":"..\/images\/tiles\/castle_wall_tc1.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":459,
+         "image":"..\/images\/tiles\/castle_wall_tc2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":460,
+         "image":"..\/images\/tiles\/castle_wall_tc3_b.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":461,
+         "image":"..\/images\/tiles\/castle_wall_tc3_t.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":462,
+         "image":"..\/images\/tiles\/castle_wall_tc4_b.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":463,
+         "image":"..\/images\/tiles\/castle_wall_tc4_t.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":464,
+         "image":"..\/images\/tiles\/castle_wall_tc5.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":465,
+         "image":"..\/images\/tiles\/castle_wall_ttl1.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":466,
+         "image":"..\/images\/tiles\/castle_wall_ttl2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":467,
+         "image":"..\/images\/tiles\/castle_wall_ttl3.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":468,
+         "image":"..\/images\/tiles\/castle_wall_ttl4.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":469,
+         "image":"..\/images\/tiles\/castle_wall_ttr1.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":470,
+         "image":"..\/images\/tiles\/castle_wall_ttr2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":471,
+         "image":"..\/images\/tiles\/castle_window1.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":472,
+         "image":"..\/images\/tiles\/castle_wall_btr4.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":473,
+         "image":"..\/images\/tiles\/castle_wall_ltb4.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":474,
+         "image":"..\/images\/tiles\/castle_wall_rtt5.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":475,
+         "image":"..\/images\/tiles\/castle_wall_ttl5.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":476,
+         "image":"..\/images\/tiles\/castle_battlement_b1.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":477,
+         "image":"..\/images\/tiles\/castle_battlement_b2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":478,
          "image":"..\/images\/tiles\/castle_battlement_btl.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":260,
+         "id":479,
          "image":"..\/images\/tiles\/castle_battlement_btr.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":261,
-         "image":"..\/images\/tiles\/castle_battlement_l.png",
+         "id":480,
+         "image":"..\/images\/tiles\/castle_battlement_l1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":262,
-         "image":"..\/images\/tiles\/castle_battlement_ltb.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":263,
-         "image":"..\/images\/tiles\/castle_battlement_ltt.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":264,
-         "image":"..\/images\/tiles\/castle_battlement_mc.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":267,
-         "image":"..\/images\/tiles\/castle_battlement_r.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":268,
-         "image":"..\/images\/tiles\/castle_battlement_rtb.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":269,
-         "image":"..\/images\/tiles\/castle_battlement_rtt.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":270,
-         "image":"..\/images\/tiles\/castle_battlement_t.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":274,
-         "image":"..\/images\/tiles\/castle_battlement_ttl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":275,
-         "image":"..\/images\/tiles\/castle_battlement_ttr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":276,
-         "image":"..\/images\/tiles\/castle_bga_b.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":277,
-         "image":"..\/images\/tiles\/castle_bga_bm.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":278,
-         "image":"..\/images\/tiles\/castle_bga_l.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":279,
-         "image":"..\/images\/tiles\/castle_bga_ltt.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":280,
-         "image":"..\/images\/tiles\/castle_bga_mc1.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":281,
-         "image":"..\/images\/tiles\/castle_bga_mc2.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":282,
-         "image":"..\/images\/tiles\/castle_bga_mc3.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":283,
-         "image":"..\/images\/tiles\/castle_bga_mc4.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":284,
-         "image":"..\/images\/tiles\/castle_bga_mc5.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":285,
-         "image":"..\/images\/tiles\/castle_bga_mc6.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":286,
-         "image":"..\/images\/tiles\/castle_bga_mc7.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":287,
-         "image":"..\/images\/tiles\/castle_bga_mc8.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":288,
-         "image":"..\/images\/tiles\/castle_bga_mtm.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":289,
-         "image":"..\/images\/tiles\/castle_bga_r.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":290,
-         "image":"..\/images\/tiles\/castle_bga_rtt.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":291,
-         "image":"..\/images\/tiles\/castle_bga_t.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":292,
-         "image":"..\/images\/tiles\/castle_bga_ttl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":293,
-         "image":"..\/images\/tiles\/castle_bga_ttm.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":294,
-         "image":"..\/images\/tiles\/castle_bga_ttr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":295,
-         "image":"..\/images\/tiles\/castle_bgb_mc1.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":296,
-         "image":"..\/images\/tiles\/castle_bgb_mc2.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":297,
-         "image":"..\/images\/tiles\/castle_bgb_mc3.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":298,
-         "image":"..\/images\/tiles\/castle_bgc_mc1.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":299,
-         "image":"..\/images\/tiles\/castle_door_int_b.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":300,
-         "image":"..\/images\/tiles\/castle_door_int_btr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":301,
-         "image":"..\/images\/tiles\/castle_door_int_l.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":302,
-         "image":"..\/images\/tiles\/castle_door_int_ltb.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":303,
-         "image":"..\/images\/tiles\/castle_door_int_m.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":304,
-         "image":"..\/images\/tiles\/castle_door_int_r.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":305,
-         "image":"..\/images\/tiles\/castle_door_int_t1.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":306,
-         "image":"..\/images\/tiles\/castle_door_int_t2.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":307,
-         "image":"..\/images\/tiles\/castle_doora_ext1.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":308,
-         "image":"..\/images\/tiles\/castle_doora_ext2.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":309,
-         "image":"..\/images\/tiles\/castle_doorb_ext1.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":310,
-         "image":"..\/images\/tiles\/castle_doorb_ext2.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":311,
-         "image":"..\/images\/tiles\/castle_gatea1_bl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":312,
-         "image":"..\/images\/tiles\/castle_gatea1_br.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":313,
-         "image":"..\/images\/tiles\/castle_gatea1_tl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":314,
-         "image":"..\/images\/tiles\/castle_gatea1_tr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":315,
-         "image":"..\/images\/tiles\/castle_gatea2_bl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":316,
-         "image":"..\/images\/tiles\/castle_gatea2_br.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":317,
-         "image":"..\/images\/tiles\/castle_gatea2_tl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":318,
-         "image":"..\/images\/tiles\/castle_gatea2_tr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":319,
-         "image":"..\/images\/tiles\/castle_gatea3_bl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":320,
-         "image":"..\/images\/tiles\/castle_gatea3_br.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":321,
-         "image":"..\/images\/tiles\/castle_gatea3_tl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":322,
-         "image":"..\/images\/tiles\/castle_gatea3_tr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":323,
-         "image":"..\/images\/tiles\/castle_gatea4_tl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":324,
-         "image":"..\/images\/tiles\/castle_gatea4_tr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":325,
-         "image":"..\/images\/tiles\/castle_gatea5_bl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":326,
-         "image":"..\/images\/tiles\/castle_gatea5_br.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":327,
-         "image":"..\/images\/tiles\/castle_gatea5_tl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":328,
-         "image":"..\/images\/tiles\/castle_gatea5_tr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":329,
-         "image":"..\/images\/tiles\/castle_gateb1_bl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":330,
-         "image":"..\/images\/tiles\/castle_gateb1_br.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":331,
-         "image":"..\/images\/tiles\/castle_gateb1_tl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":332,
-         "image":"..\/images\/tiles\/castle_gateb1_tr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":333,
-         "image":"..\/images\/tiles\/castle_gateb2_bl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":334,
-         "image":"..\/images\/tiles\/castle_gateb2_br.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":335,
-         "image":"..\/images\/tiles\/castle_gateb2_tl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":336,
-         "image":"..\/images\/tiles\/castle_gateb2_tr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":337,
-         "image":"..\/images\/tiles\/castle_gateb3_bl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":338,
-         "image":"..\/images\/tiles\/castle_gateb3_br.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":339,
-         "image":"..\/images\/tiles\/castle_gateb3_tl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":340,
-         "image":"..\/images\/tiles\/castle_gateb3_tr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":341,
-         "image":"..\/images\/tiles\/castle_gateb4_tl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":342,
-         "image":"..\/images\/tiles\/castle_gateb4_tr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":343,
-         "image":"..\/images\/tiles\/castle_gateb5_bl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":344,
-         "image":"..\/images\/tiles\/castle_gateb5_br.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":345,
-         "image":"..\/images\/tiles\/castle_gateb5_tl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":346,
-         "image":"..\/images\/tiles\/castle_gateb5_tr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":347,
-         "image":"..\/images\/tiles\/castle_pillara_bl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":348,
-         "image":"..\/images\/tiles\/castle_pillara_br.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":349,
-         "image":"..\/images\/tiles\/castle_pillara_l.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":350,
-         "image":"..\/images\/tiles\/castle_pillara_r.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":351,
-         "image":"..\/images\/tiles\/castle_pillara_tl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":352,
-         "image":"..\/images\/tiles\/castle_pillara_tr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":353,
-         "image":"..\/images\/tiles\/castle_pillarb_bl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":354,
-         "image":"..\/images\/tiles\/castle_pillarb_br.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":355,
-         "image":"..\/images\/tiles\/castle_pillarb_l.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":356,
-         "image":"..\/images\/tiles\/castle_pillarb_r.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":357,
-         "image":"..\/images\/tiles\/castle_pillarb_tl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":358,
-         "image":"..\/images\/tiles\/castle_pillarb_tr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":359,
-         "image":"..\/images\/tiles\/castle_wall_int_b.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":360,
-         "image":"..\/images\/tiles\/castle_wall_int_btl_b.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":361,
-         "image":"..\/images\/tiles\/castle_wall_int_btl_t.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":362,
-         "image":"..\/images\/tiles\/castle_wall_int_btr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":363,
-         "image":"..\/images\/tiles\/castle_wall_int_l.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":364,
-         "image":"..\/images\/tiles\/castle_wall_int_ltb.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":365,
-         "image":"..\/images\/tiles\/castle_wall_int_m.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":366,
-         "image":"..\/images\/tiles\/castle_wall_int_r.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":367,
-         "image":"..\/images\/tiles\/castle_wall_int_rtt.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":368,
-         "image":"..\/images\/tiles\/castle_wall_int_rtt_b.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":369,
-         "image":"..\/images\/tiles\/castle_wall_int_rtt_t.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":370,
-         "image":"..\/images\/tiles\/castle_wall_int_tc1.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":372,
-         "image":"..\/images\/tiles\/castle_wall_int_tc2_b.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":373,
-         "image":"..\/images\/tiles\/castle_wall_int_tc2_t.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":375,
-         "image":"..\/images\/tiles\/castle_wall_int_tc3_b.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":376,
-         "image":"..\/images\/tiles\/castle_wall_int_tc3_t.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":377,
-         "image":"..\/images\/tiles\/castle_wall_int_tc4.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":378,
-         "image":"..\/images\/tiles\/castle_wall_int_ttl.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":379,
-         "image":"..\/images\/tiles\/castle_wall_int_ttm.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":380,
-         "image":"..\/images\/tiles\/castle_wall_int_ttr.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":381,
-         "image":"..\/images\/tiles\/castle_window_int_t.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":382,
-         "image":"..\/images\/tiles\/castle_wall_int_ltt.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":383,
+         "id":481,
          "image":"..\/images\/tiles\/castle_battlement_l2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":384,
-         "image":"..\/images\/tiles\/castle_battlement_ltt2.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":385,
-         "image":"..\/images\/tiles\/castle_battlement_r2.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":386,
-         "image":"..\/images\/tiles\/castle_battlement_ttr2.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":387,
-         "image":"..\/images\/tiles\/castle_battlement_mc2.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":388,
-         "image":"..\/images\/tiles\/castle_battlement_mc3.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":389,
-         "image":"..\/images\/tiles\/castle_battlement_mc4.png",
-         "imageheight":50,
-         "imagewidth":50
-        }, 
-        {
-         "id":390,
+         "id":482,
          "image":"..\/images\/tiles\/castle_battlement_l3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":391,
-         "image":"..\/images\/tiles\/castle_battlement_r3.png",
+         "id":483,
+         "image":"..\/images\/tiles\/castle_battlement_ltb.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":392,
+         "id":484,
+         "image":"..\/images\/tiles\/castle_battlement_ltt1.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":485,
+         "image":"..\/images\/tiles\/castle_battlement_ltt2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":486,
+         "image":"..\/images\/tiles\/castle_battlement_mc1.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":487,
+         "image":"..\/images\/tiles\/castle_battlement_mc2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":488,
+         "image":"..\/images\/tiles\/castle_battlement_mc3.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":489,
+         "image":"..\/images\/tiles\/castle_battlement_mc4.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":490,
          "image":"..\/images\/tiles\/castle_battlement_mc5.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":393,
+         "id":491,
          "image":"..\/images\/tiles\/castle_battlement_mc6.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":394,
+         "id":492,
          "image":"..\/images\/tiles\/castle_battlement_mc7.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":395,
+         "id":493,
          "image":"..\/images\/tiles\/castle_battlement_mc8.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":396,
+         "id":494,
          "image":"..\/images\/tiles\/castle_battlement_mc9.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":397,
+         "id":495,
          "image":"..\/images\/tiles\/castle_battlement_mc10.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":398,
-         "image":"..\/images\/tiles\/castle_battlement_mc11.png",
+         "id":496,
+         "image":"..\/images\/tiles\/castle_battlement_r1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":399,
-         "image":"..\/images\/tiles\/castle_battlement_mc12.png",
+         "id":497,
+         "image":"..\/images\/tiles\/castle_battlement_r2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":400,
-         "image":"..\/images\/tiles\/castle_battlement_mc13.png",
+         "id":498,
+         "image":"..\/images\/tiles\/castle_battlement_r3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":401,
-         "image":"..\/images\/tiles\/castle_wall_int_ltt2.png",
+         "id":499,
+         "image":"..\/images\/tiles\/castle_battlement_rtb.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":402,
-         "image":"..\/images\/tiles\/castle_wall_int_rtt2.png",
+         "id":500,
+         "image":"..\/images\/tiles\/castle_battlement_rtt.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":403,
-         "image":"..\/images\/tiles\/castle_wall_int_tc5.png",
+         "id":501,
+         "image":"..\/images\/tiles\/castle_battlement_t.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":404,
-         "image":"..\/images\/tiles\/castle_wall_int_tc6.png",
+         "id":502,
+         "image":"..\/images\/tiles\/castle_battlement_ttl.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":405,
-         "image":"..\/images\/tiles\/castle_wall_int_ttl2.png",
+         "id":503,
+         "image":"..\/images\/tiles\/castle_battlement_ttr1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
-         "id":406,
-         "image":"..\/images\/tiles\/castle_wall_int_ttr2.png",
+         "id":504,
+         "image":"..\/images\/tiles\/castle_battlement_ttr2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":505,
+         "image":"..\/images\/tiles\/castle_door_b1.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":506,
+         "image":"..\/images\/tiles\/castle_door_b2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":507,
+         "image":"..\/images\/tiles\/castle_gate1_bl.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":508,
+         "image":"..\/images\/tiles\/castle_gate1_br.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":509,
+         "image":"..\/images\/tiles\/castle_gate1_tl.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":510,
+         "image":"..\/images\/tiles\/castle_gate1_tr.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":511,
+         "image":"..\/images\/tiles\/castle_gate2_bl.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":512,
+         "image":"..\/images\/tiles\/castle_gate2_br.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":513,
+         "image":"..\/images\/tiles\/castle_gate2_tl.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":514,
+         "image":"..\/images\/tiles\/castle_gate2_tr.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":515,
+         "image":"..\/images\/tiles\/castle_gate3_bl.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":516,
+         "image":"..\/images\/tiles\/castle_gate3_br.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":517,
+         "image":"..\/images\/tiles\/castle_gate3_tl.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":518,
+         "image":"..\/images\/tiles\/castle_gate3_tr.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":519,
+         "image":"..\/images\/tiles\/castle_gate4_bl.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":520,
+         "image":"..\/images\/tiles\/castle_gate4_br.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":521,
+         "image":"..\/images\/tiles\/castle_gate4_tl.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":522,
+         "image":"..\/images\/tiles\/castle_gate4_tr.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":523,
+         "image":"..\/images\/tiles\/castle_gate5_tl.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":524,
+         "image":"..\/images\/tiles\/castle_gate5_tr.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":525,
+         "image":"..\/images\/tiles\/castle_pillar_bl.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":526,
+         "image":"..\/images\/tiles\/castle_pillar_br.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":527,
+         "image":"..\/images\/tiles\/castle_pillar_ml.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":528,
+         "image":"..\/images\/tiles\/castle_pillar_mr.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":529,
+         "image":"..\/images\/tiles\/castle_pillar_tl.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":530,
+         "image":"..\/images\/tiles\/castle_pillar_tr.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":531,
+         "image":"..\/images\/tiles\/castle_wall_l1.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":532,
+         "image":"..\/images\/tiles\/castle_wall_l2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":533,
+         "image":"..\/images\/tiles\/castle_wall_l3.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":534,
+         "image":"..\/images\/tiles\/castle_wall_l4.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":535,
+         "image":"..\/images\/tiles\/castle_wall_l5.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":536,
+         "image":"..\/images\/tiles\/castle_wall_mc1.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":537,
+         "image":"..\/images\/tiles\/castle_wall_r1.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":538,
+         "image":"..\/images\/tiles\/castle_wall_r2.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":539,
+         "image":"..\/images\/tiles\/castle_wall_r3.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":540,
+         "image":"..\/images\/tiles\/castle_wall_r4.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":541,
+         "image":"..\/images\/tiles\/castle_wall_r5.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":542,
+         "image":"..\/images\/tiles\/castle_window2.png",
          "imageheight":50,
          "imagewidth":50
         }],
