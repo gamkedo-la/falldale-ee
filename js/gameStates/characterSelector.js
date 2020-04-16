@@ -106,9 +106,9 @@ function selectCharacter(index){
 }
 
 function launchGame() {
-  //loadLevel();
+  loadLevel();
   //loadTiledMap(TileMaps['level1']);
-  loadTiledMap(zones.startingZone);
+  //loadTiledMap(zones.startingZone);
   characterSelectionScreen = false;
   scrollBackgroundScreen = true;
 

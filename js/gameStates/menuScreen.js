@@ -116,7 +116,7 @@ function eyesAnimationClass(xPos,yPos, startFrame, whichPic){
 
 		if(this.blink){
 			this.animCycle++;
-			console.log(this.animCycle);
+			//console.log(this.animCycle);
 			if(this.animCycle > 6){
 				this.animCycle = 0;
 				this.animCycleAdvance++

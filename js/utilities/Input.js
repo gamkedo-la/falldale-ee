@@ -192,7 +192,7 @@ function keyPressed(evt) {
       if (tileEditor) {
         tileEditor = false;
         levelNow = 0;//0=fallDale
-        loadLevel(levelList[ levelNow ]);
+        loadLevel();
         dialogManager.setDialogWithCountdown("Exited Tile Editor Mode", 5);
 //                dialog = "Exited Tile Editor Mode";
       } else {

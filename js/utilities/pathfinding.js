@@ -62,28 +62,28 @@ function pathFinder() {
 		var left = indexLeftofIndex(index);
 		var right = indexRightOfIndex(index);
 
-		var grid = levelList[ levelNow ];
+		var grid = roomGrid;
 
 		if (above != null) { //checking if tile above is present and adding it to result
-		if (isPassable(levelList[ levelNow ][ above ])) {
+		if (isPassable(grid[ above ])) {
 			result.push(above);
             }
         }
 
         if (below != null) { //checking if tile below is present and adding it to result
-		  if (isPassable(levelList[ levelNow ][ below ])) {
+		  if (isPassable(grid[ below ])) {
 			result.push(below);
 		  }
         }
 
         if (left != null) { //checking if tile to the left is present and adding it to result
-		  if (isPassable(levelList[ levelNow ][ left ])) {
+		  if (isPassable(grid[ left ])) {
 			result.push(left);
 		  }
         }
 
         if (right != null) { //checking if tile to the right is present and adding it to result
-		  if (isPassable(levelList[ levelNow ][ right ])) {
+		  if (isPassable(grid[ right ])) {
 			result.push(right);
 		  }
         }

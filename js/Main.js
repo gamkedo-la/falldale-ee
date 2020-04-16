@@ -217,16 +217,21 @@ function backgroundMusicSelect() {
 function loadLevel() {
   recalulateLevelNow();
   var whichLevel = levelList[ levelNow ];
-  roomGrid = whichLevel.slice();
+  // load the level
+  currentLevel = zones.get(whichLevel);
+  loadTiledMap(currentLevel)
+
+  //roomGrid = whichLevel.slice();
   if (previousLevelNow == 7 && redWarrior.questOneComplete == false) {
 	startQuestOne();
   }
   
-  enemyList.splice(0, enemyList.length); //Empty enemyList
-  tileList.splice(0, tileList.length); //Empty tileList
-  animateList.splice(0, animateList.length); //Empty animateList
+  //enemyList.splice(0, enemyList.length); //Empty enemyList
+  //tileList.splice(0, tileList.length); //Empty tileList
+  //animateList.splice(0, animateList.length); //Empty animateList
   backgroundMusicSelect();
 
+  /*
   var arrayIndex = 0;
   for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) {
     for (var eachCol = 0; eachCol < ROOM_COLS; eachCol++) {
@@ -317,6 +322,7 @@ function loadLevel() {
       arrayIndex++;
     } //end of col for
   } // end of row for
+  */
 
   if (levelNow == 7 && redWarrior.questOneComplete == false && firstQuestLoad) {
   	enemyList = [];

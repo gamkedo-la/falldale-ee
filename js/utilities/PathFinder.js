@@ -13,7 +13,7 @@ function Pathfinder() {
     let neighbors = neighborsForIndex(start);
     let currentDistance = 1;
 
-    while (frontier.size <= levelList[ levelNow ].length) {
+    while (frontier.size <= roomGrid.length) {
       let newNeighbors = [];
       for (let i = 0; i < neighbors.length; i++) {
         const frontierSize = frontier.size;
@@ -30,7 +30,7 @@ function Pathfinder() {
     }
 
     let string = "";
-    for (let j = 0; j < levelList[ levelNow ].length; j++) {
+    for (let j = 0; j < roomGrid.length; j++) {
       let distString = distances[ j ].toString();
       if (distString.length < 2) {
         distString = ("0" + distString);
@@ -78,7 +78,7 @@ function Pathfinder() {
 
   const indexBelowIndex = function (index) {
     const result = index + ROOM_COLS;
-    if (result > levelList[ levelNow ].length) {
+    if (result > roomGrid.length) {
       return null;
     } else {
       return result;
@@ -96,7 +96,7 @@ function Pathfinder() {
 
   const indexRightOfIndex = function (index) {
     const result = index + 1;
-    if (result > levelList[ levelNow ].length) {
+    if (result > roomGrid.length) {
       return null;
     } else {
       return result;
