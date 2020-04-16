@@ -57,7 +57,7 @@ function checkForQuestOneComplete() {
     backgroundMusic.loopSong("have-a-nice-beer");
     OverlayFX.nightMode = false;
     levelList[ 7 ] = fallDale2;
-    redWarrior.questOneActive = false;
+    redWarrior.quest.oneActive = false;
     questOneCompletionScreenActive  = true;
   }
 

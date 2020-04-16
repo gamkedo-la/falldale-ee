@@ -634,13 +634,13 @@ var guiOffsetX = 0;
   canvasContext.drawImage(questGUIPic,4,4);
   questionProgressionFont = "25px endor_altregular"
 
-  if (redWarrior.questOneActive) {
+  if (redWarrior.quest.oneActive) {
     barW = Math.floor(barMaxW*goblinsKilledInFallDale/10);
     colorRect(barX,barY,barW,barH,barC);
     drawTextCentered("Falldale Quest Progress:", tx, ty1, "#3d3126", questionProgressionFont);
     drawTextCentered(goblinsKilledInFallDale + " of 10 Goblins Killed", tx, ty2, "#3d3126", questionProgressionFont);
   }
-  else if (redWarrior.questTwoActive) {
+  else if (redWarrior.quest.twoActive) {
     barW = Math.floor(barMaxW*(goblinsKilledInForest+orcsKilledInForest)/20);
     colorRect(barX,barY,barW,barH,barC);
     //drawTextCentered(goblinsKilledInForest + "  of 10 Goblins killed in the forest.", tx, ty1, "#3d3126", "14px");
@@ -649,7 +649,7 @@ var guiOffsetX = 0;
     drawTextCentered(goblinsKilledInForest + "  of 10 Goblins and " +
       orcsKilledInForest + " of 10 Orcs", tx, ty2, "#3d3126", questionProgressionFont);
   }
-  else if (redWarrior.questThreeActive) {
+  else if (redWarrior.quest.threeActive) {
     barW = Math.floor(barMaxW*(skeletonsKilledInGraveyardOneorTwo+zombiesKilledInGraveyardOneorTwo)/40);
     colorRect(barX,barY,barW,barH,barC);
     //drawTextCentered(skeletonsKilledInGraveyardOneorTwo + " of 20 Skeletons killed in the forest.", tx, ty1, "#3d3126", "14px");

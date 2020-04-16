@@ -20,6 +20,7 @@ function removeEnemy() {
 }
 
 function enemyClass() {
+    this.stats = new Stats;
     this.type = "enemy";
     this.x = 0;
     this.y = 0;

@@ -4,9 +4,9 @@
 //and the Orc King attacking the village
 
 function questFiveComplete() {
-  redWarrior.questFiveComplete = true;
+  redWarrior.quest.fiveComplete = true;
   dialogManager.setDialogWithCountdown("The Druid Queen is dead!", 8);
   //levelList[ 9 ] = druidsGroove2;
-  redWarrior.questFiveActive = false;
+  redWarrior.quest.fiveActive = false;
   questFiveCompletionScreenActive = true;
 }

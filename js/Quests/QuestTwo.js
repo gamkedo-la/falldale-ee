@@ -5,7 +5,7 @@ var goblinsKilledInForest = 0;
 var orcsKilledInForest = 0;
 
 function countGoblinforQuestTwo() {
-  if (redWarrior.questTwoComplete == false) {
+  if (redWarrior.quest.twoComplete == false) {
     if (levelNow == 6 && goblinsKilledInForest < 10) { // located in Forest
       goblinsKilledInForest++;
       checkForQuestTwoComplete();
@@ -14,7 +14,7 @@ function countGoblinforQuestTwo() {
 }
 
 function countOrcforQuestTwo() {
-  if (redWarrior.questTwoComplete == false) {
+  if (redWarrior.quest.twoComplete == false) {
     if (levelNow == 6 && orcsKilledInForest < 10) { // located in Forest
       orcsKilledInForest++;
       checkForQuestTwoComplete();
@@ -26,13 +26,13 @@ function checkForQuestTwoComplete() {
   console.log('Checking for Quest Two')
   if (goblinsKilledInForest >= 10 && orcsKilledInForest >= 10) {
     console.log('Complete')
-	redWarrior.questTwoComplete = true;
+	redWarrior.quest.twoComplete = true;
     dialogManager.setDialogWithCountdown("I have van-quest all the Goblins and Orcs from the forest!", 8);
     backgroundMusic.loopSong("have-a-nice-beer");
     levelList[ 6 ] = forest2;
-    redWarrior.questTwoActive = false;
+    redWarrior.quest.twoActive = false;
     questTwoCompletionScreenActive = true;
-	console.log(redWarrior.questTwoComplete);
+	console.log(redWarrior.quest.twoComplete);
   }
 
 }
