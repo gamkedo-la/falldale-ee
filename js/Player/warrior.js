@@ -11,6 +11,7 @@ var levelExperienceArray = [ 0, 500, 2000, 4000, 6000, 10000, 16000, 26000, 4200
 function warriorClass(whichPlayerPic) {
   this.stats = new Stats();
   this.inventory = new Inventory();
+  this.quest = new Quest();
   this.direction = {x: 0, y: 1};
   this.rotation = this.direction;
   this.mySword = new swordClass();
@@ -45,24 +46,9 @@ function warriorClass(whichPlayerPic) {
   this.sx = 50;
   this.sy = this.height;
   this.playerMove = false;
-
-  
   this.armor = 10;
-  
   this.haveMap = false;
-  this.questOneActive = true;
   this.delkonRewardOffer = false;
-  this.questOneComplete = false;
-  this.questTwoActive = false;
-  this.questTwoComplete = false;
-  this.questThreeActive = false;
-  this.questThreeComplete = false;
-  this.questFourActive = false;
-  this.questFourComplete = false;
-  this.questFiveActive = false;
-  this.questFiveComplete = false;
-  this.questSixActive = false;
-  this.questSixComplete = false;
   this.goblinsKilledInFallDale = 0;
 
 

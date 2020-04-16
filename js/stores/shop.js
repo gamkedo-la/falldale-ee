@@ -15,7 +15,7 @@ function drawShop() {
   canvasContext.restore();
 
   if (!welcomeSpeech) {
-  	if (redWarrior.questTwoComplete) {
+  	if (redWarrior.quest.twoComplete) {
   	  shopKeeperFeedback = "Shop Keeper:  You could use this Ax for your journey through the woods.";
   	} else {
   	  shopKeeperFeedback = "Shop Keeper:  Hi, I'm the Shop Keeper.  I could use a better name.";
