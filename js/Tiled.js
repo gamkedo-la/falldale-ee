@@ -249,7 +249,7 @@ function loadObjects(objectgroup) {
 	let objects = objectgroup.objects;
 	for (let object of objects) {
 		if (object.type === 'Rooftop') {
-			let newRoof = new Roof(object.x, object.y, object.height, object.width);
+			let newRoof = new Rooftop(object.x, object.y, object.height, object.width);
 			newRoof.type = 50;
 			tileList.push(newRoof);
 		}
