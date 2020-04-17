@@ -10,7 +10,7 @@ const zoneFiles = [
 	"maps/falldale2.json",
 	"maps/eastWoods.json",
 	"maps/druidsGroove.json",
-	"maps/graveYard.json",
+	"maps/graveyard.json",
 	"maps/oldGraveYard.json",
 ]
 const startingZone = "falldale2";

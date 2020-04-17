@@ -810,7 +810,7 @@ var levelList = [orcKingforest, wizardsLayer, 	eastNorthWoods,  // 0, 1, 2
 var levelList = ["castle", 		"wizard", 		"eastNorthWoods",  // 0, 1, 2
 				"upperForest", 	"middleWoods", 	"eastMiddleWoods", // 3, 4, 5
 				"forest", 		"falldale2", 	"eastWoods", 	     // 6, 7, 8
-				"druidsGroove", "graveYard", 	"oldGraveYard"];   // 9, 10, 11
+				"druidsGroove", "graveyard", 	"oldGraveYard"];   // 9, 10, 11
 var levelRow = 2;
 var levelCol = 1;
 var levelNow = 0;  // 0 is invalid, will be using recalulateLevelNow() to initialize elsewhere
