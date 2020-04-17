@@ -16,7 +16,7 @@
  "margin":0,
  "name":"tiles",
  "spacing":0,
- "tilecount":361,
+ "tilecount":363,
  "tiledversion":"1.3.3",
  "tileheight":150,
  "tiles":[
@@ -2183,6 +2183,18 @@
         {
          "id":588,
          "image":"..\/images\/tiles\/castle_battlement_mc11.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":589,
+         "image":"..\/images\/tiles\/waterFallPlaceholder.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":590,
+         "image":"..\/images\/tiles\/waterPlaceholder.png",
          "imageheight":50,
          "imagewidth":50
         }],

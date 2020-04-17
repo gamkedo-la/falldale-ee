@@ -42,6 +42,7 @@ class Zones {
                 if (++loadCount >= zoneFiles.length) doneCb();
             };
             xhr.open("GET", path, true);
+            xhr.setRequestHeader("Cache-Control", "no-store");
             xhr.send();
         });
     }

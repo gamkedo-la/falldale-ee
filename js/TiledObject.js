@@ -1,3 +1,8 @@
+const fxImgMap = {
+	"waterPlaceholder": waterScrollImg,
+	"waterFallPlaceholder": waterFallsImg,
+};
+
 function TiledObject(index, type, tile) {
 	this.width = TILE_W;
 	this.height = TILE_H;
@@ -6,13 +11,13 @@ function TiledObject(index, type, tile) {
 	this.y = Math.floor(index / ROOM_COLS) * TILE_H;
 	this.index = index;
 	this.type = type;
-	if (tile > 0) {
-		this.sprite = sprites.get(tile-1);
-		if (this.sprite) {
-			this.image = this.sprite.img;
-			this.width = this.sprite.width;
-			this.height = this.sprite.height;
-		}
+	this.fxImage = {};
+	this.sprite = sprites.get(tile-1);
+	if (this.sprite) {
+		this.image = this.sprite.img;
+		this.width = this.sprite.width;
+		this.height = this.sprite.height;
+		this.fxImage = fxImgMap[this.sprite.name];
 	}
 	// adjust position based on height of tile
 	if (this.height > TILE_H) {
@@ -26,33 +31,14 @@ function TiledObject(index, type, tile) {
 	this.drawTileFX = function () {
 
 		// scrolling water effect
-		if (this.type == TILE_WATER ||
-			this.type == TILE_BRIDGE_UPPER ||
-			this.type == TILE_BRIDGE_LOWER) {
-			//console.log("we have scrolling water!");
-
+		if (this.fxImage) {
 			var offset = TILE_H - ((frameCounter * 0.5) % (TILE_H));
-
 			// the water-scroll image is large enough to have two tiles worth
-
-			canvasContext.drawImage(waterScrollImg,
+			canvasContext.drawImage(this.fxImage,
 				0, offset, 					// src x,y
 				TILE_W, TILE_H,	            // src w,h
 				this.x, this.y,		        // dst x,y
 				TILE_W, TILE_H);        	// dst w,h
-		}
-
-		if (this.type == TILE_WATERFALLS) {
-
-			var offset = TILE_H - ((frameCounter * 0.5) % (TILE_H));
-
-			canvasContext.drawImage(waterFallsImg,
-				0, offset, 					// src x,y
-				TILE_W, TILE_H,	            // src w,h
-				this.x, this.y,		        // dst x,y
-				TILE_W, TILE_H);        	// dst w,h
-			particleFX(this.x, this.y, 10, "white", .5, .5, 500, 5);
-			particleFX(200, 300, 30, 'white');
 		}
 
 	};
