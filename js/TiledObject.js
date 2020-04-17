@@ -1,16 +1,25 @@
 function TiledObject(index, type, tile) {
 	this.width = TILE_W;
 	this.height = TILE_H;
-	this.x = index % ROOM_COLS * this.width;
-	this.y = Math.floor(index / ROOM_COLS) * this.height;
+	// derive x,y from grid index based on width/height of grid
+	this.x = index % ROOM_COLS * TILE_W;
+	this.y = Math.floor(index / ROOM_COLS) * TILE_H;
 	this.index = index;
 	this.type = type;
 	if (tile > 0) {
 		this.sprite = sprites.get(tile-1);
 		if (this.sprite) {
 			this.image = this.sprite.img;
+			this.width = this.sprite.width;
+			this.height = this.sprite.height;
 		}
 	}
+	// adjust position based on height of tile
+	if (this.height > TILE_H) {
+		this.y -= (this.height - TILE_H);
+		if (this.y < 0) this.y = 0;
+	}
+
 	//this.image = getTile(tile);
 
 	// add special fx for tiles that need it (glows, water, etc)

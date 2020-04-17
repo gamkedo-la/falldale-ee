@@ -23,8 +23,8 @@ class Sprites {
 				path = spritePath + path.replace(/^.*[\\\/]/, '');
 				let name = path.replace(/^.*[\\\/]/, '');
 				name = name.substring(0, name.lastIndexOf('.'));
-                var width = record.width || spriteDfltSize;
-                var height = record.height || spriteDfltSize;
+                var width = record.imagewidth || spriteDfltSize;
+                var height = record.imageheight || spriteDfltSize;
                 var collider = record.collider;
                 var sprite = new Sprite(name, path, width, height, record.id, collider, () => {
                     if (++loadCount >= records.length) doneCb();
