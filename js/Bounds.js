@@ -8,6 +8,8 @@ class Bounds {
         this.height = height;
         this.maxX = minX+width;
         this.maxY = minY+height;
+        this.centerX = minX+width/2;
+        this.centerY = minY+height/2;
     }
 
     // STATIC FUNCTIONS ----------------------------------------------------
@@ -100,13 +102,22 @@ class Bounds {
         return false;
     }
 
+    extend(other) {
+        if (other.minX < this.minX) this.minX = other.minX;
+        if (other.maxX > this.maxX) this.maxX = other.maxX;
+        if (other.minY < this.minY) this.minY = other.minY;
+        if (other.maxY > this.maxY) this.maxY = other.maxY;
+        this.centerX = this.minX+this.width/2;
+        this.centerY = this.minY+this.height/2;
+    }
+
     draw(ctx) {
         ctx.strokeStyle = "red";
         if (ctx) ctx.strokeRect(this.minX, this.minY, this.width, this.height);
     }
 
     toString() {
-        return "[" + this.minX + "," + this.minY + ":" + this.maxX + "," + this.maxY + "]";
+        return "bounds[" + this.minX + "," + this.minY + ":" + this.maxX + "," + this.maxY + "]";
     }
 }
 
@@ -121,7 +132,6 @@ class BoundsSet {
             if (items[x].minX < this.minX) this.minX = items[x].minX;
             if (items[x].minY < this.minY) this.minY = items[x].minY;
         }
-        console.log("minx: " + this.minX + " miny: " + this.minY);
     }
 
     // PROPERTIES ----------------------------------------------------------
@@ -158,6 +168,6 @@ class BoundsSet {
     }
 
     toString() {
-        return this.items.toString();
+        return "set[" + this.length + "]: " + this.items.toString();
     }
 }

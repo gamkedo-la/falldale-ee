@@ -3,7 +3,8 @@ const fxImgMap = {
 	"waterFallPlaceholder": waterFallsImg,
 };
 
-function TiledObject(index, type, tile, dfltColliderKind) {
+function TiledObject(layer, index, type, tile, dfltColliderKind) {
+	this.layer = layer;
 	this.width = TILE_W;
 	this.height = TILE_H;
 	// derive x,y from grid index based on width/height of grid
@@ -11,18 +12,24 @@ function TiledObject(index, type, tile, dfltColliderKind) {
 	this.y = Math.floor(index / ROOM_COLS) * TILE_H;
 	this.index = index;
 	this.type = type;
-	this.fxImage = {};
-	this.sprite = sprites.get(tile-1);
-	if (this.sprite) {
-		this.image = this.sprite.img;
-		this.width = this.sprite.width;
-		this.height = this.sprite.height;
-		this.fxImage = fxImgMap[this.sprite.name];
-		if (this.sprite.collider) {
-			dfltColliderKind = this.sprite.collider;
+	this.fxImage = false;
+	this.collider = false;
+
+	this.setSprite = function(sprite) {
+		var collider = "none";
+		if (this.layer == "Midground") collider = "full";
+		if (sprite) {
+			this.sprite = sprite;
+			this.image = sprite.img;
+			this.width = sprite.width;
+			this.height = sprite.height;
+			this.fxImage = fxImgMap[sprite.name];
+			if (sprite.collider) collider = this.sprite.collider;
+			this.collider = Bounds.parse(collider, {x: this.x, y: this.y}, TILE_W);
 		}
-	}
-	this.collider = Bounds.parse(dfltColliderKind, {x: this.x, y: this.y}, TILE_W);
+	};
+
+	this.setSprite( sprites.get(tile-1) );
 	// adjust position based on height of tile
 	if (this.height > TILE_H) {
 		this.y -= (this.height - TILE_H);
@@ -54,12 +61,6 @@ function TiledObject(index, type, tile, dfltColliderKind) {
 
 		// optional sparkles, splashes, glows are drawn on top
 		this.drawTileFX();
-
-		// bridge needs to be drawn over top of flowing water
-		if (this.type == TILE_BRIDGE_UPPER ||
-			this.type == TILE_BRIDGE_LOWER) {
-			canvasContext.drawImage(this.image, this.x, this.y);
-		}
 
 		if (this.collider && canvasContext.dbgCollider) {
 			this.collider.draw(canvasContext)

@@ -239,7 +239,7 @@ function createTileObjects(layer) {
 	for (let row = 0; row < layer.height; row++) {
 		for (let col = 0; col < layer.width; col++) {
 			if (layer.data[arrayIndex] > 0) {
-				let newTile = new TiledObject(arrayIndex, type, layer.data[arrayIndex], dfltCollider);
+				let newTile = new TiledObject(layer.name, arrayIndex, type, layer.data[arrayIndex], dfltCollider);
 				if (newTile.collider) {
 					zoneCollider.add(newTile.collider);
 				}
@@ -274,4 +274,86 @@ function loadCharacter(type) {
 	character.initialize(type, sprite, frames);
 
 	return character;
+}
+
+function getLayer(name) {
+	if (currentLevel) {
+		for (var layer of currentLevel.layers) {
+			if (layer.name == name) {
+				return layer;
+			}
+		}
+	}
+	return {}
+}
+
+function getFloorSprite(x, y) {
+	var layer = getLayer("Background");
+	if (layer) {
+		let i = clampInt(floorInt(x, TILE_H), 0, ROOM_COLS);
+		let j = clampInt(floorInt(y, TILE_W), 0, ROOM_ROWS);
+		let index = i % ROOM_COLS + ROOM_COLS * j;
+		let id = layer.data[index] - 1;
+		return sprites.get(id);
+	}
+	return dfltSprite;
+}
+
+function getMidSprite(x, y) {
+	var layer = getLayer("Midground");
+	if (layer) {
+		let i = clampInt(floorInt(x, TILE_H), 0, ROOM_COLS);
+		let j = clampInt(floorInt(y, TILE_W), 0, ROOM_ROWS);
+		let index = i % ROOM_COLS + ROOM_COLS * j;
+		let id = layer.data[index] - 1;
+		return sprites.get(id);
+	}
+	return dfltSprite;
+}
+
+function getMidSpriteIndex(idx) {
+	var layer = getLayer("Midground");
+	if (layer) {
+		let id = layer.data[idx] - 1;
+		return sprites.get(id);
+	}
+	return dfltSprite;
+}
+
+function getHitIndices(hit) {
+	var indices = [];
+	if (hit) {
+		// minX, minY
+		let i = clampInt(floorInt(hit.minX, TILE_H), 0, ROOM_COLS);
+		let j = clampInt(floorInt(hit.minY, TILE_W), 0, ROOM_ROWS);
+		let index = i % ROOM_COLS + ROOM_COLS * j;
+		indices.push(index);
+		// minX, maxY
+		i = clampInt(floorInt(hit.minX, TILE_H), 0, ROOM_COLS);
+		j = clampInt(floorInt(hit.maxY, TILE_W), 0, ROOM_ROWS);
+		index = i % ROOM_COLS + ROOM_COLS * j;
+		if (!indices.includes(index)) indices.push(index);
+		// maxX, minY
+		i = clampInt(floorInt(hit.maxX, TILE_H), 0, ROOM_COLS);
+		j = clampInt(floorInt(hit.minY, TILE_W), 0, ROOM_ROWS);
+		index = i % ROOM_COLS + ROOM_COLS * j;
+		if (!indices.includes(index)) indices.push(index);
+		// maxX, maxY
+		i = clampInt(floorInt(hit.maxX, TILE_H), 0, ROOM_COLS);
+		j = clampInt(floorInt(hit.maxY, TILE_W), 0, ROOM_ROWS);
+		index = i % ROOM_COLS + ROOM_COLS * j;
+		if (!indices.includes(index)) indices.push(index);
+	}
+	return indices;
+}
+
+function setMidTileSprite(x, y, sprite) {
+	let i = clampInt(floorInt(x, TILE_H), 0, ROOM_COLS);
+	let j = clampInt(floorInt(y, TILE_W), 0, ROOM_ROWS);
+	let index = i % ROOM_COLS + ROOM_COLS * j;
+	for (var tile of tileList) {
+		if (tile.layer == "Midground" && tile.index == index) {
+			tile.setSprite(sprite);
+		}
+	}
 }

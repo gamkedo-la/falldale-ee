@@ -118,6 +118,7 @@ function loadImageForWorldCode(worldCode, fileName) {
 function loadImages() {
 
   var imageList = [
+    /*
     { tileType: TILE_ROAD, theFile: "worldRoad.png" },
     { tileType: TILE_OPEN_DOORWAY, theFile: "OpenDoorway.png" },
     
@@ -384,6 +385,7 @@ function loadImages() {
   { tileType: TILE_CASTLE_BATTLEMENT_BL, theFile: "castle/castle_battlement_bl.png" },
   { tileType: TILE_CASTLE_BATTLEMENT_BC, theFile: "castle/castle_battlement_bc.png" },
   { tileType: TILE_CASTLE_BATTLEMENT_BR, theFile: "castle/castle_battlement_br.png" },
+  */
 
     { varName: characterCreationBackgroundPic, theFile: "gameStates/characterCreation.png" },
 	{ varName: cloudPic, theFile: "gameStates/cloud.png" },

@@ -816,6 +816,7 @@ var levelCol = 1;
 var levelNow = 0;  // 0 is invalid, will be using recalulateLevelNow() to initialize elsewhere
 var previousLevelNow;
 var roomGrid = [];
+var currentLevel = {};
 
 
 const TILE_PLAYERSTART = 950;

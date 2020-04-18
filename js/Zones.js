@@ -85,18 +85,23 @@ class ZoneCollider {
         var endi = clampInt(floorInt(other.maxX, this.tileSize), 0, this.gwidth);
         var startj = clampInt(floorInt(other.minY, this.tileSize), 0, this.gheight);
         var endj = clampInt(floorInt(other.maxY, this.tileSize), 0, this.gheight);
+        var totalHit = false;
         for (var i=starti; i<=endi; i++) {
             for (var j=startj; j<=endj; j++) {
                 var colliders = this.get(i,j);
                 if (colliders) {
                     for (var x=0; x<colliders.length; x++) {
                         var hit = colliders[x].hit(other); 
-                        if (hit) return hit;
+                        if (!totalHit) {
+                            totalHit = hit;
+                        } else {
+                            totalHit.extend(hit);
+                        }
                     }
                 }
             }
         }
-        return false;
+        return totalHit;
     }
 
     reset() {

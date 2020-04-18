@@ -163,14 +163,16 @@ function warriorClass(whichPlayerPic) {
       return;
     }
 
+    var hitbox = false;
     if (this.prevX != nextX || this.prevY != nextY) {
       // check for collision in x axis
       var nextCollider = new Bounds(nextX+this.bounds.minX, this.y+this.bounds.minY, this.bounds.width, this.bounds.height);
       if (!debugMode && this.direction.x) {
         var hit = zoneCollider.hit(nextCollider);
-        if (hit) console.log("hit on x: " + hit);
+        //if (hit) console.log("hit on x: " + hit);
         // if hit, adjust x position so as not to walk into object to left/right
         if (hit) {
+          hitbox = hit;
           if (this.direction.x < 0) {
               nextX = hit.maxX + (nextX-nextCollider.minX) + 1;
           } else {
@@ -183,9 +185,14 @@ function warriorClass(whichPlayerPic) {
       var nextCollider = new Bounds(this.x+this.bounds.minX, nextY+this.bounds.minY, this.bounds.width, this.bounds.height);
       if (!debugMode && this.direction.y) {
         var hit = zoneCollider.hit(nextCollider);
-        if (hit) console.log("hit on y: " + hit);
+        //if (hit) console.log("hit on y: " + hit);
         // if hit, adjust y position so as not to walk into object to up/down
         if (hit) {
+          if (hitbox) {
+            hitbox.extend(hit);
+          } else {
+            hitbox = hit;
+          }
           if (this.direction.y < 0) {
               nextY = hit.maxY + (nextY-nextCollider.minY) + 1;
           } else {
@@ -195,9 +202,8 @@ function warriorClass(whichPlayerPic) {
       }
 
       //let collision = this.collisionCheck(nextX, nextY);
-      this.updatePosition(nextX, nextY);
-      // update our collider
-      this.collider = new Bounds(this.x+this.bounds.minX, this.y+this.bounds.minY, this.bounds.width, this.bounds.height);
+      var nextCollider = new Bounds(nextX+this.bounds.minX, nextY+this.bounds.minY, this.bounds.width, this.bounds.height);
+      this.updatePosition(nextX, nextY, nextCollider, hitbox);
     }
 
     this.checkForLevelUp()
@@ -729,31 +735,31 @@ function warriorClass(whichPlayerPic) {
     return { x: nextX, y: nextY };
   };
 
-  this.updatePosition = function (nextX, nextY) {
+  this.updatePosition = function (nextX, nextY, collider, hitbox) {
 
     let walkIntoTileIndex = this.indexOfNextTile(nextX, nextY);
     const walkIntoTileType = this.tileTypeForIndex(walkIntoTileIndex);
 
-    switch (walkIntoTileType) {
-      case TILE_GRASS:
-      case TILE_GARDEN:
-	  case TILE_GARDEN_1:
-	  case TILE_GARDEN_2:
-	  case TILE_GARDEN_3:
-	  case TILE_GARDEN_4:
-	  case TILE_GARDEN_5:
-	  case TILE_GARDEN_6:
-	  case TILE_GARDEN_7:
-	  case TILE_GARDEN_6:
-	  case TILE_GARDEN_7:
-        this.setSpeedAndPosition(PLAYER_SPEED_DEBUFF, nextX, nextY);
-        break;
-      default:
-        //const index = this.indexOfNextTile(nextX, nextY);
-        //const type = this.tileTypeForIndex(index);
-        //if (this.isPassableTile(type))
-        this.setSpeedAndPosition(PLAYER_SPEED, nextX, nextY);
+    // get floor sprite
+    var floorSprite = getFloorSprite(collider.centerX, collider.centerY);
+    var speed = floorSprite.speed;
+    var myIndex = getTileIndexAtPixelCoord(collider.centerX, collider.centerY);
+
+    // udpate position based on speed
+    this.setSpeedAndPosition(speed, nextX, nextY);
+    // update our collider
+    this.collider = new Bounds(this.x+this.bounds.minX, this.y+this.bounds.minY, this.bounds.width, this.bounds.height);
+
+    // get hit indices (takes into account collisions and what we would have walked into)
+    var hitIndices = getHitIndices(hitbox);
+
+    // iterate through hit indices
+    for (var idx of hitIndices) {
+      var sprite = getMidSpriteIndex(idx);
+      console.log("hit sprite: " + sprite);
     }
+
+
 
     switch (walkIntoTileType) {
       case TILE_TREE5FALLEN_BOTTOM:

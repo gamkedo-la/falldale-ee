@@ -672,7 +672,13 @@
          "id":138,
          "image":"..\/images\/tiles\/grass.png",
          "imageheight":51,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"speed",
+                 "type":"float",
+                 "value":4
+                }]
         }, 
         {
          "id":139,

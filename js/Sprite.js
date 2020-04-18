@@ -1,7 +1,7 @@
 // =========================================================================
 const spriteJson = "maps/tiles.json";
 const spritePath = "images/tiles/";
-const spriteDfltSize = 50;
+const spriteDfltSize = TILE_W;
 
 // =========================================================================
 class Sprites {
@@ -26,19 +26,23 @@ class Sprites {
                 var width = record.imagewidth || spriteDfltSize;
                 var height = record.imageheight || spriteDfltSize;
                 var collider = "";
+                var speed = PLAYER_SPEED;
                 // parse custom properties
                 if (record.properties) {
                     console.log("record has properties: " + record.properties);
                     record.properties.forEach(property => {
                         if (property.name == "collider") {
                             collider = property.value;
-                            console.log("found collider data: " + collider);
+                        }
+                        if (property.name == "speed") {
+                            speed = property.value;
                         }
                     });
                 }
                 var sprite = new Sprite(name, path, width, height, record.id, collider, () => {
                     if (++loadCount >= records.length) doneCb();
                 });
+                sprite.speed = speed;
 				this.spriteMap[record.id] = sprite;
                 this.spriteNameMap[name] = sprite;
             });
@@ -66,8 +70,19 @@ class Sprite {
         this.height = height;
         this.id = id;
         this.collider = collider;
-        this.img = new Image();
-        if (onload_cb != null) this.img.onload = onload_cb;
-        this.img.src = url;
+        this.speed = PLAYER_SPEED;
+        if (url) {
+            this.img = new Image();
+            if (onload_cb != null) this.img.onload = onload_cb;
+            this.img.src = url;
+        } else {
+            this.img = {};
+        }
+    }
+
+    toString() {
+        return this.name;
     }
 }
+
+const dfltSprite = new Sprite("dflt", "", TILE_W, TILE_H, -1, "", null);
