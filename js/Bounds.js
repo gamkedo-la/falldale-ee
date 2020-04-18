@@ -51,6 +51,11 @@ class Bounds {
                     new Bounds(pos.x, pos.y, tileSize*.5, tileSize),
                     new Bounds(pos.x+tileSize*.5, pos.y+tileSize*.5, tileSize*.5, tileSize*.5),
                 ]);
+            case "lbrq":
+                return new BoundsSet([
+                    new Bounds(pos.x, pos.y, tileSize*.25, tileSize),
+                    new Bounds(pos.x, pos.y+tileSize*.75, tileSize, tileSize*.25),
+                ]);
             case "rtl":
                 return new BoundsSet([
                     new Bounds(pos.x+tileSize*.5, pos.y, tileSize*.5, tileSize),
@@ -60,6 +65,11 @@ class Bounds {
                 return new BoundsSet([
                     new Bounds(pos.x+tileSize*.5, pos.y, tileSize*.5, tileSize),
                     new Bounds(pos.x, pos.y+tileSize*.5, tileSize*.5, tileSize*.5),
+                ]);
+            case "rblq":
+                return new BoundsSet([
+                    new Bounds(pos.x+tileSize*.75, pos.y, tileSize*.25, tileSize),
+                    new Bounds(pos.x, pos.y+tileSize*.75, tileSize, tileSize*.25),
                 ]);
         }
         return false;

@@ -18,6 +18,9 @@ function TiledObject(index, type, tile, dfltColliderKind) {
 		this.width = this.sprite.width;
 		this.height = this.sprite.height;
 		this.fxImage = fxImgMap[this.sprite.name];
+		if (this.sprite.collider) {
+			dfltColliderKind = this.sprite.collider;
+		}
 	}
 	this.collider = Bounds.parse(dfltColliderKind, {x: this.x, y: this.y}, TILE_W);
 	// adjust position based on height of tile

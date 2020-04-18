@@ -1026,31 +1026,61 @@
          "id":206,
          "image":"..\/images\/tiles\/woodwall_bc.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"bottomQtr"
+                }]
         }, 
         {
          "id":207,
          "image":"..\/images\/tiles\/woodwall_bl.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"lbrq"
+                }]
         }, 
         {
          "id":208,
          "image":"..\/images\/tiles\/woodwall_br.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"rblq"
+                }]
         }, 
         {
          "id":209,
          "image":"..\/images\/tiles\/woodwall_ml.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"leftQtr"
+                }]
         }, 
         {
          "id":210,
          "image":"..\/images\/tiles\/woodwall_mr.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"rightQtr"
+                }]
         }, 
         {
          "id":211,

@@ -25,7 +25,17 @@ class Sprites {
 				name = name.substring(0, name.lastIndexOf('.'));
                 var width = record.imagewidth || spriteDfltSize;
                 var height = record.imageheight || spriteDfltSize;
-                var collider = record.collider;
+                var collider = "";
+                // parse custom properties
+                if (record.properties) {
+                    console.log("record has properties: " + record.properties);
+                    record.properties.forEach(property => {
+                        if (property.name == "collider") {
+                            collider = property.value;
+                            console.log("found collider data: " + collider);
+                        }
+                    });
+                }
                 var sprite = new Sprite(name, path, width, height, record.id, collider, () => {
                     if (++loadCount >= records.length) doneCb();
                 });
@@ -34,6 +44,7 @@ class Sprites {
             });
         }
         xhr.open("GET", spriteJson, true);
+        xhr.setRequestHeader("Cache-Control", "no-store");
         xhr.send();
     }
 
