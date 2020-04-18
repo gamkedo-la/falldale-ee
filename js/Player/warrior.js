@@ -30,6 +30,8 @@ function warriorClass(whichPlayerPic) {
   this.isEnemyCollision = false;
   this.myWarriorPic = null; // which picture to use
   this.name = "Untitled warrior";
+  this.bounds = new Bounds(10,25,30,20);
+  this.collider = new Bounds(this.x+this.bounds.minX, this.y+this.bounds.minY, this.bounds.width, this.bounds.height);
   
   this.isTakingDamage = false;
   this.warriorHealthCountdownSeconds = 5;
@@ -162,8 +164,40 @@ function warriorClass(whichPlayerPic) {
     }
 
     if (this.prevX != nextX || this.prevY != nextY) {
-      let collision = this.collisionCheck(nextX, nextY);
-      this.updatePosition(collision.x, collision.y);
+      // check for collision in x axis
+      var nextCollider = new Bounds(nextX+this.bounds.minX, this.y+this.bounds.minY, this.bounds.width, this.bounds.height);
+      if (!debugMode && this.direction.x) {
+        var hit = zoneCollider.hit(nextCollider);
+        if (hit) console.log("hit on x: " + hit);
+        // if hit, adjust x position so as not to walk into object to left/right
+        if (hit) {
+          if (this.direction.x < 0) {
+              nextX = hit.maxX + (nextX-nextCollider.minX) + 1;
+          } else {
+              nextX = hit.minX - (nextCollider.width + nextCollider.minX-nextX) - 1;
+          }
+        }
+      }
+
+      // check for collision in y axis
+      var nextCollider = new Bounds(this.x+this.bounds.minX, nextY+this.bounds.minY, this.bounds.width, this.bounds.height);
+      if (!debugMode && this.direction.y) {
+        var hit = zoneCollider.hit(nextCollider);
+        if (hit) console.log("hit on y: " + hit);
+        // if hit, adjust y position so as not to walk into object to up/down
+        if (hit) {
+          if (this.direction.y < 0) {
+              nextY = hit.maxY + (nextY-nextCollider.minY) + 1;
+          } else {
+              nextY = hit.minY - (nextCollider.height + nextCollider.minY-nextY) - 1;
+          }
+        }
+      }
+
+      //let collision = this.collisionCheck(nextX, nextY);
+      this.updatePosition(nextX, nextY);
+      // update our collider
+      this.collider = new Bounds(this.x+this.bounds.minX, this.y+this.bounds.minY, this.bounds.width, this.bounds.height);
     }
 
     this.checkForLevelUp()
@@ -380,6 +414,10 @@ function warriorClass(whichPlayerPic) {
 
     if (debugMode) {
       this.drawDebug();
+    }
+
+    if (this.collider && canvasContext.dbgCollider) {
+      this.collider.draw(canvasContext);
     }
 
     if (this.rotation.y > 0 || this.rotation.x > 0) {
@@ -695,6 +733,27 @@ function warriorClass(whichPlayerPic) {
 
     let walkIntoTileIndex = this.indexOfNextTile(nextX, nextY);
     const walkIntoTileType = this.tileTypeForIndex(walkIntoTileIndex);
+
+    switch (walkIntoTileType) {
+      case TILE_GRASS:
+      case TILE_GARDEN:
+	  case TILE_GARDEN_1:
+	  case TILE_GARDEN_2:
+	  case TILE_GARDEN_3:
+	  case TILE_GARDEN_4:
+	  case TILE_GARDEN_5:
+	  case TILE_GARDEN_6:
+	  case TILE_GARDEN_7:
+	  case TILE_GARDEN_6:
+	  case TILE_GARDEN_7:
+        this.setSpeedAndPosition(PLAYER_SPEED_DEBUFF, nextX, nextY);
+        break;
+      default:
+        //const index = this.indexOfNextTile(nextX, nextY);
+        //const type = this.tileTypeForIndex(index);
+        //if (this.isPassableTile(type))
+        this.setSpeedAndPosition(PLAYER_SPEED, nextX, nextY);
+    }
 
     switch (walkIntoTileType) {
       case TILE_TREE5FALLEN_BOTTOM:

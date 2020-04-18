@@ -30,7 +30,7 @@ class Sprites {
                     if (++loadCount >= records.length) doneCb();
                 });
 				this.spriteMap[record.id] = sprite;
-				this.spriteNameMap[name] = sprite;
+                this.spriteNameMap[name] = sprite;
             });
         }
         xhr.open("GET", spriteJson, true);

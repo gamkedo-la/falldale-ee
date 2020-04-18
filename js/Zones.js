@@ -51,3 +51,56 @@ class Zones {
         return this.zoneMap[name];
     }
 }
+
+// =========================================================================
+class ZoneCollider {
+    constructor(gwidth, gheight, tileSize) {
+        this.gwidth = gwidth;
+        this.gheight = gheight;
+        this.tileSize = tileSize;
+        this.grid = new Array(gwidth*gheight);
+    }
+
+    get(i, j) {
+        i = clampInt(i, 0, this.gwidth);
+        j = clampInt(j, 0, this.gheight);
+        let index = i % this.gwidth + this.gwidth * j;
+        return this.grid[index];
+    }
+
+    add(collider) {
+        var i = clampInt(floorInt(collider.minX, this.tileSize), 0, this.gwidth);
+        var j = clampInt(floorInt(collider.minY, this.tileSize), 0, this.gheight);
+        let index = i % this.gwidth + this.gwidth * j;
+        if (this.grid[index]) {
+            this.grid[index].push(collider);
+        } else {
+            this.grid[index] = [ collider ];
+        }
+    }
+
+    // given other collider, lookup collider based on grid coordinates that overlap w/ bounds of other collider to determine hit
+    hit(other) {
+        var starti = clampInt(floorInt(other.minX, this.tileSize), 0, this.gwidth);
+        var endi = clampInt(floorInt(other.maxX, this.tileSize), 0, this.gwidth);
+        var startj = clampInt(floorInt(other.minY, this.tileSize), 0, this.gheight);
+        var endj = clampInt(floorInt(other.maxY, this.tileSize), 0, this.gheight);
+        for (var i=starti; i<=endi; i++) {
+            for (var j=startj; j<=endj; j++) {
+                var colliders = this.get(i,j);
+                if (colliders) {
+                    for (var x=0; x<colliders.length; x++) {
+                        var hit = colliders[x].hit(other); 
+                        if (hit) return hit;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    reset() {
+        this.grid = new Array(this.gwidth*this.gheight);
+    }
+
+}

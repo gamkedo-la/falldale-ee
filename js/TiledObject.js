@@ -3,7 +3,7 @@ const fxImgMap = {
 	"waterFallPlaceholder": waterFallsImg,
 };
 
-function TiledObject(index, type, tile) {
+function TiledObject(index, type, tile, dfltColliderKind) {
 	this.width = TILE_W;
 	this.height = TILE_H;
 	// derive x,y from grid index based on width/height of grid
@@ -19,6 +19,7 @@ function TiledObject(index, type, tile) {
 		this.height = this.sprite.height;
 		this.fxImage = fxImgMap[this.sprite.name];
 	}
+	this.collider = Bounds.parse(dfltColliderKind, {x: this.x, y: this.y}, TILE_W);
 	// adjust position based on height of tile
 	if (this.height > TILE_H) {
 		this.y -= (this.height - TILE_H);
@@ -55,6 +56,10 @@ function TiledObject(index, type, tile) {
 		if (this.type == TILE_BRIDGE_UPPER ||
 			this.type == TILE_BRIDGE_LOWER) {
 			canvasContext.drawImage(this.image, this.x, this.y);
+		}
+
+		if (this.collider && canvasContext.dbgCollider) {
+			this.collider.draw(canvasContext)
 		}
 
 	};

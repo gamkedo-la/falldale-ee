@@ -188,6 +188,7 @@ function keyPressed(evt) {
       statsScreen = !statsScreen
     } else if (evt.keyCode == debugModeKey || evt.keyCode === KEY_ZERO) {  ////////// remove this code for itch /////////////////
       debugMode = !debugMode
+      canvasContext.dbgCollider = debugMode;
     } else if (evt.keyCode == tileEditorModeKey) {
       if (tileEditor) {
         tileEditor = false;

@@ -101,3 +101,12 @@ function randomIntFromInterval(min,max) // min and max included
 function getRndInteger(min, max) {
   return Math.random() * (max - min) + min;
 }
+
+function clampInt(val, min, max) {
+    val = parseInt(val);
+    return val > max ? max : val < min ? min : val;
+}
+
+function floorInt(val, base) {
+    return parseInt(val/base);
+}

@@ -25,6 +25,7 @@ var statsScreen = false;
 var scrollBackgroundScreen = true;
 var sprites = {};
 var zones = {};
+var zoneCollider = new ZoneCollider(ROOM_COLS, ROOM_ROWS, TILE_W);
 
 // Game States //
 
@@ -113,6 +114,7 @@ window.onload = function () {
   canvas = document.getElementById('gameCanvas');
   minimapCanvas = document.createElement('canvas');
   canvasContext = canvas.getContext('2d');
+  //canvasContext.dbgCollider = true;
   minimapContext = minimapCanvas.getContext('2d');
   minimapCanvas.width = ROOM_COLS * 4;
   minimapCanvas.height = ROOM_ROWS * 4;
@@ -215,6 +217,7 @@ function backgroundMusicSelect() {
 }
 
 function loadLevel() {
+  zoneCollider.reset();
   recalulateLevelNow();
   var whichLevel = levelList[ levelNow ];
   // load the level

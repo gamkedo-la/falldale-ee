@@ -234,10 +234,15 @@ function createTileObjects(layer) {
 	else type = 50;
 
 	let arrayIndex = 0;
+	let dfltCollider = "none";
+	if (layer.name == 'Midground') dfltCollider = "full";
 	for (let row = 0; row < layer.height; row++) {
 		for (let col = 0; col < layer.width; col++) {
 			if (layer.data[arrayIndex] > 0) {
-				let newTile = new TiledObject(arrayIndex, type, layer.data[arrayIndex]);
+				let newTile = new TiledObject(arrayIndex, type, layer.data[arrayIndex], dfltCollider);
+				if (newTile.collider) {
+					zoneCollider.add(newTile.collider);
+				}
 				tileList.push(newTile);
 			}
 			arrayIndex++;
