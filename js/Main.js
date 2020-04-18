@@ -752,27 +752,13 @@ function drawAll() {
 
     depthSortedDraw();
 
-    // FIXME these fx are Falldale-only right now
-    // it would be nice if they also were on all game regions
     if (levelNow == 7) { //7=fallDale??? elsewhere it is listed as 0 FIXME
-      drawRooftops(fallDaleRooftops); // FIXME: hardcoded for main town area only
       // this is now rendered inside depthSortedDraw right after floor tiles
       //OverlayFX.draw(); // night mode, light glows, detail decals, footsteps etc
       if (! movementInstructionsShown ) {
         instructions = true;
         movementInstructionsShown = true;
       }
-      
-    } else if (levelNow == 0) {
-      drawRooftops(orcKingforestRoofTops);
-    } else if (levelNow == 6) {
-      drawRooftops(forestRoofTops);
-    } else if (levelNow == 8) {
-      drawRooftops(eastWoodsRoofTops);
-    } else if (levelNow == 5) {
-      drawRooftops(eastMiddleWoodsRoofTops);
-	} else if (levelNow == 1) {
-      drawRooftops(wizardsRoofTops);
     }
 
     drawParticles();
