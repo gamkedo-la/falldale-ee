@@ -110,3 +110,9 @@ function clampInt(val, min, max) {
 function floorInt(val, base) {
     return parseInt(val/base);
 }
+
+function distance(x1, y1, x2, y2) {
+    var XD = x2 - x1;
+    var YD = y2 - y1;
+    return Math.sqrt(XD * XD + YD * YD);
+}

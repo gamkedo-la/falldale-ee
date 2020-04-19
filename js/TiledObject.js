@@ -20,6 +20,7 @@ function TiledObject(layer, index, type, tile, dfltColliderKind) {
 		if (this.layer == "Midground") collider = "full";
 		if (sprite) {
 			this.sprite = sprite;
+			this.id = sprite.id;
 			this.image = sprite.img;
 			this.width = sprite.width;
 			this.height = sprite.height;
@@ -29,7 +30,7 @@ function TiledObject(layer, index, type, tile, dfltColliderKind) {
 		}
 	};
 
-	this.setSprite( sprites.get(tile-1) );
+	this.setSprite( sprites.get(tile) );
 	// adjust position based on height of tile
 	if (this.height > TILE_H) {
 		this.y -= (this.height - TILE_H);

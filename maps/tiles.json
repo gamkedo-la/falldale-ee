@@ -774,7 +774,13 @@
          "id":159,
          "image":"..\/images\/tiles\/OpenDoorway.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":160,
@@ -1037,7 +1043,7 @@
                 {
                  "name":"collider",
                  "type":"string",
-                 "value":"bottomQtr"
+                 "value":"none"
                 }]
         }, 
         {
@@ -1049,7 +1055,7 @@
                 {
                  "name":"collider",
                  "type":"string",
-                 "value":"lbrq"
+                 "value":"leftQtr"
                 }]
         }, 
         {
@@ -1061,7 +1067,7 @@
                 {
                  "name":"collider",
                  "type":"string",
-                 "value":"rblq"
+                 "value":"rightQtr"
                 }]
         }, 
         {

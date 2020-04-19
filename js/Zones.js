@@ -79,6 +79,16 @@ class ZoneCollider {
         }
     }
 
+    clearTile(tile) {
+        if (tile.index >= 0 && tile.index < this.grid.length && this.grid[tile.index]) {
+            for (var i=0; i<this.grid[tile.index].length; i++) {
+                if (this.grid[tile.index][i] == tile.collider) {
+                    this.grid[tile.index].splice(i, 1);
+                }
+            }
+        }
+    }
+
     // given other collider, lookup collider based on grid coordinates that overlap w/ bounds of other collider to determine hit
     hit(other) {
         var starti = clampInt(floorInt(other.minX, this.tileSize), 0, this.gwidth);

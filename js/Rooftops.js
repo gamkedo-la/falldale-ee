@@ -16,7 +16,11 @@ class Rooftop {
 		let py = redWarrior.y;
 		if (px >= this.x && px <= this.x + this.width && py >= this.y && py <= this.y + this.height) {
 			this.visible = false;
+			//console.log("setting inside to true");
 			redWarrior.isInsideAnyBuilding = true;
+		} else {
+			//console.log("setting inside to false");
+			redWarrior.isInsideAnyBuilding = false;
 		}
 
 		let scaleFactor = canvas.clientHeight / canvas.height;

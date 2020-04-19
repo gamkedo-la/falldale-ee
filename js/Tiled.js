@@ -293,7 +293,7 @@ function getFloorSprite(x, y) {
 		let i = clampInt(floorInt(x, TILE_H), 0, ROOM_COLS);
 		let j = clampInt(floorInt(y, TILE_W), 0, ROOM_ROWS);
 		let index = i % ROOM_COLS + ROOM_COLS * j;
-		let id = layer.data[index] - 1;
+		let id = layer.data[index];
 		return sprites.get(id);
 	}
 	return dfltSprite;
@@ -305,7 +305,7 @@ function getMidSprite(x, y) {
 		let i = clampInt(floorInt(x, TILE_H), 0, ROOM_COLS);
 		let j = clampInt(floorInt(y, TILE_W), 0, ROOM_ROWS);
 		let index = i % ROOM_COLS + ROOM_COLS * j;
-		let id = layer.data[index] - 1;
+		let id = layer.data[index];
 		return sprites.get(id);
 	}
 	return dfltSprite;
@@ -314,7 +314,7 @@ function getMidSprite(x, y) {
 function getMidSpriteIndex(idx) {
 	var layer = getLayer("Midground");
 	if (layer) {
-		let id = layer.data[idx] - 1;
+		let id = layer.data[idx];
 		return sprites.get(id);
 	}
 	return dfltSprite;
@@ -347,13 +347,46 @@ function getHitIndices(hit) {
 	return indices;
 }
 
+function setMidTileSpriteIdx(index, sprite) {
+	console.log("trying to set tile at index: " + index + " to sprite: " + sprite);
+	if (!sprite) return;
+	for (var tile of tileList) {
+		//console.log("tile is: " + tile.layer + ":" + tile.index);
+		if (tile.layer == "Midground" && tile.index == index) {
+			// clear current tile collider
+			zoneCollider.clearTile(tile);
+			// set new sprite
+			tile.setSprite(sprite);
+			// reset room grid and layer data
+			roomGrid[index] = sprite.id;
+			var layer = getLayer("Midground");
+			if (layer) {
+				layer.data[index] = sprite.id;
+			}
+			// reassign zone collider
+			if (tile.collider) zoneCollider.add(tile.collider);
+			break;
+		}
+	}
+}
+
 function setMidTileSprite(x, y, sprite) {
+	if (!sprite) return;
 	let i = clampInt(floorInt(x, TILE_H), 0, ROOM_COLS);
 	let j = clampInt(floorInt(y, TILE_W), 0, ROOM_ROWS);
 	let index = i % ROOM_COLS + ROOM_COLS * j;
+	setMidTileSpriteIdx(index, sprite);
+}
+
+function getTileIdx(layer, index) {
 	for (var tile of tileList) {
-		if (tile.layer == "Midground" && tile.index == index) {
-			tile.setSprite(sprite);
+		if (tile.layer == layer && tile.index == index) {
+			return tile;
 		}
 	}
+	return false;
+}
+
+function getMidTileIdx(index) {
+	return getTileIdx("Midground", index);
 }

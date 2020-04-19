@@ -27,6 +27,7 @@ class Sprites {
                 var height = record.imageheight || spriteDfltSize;
                 var collider = "";
                 var speed = PLAYER_SPEED;
+                var id = record.id + 1;
                 // parse custom properties
                 if (record.properties) {
                     console.log("record has properties: " + record.properties);
@@ -39,11 +40,11 @@ class Sprites {
                         }
                     });
                 }
-                var sprite = new Sprite(name, path, width, height, record.id, collider, () => {
+                var sprite = new Sprite(name, path, width, height, id, collider, () => {
                     if (++loadCount >= records.length) doneCb();
                 });
                 sprite.speed = speed;
-				this.spriteMap[record.id] = sprite;
+				this.spriteMap[id] = sprite;
                 this.spriteNameMap[name] = sprite;
             });
         }

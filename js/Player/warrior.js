@@ -585,8 +585,9 @@ function warriorClass(whichPlayerPic) {
     if (sound != null) {
       sound.play();
     }
-    setNewTypeForTileObjectAtIndex(aTileType, aTileIndex);
-    roomGrid[ aTileIndex ] = aTileType;
+    setMidTileSpriteIdx(aTileIndex, aTileType);
+    //setNewTypeForTileObjectAtIndex(aTileType, aTileIndex);
+    //roomGrid[ aTileIndex ] = aTileType;
   };
 
   this.unlockDoor = function (tileIndex, color) {
@@ -672,21 +673,32 @@ function warriorClass(whichPlayerPic) {
   };
 
   this.tryOpenDoor = function (walkIntoTileIndex, doorTileType, message) {
-    if (this.isInsideAnyBuilding || this.lastOpenDoorIndex > 0)
+    if (this.lastOpenDoorIndex > 0) {
       return;
-
-    this.replaceTileAtIndexWithTileOfTypeAndPlaySound(walkIntoTileIndex, TILE_OPEN_DOORWAY, shutDoor);
+    }
+    // replace the sprite for the tile at given index
+    this.replaceTileAtIndexWithTileOfTypeAndPlaySound(walkIntoTileIndex, sprites.getname("OpenDoorway"), shutDoor);
     this.lastOpenDoorIndex = walkIntoTileIndex;
     this.lastOpenDoorTile = doorTileType;
     dialogManager.setDialogWithCountdown(message);
   };
 
   this.tryCloseDoor = function () {
-    if (!this.isInsideAnyBuilding && this.lastOpenDoorIndex > 0) {
-      this.replaceTileAtIndexWithTileOfTypeAndPlaySound(this.lastOpenDoorIndex, this.lastOpenDoorTile, shutDoor);
-      this.lastOpenDoorIndex = -1;
-      return true;
+    if (this.lastOpenDoorIndex > 0) {
+      // check distance from last open door
+      var doorTile = getMidTileIdx(this.lastOpenDoorIndex);
+      //console.log("trying to close door at: " + this.lastOpenDoorIndex + " doorTile: " + doorTile + " distance: " + distance(doorTile.x, doorTile.y, this.x, this.y));
+      if (!doorTile || distance(doorTile.x, doorTile.y, this.x, this.y) > (TILE_W*1.5)) {
+        this.replaceTileAtIndexWithTileOfTypeAndPlaySound(this.lastOpenDoorIndex, this.lastOpenDoorTile, shutDoor);
+        this.lastOpenDoorIndex = -1;
+        return true;
+      }
     }
+    //if (!this.isInsideAnyBuilding && this.lastOpenDoorIndex > 0) {
+      //this.replaceTileAtIndexWithTileOfTypeAndPlaySound(this.lastOpenDoorIndex, this.lastOpenDoorTile, shutDoor);
+      //this.lastOpenDoorIndex = -1;
+      //return true;
+    //}
     return false;
   };
 
@@ -756,11 +768,20 @@ function warriorClass(whichPlayerPic) {
     // iterate through hit indices
     for (var idx of hitIndices) {
       var sprite = getMidSpriteIndex(idx);
-      console.log("hit sprite: " + sprite);
+      if (sprite) {
+        switch (sprite.name) {
+          case "frontdoor":
+            if (this.lastOpenDoorIndex = -1) {
+              //console.log("trying to open door...")
+              this.tryOpenDoor(idx, sprite,
+                  "This place smells nice.  Is that lavender?");
+              }
+            return;
+        }
+      }
     }
 
-
-
+    /*
     switch (walkIntoTileType) {
       case TILE_TREE5FALLEN_BOTTOM:
         this.removeFallenTree(walkIntoTileIndex. TILE_ROAD);
@@ -852,6 +873,7 @@ function warriorClass(whichPlayerPic) {
       default:
         break;
     } // end of switch
+    */
 
     this.tryCloseDoor();
 
