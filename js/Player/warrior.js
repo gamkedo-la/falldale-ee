@@ -75,6 +75,7 @@ function warriorClass(whichPlayerPic) {
   this.isInsideAnyBuilding = false;
   this.lastOpenDoorIndex = -1;
   this.lastOpenDoorTile = TILE_FRONTDOOR_YELLOW;
+  this.questOneComplete = false;
 
   this.savePrefix = "player_";
   this.saveVariables = [ "x", "y", "health", "maxHealth", "name", "experience", "keysHeld", "goldpieces",

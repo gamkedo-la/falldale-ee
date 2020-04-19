@@ -276,6 +276,14 @@ function loadCharacter(type) {
 	return character;
 }
 
+function spawnCharacter(pos, type) {
+	let newObject = loadCharacter(type);
+	console.log("spawned obj is " + newObject);
+	newObject.x = pos.x;
+	newObject.y = pos.y;
+	enemyList.push(newObject)
+}
+
 function getLayer(name) {
 	if (currentLevel) {
 		for (var layer of currentLevel.layers) {

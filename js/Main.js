@@ -225,8 +225,9 @@ function loadLevel() {
   loadTiledMap(currentLevel)
 
   //roomGrid = whichLevel.slice();
-  if (previousLevelNow == 7 && redWarrior.questOneComplete == false) {
-	startQuestOne();
+  console.log("levelNow: " + levelNow);
+  if (levelNow == 7 && !redWarrior.questOneComplete) {
+    startQuestOne();
   }
   
   //enemyList.splice(0, enemyList.length); //Empty enemyList
@@ -327,7 +328,8 @@ function loadLevel() {
   } // end of row for
   */
 
-  if (levelNow == 7 && redWarrior.questOneComplete == false && firstQuestLoad) {
+  /*
+  if (levelNow == 7 && !redWarrior.questOneComplete && firstQuestLoad) {
   	enemyList = [];
   	for (var e = 0; e < firstQuestEnemyList.length; e++) {
   		enemyList.push(firstQuestEnemyList[e]);
@@ -335,6 +337,7 @@ function loadLevel() {
   } else {
   	firstQuestLoad = true;
   }
+  */
 
   redrawMinimapTiles();
 }
