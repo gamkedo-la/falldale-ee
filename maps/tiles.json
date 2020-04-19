@@ -54,7 +54,13 @@
          "id":9,
          "image":"..\/images\/tiles\/backwallcabinetlowerhalf.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"topQtr"
+                }]
         }, 
         {
          "id":10,
@@ -1134,7 +1140,13 @@
          "id":218,
          "image":"..\/images\/tiles\/dresserbottom.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"topQtr"
+                }]
         }, 
         {
          "id":407,

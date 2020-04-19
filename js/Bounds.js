@@ -94,9 +94,9 @@ class Bounds {
                        (other.maxY >= this.minY && other.maxY <= this.maxY);
         if (xoverlap && yoverlap) {
             var minX = Math.max(this.minX, other.minX);
-            var maxX = Math.min(this.maxX, other.maxX);
+            var maxX = Math.min(this.maxX, other.maxX) - .01;
             var minY = Math.max(this.minY, other.minY);
-            var maxY = Math.min(this.maxY, other.maxY);
+            var maxY = Math.min(this.maxY, other.maxY) - .01;
             return new Bounds(minX, minY, maxX-minX, maxY-minY);
         }
         return false;

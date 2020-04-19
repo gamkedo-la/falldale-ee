@@ -68,6 +68,11 @@ class ZoneCollider {
         return this.grid[index];
     }
 
+    getIdx(index) {
+        index = clampInt(index, 0, this.grid.length);
+        return this.grid[index];
+    }
+
     add(collider) {
         var i = clampInt(floorInt(collider.minX, this.tileSize), 0, this.gwidth);
         var j = clampInt(floorInt(collider.minY, this.tileSize), 0, this.gheight);

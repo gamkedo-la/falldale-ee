@@ -586,8 +586,6 @@ function warriorClass(whichPlayerPic) {
       sound.play();
     }
     setMidTileSpriteIdx(aTileIndex, aTileType);
-    //setNewTypeForTileObjectAtIndex(aTileType, aTileIndex);
-    //roomGrid[ aTileIndex ] = aTileType;
   };
 
   this.unlockDoor = function (tileIndex, color) {
@@ -694,57 +692,7 @@ function warriorClass(whichPlayerPic) {
         return true;
       }
     }
-    //if (!this.isInsideAnyBuilding && this.lastOpenDoorIndex > 0) {
-      //this.replaceTileAtIndexWithTileOfTypeAndPlaySound(this.lastOpenDoorIndex, this.lastOpenDoorTile, shutDoor);
-      //this.lastOpenDoorIndex = -1;
-      //return true;
-    //}
     return false;
-  };
-
-  this.collisionCheck = function (nextX, nextY) {
-
-    let col = [];
-    col[ 0 ] = { index: this.indexOfNextTile(nextX, nextY), x: nextX, y: nextY };
-    col[ 1 ] = { index: this.indexOfNextTile(nextX, this.y), x: nextX, y: this.y };
-    col[ 2 ] = { index: this.indexOfNextTile(this.x, nextY), x: this.x, y: nextY };
-
-    for (i = 0; i <= 2; i++) {
-      const walkIntoTileType = this.tileTypeForIndex(col[ i ].index);
-
-      if (this.isPassableTile(walkIntoTileType)) {
-        nextX = col[ i ].x;
-        nextY = col[ i ].y;
-        break;
-      }
-    }
-
-    //speed buffs/debuffs
-    const walkIntoTileTypeIndex = this.indexOfNextTile(nextX, nextY + (this.height / 2));
-    const walkIntoTileTypeFeet = this.tileTypeForIndex(walkIntoTileTypeIndex);
-
-    switch (walkIntoTileTypeFeet) {
-      case TILE_GRASS:
-      case TILE_GARDEN:
-	  case TILE_GARDEN_1:
-	  case TILE_GARDEN_2:
-	  case TILE_GARDEN_3:
-	  case TILE_GARDEN_4:
-	  case TILE_GARDEN_5:
-	  case TILE_GARDEN_6:
-	  case TILE_GARDEN_7:
-	  case TILE_GARDEN_6:
-	  case TILE_GARDEN_7:
-        this.setSpeedAndPosition(PLAYER_SPEED_DEBUFF, nextX, nextY);
-        break;
-      default:
-        const index = this.indexOfNextTile(nextX, nextY);
-        const type = this.tileTypeForIndex(index);
-        if (this.isPassableTile(type))
-          this.setSpeedAndPosition(PLAYER_SPEED, nextX, nextY);
-    }
-
-    return { x: nextX, y: nextY };
   };
 
   this.updatePosition = function (nextX, nextY, collider, hitbox) {
@@ -755,7 +703,6 @@ function warriorClass(whichPlayerPic) {
     // get floor sprite
     var floorSprite = getFloorSprite(collider.centerX, collider.centerY);
     var speed = floorSprite.speed;
-    var myIndex = getTileIndexAtPixelCoord(collider.centerX, collider.centerY);
 
     // udpate position based on speed
     this.setSpeedAndPosition(speed, nextX, nextY);
@@ -767,8 +714,10 @@ function warriorClass(whichPlayerPic) {
 
     // iterate through hit indices
     for (var idx of hitIndices) {
+      // check collider associated w/ index to validate hit
       var sprite = getMidSpriteIndex(idx);
       if (sprite) {
+        console.log("hit tile: " + sprite);
         switch (sprite.name) {
           case "frontdoor":
             if (this.lastOpenDoorIndex = -1) {
@@ -776,7 +725,30 @@ function warriorClass(whichPlayerPic) {
               this.tryOpenDoor(idx, sprite,
                   "This place smells nice.  Is that lavender?");
               }
-            return;
+            break;
+          case "1 grave":
+          case "2 graves":
+          case "grave_3":
+            dialogManager.setDialogWithCountdown("Too many good people have died from the Skeleton King and his army of the dead.");
+            break;
+          case "oblisk grave":
+            dialogManager.setDialogWithCountdown("I need to avenge my friend.  The Skeleton King and his army of the dead must be destroyed!.");
+            break;
+          case "fountain":
+            dialogManager.setDialogWithCountdown("What a beautiful fountain.");
+            break;
+          case "dresserbottom":
+            dialogManager.setDialogWithCountdown("I really need to get some new clothes.");
+            break;
+          case "bedleftside":
+            dialogManager.setDialogWithCountdown("No time to sleep!.");
+            break;
+          case "weaponsracklh":
+            dialogManager.setDialogWithCountdown("No swords?!  Isn't this a blacksmith's shop?");
+            break;
+          case "stool":
+            dialogManager.setDialogWithCountdown("I really need a drink!");
+            break;
         }
       }
     }
@@ -790,11 +762,6 @@ function warriorClass(whichPlayerPic) {
       case TILE_TREE5FALLEN_BOTTOM_GRASS:
         this.removeFallenTree(walkIntoTileIndex, TILE_GRASS);
         break;
-      case TILE_HEALER_FRONTDOOR:
-        if (this.lastOpenDoorIndex = -1)
-          this.tryOpenDoor(walkIntoTileIndex, TILE_HEALER_FRONTDOOR,
-              "This place smells nice.  Is that lavender?");
-        return;
       case TILE_YELLOW_DOOR:
         this.unlockDoor(walkIntoTileIndex, "yellow");
         break;
@@ -838,35 +805,14 @@ function warriorClass(whichPlayerPic) {
       case TILE_ARROWS:
         this.pickupItem("arrows", walkIntoTileIndex, TILE_GRASS);
         break;
-      case TILE_GRAVE_1:
-      case TILE_GRAVE_2:
-      case TILE_GRAVE_3:
-        dialogManager.setDialogWithCountdown("Too many good people have died from the Skeleton King and his army of the dead.");
-        break;
-      case TILE_GRAVE_4:
-        dialogManager.setDialogWithCountdown("I need to avenge my friend.  The Skeleton King and his army of the dead must be destroyed!.");
-        break;
-      case TILE_FOUNTAIN:
-        dialogManager.setDialogWithCountdown("What a beautiful fountain.");
-        break;
+
       case TILE_SPIKES:
         this.impaledOnFreshSpikes(walkIntoTileIndex, nextX, nextY);
         break;
       case TILE_SPIKES_BLOODY:
         this.impaledOnBloodySpikes(nextX, nextY);
         break;
-      case TILE_HOUSE_DRESSER_BOTTOM:
-        dialogManager.setDialogWithCountdown("I really need to get some new clothes.");
-        break;
-      case TILE_HOUSE_LS_BED_BOTTOM:
-        dialogManager.setDialogWithCountdown("No time to sleep!.");
-        break;
-      case TILE_BRICK_BW_WEAPONSRACKBOTTOM:
-        dialogManager.setDialogWithCountdown("No swords?!  Isn't this a blacksmith's shop?");
-        break;
-      case TILE_CHAIR:
-        dialogManager.setDialogWithCountdown("I really need a drink!");
-        break;
+
       case TILE_WALL:
       case TILE_OPEN_DOORWAY:
         return;
