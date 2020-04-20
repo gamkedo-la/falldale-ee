@@ -278,9 +278,7 @@ function loadCharacter(type) {
 
 function spawnCharacter(pos, type) {
 	let newObject = loadCharacter(type);
-	console.log("spawned obj is " + newObject);
-	newObject.x = pos.x;
-	newObject.y = pos.y;
+	newObject.setPos(pos.x,pos.y);
 	enemyList.push(newObject)
 }
 
@@ -302,7 +300,20 @@ function getFloorSprite(x, y) {
 		let j = clampInt(floorInt(y, TILE_W), 0, ROOM_ROWS);
 		let index = i % ROOM_COLS + ROOM_COLS * j;
 		let id = layer.data[index];
-		return sprites.get(id);
+		let sprite = sprites.get(id);
+		if (!sprite) return dfltSprite;
+		return sprite;
+	}
+	return dfltSprite;
+}
+
+function getFloorSpriteIndex(idx) {
+	var layer = getLayer("Background");
+	if (layer) {
+		let id = layer.data[idx];
+		let sprite = sprites.get(id);
+		if (!sprite) return dfltSprite;
+		return sprite;
 	}
 	return dfltSprite;
 }

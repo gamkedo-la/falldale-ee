@@ -78,6 +78,8 @@ function enemyClass() {
     this.goToX = this.x;
     this.goToY = this.y;
     this.goToMode = GOTO_PLAYER;
+    this.bounds = new Bounds(5,5,40,40);
+    this.collider = false;
 
     this.initialize = function(enemyName, enemyPicture, numberOfFrames = 6) {
         this.health = this.maxhealth;
@@ -123,6 +125,10 @@ function enemyClass() {
                 this.myMelee.draw(this);
             }
 
+            if (canvasContext.dbgCollider && this.collider) {
+                this.collider.draw(canvasContext);
+            }
+
             if (debugMode) {
                 colorText(this.scriptID, this.x, this.y - 20, "red");
                 colorText("HP: " + this.health, this.x, this.y - 10, "red");
@@ -130,6 +136,7 @@ function enemyClass() {
                 colorRect(this.x, this.y + this.height, 5, 5, "red");
                 colorRect(this.x + this.width, this.y, 5, 5, "red");
                 colorRect(this.x + this.width, this.y + this.height, 5, 5, "red");
+
 
                 if (typeof this.currentPath !== "undefined" && this.currentPath != null) {
                     canvasContext.globalAlpha = 0.2;
@@ -149,6 +156,12 @@ function enemyClass() {
             canvasContext.drawImage(this.deadPic, Math.round(this.x), Math.round(this.y));
         }
     };
+
+    this.setPos = function(x,y) {
+        this.x = x;
+        this.y = y;
+        this.collider = new Bounds(this.bounds.minX + this.x, this.bounds.minY + this.y, this.bounds.width, this.bounds.height);
+    }
 
     this.drawHealth = function() {
         if (this.displayHealthCountdown >= 0) {
@@ -178,6 +191,7 @@ function enemyClass() {
         }
     };
 
+
     this.move = function(timeBetweenChangeDir) {
         if ((this.health <= 0 || !this.enemyMove) && !this.isBouncedBack) {
             return;
@@ -190,9 +204,9 @@ function enemyClass() {
         if (this.isBouncedBack) {
             let nextBounceX = this.x + this.bounceX * this.bounceSpeedFactor;
             let nextBounceY = this.y + this.bounceY * this.bounceSpeedFactor;
-            if (this.isPassableTile(this.tileTypeAtPosition(nextBounceX, nextBounceY))) {
-                this.x = nextBounceX;
-                this.y = nextBounceY;
+            var sprite = getMidSprite(nextBounceX + this.bounds.centerX, nextBounceY + this.bounds.centerY);
+            if (this.isPassableSprite(sprite)) {
+                this.setPos(nextBounceX, nextBounceY);
             }
             if (Math.abs(this.x - this.bounceTargetX) < 0.1 ||
                 Math.abs(this.y - this.bounceTargetY) < 0.1) {
@@ -208,8 +222,7 @@ function enemyClass() {
                     nextPos = this.randomMove(timeBetweenChangeDir, this.speed);
                 }
             }
-            this.x = nextPos.x;
-            this.y = nextPos.y;
+            this.setPos(nextPos.x, nextPos.y);
         }
 
         this.setFacing();
@@ -244,26 +257,24 @@ function enemyClass() {
         } //this enemy is not fully initialized yet
         var distToPlayer = this.nonPathDistance(this.x, this.y, redWarrior.x, redWarrior.y);
         if (this.goToMode == GOTO_PLAYER) {
-            this.goToX = redWarrior.x;
-            this.goToY = redWarrior.y;
+            this.goToX = redWarrior.collider.centerX;
+            this.goToY = redWarrior.collider.centerY;
             this.speed = this.aggroSpeed || this.defaultSpeed
 
             if (distToPlayer > this.aiVisionRange || redWarrior.isInsideAnyBuilding) {
                 this.currentPath = null;
                 this.goToMode = GOTO_NONE;
                 this.speed = this.defaultSpeed
-				if(this.scriptID == 316){
-					console.log(this.myName + this.scriptID + " is no longer tracking player");
-				}
+                console.log(this.myName + this.scriptID + " is no longer tracking player");
                 return null;
             }
         } else if (this.goToMode == GOTO_NONE) {
             if (distToPlayer < this.aiVisionRange && !redWarrior.isInsideAnyBuilding) {
                 this.goToMode = GOTO_PLAYER;
-				if(this.scriptID == 316){
-					console.log(this.myName + this.scriptID + " is tracking the player.");
-				}
-			}
+                console.log(this.myName + this.scriptID + " is tracking the player.");
+			} else {
+                return null;
+            }
         } else if (this.goToMode == GOTO_CUTSCENE) {
             var distToGoal = this.nonPathDistance(this.x, this.y, this.goToX, this.goToY);
             if (distToGoal < TILE_W) {
@@ -277,13 +288,16 @@ function enemyClass() {
         this.cyclesTilDirectionChange--;
         if ((this.cyclesTilDirectionChange <= 0) || (this.currentPath == null)) {
             this.cyclesTilDirectionChange = timeBetweenDirChange;
-            const thisTileIndex = getTileIndexAtPixelCoord(this.x, this.y);
+            const thisTileIndex = getTileIndexAtPixelCoord(this.collider.centerX, this.collider.centerY);
 
             var goToTileIndex = getTileIndexAtPixelCoord(this.goToX, this.goToY);
 
+            //console.log("center: " + this.collider.centerX + "," + this.collider.centerY + " gives index: " + thisTileIndex);
 
-
-            this.currentPath = this.pather.pathFrom_To_(thisTileIndex, goToTileIndex, this.isPassableTile);
+            var passableFcn = this.isPassableIndex.bind(this);
+            this.currentPath = this.pather.pathFrom_To_(thisTileIndex, goToTileIndex, passableFcn);
+            if (this.currentPath.length == 0) this.currentPath = null;
+            //console.log("new path is: " + this.currentPath);
             this.currentPathIndex = 0;
 
             if (this.myName == "Bat") {
@@ -295,12 +309,17 @@ function enemyClass() {
             }
         }
 
-        const currentTile = getTileIndexAtPixelCoord(this.x, this.y);
+        //const currentTile = getTileIndexAtPixelCoord(this.x, this.y);
+        const currentTile = getTileIndexAtPixelCoord(this.collider.centerX, this.collider.centerY);
         const nextTile = this.currentPath[this.currentPathIndex];
+        //console.log("currentTile: " + currentTile + " nextTile: " + nextTile + " n-c: " + (nextTile - currentTile));
+        //console.log("currentPathIndex: " + this.currentPathIndex);
 
         if (currentTile == nextTile) {
             this.currentPathIndex++;
             if (this.currentPathIndex == this.currentPath.length) {
+                this.currentPath = null;
+                //console.log("end of path hit");
                 return null;
             }
         }
@@ -324,6 +343,7 @@ function enemyClass() {
     };
 
     this.randomMove = function(timeBetweenDirChange) {
+        //console.log("random move");
         this.cyclesTilDirectionChange--;
         if (this.cyclesTilDirectionChange <= 0) {
             this.cyclesTilDirectionChange = timeBetweenDirChange;
@@ -348,7 +368,7 @@ function enemyClass() {
         let newX = this.x;
         let newY = this.y;
 
-        this.updateSpeedMult();
+        this.updateSpeedMult(this.collider.centerX, this.collider.centerY);
 
         if (this.walkNorth) {
             newY -= this.speed * this.speedMult;
@@ -374,6 +394,21 @@ function enemyClass() {
             this.sx = 0;
             this.sy = (this.height * 3) + 1;
             this.direction = "east";
+        }
+
+        // check for collisions (make this it's own function???)
+        let midSprite = getMidSprite(newX+this.bounds.centerX, newY+this.bounds.centerY);
+        if (!this.isPassableSprite(midSprite)) {
+            if (this.walkNorth) {
+                this.changeDirection("south");
+            } else if (this.walkEast) {
+                this.changeDirection("west");
+            } else if (this.walkWest) {
+                this.changeDirection("east");
+            } else if (this.walkSouth) {
+                this.changeDirection("north");
+            }
+            return {x: this.x, y: this.y};
         }
 
         return {
@@ -403,40 +438,29 @@ function enemyClass() {
         return walkIntoTileType;
     };
 
-    this.updateSpeedMult = function() {
-        const walkIntoTileType = this.tileTypeAtPosition(this.x, this.y);
+    this.updateSpeedMult = function(x,y) {
+        // get floor sprite for current position
+        var floorSprite = getFloorSprite(x,y);
+        // compute speed multipler (based on speed associated w/ floor sprite)
+        this.speedMult = floorSprite.speed/PLAYER_SPEED;
 
-
+        /*
+        FIXME: need to replace w/ new Tiled code
         switch (walkIntoTileType) {
             case TILE_SPIKES:
                 const aTileIndex = getTileIndexAtPixelCoord(this.x, this.y);
                 this.health = this.health - 0.5; // Damage to Health
-
                 setNewTypeForTileObjectAtIndex(TILE_SPIKES_BLOODY, aTileIndex);
                 roomGrid[walkIntoTileIndex] = TILE_SPIKES_BLOODY;
                 spikeSound.play();
                 break;
         }
+        */
 
-        this.speedMult = this.speedMultForTileType(walkIntoTileType);
-        if (!this.isPassableTile(walkIntoTileType)) {
-            this.speedMult = 0;
-        }
-
-        if (this.speedMult == 0) {
-            if (this.walkNorth) {
-                this.changeDirection("south");
-            } else if (this.walkEast) {
-                this.changeDirection("west");
-            } else if (this.walkWest) {
-                this.changeDirection("east");
-            } else if (this.walkSouth) {
-                this.changeDirection("north");
-            }
-        }
     };
 
     this.changeDirection = function(newDirection) {
+        //console.log("changeDirection: " + newDirection);
         if (newDirection == undefined) {
             const newDir = Math.floor(3 * Math.random());
             if (this.walkNorth) {
@@ -512,8 +536,7 @@ function enemyClass() {
     };
 
     this.restorePos = function() {
-        this.x = this.prevX;
-        this.y = this.prevY;
+        this.setPos(this.prevX, this.prevY);
     };
 
     this.isOverlappingPoint = function() {
@@ -577,8 +600,7 @@ function enemyClass() {
     this.reset = function(resetX, resetY) {
         this.pather = new pathFinder();
         this.changeDirection();
-        this.x = resetX;
-        this.y = resetY;
+        this.setPos(resetX, resetY);
         this.scriptID = Math.floor(resetX / TILE_W) * 100 + Math.floor(resetY / TILE_H);
         this.health = this.maxhealth;
         if (this.hasOwnProperty("myBite")) {
@@ -589,183 +611,22 @@ function enemyClass() {
         }
     };
 
-    this.speedMultForTileType = function(tileType) {
-        switch (tileType) {
-            case TILE_YELLOW_DOOR:
-            case TILE_GREEN_DOOR:
-            case TILE_RED_DOOR:
-            case TILE_BLUE_DOOR:
-            case TILE_WALL:
-            case TILE_BUSH:
-            case TILE_BUSH:
-            case TILE_TREE2BOTTOMHALF:
-            case TILE_TREE3TOPHALF:
-            case TILE_TREE3BOTTOMHALF:
-            case TILE_WATER:
-            case TILE_FOUNTAIN:
-            case TILE_OPEN_DOORWAY:
-                return 0;
-            case TILE_GRASS:
-                return 0.5;
-            case TILE_BRIDGE_UPPER:
-            case TILE_BRIDGE_LOWER:
-            case TILE_ROAD:
-                return 1;
-            default:
-                return this.speedMult;
+    this.isPassableSprite = function(sprite) {
+        if (sprite && (sprite.collider == "full" || !sprite.collider)) {
+            return false;
         }
+        return true;
     };
 
     this.isPassableTile = function(aTile) {
-        switch (aTile) {
-            case TILE_WALL:
-            case TILE_DOOR:
-            case TILE_YELLOW_DOOR:
-            case TILE_GREEN_DOOR:
-            case TILE_BLUE_DOOR:
-            case TILE_RED_DOOR:
-            case TILE_ROOF_FRONTRIGHT:
-            case TILE_ROOF_SIDERIGHT:
-            case TILE_ROOF_BACKRIGHT:
-            case TILE_FRONTWALL_WINDOW:
-            case TILE_FRONTDOOR_YELLOW:
-            case TILE_ROOF_BACKSIDE:
-            case TILE_ROOF_BACKLEFT:
-            case TILE_ROOF_LEFTSIDE:
-            case TILE_ROOF_FRONTLEFT:
-            case TILE_ROOF_FRONT:
-            case TILE_ROOF_CENTER:
-            case TILE_HEALER_BW_CABINET_POTIONS:
-            case TILE_HEALER_DESK:
-            case TILE_HEALER_FRONTDOOR:
-            case TILE_CABINET_LH:
-            case TILE_BS_BW:
-            case TILE_BS_BW_CABINET_POTIONS:
-            case TILE_BS_BW_CABINET_EMPTY:
-            case TILE_BRICK_TL:
-            case TILE_BRICK_TR:
-            case TILE_BS_DESK:
-            case TILE_BRICK_BW_WEAPONSRACK:
-            case TILE_BRICK_BW_WEAPONSRACKBOTTOM:
-            case TILE_BS_FW_LS:
-            case TILE_BS_LW:
-            case TILE_BS_FW_RS:
-            case TILE_HOUSE_FRONT_WALL:
-            case TILE_HOUSE_FRONT_WINDOW:
-            case TILE_HOUSE_FRONT_WINDOW_BROKEN:
-            case TILE_HOUSE_FW_RS:
-            case TILE_HOUSE_FW_LS:
-            case TILE_HOUSE_BW:
-            case TILE_HOUSE_BW_LS:
-            case TILE_HOUSE_BW_RS:
-            case TILE_HOUSE_BW_WINDOW:
-            case TILE_HOUSE_LS_BED_TOP:
-            case TILE_HOUSE_LS_BED_BOTTOM:
-            case TILE_HOUSE_DRESSER_TOP:
-            case TILE_HOUSE_DRESSER_BOTTOM:
-            case TILE_BAR_CABINET:
-            case TILE_BAR:
-            case TILE_TREE_1_SW:
-            case TILE_TREE_1_SE:
-            case TILE_BAR_TOP:
-            case TILE_CHAIR:
-            case TILE_MAUSOLEUM_1:
-            case TILE_MAUSOLEUM_2:
-            case TILE_MAUSOLEUM_3:
-            case TILE_MAUSOLEUM_4:
-            case TILE_ZOMBIE:
-            case TILE_ZOMBIE2:
-            case TILE_ZOMBIE3:
-            case TILE_GREEN_ORC_SWORD:
-            case TILE_GREEN_ORC_CLUB:
-            case TILE_GREEN_ORC_AX:
-            case TILE_ARCHER:
-            case TILE_SHOPKEEPER:
-            case TILE_HEALER:
-            case TILE_PRINCESS:
-            case TILE_DODD:
-            case TILE_TARAN:
-            case TILE_DELKON:
-            case TILE_ADDY:
-            case TILE_GABRIEL:
-            case TILE_FENTON:
-            case TILE_BUSH:
-            case TILE_BUSH:
-            case TILE_TREE2BOTTOMHALF:
-            case TILE_TREE3TOPHALF:
-            case TILE_TREE3BOTTOMHALF:
-            case TILE_GRAVEYARD_FENCE_LEFT:
-            case TILE_GRAVEYARD_FENCE_RIGHT:
-            case TILE_GRAVEYARD_FENCE:
-            case TILE_GRAVEYARD_FENCE_SIDE:
-            case TILE_GRAVEYARD_FENCE_BR:
-            case TILE_GRAVEYARD_FENCE_TR:
-            case TILE_GRAVEYARD_FENCE_LEFTSIDE:
-            case TILE_GRAVEYARD_FENCE_BL:
-            case TILE_GRAVEYARD_FENCE_TL:
-            case TILE_GRAVE_1:
-            case TILE_GRAVE_2:
-            case TILE_GRAVE_3:
-            case TILE_GRAVE_4:
-            case TILE_SKELETON:
-            case TILE_GOBLIN:
-            case TILE_SPIKES:
-            case TILE_SPIKES_BLOODY:
-            case TILE_WATER:
-            case TILE_FOUNTAIN:
-            case TILE_BRIDGE_UPPER:
-            case TILE_OPEN_DOORWAY:
-            case TILE_ORC_HOUSE_FL:
-            case TILE_ORC_HOUSE_FR:
-            case TILE_ORC_HOUSE_BL:
-            case TILE_ORC_HOUSE_BR:
-            case TILE_ORC_HOUSE_WALL:
-            case TILE_ORC_HOUSE_LS:
-            case TILE_ORC_HOUSE_RS:
-            case TILE_ORC_HOUSE_WINDOW:
-            case TILE_WIZARD_BW_TS:
-            case TILE_WIZARD_BW_BS:
-            case TILE_WIZARD_BW_LC_TS:
-            case TILE_WIZARD_BW_RC_TS:
-            case TILE_WIZARD_LW:
-            case TILE_WIZARD_RW:
-            case TILE_WIZARD_BOTTOM_W:
-            case TILE_WIZARD_BOTTOM_L:
-            case TILE_WIZARD_BOTTOM_R:
-            case TILE_WIZARD_FIREPLACE_TS:
-            case TILE_WIZARD_FIREPLACE_BS:
-                return false;
-            case TILE_PLAYERSTART:
-            case TILE_ROAD:
-            case TILE_BRIDGE_LOWER:
-            case TILE_ROAD:
-            case TILE_DIRTROAD_N_E:
-            case TILE_DIRTROAD_N_S:
-            case TILE_DIRTROAD_S_E:
-            case TILE_DIRTROAD_W_E:
-            case TILE_DIRTROAD_W_N:
-            case TILE_DIRTROAD_W_S:
-            case TILE_DIRTROAD_W_N_E:
-            case TILE_DIRTROAD_W_S_E:
-            case TILE_FOREST_PORTAL:
-            case TILE_GRASS:
-            case TILE_GRAVE_YARD_PORTAL:
-            case TILE_HOME_VILLAGE_PORTAL:
-            case TILE_ARROWS:
-            case TILE_THROWINGROCKS:
-            case TILE_KEY:
-            case TILE_YELLOW_KEY:
-            case TILE_GREEN_KEY:
-            case TILE_BLUE_KEY:
-            case TILE_RED_KEY:
-            case TILE_TREASURE:
-            case TILE_MAP:
-            case TILE_BAT:
-            case TILE_GARDEN_1:
-                return true;
-            default:
-                return true;
-        }
+        // enemy shouldn't don't go through doors
+        // FIXME
+        return this.isPassableSprite(sprites.get(aTile));
+    };
+
+    this.isPassableIndex = function(index) {
+        // lookup midground sprite for index
+        return this.isPassableSprite(getMidSpriteIndex(index));
     };
 
     this.newRandomPic = function() {

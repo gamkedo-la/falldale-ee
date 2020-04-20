@@ -18,8 +18,8 @@ function pathFinder() {
         var cameFrom = {};
         cameFrom[start] = "S";
 
-		//console.log(frontier.length);
-
+        //console.log(frontier.length);
+        
         while (frontier.length > 0) {
             var current = frontier.shift();
             var neighbors = neighborsForIndex(current, isPassableFunction);
@@ -62,30 +62,20 @@ function pathFinder() {
 		var left = indexLeftofIndex(index);
 		var right = indexRightOfIndex(index);
 
-		var grid = roomGrid;
-
-		if (above != null) { //checking if tile above is present and adding it to result
-		if (isPassable(grid[ above ])) {
+		if (isPassable(above)) {
 			result.push(above);
-            }
         }
 
-        if (below != null) { //checking if tile below is present and adding it to result
-		  if (isPassable(grid[ below ])) {
+        if (isPassable(below)) {
 			result.push(below);
-		  }
         }
 
-        if (left != null) { //checking if tile to the left is present and adding it to result
-		  if (isPassable(grid[ left ])) {
+        if (isPassable(left)) {
 			result.push(left);
-		  }
         }
 
-        if (right != null) { //checking if tile to the right is present and adding it to result
-		  if (isPassable(grid[ right ])) {
+        if (isPassable(right)) {
 			result.push(right);
-		  }
         }
 
         return result;
