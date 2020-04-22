@@ -1152,97 +1152,193 @@
          "id":407,
          "image":"..\/images\/tiles\/castle_door_lr1.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":408,
          "image":"..\/images\/tiles\/castle_door_lr2.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":409,
          "image":"..\/images\/tiles\/castle_door_lr3.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":410,
          "image":"..\/images\/tiles\/castle_door_lr4.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":411,
          "image":"..\/images\/tiles\/castle_door_lr5.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":412,
          "image":"..\/images\/tiles\/castle_door_lr6.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":413,
          "image":"..\/images\/tiles\/castle_door_lr7.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":414,
          "image":"..\/images\/tiles\/castle_door_lr8.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":415,
          "image":"..\/images\/tiles\/castle_door_lr9.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":416,
          "image":"..\/images\/tiles\/castle_door_lr10.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":417,
          "image":"..\/images\/tiles\/castle_door_lr11.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":418,
          "image":"..\/images\/tiles\/castle_door_lr12.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":419,
          "image":"..\/images\/tiles\/castle_door_lr13.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":420,
          "image":"..\/images\/tiles\/castle_door_lr14.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":421,
          "image":"..\/images\/tiles\/castle_door_lr15.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":422,
          "image":"..\/images\/tiles\/castle_door_lr16.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":423,
@@ -1254,19 +1350,37 @@
          "id":424,
          "image":"..\/images\/tiles\/castle_door_t2.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":425,
          "image":"..\/images\/tiles\/castle_wall_b1.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":426,
          "image":"..\/images\/tiles\/castle_wall_b2.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":427,
@@ -1278,7 +1392,13 @@
          "id":428,
          "image":"..\/images\/tiles\/castle_wall_btl1.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":429,
@@ -1326,49 +1446,97 @@
          "id":436,
          "image":"..\/images\/tiles\/castle_wall_lr1.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"ttbMidThird"
+                }]
         }, 
         {
          "id":437,
          "image":"..\/images\/tiles\/castle_wall_lr2.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"ttbMidThird"
+                }]
         }, 
         {
          "id":438,
          "image":"..\/images\/tiles\/castle_wall_lr3.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"ttbMidThird"
+                }]
         }, 
         {
          "id":439,
          "image":"..\/images\/tiles\/castle_wall_lr4.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"ttbMidThird"
+                }]
         }, 
         {
          "id":440,
          "image":"..\/images\/tiles\/castle_wall_lr5.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"ttbMidThird"
+                }]
         }, 
         {
          "id":441,
          "image":"..\/images\/tiles\/castle_wall_lr6.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"ttbMidThird"
+                }]
         }, 
         {
          "id":442,
          "image":"..\/images\/tiles\/castle_wall_lr7.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"ttbMidThird"
+                }]
         }, 
         {
          "id":443,
          "image":"..\/images\/tiles\/castle_wall_lr8.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"ttbMidThird"
+                }]
         }, 
         {
          "id":444,
@@ -1404,7 +1572,13 @@
          "id":449,
          "image":"..\/images\/tiles\/castle_wall_rtb1.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":450,
@@ -1476,13 +1650,25 @@
          "id":461,
          "image":"..\/images\/tiles\/castle_wall_tc3_t.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":462,
          "image":"..\/images\/tiles\/castle_wall_tc4_b.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":463,
@@ -1752,13 +1938,25 @@
          "id":507,
          "image":"..\/images\/tiles\/castle_gate1_bl.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"leftThird"
+                }]
         }, 
         {
          "id":508,
          "image":"..\/images\/tiles\/castle_gate1_br.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"rightThird"
+                }]
         }, 
         {
          "id":509,
@@ -1824,13 +2022,25 @@
          "id":519,
          "image":"..\/images\/tiles\/castle_gate4_bl.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"leftThird"
+                }]
         }, 
         {
          "id":520,
          "image":"..\/images\/tiles\/castle_gate4_br.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"rightThird"
+                }]
         }, 
         {
          "id":521,
@@ -1860,13 +2070,25 @@
          "id":525,
          "image":"..\/images\/tiles\/castle_pillar_bl.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"rightThird"
+                }]
         }, 
         {
          "id":526,
          "image":"..\/images\/tiles\/castle_pillar_br.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"leftThird"
+                }]
         }, 
         {
          "id":527,

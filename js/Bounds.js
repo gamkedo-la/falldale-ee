@@ -27,12 +27,20 @@ class Bounds {
                 return new Bounds(pos.x, pos.y+tileSize*.5, tileSize, tileSize*.5);
             case "leftQtr":
                 return new Bounds(pos.x, pos.y, tileSize*.25, tileSize);
+            case "leftThird":
+                return new Bounds(pos.x, pos.y, tileSize*.33, tileSize);
             case "rightQtr":
                 return new Bounds(pos.x+tileSize*.75, pos.y, tileSize*.25, tileSize);
+            case "rightThird":
+                return new Bounds(pos.x+tileSize*.67, pos.y, tileSize*.33, tileSize);
             case "topQtr":
                 return new Bounds(pos.x, pos.y, tileSize, tileSize*.25);
+            case "topThird":
+                return new Bounds(pos.x, pos.y, tileSize, tileSize*.33);
             case "bottomQtr":
                 return new Bounds(pos.x, pos.y+tileSize*.75, tileSize, tileSize*.25);
+            case "bottomThird":
+                return new Bounds(pos.x, pos.y+tileSize*.67, tileSize, tileSize*.33);
             case "middle":
                 return new Bounds(pos.x+tileSize*.25, pos.y+tileSize*.25, tileSize*.75, tileSize*.75);
             case "tl":
@@ -43,6 +51,8 @@ class Bounds {
                 return new Bounds(pos.x, pos.y+tileSize*.5, tileSize*.5, tileSize*.5);
             case "br":
                 return new Bounds(pos.x+tileSize*.5, pos.y+tileSize*.5, tileSize*.5, tileSize*.5);
+            case "ttbMidThird":
+                return new Bounds(pos.x+tileSize*.33, pos.y, tileSize*.33, tileSize);
             case "ltr":
                 return new BoundsSet([
                     new Bounds(pos.x, pos.y, tileSize*.5, tileSize),

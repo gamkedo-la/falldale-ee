@@ -233,7 +233,7 @@ function createTileObjects(layer) {
 	let type;
 	console.log("loading layer: " + layer.name);
 	//Values used for depth sorted draw
-	if (layer.name === 'Background' || layer.name === 'BG Overlay') type = 0;
+	if (layer.name === 'Background' || layer.name === 'BG Overlay' || layer.name === 'Background Overlay') type = 0;
 	else type = 50;
 
 	let arrayIndex = 0;
