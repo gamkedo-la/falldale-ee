@@ -26,6 +26,7 @@ var scrollBackgroundScreen = true;
 var sprites = {};
 var zones = {};
 var zoneCollider = new ZoneCollider(ROOM_COLS, ROOM_ROWS, TILE_W);
+var roofZones = new RoofZones();
 
 // Game States //
 
@@ -217,6 +218,7 @@ function backgroundMusicSelect() {
 }
 
 function loadLevel() {
+  roofZones.reset();
   zoneCollider.reset();
   recalulateLevelNow();
   var whichLevel = levelList[ levelNow ];
@@ -343,6 +345,7 @@ function loadLevel() {
 }
 
 function updateAll() {
+  roofZones.update();
   moveAll();
   updateItems();
   drawAll();
@@ -754,6 +757,10 @@ function drawAll() {
     canvasContext.translate(-camera.x, -camera.y);
 
     depthSortedDraw();
+
+    if (debugMode) {
+      roofZones.draw();
+    }
 
     if (levelNow == 7) { //7=fallDale??? elsewhere it is listed as 0 FIXME
       // this is now rendered inside depthSortedDraw right after floor tiles

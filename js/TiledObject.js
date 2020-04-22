@@ -14,6 +14,7 @@ function TiledObject(layer, index, type, tile, dfltColliderKind) {
 	this.type = type;
 	this.fxImage = false;
 	this.collider = false;
+	this.checkRoofZone = false;
 
 	this.setSprite = function(sprite) {
 		var collider = "none";
@@ -57,6 +58,8 @@ function TiledObject(layer, index, type, tile, dfltColliderKind) {
 
 	this.draw = function () {
 		if (!this.image) return;
+		// if tile is part of roof zone, check if roof zone is visible and if not don't draw roof tile
+		if (this.checkRoofZone && !roofZones.checkTileVisibility(this)) return;
 		// draw the tile
 		canvasContext.drawImage(this.image, this.x, this.y);
 

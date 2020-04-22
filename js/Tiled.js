@@ -217,6 +217,7 @@ function loadTiledMap(map) {
 	enemyList.length = 0;
 	tileList.length = 0;
 	for (let layer of map.layers) {
+		console.log("layer: " + layer.name + " type: " + layer.type);
 		if (layer.type === "tilelayer") {
 			createTileObjects(layer);
 			if (layer.name === 'Midground') {
@@ -225,10 +226,12 @@ function loadTiledMap(map) {
 		}
 		if (layer.type === "objectgroup") loadObjects(layer);
 	}
+	console.log("tileList.length: " + tileList.length);
 }
 
 function createTileObjects(layer) {
 	let type;
+	console.log("loading layer: " + layer.name);
 	//Values used for depth sorted draw
 	if (layer.name === 'Background' || layer.name === 'BG Overlay') type = 0;
 	else type = 50;
@@ -243,6 +246,10 @@ function createTileObjects(layer) {
 				if (newTile.collider) {
 					zoneCollider.add(newTile.collider);
 				}
+				// if tile is part of a roof layer, set checkRoofZone which will force tile to look for roof zone when drawing
+				if (layer.name == "Roof" || layer.name == "RoofOverlay") {
+					newTile.checkRoofZone = true;
+				}
 				tileList.push(newTile);
 			}
 			arrayIndex++;
@@ -252,18 +259,22 @@ function createTileObjects(layer) {
 
 function loadObjects(objectgroup) {
 	let objects = objectgroup.objects;
+	console.log("loading objects for layer: " + objectgroup.name);
 	for (let object of objects) {
 		if (object.type === 'Rooftop') {
 			let newRoof = new Rooftop(object.x, object.y, object.height, object.width);
 			newRoof.type = 50;
 			tileList.push(newRoof);
+		} else if (object.type == 'RoofZone') {
+			let roofZone = new RoofZone(object.x, object.y, object.width, object.height);
+			roofZones.add(roofZone);
 		}
 		else if (objectDefinitions[object.type]) {
 			let newObject = loadCharacter(object.type);
 			newObject.x = object.x;
 			newObject.y = object.y;
 			enemyList.push(newObject)
-		}
+		} 
 	}
 }
 
