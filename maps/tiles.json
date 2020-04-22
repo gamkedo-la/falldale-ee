@@ -156,13 +156,25 @@
          "id":30,
          "image":"..\/images\/tiles\/bush.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"middle"
+                }]
         }, 
         {
          "id":31,
          "image":"..\/images\/tiles\/bush_tall.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"ttbMidThird"
+                }]
         }, 
         {
          "id":32,
@@ -312,61 +324,121 @@
          "id":71,
          "image":"..\/images\/tiles\/cliffBottomLeft.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"lbrq"
+                }]
         }, 
         {
          "id":72,
          "image":"..\/images\/tiles\/cliffFullShadow.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":73,
          "image":"..\/images\/tiles\/cliffLeft.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"leftQtr"
+                }]
         }, 
         {
          "id":74,
          "image":"..\/images\/tiles\/cliffRight.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"rightQtr"
+                }]
         }, 
         {
          "id":75,
          "image":"..\/images\/tiles\/cliffRightCorner.png",
          "imageheight":51,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"rblq"
+                }]
         }, 
         {
          "id":76,
          "image":"..\/images\/tiles\/cliffShadow.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":77,
          "image":"..\/images\/tiles\/cliffTop.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"bottomQtr"
+                }]
         }, 
         {
          "id":78,
          "image":"..\/images\/tiles\/cliffTop1.png",
          "imageheight":51,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"topQtr"
+                }]
         }, 
         {
          "id":79,
          "image":"..\/images\/tiles\/cliffTopLeft.png",
          "imageheight":51,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"ltrq"
+                }]
         }, 
         {
          "id":80,
          "image":"..\/images\/tiles\/cliffTopRightCorner.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"rtlq"
+                }]
         }, 
         {
          "id":83,
@@ -900,49 +972,97 @@
          "id":180,
          "image":"..\/images\/tiles\/tree_pine_blue_l.png",
          "imageheight":150,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"rightThird"
+                }]
         }, 
         {
          "id":181,
          "image":"..\/images\/tiles\/tree_pine_blue_r.png",
          "imageheight":150,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"leftThird"
+                }]
         }, 
         {
          "id":182,
          "image":"..\/images\/tiles\/tree_pine_l.png",
          "imageheight":150,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"rightThird"
+                }]
         }, 
         {
          "id":183,
          "image":"..\/images\/tiles\/tree_pine_r.png",
          "imageheight":150,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"leftThird"
+                }]
         }, 
         {
          "id":184,
          "image":"..\/images\/tiles\/tree_pine_yellow_l.png",
          "imageheight":150,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"rightThird"
+                }]
         }, 
         {
          "id":185,
          "image":"..\/images\/tiles\/tree_pine_yellow_r.png",
          "imageheight":150,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"leftThird"
+                }]
         }, 
         {
          "id":186,
          "image":"..\/images\/tiles\/tree1.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":187,
          "image":"..\/images\/tiles\/tree2.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":188,

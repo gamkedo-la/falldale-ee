@@ -612,7 +612,7 @@ function enemyClass() {
     };
 
     this.isPassableSprite = function(sprite) {
-        if (sprite && (sprite.collider == "full" || !sprite.collider)) {
+        if (sprite && (sprite.collider == "none" || !sprite.collider)) {
             return false;
         }
         return true;
