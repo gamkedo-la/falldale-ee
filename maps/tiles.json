@@ -16,7 +16,7 @@
  "margin":0,
  "name":"tiles",
  "spacing":0,
- "tilecount":363,
+ "tilecount":366,
  "tiledversion":"1.3.3",
  "tileheight":150,
  "tiles":[
@@ -2593,6 +2593,30 @@
          "image":"..\/images\/tiles\/waterPlaceholder.png",
          "imageheight":50,
          "imagewidth":50
+        }, 
+        {
+         "id":591,
+         "image":"..\/images\/tiles\/bonfire_l_PH.png",
+         "imageheight":100,
+         "imagewidth":50
+        }, 
+        {
+         "id":592,
+         "image":"..\/images\/tiles\/bonfire_r_PH.png",
+         "imageheight":100,
+         "imagewidth":50
+        }, 
+        {
+         "id":593,
+         "image":"..\/images\/tiles\/bonfire_s_PH.png",
+         "imageheight":50,
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"bottomHalf"
+                }]
         }],
  "tilewidth":52,
  "type":"tileset",

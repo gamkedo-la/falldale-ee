@@ -26,6 +26,9 @@ var archerPic3 = document.createElement("img");
 var deadArcherPic = document.createElement("img");
 var twigPic = document.createElement("img");
 var clothPic = document.createElement("img");
+var bonfireSmAnim = document.createElement("img");
+var bonfireLeftAnim = document.createElement("img");
+var bonfireRightAnim = document.createElement("img");
 
 //NPCs
 //Monsters
@@ -387,6 +390,9 @@ function loadImages() {
   { tileType: TILE_CASTLE_BATTLEMENT_BR, theFile: "castle/castle_battlement_br.png" },
   */
 
+  { varName: bonfireSmAnim, theFile: "forest/bonfire_s.png" },
+  { varName: bonfireLeftAnim, theFile: "forest/bonfire_l.png" },
+  { varName: bonfireRightAnim, theFile: "forest/bonfire_r.png" },
     { varName: characterCreationBackgroundPic, theFile: "gameStates/characterCreation.png" },
 	{ varName: cloudPic, theFile: "gameStates/cloud.png" },
 	{ varName: falldalePic, theFile: "gameStates/falldale.png" },
