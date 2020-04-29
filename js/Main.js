@@ -208,6 +208,9 @@ function loadLevel() {
   if (levelNow == falldaleZone && !redWarrior.questOneComplete) {
     startQuestOne();
   }
+  if (levelNow == castleZone && !redWarrior.questThreeComplete) {
+    startQuestThree();
+  }
   
   //enemyList.splice(0, enemyList.length); //Empty enemyList
   //tileList.splice(0, tileList.length); //Empty tileList

@@ -291,6 +291,7 @@ function spawnCharacter(pos, type) {
 	let newObject = loadCharacter(type);
 	newObject.setPos(pos.x,pos.y);
 	enemyList.push(newObject)
+	return newObject;
 }
 
 function getLayer(name) {

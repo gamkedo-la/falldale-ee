@@ -595,6 +595,10 @@ function enemyClass() {
             this.bounceTargetX = this.x + this.bounceX;
             this.bounceTargetY = this.y + this.bounceY;
         }
+
+        if (!this.alive && this.q3) {
+            q3HandleEnemyKill(this);
+        }
     };
 
     this.reset = function(resetX, resetY) {
