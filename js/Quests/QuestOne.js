@@ -59,7 +59,7 @@ function startQuestOne() {
 function countGoblinforQuestOne() {
   console.log("count goblin for q1");
   if (redWarrior.questOneComplete == false) {
-    if (levelNow == 7) { // located in Falldale
+    if (levelNow == falldaleZone) { // located in Falldale
       goblinsKilledInFallDale++;
       checkForQuestOneComplete();
     }

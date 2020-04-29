@@ -174,45 +174,22 @@ function imageLoadingDoneSoStartGame() {
 function backgroundMusicSelect() {
   var musicLevel = levelNow;
   switch (musicLevel) {
-    case 0:
-      backgroundMusic.loopSong("woodsbgm");
-      break;
-    case 1:
+    case castleZone:
       backgroundMusic.loopSong("wizard-tower");
       break;
-    case 2:
-      backgroundMusic.loopSong("woodsbgm");
-      break;
-    case 3:
-      backgroundMusic.loopSong("woodsbgm");
-      break;
-    case 4:
-      backgroundMusic.loopSong("woodsbgm");
-      break;
-    case 5:
-      backgroundMusic.loopSong("woodsbgm");
-      break;
-    case 6:
-      backgroundMusic.loopSong("woodsbgm");
-      break;
-    case 7:
+    case falldaleZone:
       if (redWarrior.questOneComplete) {
         backgroundMusic.loopSong("have-a-nice-beer");
       } else {
         backgroundMusic.loopSong("goblinRaid");
       }
       break;
-    case 8:
-      backgroundMusic.loopSong("woodsbgm");
-      break;
-    case 9:
-      backgroundMusic.loopSong("woodsbgm");
-      break;
-    case 10:
+    case graveyardZone:
+    case oldGraveyardZone:
       backgroundMusic.loopSong("cemeteryBGM");
       break;
-    case 12:
-      backgroundMusic.loopSong("cemeteryBGM");
+    default:
+      backgroundMusic.loopSong("woodsbgm");
       break;
   }
 }
@@ -228,7 +205,7 @@ function loadLevel() {
 
   //roomGrid = whichLevel.slice();
   console.log("levelNow: " + levelNow);
-  if (levelNow == 7 && !redWarrior.questOneComplete) {
+  if (levelNow == falldaleZone && !redWarrior.questOneComplete) {
     startQuestOne();
   }
   
@@ -236,110 +213,6 @@ function loadLevel() {
   //tileList.splice(0, tileList.length); //Empty tileList
   //animateList.splice(0, animateList.length); //Empty animateList
   backgroundMusicSelect();
-
-  /*
-  var arrayIndex = 0;
-  for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) {
-    for (var eachCol = 0; eachCol < ROOM_COLS; eachCol++) {
-      let tileType = roomGrid[ arrayIndex ];
-      var newEnemy;
-      var newTile;
-      //Enemies and NPCs
-      if (classTileNames[tileType] != undefined) {
-        let type = classTileNames[roomGrid [ arrayIndex ]];
-        newEnemy = loadCharacter(type);
-      } else if (tileType == TILE_CAT) {   // NPC
-        newEnemy = new npcClass('Fido', catPic);
-        newEnemy.numberOfFrames = 6; // six frame walk cycle
-        newEnemy.patrolPoints = [ 4, 6, 10, 6 ]; // sidewalk near your house
-        newEnemy.spriteSheetRows = 2; // to allow flipping
-      // animations
-      } else if ( tileType == TILE_BONFIRE_LG ||
-                  tileType == TILE_BONFIRE_S ) {
-        let sprite = worldPics[ tileType ];
-        let resetX = (eachCol * TILE_W);
-        let resetY = (eachRow * TILE_H);
-        if (tileType == TILE_BONFIRE_LG) {
-          resetY -= 50;
-        }
-        newAnim = new animatorClass();
-        newAnim.initialize(sprite, 8);
-        newAnim.reset(resetX, resetY);
-        if (tileType == TILE_BONFIRE_LG) {
-          newAnim.height = 100;
-          newAnim.width = 100;
-          newAnim.sx = 100;
-        }
-        if (tileTypeHasGrassTransparency(tileType)) {
-          newTile = new TileObject(arrayIndex);
-          newTile.setNewType(TILE_GRASS);
-          tileList.push(newTile);
-        }
-        arrayIndex++;
-        continue;//Don't reset or add to enemyList if no enemy tile found
-
-      // tiles
-      } else {
-        newTile = new TileObject(arrayIndex);
-
-        if (tileTypeHasTransparency(newTile.type)) {
-          newTile.setNewType(TILE_ROAD);
-          tileList.push(newTile);
-          newTile = new TileObject(arrayIndex);
-        } else if (tileTypeHasGrassTransparency(newTile.type)) {
-          newTile.setNewType(TILE_GRASS);
-          tileList.push(newTile);
-          newTile = new TileObject(arrayIndex);
-        } else if (tileTypeHasBarFloorTransparency(newTile.type)) {
-          newTile.setNewType(TILE_BAR_FLOOR1);
-          tileList.push(newTile);
-          newTile = new TileObject(arrayIndex);
-        }
-
-        // double height tiles
-        if (tileType == TILE_TREE_PINE_L ||
-            tileType == TILE_TREE_PINE_R ||
-            tileType == TILE_TREE_PINE_BLUE_L ||
-            tileType == TILE_TREE_PINE_BLUE_R ||
-            tileType == TILE_TREE_PINE_YELLOW_L ||
-            tileType == TILE_TREE_PINE_YELLOW_R) {
-          newTile.height = 150;
-          newTile.y -= 100;
-        }
-
-        tileList.push(newTile);
-        arrayIndex++;
-        continue;//Don't reset or add to enemyList if no enemy tile found
-      }
-
-      let offsetX = newEnemy.startOffsetX != undefined ? newEnemy.startOffsetX : 0;
-      let offsetY = newEnemy.startOffsetY != undefined ? newEnemy.startOffsetY : 0;
-      resetX = (eachCol * TILE_W) + offsetX;
-      resetY = (eachRow * TILE_H) + offsetY;
-      newEnemy.reset(resetX, resetY, newEnemy.direction);
-      enemyList.push(newEnemy);
-
-	  if(npcList.findIndex((element) => element === roomGrid[arrayIndex])) {
-			roomGrid[ arrayIndex ] = TILE_BAR_FLOOR1;
-	  } else {
-			roomGrid[ arrayIndex ] = TILE_ROAD;
-      }	
-	  tileList.push(new TileObject(arrayIndex));
-      arrayIndex++;
-    } //end of col for
-  } // end of row for
-  */
-
-  /*
-  if (levelNow == 7 && !redWarrior.questOneComplete && firstQuestLoad) {
-  	enemyList = [];
-  	for (var e = 0; e < firstQuestEnemyList.length; e++) {
-  		enemyList.push(firstQuestEnemyList[e]);
-  	}
-  } else {
-  	firstQuestLoad = true;
-  }
-  */
 
   redrawMinimapTiles();
 }
@@ -373,7 +246,7 @@ function updateItems() {
 }
 
 function resetGame() { // @TODO: WIP full game reset, not connected to anything for now
-	levelNow = 7;
+	levelNow = falldaleZone;
   startQuestOne();
 	loadLevel();
 }
@@ -762,7 +635,7 @@ function drawAll() {
       roofZones.draw();
     }
 
-    if (levelNow == 7) { //7=fallDale??? elsewhere it is listed as 0 FIXME
+    if (levelNow == falldaleZone) { //7=fallDale??? elsewhere it is listed as 0 FIXME
       // this is now rendered inside depthSortedDraw right after floor tiles
       //OverlayFX.draw(); // night mode, light glows, detail decals, footsteps etc
       if (! movementInstructionsShown ) {

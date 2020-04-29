@@ -805,18 +805,28 @@ var levelList = [orcKingforest, wizardsLayer, 	eastNorthWoods,  // 0, 1, 2
 				upperForest, 	middleWoods, 	eastMiddleWoods, // 3, 4, 5
 				forest, 		fallDale, 		eastWoods, 	     // 6, 7, 8
 				druidsGroove, 	graveYard, 		oldGraveYard];   // 9, 10, 11
+				"upperForest", 	"middleWoods", 	"eastMiddleWoods", // 3, 4, 5
 				*/
 
 var levelList = ["castle", 		"wizard", 		"eastNorthWoods",  // 0, 1, 2
-				"upperForest", 	"middleWoods", 	"eastMiddleWoods", // 3, 4, 5
-				"forest", 		"falldale2", 	"eastWoods", 	     // 6, 7, 8
-				"druidsGroove", "graveyard", 	"oldGraveYard"];   // 9, 10, 11
-var levelRow = 2;
+				"forest", 		"falldale2", 	"eastWoods", 	     // 3, 4, 5
+				"druidsGroove", "graveyard", 	"oldGraveYard"];   // 6, 7, 8
+var levelRow = 1;
 var levelCol = 1;
 var levelNow = 0;  // 0 is invalid, will be using recalulateLevelNow() to initialize elsewhere
 var previousLevelNow;
 var roomGrid = [];
 var currentLevel = {};
+
+const castleZone = 0;
+const wizardZone = 1;
+const eastNorthWoodsZone = 2;
+const forestZone = 3;
+const falldaleZone = 4;
+const eastWoodsZone = 5;
+const druidsGrooveZone = 6;
+const graveyardZone = 7;
+const oldGraveyardZone = 8;
 
 
 const TILE_PLAYERSTART = 950;
@@ -1178,6 +1188,7 @@ const TILE_ROAD_MINIMAP = 902;
 const TILE_BLOCKED_MINIMAP = 903;
 
 const MAP_WIDTH = 3;
+const MAP_HEIGHT = 3;
 
 // List of tiles with no collision interaction for ranged weapons
 // (Created because it would be a shorter list than for tiles with collision [I think])

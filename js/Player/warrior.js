@@ -213,7 +213,7 @@ function warriorClass(whichPlayerPic) {
     this.myRock.move();
 
     this.tryToTriggerMonsterSpawnAt(skeletonClass, skeletonPic, skeletonSpawnTiles, this.x + this.width / 2, this.y + this.height / 2, direction, 6);
-	if(levelNow == 7){
+	if(levelNow == falldaleZone){
 		this.checkIfInBar(this.x, this.y);
 	}
 };
@@ -518,7 +518,7 @@ function warriorClass(whichPlayerPic) {
       return true;
     }
 
-    if (tileR >= ROOM_ROWS - 1 && levelRow < MAP_WIDTH) {
+    if (tileR >= ROOM_ROWS - 1 && levelRow < MAP_HEIGHT) {
       console.log("Touching bottom edge of map");
       levelRow++;
       this.y = TILE_H;
