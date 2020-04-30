@@ -3,8 +3,9 @@
 // coords in tile position (not absolute x,y)
 let q3Spawn = [
   { name: "bob", type: "Goblin", x:10, y:10 },
-  { name: "sue", type: "OrcSword", x:40, y:40 },
-  { name: "billybob", type: "Orc Boss", x:15, y:40 },
+  //{ name: "fred", type: "Goblin", x:15, y:15 },
+  //{ name: "sue", type: "OrcSword", x:40, y:40 },
+  //{ name: "billybob", type: "Orc Boss", x:15, y:40 },
 ];
 
 // keep track of enemies killed, so we don't respawn on lvl load

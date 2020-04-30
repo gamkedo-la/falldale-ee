@@ -80,6 +80,7 @@ function enemyClass() {
     this.goToMode = GOTO_PLAYER;
     this.bounds = new Bounds(5,5,40,40);
     this.collider = false;
+    this.lastIdx = 0;
 
     this.initialize = function(enemyName, enemyPicture, numberOfFrames = 6) {
         this.health = this.maxhealth;
@@ -158,6 +159,18 @@ function enemyClass() {
     };
 
     this.setPos = function(x,y) {
+        let i = clampInt(floorInt(x, TILE_H), 0, ROOM_COLS);
+        let j = clampInt(floorInt(y, TILE_W), 0, ROOM_ROWS);
+        let index = i % ROOM_COLS + ROOM_COLS * j;
+        if (index != this.lastIdx) {
+            this.lastIdx = index;
+            let sprite = getMidSpriteIndex(index);
+            if (!this.isPassableSprite(sprite)) {
+                //console.log("stopping " + this.myName + " from moving into " + sprite);
+                return;
+            }
+            //console.log(this.myName + " moving into " + sprite);
+        }
         this.x = x;
         this.y = y;
         this.collider = new Bounds(this.bounds.minX + this.x, this.bounds.minY + this.y, this.bounds.width, this.bounds.height);
@@ -222,6 +235,7 @@ function enemyClass() {
                     nextPos = this.randomMove(timeBetweenChangeDir, this.speed);
                 }
             }
+
             this.setPos(nextPos.x, nextPos.y);
         }
 
@@ -297,7 +311,16 @@ function enemyClass() {
             var passableFcn = this.isPassableIndex.bind(this);
             this.currentPath = this.pather.pathFrom_To_(thisTileIndex, goToTileIndex, passableFcn);
             if (this.currentPath.length == 0) this.currentPath = null;
-            //console.log("new path is: " + this.currentPath);
+            /*
+            if (this.currentPath) {
+                let str = "";
+                for (let p of this.currentPath) {
+                    let s = getMidSpriteIndex(p);
+                    str = str + p + ":" + s + ":" + ((s != undefined)?s.collider:"u") + "\n";
+                }
+                console.log("new path is: " + str);
+            }
+            */
             this.currentPathIndex = 0;
 
             if (this.myName == "Bat") {
@@ -616,7 +639,11 @@ function enemyClass() {
     };
 
     this.isPassableSprite = function(sprite) {
-        if (sprite && (sprite.collider == "none" || !sprite.collider)) {
+        if (sprite && sprite.collider && sprite.collider != "none") {
+            return false;
+        }
+        // if sprite collider is not specified, it will default to "full" when instantiating the tile...
+        if (sprite && !sprite.collider) {
             return false;
         }
         return true;
@@ -630,7 +657,9 @@ function enemyClass() {
 
     this.isPassableIndex = function(index) {
         // lookup midground sprite for index
-        return this.isPassableSprite(getMidSpriteIndex(index));
+        let sprite = getMidSpriteIndex(index);
+        //if (sprite && sprite.name && sprite.name.startsWith("castle")) console.log("sprite: " + sprite + " collider: " + sprite.collider + " passable: " + this.isPassableSprite(sprite));
+        return this.isPassableSprite(sprite);
     };
 
     this.newRandomPic = function() {
