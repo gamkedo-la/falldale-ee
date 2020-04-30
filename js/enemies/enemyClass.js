@@ -31,6 +31,8 @@ function enemyClass() {
     this.isBouncedBack = false;
     this.bounceSpeedFactor = 0.2;
     this.speed = 0.5;
+    this.defaultSpeed = 0.5;
+    this.aggroSpeed = 0.5;
     this.myName = "anEnemy";
     this.enemyMove = true;
     this.speedMult = 1.0;
@@ -93,6 +95,7 @@ function enemyClass() {
         this.numberOfFrames = numberOfFrames;
         // if enemy doesn't have a custom range use default
         this.aiVisionRange = this.aiVisionRange || AI_VISION_RANGE
+        //console.log("initializing " + enemyName + " vr: " + this.aiVisionRange);
     };
 
     this.draw = function() {
@@ -215,6 +218,7 @@ function enemyClass() {
         OverlayFX.maybeLeaveFootprint(this);
 
         if (this.isBouncedBack) {
+            this.currentPath = null;
             let nextBounceX = this.x + this.bounceX * this.bounceSpeedFactor;
             let nextBounceY = this.y + this.bounceY * this.bounceSpeedFactor;
             //var sprite = getMidSprite(nextBounceX + this.bounds.centerX, nextBounceY + this.bounds.centerY);
@@ -228,9 +232,22 @@ function enemyClass() {
             }
         } else {
             let nextPos = this.pathFindingMove(timeBetweenChangeDir, this.speed);
-            // console.log("Calling Pathfinding Move");
+            /*
+            if (nextPos) {
+                console.log("pathfinding move gives: " + nextPos.x + "," + nextPos.y);
+            } else {
+                console.log("pathfinding move gives: " + nextPos);
+            }
+            */
             if (this.currentPath == null) {
                 nextPos = this.randomMove(timeBetweenChangeDir, this.speed);
+                /*
+                if (nextPos) {
+                    console.log("random move gives: " + nextPos.x + "," + nextPos.y);
+                } else {
+                    console.log("random move gives: " + nextPos);
+                }
+                */
             } else {
                 if (nextPos == null) {
                     nextPos = this.randomMove(timeBetweenChangeDir, this.speed);
@@ -274,12 +291,14 @@ function enemyClass() {
         if (this.goToMode == GOTO_PLAYER) {
             this.goToX = redWarrior.collider.centerX;
             this.goToY = redWarrior.collider.centerY;
-            this.speed = this.aggroSpeed || this.defaultSpeed
+            this.speed = this.aggroSpeed || this.defaultSpeed;
+            //console.log("setting speed to: " + this.speed);
 
             if (distToPlayer > this.aiVisionRange || redWarrior.isInsideAnyBuilding) {
                 this.currentPath = null;
                 this.goToMode = GOTO_NONE;
-                this.speed = this.defaultSpeed
+                this.speed = this.defaultSpeed;
+                //console.log("setting speed to: " + this.speed);
                 console.log(this.myName + this.scriptID + " is no longer tracking player");
                 return null;
             }
@@ -393,6 +412,9 @@ function enemyClass() {
         let newY = this.y;
 
         this.updateSpeedMult(this.collider.centerX, this.collider.centerY);
+
+        //console.log("getNewPosition: wn:" + this.walkNorth + " ws: " + this.walkSouth + " ww: " + this.walkWest + " we: " + this.walkEast);
+        //console.log("speed: " + this.speed + " sm: " + this.speedMult + " sx: " + this.sx + " sy: " + this.sy + " dir: " + this.direction);
 
         if (this.walkNorth) {
             newY -= this.speed * this.speedMult;

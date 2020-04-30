@@ -1,4 +1,5 @@
 const ORC_SPEED = 1.2;
+const ORC_AGGRO = 1.8;
 const ORC_TIME_BETWEEN_CHANGE_DIR = 200;
 
 var orcsKilled = 0;
@@ -7,6 +8,8 @@ orcClass.prototype = new enemyClass();
 
 function orcClass() {
   this.speed = ORC_SPEED;
+  this.defaultSpeed = ORC_SPEED;
+  this.aggroSpeed = ORC_AGGRO;
   this.health = 12;
   this.maxhealth = 12;
   this.alive = true;
@@ -24,6 +27,8 @@ function orcClass() {
   this.shadowYOffset = 56;
   this.deadPic = deadOrcPic;
   this.picVariants = [ orcPic, orcPic2, orcPic3 ];
+  this.debugMovement = true
+  this.pather = new pathFinder()
 
   this.superClassReset = this.reset;
   this.reset = function (resetX, resetY) {

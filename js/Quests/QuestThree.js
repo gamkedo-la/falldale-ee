@@ -3,6 +3,7 @@
 // coords in tile position (not absolute x,y)
 let q3Spawn = [
   // goblins
+  /*
   { name: "bob", type: "Goblin", x:22, y:22, area: "entranceHall" },
   { name: "fred", type: "Goblin", x:9, y:42, area: "" },             // outside campground
   { name: "gus", type: "Goblin", x:8, y:38, area: "" },              // outside campground
@@ -14,11 +15,15 @@ let q3Spawn = [
   { name: "niels", type: "Goblin", x:23, y:11, area: "diningHall" },         
   { name: "goyle", type: "Goblin", x:28, y:9, area: "throneRoom" },         
   { name: "krab", type: "Goblin", x:28, y:13, area: "throneRoom" },         
+  */
   // orcs
+  /*
   { name: "sue", type: "OrcSword", x:33, y:6, area: "" },           // throne room
   { name: "pam", type: "OrcClub", x:33, y:16, area: "" },           // throne room
   { name: "pat", type: "OrcClub", x:23, y:17, area: "entranceHall" },
-  { name: "thelma", type: "OrcAxe", x:21, y:29, area: "" },         // guards front door
+  */
+  { name: "thelma", type: "OrcSword", x:21, y:29, area: "" },         // guards front door
+  /*
   { name: "louise", type: "OrcAxe", x:24, y:29, area: "" },         // guards front door
   { name: "sal", type: "OrcSword", x:5, y:42, area: "" },           // outside campground
   { name: "stimpy", type: "OrcSword", x:13, y:17, area: "storage" },
@@ -29,6 +34,7 @@ let q3Spawn = [
   { name: "myrtle", type: "OrcAxe", x:47, y:26, area: "eastGuard" },
   { name: "millie", type: "OrcClub", x:43, y:20, area: "courtyard" },
   // boss
+  */
   { name: "billybob", type: "Orc Boss", x:38, y:11, area: "throneRoom" },
 ];
 

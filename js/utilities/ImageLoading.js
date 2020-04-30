@@ -17,6 +17,7 @@ var warriorProfilePic = document.createElement("img");
 var animatedEyesPic = document.createElement("img");
 var swordPic = document.createElement("img");
 var clubPic = document.createElement("img");
+var hammerPic = document.createElement("img");
 var bitePic = document.createElement("img");
 var magicSwordPic = document.createElement("img");
 var rockPic = document.createElement("img");
@@ -406,6 +407,7 @@ function loadImages() {
     { varName: swordPic, theFile: "Weapons/basicSword.png" },
     { varName: magicSwordPic, theFile: "Weapons/magicSword.png" },
     { varName: clubPic, theFile: "Weapons/club.png" },
+    { varName: hammerPic, theFile: "Weapons/hammer.png" },
     { varName: bitePic, theFile: "Weapons/bite.png" },
     { varName: skeletonPic, theFile: "Monsters/skeleton.png" },
     { varName: skeletonPic2, theFile: "Monsters/skeleton.png" },
