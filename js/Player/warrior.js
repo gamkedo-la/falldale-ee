@@ -52,6 +52,7 @@ function warriorClass(whichPlayerPic) {
   this.haveMap = false;
   this.delkonRewardOffer = false;
   this.goblinsKilledInFallDale = 0;
+  this.areas = [];
 
 
   // side quests

@@ -27,6 +27,7 @@ var sprites = {};
 var zones = {};
 var zoneCollider = new ZoneCollider(ROOM_COLS, ROOM_ROWS, TILE_W);
 var roofZones = new RoofZones();
+var areas = new Areas();
 
 // Game States //
 
@@ -195,6 +196,7 @@ function backgroundMusicSelect() {
 }
 
 function loadLevel() {
+  areas.reset();
   roofZones.reset();
   zoneCollider.reset();
   recalulateLevelNow();
@@ -221,6 +223,7 @@ function loadLevel() {
 }
 
 function updateAll() {
+  areas.update();
   roofZones.update();
   moveAll();
   updateItems();
@@ -636,6 +639,7 @@ function drawAll() {
 
     if (debugMode) {
       roofZones.draw();
+      areas.draw();
     }
 
     if (levelNow == falldaleZone) { //7=fallDale??? elsewhere it is listed as 0 FIXME

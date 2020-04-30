@@ -268,8 +268,11 @@ function loadObjects(objectgroup) {
 		} else if (object.type == 'RoofZone') {
 			let roofZone = new RoofZone(object.x, object.y, object.width, object.height);
 			roofZones.add(roofZone);
-		}
-		else if (objectDefinitions[object.type]) {
+		} else if (object.type == 'Area') {
+			let name = object.name;
+			let area = new Area(name, object.x, object.y, object.width, object.height);
+			areas.add(area);
+		} else if (objectDefinitions[object.type]) {
 			let newObject = loadCharacter(object.type);
 			newObject.x = object.x;
 			newObject.y = object.y;

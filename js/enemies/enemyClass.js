@@ -81,6 +81,7 @@ function enemyClass() {
     this.bounds = new Bounds(5,5,40,40);
     this.collider = false;
     this.lastIdx = 0;
+    this.assignedArea = "";
 
     this.initialize = function(enemyName, enemyPicture, numberOfFrames = 6) {
         this.health = this.maxhealth;
@@ -164,12 +165,11 @@ function enemyClass() {
         let index = i % ROOM_COLS + ROOM_COLS * j;
         if (index != this.lastIdx) {
             this.lastIdx = index;
-            let sprite = getMidSpriteIndex(index);
-            if (!this.isPassableSprite(sprite)) {
-                //console.log("stopping " + this.myName + " from moving into " + sprite);
+            if (!this.isPassableIndex(index)) {
+                //console.log("stopping " + this.myName + " from moving into " + index);
                 return;
             }
-            //console.log(this.myName + " moving into " + sprite);
+            //console.log(this.myName + " moving into " + index);
         }
         this.x = x;
         this.y = y;
@@ -217,8 +217,9 @@ function enemyClass() {
         if (this.isBouncedBack) {
             let nextBounceX = this.x + this.bounceX * this.bounceSpeedFactor;
             let nextBounceY = this.y + this.bounceY * this.bounceSpeedFactor;
-            var sprite = getMidSprite(nextBounceX + this.bounds.centerX, nextBounceY + this.bounds.centerY);
-            if (this.isPassableSprite(sprite)) {
+            //var sprite = getMidSprite(nextBounceX + this.bounds.centerX, nextBounceY + this.bounds.centerY);
+            const idx = getTileIndexAtPixelCoord(nextBounceX + this.bounds.centerX, nextBounceY + this.bounds.centerY);
+            if (this.isPassableIndex(idx)) {
                 this.setPos(nextBounceX, nextBounceY);
             }
             if (Math.abs(this.x - this.bounceTargetX) < 0.1 ||
@@ -420,8 +421,9 @@ function enemyClass() {
         }
 
         // check for collisions (make this it's own function???)
-        let midSprite = getMidSprite(newX+this.bounds.centerX, newY+this.bounds.centerY);
-        if (!this.isPassableSprite(midSprite)) {
+        // get index
+        var idx = getTileIndexAtPixelCoord(newX+this.bounds.centerX, newY+this.bounds.centerY);
+        if (!this.isPassableIndex(idx)) {
             if (this.walkNorth) {
                 this.changeDirection("south");
             } else if (this.walkEast) {
@@ -656,6 +658,13 @@ function enemyClass() {
     };
 
     this.isPassableIndex = function(index) {
+        // is enemy assigned an area?
+        if (this.assignedArea) {
+            let area = areas.get(this.assignedArea);
+            if (area && !area.hasIndex(index)) {
+                return false;
+            }
+        }
         // lookup midground sprite for index
         let sprite = getMidSpriteIndex(index);
         //if (sprite && sprite.name && sprite.name.startsWith("castle")) console.log("sprite: " + sprite + " collider: " + sprite.collider + " passable: " + this.isPassableSprite(sprite));

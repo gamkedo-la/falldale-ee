@@ -2,7 +2,7 @@
 
 // coords in tile position (not absolute x,y)
 let q3Spawn = [
-  { name: "bob", type: "Goblin", x:10, y:10 },
+  { name: "bob", type: "Goblin", x:22, y:22, area: "entranceHall" },
   //{ name: "fred", type: "Goblin", x:15, y:15 },
   //{ name: "sue", type: "OrcSword", x:40, y:40 },
   //{ name: "billybob", type: "Orc Boss", x:15, y:40 },
@@ -20,6 +20,7 @@ function startQuestThree() {
     let pos = {x: spawn.x * TILE_W, y: spawn.y * TILE_H};
 		console.log("spawning " + spawn.type + " at " + pos.x + "," + pos.y);
     let enemy = spawnCharacter(pos, spawn.type);
+    enemy.assignedArea = spawn.area;
     enemy.q3 = true;
     enemy.myName = spawn.name;
   }
