@@ -20,12 +20,12 @@ function healerInput(whichKeyCode) {
         if (redWarrior.stats.health <= redWarrior.stats.maxHealth - 1) {
           redWarrior.inventory.goldpieces = redWarrior.inventory.goldpieces - 10;
           redWarrior.stats.health = redWarrior.stats.health + 1;
-          shopKeeperFeedback = "Healer:  Thank you for your donation.  Please come again.";
+          shopKeeperFeedback = "Henry:  Thank you for your donation.  Please come again.";
         } else {
-          shopKeeperFeedback = "Healer:  I can not heal you any more.";
+          shopKeeperFeedback = "Henry:  I can not heal you any more.";
         }
       } else {
-        shopKeeperFeedback = "Healer:  You don't have enough gold pieces";
+        shopKeeperFeedback = "Henry:  You don't have enough gold pieces";
       }
       break;
     case NUM_2:
@@ -33,28 +33,28 @@ function healerInput(whichKeyCode) {
         if (redWarrior.stats.health <= redWarrior.stats.maxHealth - 5) {
           redWarrior.inventory.goldpieces = redWarrior.inventory.goldpieces - 40;
           redWarrior.stats.health = redWarrior.stats.health + 5;
-          shopKeeperFeedback = "Healer:  Thank you for your generous donation.  Please come again.";
+          shopKeeperFeedback = "Henry:  Thank you for your generous donation.  Please come again.";
         } else {
-          shopKeeperFeedback = "Healer:  I can not heal you that much.";
+          shopKeeperFeedback = "Henry:  I can not heal you that much.";
         }
       } else {
-        shopKeeperFeedback = "Healer:  You don't have enough gold pieces";
+        shopKeeperFeedback = "Henry:  You don't have enough gold pieces";
       }
       break;
     case NUM_3:
       if (redWarrior.inventory.goldpieces >= 50) {
         redWarrior.inventory.goldpieces = redWarrior.inventory.goldpieces - 50;
         redWarrior.inventory.healingPotion++;
-        shopKeeperFeedback = "Healer:  Thank you for your very generous donation.  Enjoy your healing potion when it's needed.";
+        shopKeeperFeedback = "Henry:  Thank you for your very generous donation.  Enjoy your healing potion when it's needed.";
       } else {
-        shopKeeperFeedback = "Shop Keeper:  You don't have enough gold pieces";
+        shopKeeperFeedback = "Henry:  You don't have enough gold pieces";
       }
       break;
     case NUM_4:
-      shopKeeperFeedback = "Healer:  Thanks for stopping by.  Please come again.";
+      shopKeeperFeedback = "Henry:  Thanks for stopping by.  Please come again.";
       break;
     default:
-      shopKeeperFeedback = "Healer:  Please come again.";
+      shopKeeperFeedback = "Henry:  Please come again.";
       break;
   }
   console.log("healer interraction done");

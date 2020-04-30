@@ -158,7 +158,7 @@ function npcClass(npcName, npcPic, npcFrames) {
           NPCDialog = "Fenton:  The Shop Keeper has a present for you."
         }
       } else if (this.myName == "Healer") {
-        NPCDialog = "Healer:  Hi, I'm the Healer.  I could use a better name.";
+        NPCDialog = "Healer:  Hi, I'm the Henry the Healer.";
         isAtHealer = true;
         humanMaleHi2.play();
       } else if (this.myName == "Shop Keeper") {
