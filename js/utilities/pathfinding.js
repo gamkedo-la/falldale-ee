@@ -23,12 +23,15 @@ function pathFinder() {
         while (frontier.length > 0) {
             var current = frontier.shift();
             var neighbors = neighborsForIndex(current, isPassableFunction);
+            //console.log("==> checking current: " + current + " neighbors: " + neighbors + " cf.length: " + Object.getOwnPropertyNames(cameFrom).length);
 
             for (let i = 0; i < neighbors.length; i++) {
                 const next = neighbors[i];
+                if (next == undefined || next == null) continue;
                 if (cameFrom[next] == undefined) {
                     frontier.push(next);
                     cameFrom[next] = current;
+                    //console.log("extending frontier, next: " + next + " current: " + current + "updated cameFrom:" + cameFrom[next]);
                 }
 
                 if (next == target) {
@@ -37,11 +40,17 @@ function pathFinder() {
             }
         }
 
+        //console.log("cameFrom.length" + cameFrom.length);
+        //console.log("have potential path: current: " + current + " start: " + start);
+
         var path = [];
 
         var current = target;
 
+        let iters = 1000;
         while (current != start) {
+            //console.log("current: " + current);
+            if (iters-- <= 0) break;
             path.splice(0, 0, current);
             current = cameFrom[current];
             if (current == undefined) {
@@ -50,6 +59,8 @@ function pathFinder() {
         }
 
         path.splice(0, 0, start);
+
+        //console.log("path: " + path);
 
         return path;
     };
