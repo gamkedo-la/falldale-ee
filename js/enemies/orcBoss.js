@@ -52,13 +52,11 @@ function orcBossClass() {
    this.myMelee.y = this.y;
   };
   
-  
-  
     
   this.superClassDraw = this.draw;
   this.draw = function () {
     this.superClassDraw();
-	console.log(this.health)
+    //console.log(this.health)
     if (!this.alive) {
 	  if(displayQ3){
 		questThreeComplete();

@@ -30,7 +30,7 @@ function warriorClass(whichPlayerPic) {
   this.isEnemyCollision = false;
   this.myWarriorPic = null; // which picture to use
   this.name = "Untitled warrior";
-  this.bounds = new Bounds(10,25,30,20);
+  this.bounds = new Bounds(10,20,30,30);
   this.collider = new Bounds(this.x+this.bounds.minX, this.y+this.bounds.minY, this.bounds.width, this.bounds.height);
   
   this.isTakingDamage = false;

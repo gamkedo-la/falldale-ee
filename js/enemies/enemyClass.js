@@ -99,7 +99,7 @@ function enemyClass() {
     };
 
     this.draw = function() {
-        if (this.enemyMove) {
+        if (this.enemyMove && !this.speed == 0) {
             this.tickCount++;
         }
         if (this.tickCount > this.ticksPerFrame) {
@@ -130,6 +130,7 @@ function enemyClass() {
                 this.myMelee.draw(this);
             }
 
+            if (canvasContext.dbgCollider && this.myMelee && this.myMelee.collider) this.myMelee.collider.draw(canvasContext);
             if (canvasContext.dbgCollider && this.collider) {
                 this.collider.draw(canvasContext);
             }
@@ -221,10 +222,11 @@ function enemyClass() {
             this.currentPath = null;
             let nextBounceX = this.x + this.bounceX * this.bounceSpeedFactor;
             let nextBounceY = this.y + this.bounceY * this.bounceSpeedFactor;
-            //var sprite = getMidSprite(nextBounceX + this.bounds.centerX, nextBounceY + this.bounds.centerY);
             const idx = getTileIndexAtPixelCoord(nextBounceX + this.bounds.centerX, nextBounceY + this.bounds.centerY);
             if (this.isPassableIndex(idx)) {
                 this.setPos(nextBounceX, nextBounceY);
+            } else {
+                this.isBouncedBack = false;
             }
             if (Math.abs(this.x - this.bounceTargetX) < 0.1 ||
                 Math.abs(this.y - this.bounceTargetY) < 0.1) {
@@ -287,14 +289,22 @@ function enemyClass() {
         if (this.pather == null) {
             return null;
         } //this enemy is not fully initialized yet
-        var distToPlayer = this.nonPathDistance(this.x, this.y, redWarrior.x, redWarrior.y);
+        var distToPlayer = this.nonPathDistance(this.collider.centerX, this.collider.centerY, redWarrior.x, redWarrior.y);
         if (this.goToMode == GOTO_PLAYER) {
             this.goToX = redWarrior.collider.centerX;
             this.goToY = redWarrior.collider.centerY;
             this.speed = this.aggroSpeed || this.defaultSpeed;
             //console.log("setting speed to: " + this.speed);
 
-            if (distToPlayer > this.aiVisionRange || redWarrior.isInsideAnyBuilding) {
+            // we are in melee range
+            // is the player within our melee hitbox?
+            if (this.myMelee && this.myMelee.collider && this.myMelee.collider.hit(redWarrior.collider)) {
+                this.currentPath = null;
+                if (this.speed) console.log(this.myName + this.scriptID + " stopping, in melee range");
+                this.speed = 0;
+
+            // check for out of AI range
+            } else if (distToPlayer > this.aiVisionRange || redWarrior.isInsideAnyBuilding) {
                 this.currentPath = null;
                 this.goToMode = GOTO_NONE;
                 this.speed = this.defaultSpeed;

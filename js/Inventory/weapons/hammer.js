@@ -1,22 +1,27 @@
 // hammer for orc boss
-const HAMMER_LIFE = 6;
-const BASE_HAMMER_COOLDOWN = 20;
+const HAMMER_LIFE = 8;
+const BASE_HAMMER_COOLDOWN = 60;
 
 hammerClass.prototype = new weaponClass();
 
 function hammerClass() {
-  //this.damageDice = 4; // 6 Sided Dice
-  this.damageDice = 0; // 6 Sided Dice
-  //this.damagePoints = 4;
+  this.damageDice = 9; // 6 Sided Dice
   this.damagePoints = 0;
-  //this.attackDice = 20;
-  this.attackDice = 0;
-  this.attackBonus = 1;
-
+  this.attackDice = 20;
+  this.attackBonus = 3;
+  this.width = 72;
+  this.height = 25;
+  this.collider;
+  this.range = 90;
   this.life = 0;
   this.baseHammerLife = HAMMER_LIFE;
   this.coolDownTime = 0;
   this.hammerCooldown = BASE_HAMMER_COOLDOWN;
+
+  this.southOffset = {x: 35, y:55};
+  this.northOffset = {x: 40, y:48};
+  this.westOffset = {x: 40, y:73};
+  this.eastOffset = {x: 35, y:48};
 
   this.shootFrom = function (wielder) {
     this.x = wielder.x;
@@ -24,41 +29,30 @@ function hammerClass() {
 
     this.life = this.baseHammerLife;
     this.coolDownTime = this.hammerCooldown;
-    this.hammerCooldown = Math.floor(Math.random() * BASE_HAMMER_COOLDOWN);
+    this.hammerCooldown = BASE_HAMMER_COOLDOWN * .5 + Math.floor(Math.random() * BASE_HAMMER_COOLDOWN*.5);
   };
 
   //override weaponClass.rangeTest
   this.rangeTest = function (wielder, adversary) {
-    if (wielder.direction == "north") {// warrior facing North
-      if (this.rangeHitTest(25, -20, adversary)) {
-        return true;
-      }
-    } else if (wielder.direction == "south") {// warrior facing South
-      if (this.rangeHitTest(10, 70, adversary)) {
-        return true;
-      }
-    } else if (wielder.direction == "west") {// warrior facing West
-      if (this.rangeHitTest(-30, 25, adversary)) {
-        return true;
-      }
-    } else if (wielder.direction == "east") {// warrior facing East
-      if (this.rangeHitTest(60, 25, adversary)) {
-        return true;
-      }
+    let cx = (wielder.collider ? wielder.collider.centerX : wielder.x);
+    let cy = (wielder.collider ? wielder.collider.centerY : wielder.y);
+    switch (wielder.direction) {
+      case "north":
+        this.collider = new Bounds(cx - (this.height-10), cy - (this.width + 5), this.height*2, this.width-10);
+        break;
+      case "south":
+        this.collider = new Bounds(cx - (this.height), cy + 15, this.height*2, this.width-20);
+        break;
+      case "west":
+        this.collider = new Bounds(cx - (this.width-5), cy - this.height, this.width, this.height*2);
+        break;
+      case "east":
+        this.collider = new Bounds(cx, cy - this.height, this.width-5, this.height*2);
+        break;
     }
-
-    return false;
-  };
-
-  this.rangeHitTest = function (deltaX, deltaY, adversary) {
-    if ((this.x + deltaX > adversary.x) &&
-        (this.x + deltaX < (adversary.x + adversary.width)) &&
-        (this.y + deltaY > adversary.y) &&
-        (this.y + deltaY < (adversary.y + adversary.height))) {
-      return true;
-    }
-
-    return false;
+    let hit = adversary.collider.hit(this.collider);
+    //if (hit) console.log("hit: " + hit);
+    return hit;
   };
 
   //override weaponClass.hitTest
@@ -80,51 +74,38 @@ function hammerClass() {
   };
 
   this.draw = function (wielder) {
-
-    let width = 72;
-    let height = 25;
-    let x = wielder.x;
-    let y = wielder.y;
+    let pos = {x: wielder.x, y: wielder.y};
     let rotation = 0;
 
-    let centerX = wielder.x + wielder.width / 2;
-    let centerY = wielder.y + wielder.height / 2;
-
-    if (wielder.direction == "north") {
-      //clubWidth = 10;
-      //clubLength = 20;
-      //clubXLocation = centerX + 5;
-      //clubYLocation = wielder.y - clubLength + 10;
-    } else if (wielder.direction == "south") {
-      //clubWidth = 10;
-      //clubLength = 40;
-      //clubXLocation = centerX - 5;
-      //clubYLocation = centerY + 35;
-      //rotation = Math.PI;
-    } else if (wielder.direction == "west") {
-      //clubWidth = 40;
-      //clubLength = 10;
-      //clubXLocation = wielder.x - clubWidth + 10;
-      //clubYLocation = centerY;
-      //rotation = -Math.PI / 2;
-    } else if (wielder.direction == "east") {
-      //clubWidth = 40;
-      //clubLength = 10;
-      //clubXLocation = wielder.x + 60;
-      //clubYLocation = centerY + 30;
-      //rotation = Math.PI / 2;
+    switch(wielder.direction) {
+      case "north":
+        pos = {x: wielder.x + this.northOffset.x, y: wielder.y + this.northOffset.y};
+        rotation = -(Math.PI * .5);
+        break;
+      case "south":
+        pos = {x: wielder.x + this.southOffset.x, y: wielder.y + this.southOffset.y};
+        rotation = (Math.PI * .5);
+        break;
+      case "west":
+        pos = {x: wielder.x + this.westOffset.x, y: wielder.y + this.westOffset.y};
+        rotation = Math.PI;
+        break;
+      case "east":
+        pos = {x: wielder.x + this.eastOffset.x, y: wielder.y + this.eastOffset.y};
+        break;
     }
+    //console.log("draw pos: " + pos.x + "," + pos.y);
 
     if (this.life > 0) {
       this.myHammerPic = hammerPic;
       canvasContext.save();
 
       if (rotation != 0) {
-        canvasContext.translate(clubXLocation, clubYLocation);
+        canvasContext.translate(pos.x, pos.y);
         canvasContext.rotate(rotation);
-        canvasContext.drawImage(this.myHammerPic, -clubWidth / 2, -clubLength / 2);
+        canvasContext.drawImage(this.myHammerPic, 0, 0);
       } else {
-        canvasContext.drawImage(this.myHammerPic, x, y);
+        canvasContext.drawImage(this.myHammerPic, pos.x, pos.y);
       }
 
       canvasContext.restore();

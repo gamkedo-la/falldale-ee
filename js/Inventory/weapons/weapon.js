@@ -17,7 +17,7 @@ function weaponClass() {
   this.toHitPoints = 0;
   this.attackDice = 20;
   this.attackBonus = 1;
-
+  this.range = 40;
 
   this.diceRoll = function(dieToRoll) {
   	return Math.floor(Math.random() * (dieToRoll - 1)) + (1 + this.damageBonus);
