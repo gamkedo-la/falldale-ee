@@ -254,7 +254,13 @@
          "id":27,
          "image":"..\/images\/tiles\/bridge-lower.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":28,
@@ -485,7 +491,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":53,
@@ -513,7 +525,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":54,
@@ -541,7 +559,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":55,
@@ -569,19 +593,37 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":56,
          "image":"..\/images\/tiles\/cave_sm.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":57,
          "image":"..\/images\/tiles\/cave_smd.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":58,
@@ -637,7 +679,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":60,
@@ -665,7 +713,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":61,
@@ -704,7 +758,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":62,
@@ -732,7 +792,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":63,
@@ -771,7 +837,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":64,
@@ -799,7 +871,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":65,
@@ -827,7 +905,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":66,
@@ -855,7 +939,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":67,
@@ -883,7 +973,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":68,
@@ -911,7 +1007,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":69,
@@ -939,7 +1041,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":70,
@@ -967,7 +1075,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":71,
@@ -1335,7 +1449,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":84,
@@ -1363,7 +1483,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":85,
@@ -1391,7 +1517,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":86,
@@ -1419,7 +1551,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":87,
@@ -1447,7 +1585,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":88,
@@ -1475,7 +1619,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":89,
@@ -1503,7 +1653,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":90,
@@ -1531,7 +1687,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":91,
@@ -1559,7 +1721,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":92,
@@ -1587,13 +1755,25 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":93,
          "image":"..\/images\/tiles\/dcliff_lc_btr.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":94,
@@ -1621,7 +1801,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":95,
@@ -1649,7 +1835,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":96,
@@ -1677,7 +1869,13 @@
              "visible":true,
              "x":0,
              "y":0
-            }
+            },
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"full"
+                }]
         }, 
         {
          "id":97,
