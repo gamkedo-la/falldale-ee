@@ -1,4 +1,12 @@
 { "columns":0,
+ "editorsettings":
+    {
+     "export":
+        {
+         "format":"",
+         "target":"."
+        }
+    },
  "grid":
     {
      "height":1,
@@ -8,8 +16,8 @@
  "margin":0,
  "name":"tiles",
  "spacing":0,
- "tilecount":366,
- "tiledversion":"2019.07.05",
+ "tilecount":378,
+ "tiledversion":"1.3.3",
  "tileheight":150,
  "tiles":[
         {
@@ -2127,7 +2135,7 @@
         {
          "id":138,
          "image":"..\/images\/tiles\/grass.png",
-         "imageheight":51,
+         "imageheight":50,
          "imagewidth":50,
          "properties":[
                 {
@@ -4919,6 +4927,78 @@
                  "type":"string",
                  "value":"bottomHalf"
                 }]
+        }, 
+        {
+         "id":594,
+         "image":"..\/images\/tiles\/grass_b.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":595,
+         "image":"..\/images\/tiles\/grass_btl.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":596,
+         "image":"..\/images\/tiles\/grass_btr.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":597,
+         "image":"..\/images\/tiles\/grass_l.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":598,
+         "image":"..\/images\/tiles\/grass_ltb.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":599,
+         "image":"..\/images\/tiles\/grass_ltt.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":600,
+         "image":"..\/images\/tiles\/grass_r.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":601,
+         "image":"..\/images\/tiles\/grass_rtb.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":602,
+         "image":"..\/images\/tiles\/grass_rtt.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":603,
+         "image":"..\/images\/tiles\/grass_t.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":604,
+         "image":"..\/images\/tiles\/grass_ttl.png",
+         "imageheight":50,
+         "imagewidth":50
+        }, 
+        {
+         "id":605,
+         "image":"..\/images\/tiles\/grass_ttr.png",
+         "imageheight":50,
+         "imagewidth":50
         }],
  "tilewidth":52,
  "type":"tileset",
