@@ -487,7 +487,9 @@ function depthSortedDraw() {
 
   objectsToDraw.sort(
       function (a, b) {
-        return ((a.y + a.height) - (b.y + b.height));
+        let ao = (a.depth) ? a.depth * TILE_H : 0;
+        let bo = (b.depth) ? b.depth * TILE_H : 0;
+        return ((a.y + a.height + ao) - (b.y + b.height + bo));
       }
   );
 

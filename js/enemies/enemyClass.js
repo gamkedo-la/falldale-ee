@@ -24,6 +24,7 @@ function enemyClass() {
     this.type = "enemy";
     this.x = 0;
     this.y = 0;
+    this.depth = 2;
     this.bounceX = 0;
     this.bounceY = 0;
     this.bounceTargetX = 0;

@@ -226,20 +226,22 @@ function getTile(tileID) {
 function loadTiledMap(map) {
 	enemyList.length = 0;
 	tileList.length = 0;
+	let depth = 0;
 	for (let layer of map.layers) {
 		console.log("layer: " + layer.name + " type: " + layer.type);
 		if (layer.type === "tilelayer") {
-			createTileObjects(layer);
+			createTileObjects(layer, depth);
 			if (layer.name === 'Midground') {
 				roomGrid = layer.data.slice();
 			}
 		}
-		if (layer.type === "objectgroup") loadObjects(layer);
+		if (layer.type === "objectgroup") loadObjects(layer, depth);
+		depth++;
 	}
 	console.log("tileList.length: " + tileList.length);
 }
 
-function createTileObjects(layer) {
+function createTileObjects(layer, depth) {
 	let type;
 	console.log("loading layer: " + layer.name);
 	//Values used for depth sorted draw
@@ -252,7 +254,7 @@ function createTileObjects(layer) {
 	for (let row = 0; row < layer.height; row++) {
 		for (let col = 0; col < layer.width; col++) {
 			if (layer.data[arrayIndex] > 0) {
-				let newTile = new TiledObject(layer.name, arrayIndex, type, layer.data[arrayIndex], dfltCollider);
+				let newTile = new TiledObject(layer.name, arrayIndex, type, layer.data[arrayIndex], depth);
 				if (newTile.collider) {
 					zoneCollider.add(newTile.collider);
 				}
@@ -267,12 +269,12 @@ function createTileObjects(layer) {
 	}
 }
 
-function loadObjects(objectgroup) {
+function loadObjects(objectgroup, depth) {
 	let objects = objectgroup.objects;
 	console.log("loading objects for layer: " + objectgroup.name);
 	for (let object of objects) {
 		if (object.type === 'Rooftop') {
-			let newRoof = new Rooftop(object.x, object.y, object.height, object.width);
+			let newRoof = new Rooftop(object.x, object.y, object.height, object.width, depth);
 			newRoof.type = 50;
 			tileList.push(newRoof);
 		} else if (object.type == 'RoofZone') {

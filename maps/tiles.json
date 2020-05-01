@@ -4312,7 +4312,13 @@
          "id":505,
          "image":"..\/images\/tiles\/castle_door_b1.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":506,

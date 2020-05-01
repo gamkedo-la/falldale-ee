@@ -9,10 +9,11 @@ const animImgMap = {
 	"bonfire_s_PH": bonfireSmAnim,
 }
 
-function TiledObject(layer, index, type, tile, dfltColliderKind) {
+function TiledObject(layer, index, type, tile, depth) {
 	this.layer = layer;
 	this.width = TILE_W;
 	this.height = TILE_H;
+	this.depth = depth;
 	// derive x,y from grid index based on width/height of grid
 	this.x = index % ROOM_COLS * TILE_W;
 	this.y = Math.floor(index / ROOM_COLS) * TILE_H;

@@ -32,6 +32,7 @@ function warriorClass(whichPlayerPic) {
   this.name = "Untitled warrior";
   this.bounds = new Bounds(10,20,30,30);
   this.collider = new Bounds(this.x+this.bounds.minX, this.y+this.bounds.minY, this.bounds.width, this.bounds.height);
+  this.depth = 2;
   
   this.isTakingDamage = false;
   this.warriorHealthCountdownSeconds = 5;

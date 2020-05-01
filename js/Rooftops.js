@@ -1,11 +1,12 @@
 
 class Rooftop {
-	constructor(x, y, height, width) {
+	constructor(x, y, height, width, depth) {
 		this.x = x;
 		this.y = y;
 		this.index = rowColToArrayIndex(Math.floor(this.x / TILE_W), Math.floor(this.y / TILE_H));
 		this.height = height;
 		this.width = width;
+		this.depth = depth;
 		this.visible = true;
 	}
 
@@ -50,7 +51,7 @@ class Rooftop {
 					else pic = sprites.spriteNameMap['roofbackside'];
 				} else if (row == lastRow) {
 					if (col == 0) pic = sprites.spriteNameMap['rooffrontleft'];
-					else if (col == lastCol) pic = sprites.spriteNameMap['rooffrontright'];
+					else if (col == lastCol) pic = sprites.spriteNameMap['roofFrontRight'];
 					else pic = sprites.spriteNameMap['rooffront'];
 				} else { // not first or last row
 					if (col == 0) pic = sprites.spriteNameMap['roofleftside'];
