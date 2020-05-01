@@ -532,7 +532,7 @@ var guiOffsetX = 0;
     barW = Math.floor(barMaxW*goblinsKilledInFallDale/10);
     colorRect(barX,barY,barW,barH,barC);
     drawTextCentered("Falldale Quest Progress:", tx, ty1, "#3d3126", questionProgressionFont);
-    drawTextCentered(goblinsKilledInFallDale + " of 10 Goblins Killed", tx, ty2, "#3d3126", questionProgressionFont);
+    drawTextCentered(goblinsKilledInFallDale + " of 5 Goblins Killed", tx, ty2, "#3d3126", questionProgressionFont);
   }
   else if (redWarrior.quest.twoActive) {
     barW = Math.floor(barMaxW*(goblinsKilledInForest+orcsKilledInForest)/20);
