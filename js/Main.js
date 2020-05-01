@@ -395,8 +395,7 @@ function drawCredits() {
 
         "Click once more anywhere to begin the game!",
         "",
-"Falldale is brought to you by the following members of HomeTeam GameDev...",
-        "",
+"Falldale is brought to you by the following members of HomeTeam GameDev:",
 "Vince McKeown: Project lead (also for the original Falldale), core gameplay, cliff tiles, player animation updates, bush tiles, blacksmith shop, new goblin animations, assorted map updates, tree update, town redesign,","    Orc and Arya updates, optimizations, character creation screen graphics, music integration, garden tiles, mausoleum art, GUI buttons, skeleton animations, Rowan animations, asset cleanup, pahtfinding refinement,","    cloth and stick items, destroyable boxes, quest art, intro illustration, particles, wizard's map",
 "Tylor Allison: Art (tables, bar stools, wooden walls, flagstones, bar joints, top wall updates, window, pine tree, cliffs, caves, bonfire animation, castle walls), level design (castle, east woods), Tiled integration (with Andrew),","    map data conversion, assorted bug fixes, collision system updates, new quest code features, AI zone support, orc boss AI improvements, hammer weapon ",
 "Andrew Mushel: Control improvements, Tiled integration (with Tylor), code refactoring (lock and key, item, treasure, weapon, minimap), additional rooftops",
@@ -405,7 +404,7 @@ function drawCredits() {
 "Yong Wei: Initial character class code, minimap diagonal movement",
 "John Eversole: Goblin AI update to support variable chase speeds",
 "Joshua Rigley: Achievements list",
-
+"------------Original (pre-EE) Falldale Credits------------",
 "Vince McKeown: Project lead, core gameplay and initial functionality, leveling, level and quest design, many sprites (including healer, princess, villagers, goblin, NPCs, non-chief orcs, zombies, skeletons,","    druid boss, bullywug), blacksmith shop, trees, editor, pause support, mausoleums, fireballs, treasure, quest dialog writing, NPC voices, Goblinraid song, assorted sounds, princess audio",
 "Christer \"McFunkypants\" Kaitila: game scaling, gamead support, shadows,rays of light, shine effect, rooftop mouse peek feature, editor improvements, bridge, cat, night mode, minimap, optimization, decoration","    tiles, footprints, water effect, side quests",
 "Steve Driscoll: Archer sprite and integration, goblin club tuning, initial bite support, door functionality and audio, improved word collision test, diagonal movement support, player-monster collisions,","    assorted bug fixes",
