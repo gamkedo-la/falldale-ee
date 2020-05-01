@@ -1,4 +1,12 @@
 { "columns":0,
+ "editorsettings":
+    {
+     "export":
+        {
+         "format":"",
+         "target":"."
+        }
+    },
  "grid":
     {
      "height":1,
@@ -9,7 +17,7 @@
  "name":"tiles",
  "spacing":0,
  "tilecount":366,
- "tiledversion":"2019.07.05",
+ "tiledversion":"1.3.3",
  "tileheight":150,
  "tiles":[
         {
@@ -958,7 +966,13 @@
          "id":178,
          "image":"..\/images\/tiles\/treasure.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"topHalf"
+                }]
         }, 
         {
          "id":180,
@@ -1034,7 +1048,7 @@
         }, 
         {
          "id":186,
-         "image":"..\/images\/Trees\/tree1.png",
+         "image":"..\/images\/tiles\/tree1.png",
          "imageheight":50,
          "imagewidth":50,
          "properties":[
@@ -1046,7 +1060,7 @@
         }, 
         {
          "id":187,
-         "image":"..\/images\/Trees\/tree2.png",
+         "image":"..\/images\/tiles\/tree2.png",
          "imageheight":50,
          "imagewidth":50,
          "properties":[
@@ -1070,7 +1084,7 @@
         }, 
         {
          "id":190,
-         "image":"..\/images\/Trees\/tree3.png",
+         "image":"..\/images\/tiles\/tree3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -1088,7 +1102,7 @@
         }, 
         {
          "id":193,
-         "image":"..\/images\/Trees\/tree4.png",
+         "image":"..\/images\/tiles\/tree4.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -2038,7 +2052,13 @@
          "id":505,
          "image":"..\/images\/tiles\/castle_door_b1.png",
          "imageheight":50,
-         "imagewidth":50
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }, 
         {
          "id":506,
