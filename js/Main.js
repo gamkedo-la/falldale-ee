@@ -395,22 +395,25 @@ function drawCredits() {
 
         "Click once more anywhere to begin the game!",
         "",
-"Falldale is brought to you by the following members of Gamkedo Club...",
+"Falldale is brought to you by the following members of HomeTeam GameDev...",
         "",
-"Vince McKeown: Project lead, core gameplay and initial functionality, leveling, level and quest design, many sprites (including healer, princess,",
-        "    villagers, goblin, NPCs, non-chief orcs, zombies, skeletons, druid boss, bullywug), blacksmith shop, trees, editor, pause support, mausoleums,",
-        "    fireballs, treasure, quest dialog writing, NPC voices, Goblinraid song, assorted sounds, princess audio",
-"Christer \"McFunkypants\" Kaitila: game scaling, gamead support, shadows,rays of light, shine effect, rooftop mouse peek feature, editor ",
-        "    improvements, bridge, cat, night mode, minimap, optimization, decoration tiles, footprints, water effect, side quests",
-"Steve Driscoll: Archer sprite and integration, goblin club tuning, initial bite support, door functionality and audio, improved word collision test,","    diagonal movement support, player-monster collisions, assorted bug fixes",
-"H Trayford: AI path finding, dialog manager, screen culling optimization, organization of weapon code (swords, rocks, arrows, clubs, biting, magic",
-        "    sword), zombie movement tweaks, tile, transparency support, additional input for character selection screen, assorted bug fixes",
-"Gonzalo Delgado: Orc chief art and animations, house art (door, window,and walls), file case issue fix, missing tile error handling, shoe attack","    prototype, ranged weapon improvements, Firefox compatibility fix",
-"Randy Tan Shaoxian: Projectile directionality, flashing effect after recent damage, skeleton spawning from disturbed graves, speed adjustments,",
-        "    camera improvements, assorted refactoring, enemy point collision code",
-"Klaim (A. Joël Lamotte): \"Have A Nice Beer\" pub/happy song, title menu music, wizard tower music, graveyard music,",
-        "    character and sprite selector improvements, boundary checks, charater portrait display",
-"Vismaya Menon (Quenzel201Aliza): Sprites for Player and several characters (Smally, Teeny, Weeny) including facings and animations, initial","    overall storyline",
+"Vince McKeown: Project lead (also for the original Falldale), core gameplay, cliff tiles, player animation updates, bush tiles, blacksmith shop, new goblin animations, assorted map updates, tree update, town redesign,","    Orc and Arya updates, optimizations, character creation screen graphics, music integration, garden tiles, mausoleum art, GUI buttons, skeleton animations, Rowan animations, asset cleanup, pahtfinding refinement,","    cloth and stick items, destroyable boxes, quest art, intro illustration, particles, wizard's map",
+"Tylor Allison: Art (tables, bar stools, wooden walls, flagstones, bar joints, top wall updates, window, pine tree, cliffs, caves, bonfire animation, castle walls), level design (castle, east woods), Tiled integration (with Andrew),","    map data conversion, assorted bug fixes, collision system updates, new quest code features, AI zone support, orc boss AI improvements, hammer weapon ",
+"Andrew Mushel: Control improvements, Tiled integration (with Tylor), code refactoring (lock and key, item, treasure, weapon, minimap), additional rooftops",
+"Allan Regush: Help screen, bartender voice, alchemy shop, stats data (incl. for enemies and quests), levelling up, healer name",
+"Powerproust: Updated inventory display",
+"Yong Wei: Initial character class code, minimap diagonal movement",
+"John Eversole: Goblin AI update to support variable chase speeds",
+"Joshua Rigley: Achievements list",
+
+"Vince McKeown: Project lead, core gameplay and initial functionality, leveling, level and quest design, many sprites (including healer, princess, villagers, goblin, NPCs, non-chief orcs, zombies, skeletons,","    druid boss, bullywug), blacksmith shop, trees, editor, pause support, mausoleums, fireballs, treasure, quest dialog writing, NPC voices, Goblinraid song, assorted sounds, princess audio",
+"Christer \"McFunkypants\" Kaitila: game scaling, gamead support, shadows,rays of light, shine effect, rooftop mouse peek feature, editor improvements, bridge, cat, night mode, minimap, optimization, decoration","    tiles, footprints, water effect, side quests",
+"Steve Driscoll: Archer sprite and integration, goblin club tuning, initial bite support, door functionality and audio, improved word collision test, diagonal movement support, player-monster collisions,","    assorted bug fixes",
+"H Trayford: AI path finding, dialog manager, screen culling optimization, organization of weapon code (swords, rocks, arrows, clubs, biting, magic sword), zombie movement tweaks, tile, transparency support,","    additional input for character selection screen, assorted bug fixes",
+"Gonzalo Delgado: Orc chief art and animations, house art (door, window,and walls), file case issue fix, missing tile error handling, shoe attack prototype, ranged weapon improvements, Firefox compatibility fix",
+"Randy Tan Shaoxian: Projectile directionality, flashing effect after recent damage, skeleton spawning from disturbed graves, speed adjustments, camera improvements, assorted refactoring, enemy point collision code",
+"Klaim (A. Joël Lamotte): \"Have A Nice Beer\" pub/happy song, title menu music, wizard tower music, graveyard music, character and sprite selector improvements, boundary checks, charater portrait display",
+"Vismaya Menon (Quenzel201Aliza): Sprites for Player and several characters (Smally, Teeny, Weeny) including facings and animations, initial overall storyline",
 "Trolzie: Minimap feature, sword UI fade after delay, image display fix, pause screen improvements",
 "Jeremy Kenyon: Save and load feature, question one rewards, map edge transition, movement debug features, reset improvements",
 "Andrew Mushel: Enemy spawn improvements, bat spawn and collision fixes, orc sprite randomization, state screen positioning",
@@ -426,10 +429,12 @@ function drawCredits() {
 "Dominick Aiudi: Character creation update, rock and arrow tile collisions",
 "Charlene A.: Kenku art and animation",
 "Kise: Woods background music",
-"Vaan Hope Khani: Computer distance to the player from AI"
+"Vaan Hope Khani: Computer distance to the player from AI",
+" ",
+"Apply to join us at HomeTeamGameDev.com, let's make games together!"
     ];
   canvasContext.save();
-  canvasContext.font = "12px Sans";
+  canvasContext.font = "8px Arial, Helvetica, sans-serif";
   //canvasContext.translate(stateScreenOffsetX, stateScreenOffsetY);
   canvasContext.drawImage(titlepagePic, 0, 0); // blanks out the screen
    canvasContext.globalAlpha=0.7;
@@ -438,7 +443,7 @@ function drawCredits() {
 
   canvasContext.fillStyle = "white";
   for(var i=0;i<creditsArray.length;i++) {    
-    canvasContext.fillText(creditsArray[i], 8, 12+i*16);
+    canvasContext.fillText(creditsArray[i], 8, 12+i*13);
   }
   canvasContext.restore();
 
