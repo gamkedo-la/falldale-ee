@@ -62,6 +62,16 @@ let objectDefinitions = {
 	//Bonfire
 }
 
+let npcParams = {
+	'Taran': {height:52, width:36, frames:5},
+	'Dodd': {height:52, width:36, frames:5},
+	'Delkon': {height:52, width:36, frames:5},
+	'Healer': {height:52, width:36, frames:5},
+	'Gabriel': {height:52, width:36, frames:5},
+	'Fenton': {height:52, width:36, frames:5},
+	'Addy': {height:52, width:36, frames:5},
+}
+
 let objectSprites = {
 	"Bat": batPic, 
 	"Skeleton": skeletonPic,
@@ -286,6 +296,12 @@ function loadCharacter(type) {
 	let frames = spriteFrames[type];
 	let character = new objectDefinitions[type](type, sprite, frames);
 	character.initialize(type, sprite, frames);
+	let params = npcParams[type];
+	if (params) {
+		character.width = params.width;
+		character.height = params.height;
+		character.numberOfFrames = params.frames;
+	}
 
 	return character;
 }
