@@ -22,6 +22,7 @@ function skeletonClass() {
   this.deadPic = deadSkeletonPic;
   this.health = 15;
   this.alive = true;
+  this.pather = new pathFinder()
 
   this.superClassInitialize = this.initialize;
   this.initialize = function (enemyName, enemyPic, numberOfFrames) {

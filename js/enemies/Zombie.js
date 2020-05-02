@@ -19,6 +19,7 @@ function zombieClass() {
   this.shadowYOffset = 32;
   this.myMelee = new biteClass();
   this.treasureAvailable = true;
+  this.pather = new pathFinder()
 
   this.superClassInitialize = this.initialize;
   this.initialize = function (enemyName, enemyPic) {
