@@ -28,27 +28,15 @@
          "objects":[
                 {
                  "height":0,
-                 "id":1,
-                 "name":"",
+                 "id":3,
+                 "name":"druid test",
                  "point":true,
                  "rotation":0,
-                 "type":"Fido",
+                 "type":"Druid",
                  "visible":true,
                  "width":0,
-                 "x":1674.66666666667,
-                 "y":1070.66666666667
-                }, 
-                {
-                 "height":0,
-                 "id":2,
-                 "name":"",
-                 "point":true,
-                 "rotation":0,
-                 "type":"Goblin",
-                 "visible":true,
-                 "width":0,
-                 "x":1232,
-                 "y":1856
+                 "x":1673.33333333333,
+                 "y":1030.66666666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -93,7 +81,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":3,
+ "nextobjectid":4,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.3.4",
