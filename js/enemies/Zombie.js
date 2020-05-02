@@ -1,4 +1,5 @@
 const ZOMBIE_SPEED = 1.3; // 0.3;
+const ZOMBIE_AGGRO = 2;
 const ZOMBIE_TIME_BETWEEN_CHANGE_DIR = 100;
 var zombieKilled = 0;
 
@@ -6,6 +7,8 @@ zombieClass.prototype = new enemyClass();
 
 function zombieClass() {
   this.speed = ZOMBIE_SPEED;
+  this.defaultSpeed = ZOMBIE_SPEED;
+  this.aggroSpeed = ZOMBIE_AGGRO;
   this.maxhealth = 30;
   this.width = 30;
   this.height = 52;
@@ -19,6 +22,7 @@ function zombieClass() {
   this.shadowYOffset = 32;
   this.myMelee = new biteClass();
   this.treasureAvailable = true;
+  this.pather = new pathFinder()
 
   this.superClassInitialize = this.initialize;
   this.initialize = function (enemyName, enemyPic) {
