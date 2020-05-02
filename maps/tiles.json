@@ -16,7 +16,7 @@
  "margin":0,
  "name":"tiles",
  "spacing":0,
- "tilecount":378,
+ "tilecount":380,
  "tiledversion":"1.3.3",
  "tileheight":150,
  "tiles":[
@@ -5203,6 +5203,30 @@
          "image":"..\/images\/tiles\/grass_ttr.png",
          "imageheight":50,
          "imagewidth":50
+        }, 
+        {
+         "id":606,
+         "image":"..\/images\/tiles\/cliff_stairs_l.png",
+         "imageheight":50,
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
+        }, 
+        {
+         "id":607,
+         "image":"..\/images\/tiles\/cliff_stairs_u.png",
+         "imageheight":50,
+         "imagewidth":50,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"none"
+                }]
         }],
  "tilewidth":52,
  "type":"tileset",
