@@ -66,7 +66,7 @@ let npcParams = {
 	'Taran': {height:52, width:36, frames:5},
 	'Dodd': {height:52, width:36, frames:5},
 	'Delkon': {height:52, width:36, frames:5},
-	'Healer': {height:52, width:36, frames:5},
+	//'Healer': {height:47, width:50, frames:4},
 	'Gabriel': {height:52, width:36, frames:5},
 	'Fenton': {height:52, width:36, frames:5},
 	'Addy': {height:52, width:36, frames:5},
