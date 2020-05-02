@@ -1,4 +1,5 @@
-const BAT_SPEED = 1.9;
+const BAT_SPEED = 6;
+const BAT_AGGRO = 8;
 const BAT_TIME_BETWEEN_CHANGE_DIR = 50;
 const BAT_COLLISION_RADIUS = 5;
 const BAT_RESTING_TIME = 850;
@@ -11,6 +12,8 @@ function batClass() {
   this.width = 50;
   this.height = 21;
   this.speed = BAT_SPEED;
+  this.defaultSpeed = BAT_SPEED;
+  this.aggroSpeed = BAT_AGGRO;
   this.xv = 0;
   this.yv = 0;
   this.sx = 0;
@@ -26,6 +29,7 @@ function batClass() {
   this.animateOnGamePause = true;
   this.shadowXOffset = this.width / 2;
   this.shadowYOffset = this.height / 26;
+  this.pather = new pathFinder()
 
   this.superClassInitialize = this.initialize;
   this.initialize = function (enemyName, enemyPic, numberOfFrames = 4) {
