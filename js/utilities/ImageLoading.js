@@ -21,6 +21,7 @@ var hammerPic = document.createElement("img");
 var bitePic = document.createElement("img");
 var magicSwordPic = document.createElement("img");
 var rockPic = document.createElement("img");
+var arrowPic = document.createElement("img");
 var archerPic = document.createElement("img");
 var archerPic2 = document.createElement("img");
 var archerPic3 = document.createElement("img");
@@ -465,6 +466,7 @@ function loadImages() {
     { varName: heartPic, theFile: "heart.png" },
     { varName: fireballPic, theFile: "Weapons/fireball.png" },
     { varName: rockPic, theFile: "Weapons/rock.png" },
+    { varName: arrowPic, theFile: "Weapons/arrow.png" },
     { varName: playerMiniMap, theFile: "playerMiniMap.png" },
     { varName: waterFallsImg, theFile: "waterFalls.png" },	
     { varName: waterScrollImg, theFile: "water_scroll.png" },
@@ -475,8 +477,7 @@ function loadImages() {
 	{ varName: boxPic, theFile: "box.png" },
 	{ varName: brokenBoxPic, theFile: "brokenBox.png" },
 	{ varName: wakingUpPic, theFile: "Quests/wakingUp.png" },
-	{ varName: animatedEyesPic, theFile: "gameStates/eyes_original.png" }
-	
+	{ varName: animatedEyesPic, theFile: "gameStates/eyes_original.png" },
   ];
 
   picsToLoad = imageList.length;
