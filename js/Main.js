@@ -393,13 +393,15 @@ function statsDraw() {
 function drawCredits() {
     var creditsArray = [
 
-        "Click once more anywhere to begin the game!",
+        "                                                                                                                                                CLICK ANYWHERE TO BEGIN THE GAME",
         "",
 "Falldale is brought to you by the following members of HomeTeam GameDev:",
 "Vince McKeown: Project lead (also for the original Falldale), core gameplay, cliff tiles, player animation updates, bush tiles, blacksmith shop, new goblin animations, assorted map updates, tree update, town redesign,","    Orc and Arya updates, optimizations, character creation screen graphics, music integration, garden tiles, mausoleum art, GUI buttons, skeleton animations, Rowan animations, asset cleanup, pahtfinding refinement,","    cloth and stick items, destroyable boxes, quest art, intro illustration, particles, wizard's map",
-"Tylor Allison: Art (tables, bar stools, wooden walls, flagstones, bar joints, top wall updates, window, pine tree, cliffs, caves, bonfire animation, castle walls), level design (castle, east woods), Tiled integration (with Andrew),","    map data conversion, assorted bug fixes, collision system updates, new quest code features, AI zone support, orc boss AI improvements, hammer weapon ",
+"Tylor Allison: Art (tables, bar stools, wooden walls, flagstones, bar joints, top wall updates, window, pine tree, cliffs, caves, bonfire animation, castle walls), level design (castle, east woods), Tiled integration (with Andrew),","    map data conversion, assorted bug fixes, collision system updates, new quest code features, AI zone support, orc boss AI improvements, hammer weapon, wizard area colliders, transitions, enemy placement & tuning",
 "Andrew Mushel: Control improvements, Tiled integration (with Tylor), code refactoring (lock and key, item, treasure, weapon, minimap), additional rooftops",
 "Allan Regush: Help screen, bartender voice, alchemy shop, stats data (incl. for enemies and quests), levelling up, healer name",
+"Catherine San Luis: NE Woods and East Woods, assorted map fixes, image loading bug fix",
+"Ashleigh M.: Druid addition to Old Graveyard, Old Graveyard tile improvements, Old Graveyard design, bridge, layer collision fix",
 "Powerproust: Updated inventory display",
 "Yong Wei: Initial character class code, minimap diagonal movement",
 "John Eversole: Goblin AI update to support variable chase speeds",
@@ -429,8 +431,7 @@ function drawCredits() {
 "Charlene A.: Kenku art and animation",
 "Kise: Woods background music",
 "Vaan Hope Khani: Computer distance to the player from AI",
-" ",
-"Apply to join us at HomeTeamGameDev.com, let's make games together!"
+"                                                                                                                             Apply to join us at HomeTeamGameDev.com, let's make games together!"
     ];
   canvasContext.save();
   canvasContext.font = "8px Arial, Helvetica, sans-serif";
