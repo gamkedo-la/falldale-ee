@@ -452,6 +452,7 @@ function drawCredits() {
   canvasContext.globalAlpha=1.0;
 
   canvasContext.fillStyle = "white";
+  canvasContext.textAlign = "left";
   for(var i=0;i<creditsArray.length;i++) {    
     canvasContext.fillText(creditsArray[i], 8, 12+i*13);
   }
