@@ -252,6 +252,10 @@ function handleMouseClick(evt) {
     }    
   } else if (characterCreationScreen) {
     characterCreationScreenClick(evt);
+
+    // skipping character selection, only 1 in EE edition at launch
+    selectCharacter(0);
+    launchGame();
   } else if (characterSelectionScreen) {
     characterSelectorScreenClick(evt);
   } else if (scrollBackgroundScreen) {
