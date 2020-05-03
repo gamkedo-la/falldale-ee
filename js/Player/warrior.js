@@ -42,9 +42,12 @@ function warriorClass(whichPlayerPic) {
   this.previousTileType = -1;
   this.tickCount = 0;
   this.frameIndex = 0;
+
+  // NOTE: drawWarriorAndShadow overrides both of these, they were being set somehow from outside in init
   this.width = 50;
+  this.height = 51;
+
   this.numberOfFrames = 6;
-  this.height = 50;
   this.ticksPerFrame = 5;
   this.sx = 50;
   this.sy = this.height;
@@ -399,6 +402,7 @@ function warriorClass(whichPlayerPic) {
   this.drawWarriorAndShadow = function () {
     canvasContext.drawImage(shadowPic, this.x - 16, this.y + 32);
 	this.width = 50; //temp solution until discovering what is overriding this.width????
+    this.height = 51;
     canvasContext.drawImage(this.myWarriorPic, this.sx, this.sy, this.width, this.height, Math.round(this.x), Math.round(this.y), this.width, this.height);
 
 

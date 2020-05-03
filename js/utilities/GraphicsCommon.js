@@ -40,6 +40,15 @@ function colorText(showWords, textX, textY, fillColor, font = "14px Arial Black"
   canvasContext.fillText(showWords, textX, textY);
 }
 
+// quick lazy hack last minute only used by loading text, copy/pasted to reduce risk of breaking any other use of it
+function centerText(showWords, textX, textY, fillColor, font = "14px Arial Black", maxWidth = canvas.width, resizeFactor = 0.5) {
+  canvasContext.textAlign = "center";
+  canvasContext.fillStyle = fillColor;
+  canvasContext.font = font;
+  resizeText(showWords, maxWidth, resizeFactor);
+  canvasContext.fillText(showWords, textX, textY);
+}
+
 function drawTextWithShadowCentered(text, x, y, color, font = "13px sans-serif", maxWidth = canvas.width, resizeFactor = 0.5) {
   canvasContext.textAlign = "center";
   canvasContext.font = font;

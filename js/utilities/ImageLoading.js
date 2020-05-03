@@ -105,7 +105,7 @@ function countLoadedImagesAndLaunchIfReady() {
   picsToLoad--;
   //console.log(picsToLoad);
   if (picsToLoad == 0) {
-    //imageLoadingDoneSoStartGame();
+    imageLoadingDoneSoStartGame();
   }
 }
 

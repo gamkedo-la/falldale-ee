@@ -136,7 +136,8 @@ window.onload = function () {
   camera = new Camera();
 
   colorRect(0, 0, canvas.width, canvas.height, 'orange'); // startup page
-  colorText("Loading Images... please wait", 400, 300, 'black');
+  centerText("Loading Images... please wait", 400, 300, 'black');
+
   initTiledMaps();
   sprites = new Sprites();
   zones = new Zones();
@@ -151,7 +152,16 @@ window.onload = function () {
 
 };
 
+var zoneAndOtherImagesLoaded = 0; // 0 = nothing loaded, 1 for zone load or images, 2 for both 
+
 function imageLoadingDoneSoStartGame() {
+  zoneAndOtherImagesLoaded++;
+
+  console.log("state of load: " + zoneAndOtherImagesLoaded);
+  if(zoneAndOtherImagesLoaded<2) {
+    centerText("50% done, still loading...", 400, 330, 'gray');
+    return;
+  }
   console.log("starting game...");
   colorRect(0, 0, canvas.width, canvas.height, 'orange');
   setInterval(updateAll, 1000 / FRAMES_PER_SECOND);
