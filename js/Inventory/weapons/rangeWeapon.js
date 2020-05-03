@@ -51,11 +51,20 @@ function rangedWeaponClass() {
   this.draw = function () {
     if (this.life > 0) {
       let dir = Math.atan2(this.direction.y, this.direction.x);
-      canvasContext.translate(this.x, this.y);
-      canvasContext.rotate(dir);
-      colorRect(0, 0, this.width, this.length, this.color);
-      canvasContext.rotate(-dir);
-      canvasContext.translate(-this.x, -this.y);
+      if (this.name == "arrow"){
+        canvasContext.save();
+        canvasContext.translate(this.x, this.y);
+        canvasContext.rotate(dir);
+        console.log("arrow fired");
+        canvasContext.drawImage(this.myArrowPic, 0, 0);
+        canvasContext.restore();
+      } else {
+        canvasContext.translate(this.x, this.y);
+        canvasContext.rotate(dir);
+        colorRect(0, 0, this.width, this.length, this.color);
+        canvasContext.rotate(-dir);
+        canvasContext.translate(-this.x, -this.y);
+      }
     }
   };
 

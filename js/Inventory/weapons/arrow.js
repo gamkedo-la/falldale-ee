@@ -13,4 +13,5 @@ function arrowClass(arrowDirection) {
   this.quantity = 5;
   this.direction = arrowDirection; //  arrow's direction is initialized to the direction global variable instead of blank
   this.color = "orange";
+  this.myArrowPic = arrowPic;
 }

@@ -1,4 +1,4 @@
-const DRUID_SPEED = 0.6;
+const DRUID_SPEED = 1.6;
 
 
 druidClass.prototype = new enemyClass();
@@ -13,6 +13,8 @@ function druidClass() {
   this.shadowYOffset = 54;
   this.deadPic = deadGoblinPic;
   this.treasureAvailable = true;
+  this.debugMovement = true
+  this.pather = new pathFinder()
 
   this.superClassReset = this.reset;
   this.reset = function (resetX, resetY) {

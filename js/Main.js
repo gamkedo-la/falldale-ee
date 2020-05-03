@@ -303,7 +303,7 @@ function inventoryDraw() {
   //Inventory Content
   var InventoryName   = ["Arrows", "Rocks", "Gold Pieces", "Yellow Keys", "Red Keys", "Blue Keys", "Green Keys"];
   var InventoryAmount = [redWarrior.myArrow.quantity, redWarrior.myRock.quantity, redWarrior.inventory.goldpieces, redWarrior.yellowKeysHeld, redWarrior.redKeysHeld, redWarrior.blueKeysHeld, redWarrior.greenKeysHeld];
-  var InventoryImage  = [swordPic, rockPic, goldPic, clothPic, clothPic, clothPic, clothPic];
+  var InventoryImage  = [arrowPic, rockPic, goldPic, clothPic, clothPic, clothPic, clothPic];
   var InventoryIndex  = 0;
   var InventoryMaxItems = 7;
 

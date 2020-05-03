@@ -24,7 +24,6 @@ classTileNames[TILE_DELKON] = 'Delkon';
 classTileNames[TILE_ADDY] = 'Addy';
 classTileNames[TILE_GABRIEL] = 'Gabriel';
 classTileNames[TILE_FENTON] = 'Fenton';
-//classTileNames[TILE_CAT] = 'Fido';
 classTileNames[TILE_ARYA] = 'Arya';
 classTileNames[TILE_LAWRENCE] = 'Lawrence';
 classTileNames[TILE_ROWAN] = 'Rowan';
@@ -66,7 +65,6 @@ let npcParams = {
 	'Taran': {height:52, width:36, frames:5},
 	'Dodd': {height:52, width:36, frames:5},
 	'Delkon': {height:52, width:36, frames:5},
-	'Healer': {height:52, width:36, frames:5},
 	'Gabriel': {height:52, width:36, frames:5},
 	'Fenton': {height:52, width:36, frames:5},
 	'Addy': {height:52, width:36, frames:5},
