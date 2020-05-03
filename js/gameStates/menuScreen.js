@@ -35,10 +35,8 @@ function drawMenuScreen() {
   for(var i = 0; i < 11; i++){
 	addParticle(470 + i * 10, baseOfWaterFallSplashY, 10);
   }
-  canvasContext.drawImage(falldalePic, 190, 100);
-
   drawParticles();
-
+  canvasContext.drawImage(falldalePic, 190, 100);
   warriorEyes.draw();
   canvasContext.restore();
 }
