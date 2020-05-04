@@ -366,11 +366,10 @@ function inventoryDraw() {
 }
 
 function miniMapDraw() {
-  const distFromEdge = 30;
   const width = 180;
   const height = 180;
-  const posX = canvas.width - width - distFromEdge;
-  const posY = distFromEdge;
+  const posX = canvas.width - width - 5;
+  const posY = 60;
   drawMiniMap(posX, posY, width, height, 4);
 }
 
