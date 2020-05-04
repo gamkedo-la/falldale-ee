@@ -2,7 +2,7 @@
 const spriteJson = "maps/tiles.json";
 const spritePath = "images/tiles/";
 const spriteDfltSize = TILE_W;
-const tilesetPath = "images/tiles_sz50_only.png"
+const tilesetPath = "images/tiles_sz50_only_by_json_id.png"
 
 const tilesheetMap = {
     1: {name: "1 grave", id: 1},

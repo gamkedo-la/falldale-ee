@@ -5271,7 +5271,7 @@ function loadingDoneSoStartGame() {
       console.log(i+" non standard: "+animPics[i].src + " W:" + animPics[i].width + " H:" + animPics[i].height);
       continue;
     }*/
-    console.log(animPics[i].src + " W:" + animPics[i].width);
+    // console.log(animPics[i].src + " W:" + animPics[i].width);
     var tileCount = i;
     canvasContext.drawImage(animPics[i],
       0,0,dimW,dimH,
@@ -5283,7 +5283,7 @@ function countLoadedImageAndLaunchIfReady(reportName) {
   picsToLoad--;
   console.log(picsToLoad + " " + reportName);
   if(picsToLoad == 0) { // last image loaded?
-    loadingDoneSoStartGame();
+    setTimeout(loadingDoneSoStartGame, 250);
   }
 }
 
