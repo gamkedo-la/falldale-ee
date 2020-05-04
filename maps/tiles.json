@@ -22,31 +22,31 @@
  "tiles":[
         {
          "id":0,
-         "image":"..\/images\/tiles\/1 grave.png",
+         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/1 grave.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":1,
-         "image":"..\/images\/tiles\/2 graves.png",
+         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/2 graves.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":3,
-         "image":"..\/images\/tiles\/alchemist.png",
+         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/alchemist.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":4,
-         "image":"..\/images\/tiles\/alchemist1.png",
+         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/alchemist1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":8,
-         "image":"..\/images\/tiles\/backwall.png",
+         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/backwall.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -100,7 +100,7 @@
         }, 
         {
          "id":18,
-         "image":"..\/images\/tiles\/blacksmith.png",
+         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/blacksmith.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -168,7 +168,7 @@
         }, 
         {
          "id":22,
-         "image":"..\/images\/tiles\/bonfire_unlit_s.png",
+         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/bonfire_unlit_s.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -224,7 +224,7 @@
         }, 
         {
          "id":26,
-         "image":"..\/images\/tiles\/brickWindow.png",
+         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/brickWindow.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -355,7 +355,7 @@
         }, 
         {
          "id":33,
-         "image":"..\/images\/tiles\/campring_lg_l.png",
+         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/campring_lg_l.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -411,7 +411,7 @@
         }, 
         {
          "id":35,
-         "image":"..\/images\/tiles\/cart.png",
+         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cart.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -467,7 +467,7 @@
         }, 
         {
          "id":52,
-         "image":"..\/images\/tiles\/cave_lg_bl.png",
+         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cave_lg_bl.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -535,7 +535,7 @@
         }, 
         {
          "id":54,
-         "image":"..\/images\/tiles\/cave_lg_tl.png",
+         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cave_lg_tl.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -569,7 +569,7 @@
         }, 
         {
          "id":55,
-         "image":"..\/images\/tiles\/cave_lg_tr.png",
+         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cave_lg_tr.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -627,7 +627,7 @@
         }, 
         {
          "id":58,
-         "image":"..\/images\/tiles\/cliff.png",
+         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cliff.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
