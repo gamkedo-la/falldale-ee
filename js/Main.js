@@ -138,7 +138,7 @@ window.onload = function () {
   colorRect(0, 0, canvas.width, canvas.height, 'orange'); // startup page
   centerText("Loading Images... please wait", 400, 300, 'black');
 
-  initTiledMaps();
+  // initTiledMaps();
   sprites = new Sprites();
   zones = new Zones();
   sprites.Load(() => {

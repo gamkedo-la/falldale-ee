@@ -151,11 +151,11 @@ let levels;
 let tileSheets = {};
 
 function initTiledMaps() {
-	levels = Object.getOwnPropertyNames(TileMaps);
+	/*levels = Object.getOwnPropertyNames(TileMaps);
 	for (let l of levels) {
-		let level = TileMaps[l];
+		//let level = TileMaps[l];
 		loadTileSets(level.tilesets);
-	}
+	}*/
 }
 
 function loadTileSets(tileset) {
