@@ -132,13 +132,13 @@ const tilesheetMap = { // }; var testIgnore = {
 156: {name: "mausoleumB_2", id: 156},
 157: {name: "mausoleumB_3", id: 157},
 158: {name: "mausoleumB_4", id: 158},
-//159: {name: "oblisk grave", id: 159},
+159: {name: "oblisk grave", id: 159},
 //160: {name: "OpenDoorway", id: 160},
 161: {name: "orc_hut_bl", id: 161},
 162: {name: "orc_hut_br", id: 162},
 163: {name: "orc_hut_tl", id: 163},
 164: {name: "orc_hut_tr", id: 164},
-//165: {name: "pub", id: 165},
+165: {name: "pub", id: 165},
 167: {name: "roofbackleft", id: 167},
 168: {name: "roofbackright", id: 168},
 169: {name: "roofbackside", id: 169},
@@ -199,7 +199,7 @@ const tilesheetMap = { // }; var testIgnore = {
 422: {name: "castle_door_lr15", id: 422},
 423: {name: "castle_door_lr16", id: 423},*/
 424: {name: "castle_door_t1", id: 424},
-425: {name: "castle_door_t2", id: 425},
+425: {name: "castle_door_t2", id: 425, collider: "none"},
 //426: {name: "castle_wall_b1", id: 426},
 427: {name: "castle_wall_b2", id: 427},
 428: {name: "castle_wall_b3", id: 428},
@@ -229,10 +229,10 @@ const tilesheetMap = { // }; var testIgnore = {
 452: {name: "castle_wall_rtb3", id: 452},
 453: {name: "castle_wall_rtb4", id: 453},
 454: {name: "castle_wall_rtb5", id: 454},
-/*455: {name: "castle_wall_rtt1", id: 455},
+455: {name: "castle_wall_rtt1", id: 455},
 456: {name: "castle_wall_rtt2", id: 456},
 457: {name: "castle_wall_rtt3", id: 457},
-458: {name: "castle_wall_rtt4", id: 458},*/
+458: {name: "castle_wall_rtt4", id: 458},
 459: {name: "castle_wall_tc1", id: 459},
 460: {name: "castle_wall_tc2", id: 460},
 461: {name: "castle_wall_tc3_b", id: 461},
@@ -280,7 +280,7 @@ const tilesheetMap = { // }; var testIgnore = {
 //503: {name: "castle_battlement_ttl", id: 503},
 504: {name: "castle_battlement_ttr1", id: 504},
 505: {name: "castle_battlement_ttr2", id: 505},
-506: {name: "castle_door_b1", id: 506},
+506: {name: "castle_door_b1", id: 506, collider: "none"},
 507: {name: "castle_door_b2", id: 507},
 //508: {name: "castle_gate1_bl", id: 508},
 //509: {name: "castle_gate1_br", id: 509},
@@ -379,8 +379,8 @@ const tilesheetMap = { // }; var testIgnore = {
 604: {name: "grass_t", id: 604},
 605: {name: "grass_ttl", id: 605},
 606: {name: "grass_ttr", id: 606},*/
-//607: {name: "cliff_stairs_l", id: 607},
-//608: {name: "cliff_stairs_u", id: 608},
+607: {name: "cliff_stairs_l", id: 607},
+608: {name: "cliff_stairs_u", id: 608},
 };
 
 // =========================================================================
@@ -469,6 +469,7 @@ class Sprites {
                     if (++loadCount >= records.length) doneCb();
                 });
                 sprite.speed = speed;
+                if (id == 506) console.log("assigning spritemap for images");
 				this.spriteMap[id] = sprite;
                 this.spriteNameMap[name] = sprite;
             });
@@ -489,6 +490,7 @@ class Sprites {
     }
 
     get(id) {
+        if (id == 506) console.log("getting sprite: " + this.spriteMap[id] + " collider: " + this.spriteMap[id].collider);
         return this.spriteMap[id];
     }
     getname(name) {

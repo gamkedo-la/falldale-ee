@@ -44,8 +44,6 @@ function TiledObject(layer, index, type, tile, depth) {
 				// assumes animations are laid out in single row
 				this.frameWidth = this.image.width/this.frameCount;
 				this.frameHeight = this.image.height;
-				console.log("fwidth: " + this.frameWidth);
-				console.log("fheight: " + this.frameHeight);
 			} else {
 				this.image = sprite.img;
 			}

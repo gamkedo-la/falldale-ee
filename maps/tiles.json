@@ -5206,7 +5206,8 @@
         }, 
         {
          "id":606,
-         "image":"..\/images\/tiles\/cliff_stairs_l.png",
+         "image":"..\/images\/tiles\/grass.png",
+         "real_image":"..\/images\/tiles\/cliff_stairs_l.png",
          "imageheight":50,
          "imagewidth":50,
          "properties":[
@@ -5218,7 +5219,8 @@
         }, 
         {
          "id":607,
-         "image":"..\/images\/tiles\/cliff_stairs_u.png",
+         "image":"..\/images\/tiles\/grass.png",
+         "real_image":"..\/images\/tiles\/cliff_stairs_u.png",
          "imageheight":50,
          "imagewidth":50,
          "properties":[
