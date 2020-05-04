@@ -2,12 +2,12 @@ var audioFormat;
 var muteAudio = true;
 
 function setFormat() {
-  var audio = new Audio();
-  if (audio.canPlayType("audio/mp3")) {
-    audioFormat = ".mp3";
-  } else {
+  /*var audio = (new Audio()).canPlayType("audio/mp3");
+  if (audio.canPlayType("audio/mp3")) {*/
+    audioFormat = ".mp3"; // mp3 widely enough supported at this point, removing .ogg support to help get under itch file count
+  /*} else {
     audioFormat = ".ogg";
-  }
+  }*/
 }
 
 function SoundOverlapsClass(filenameWithPath) {
