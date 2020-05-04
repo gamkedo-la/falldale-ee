@@ -407,6 +407,7 @@ class Sprites {
             // iterate through tilesheet
             for (let i=0; i<tilesY; i++) {
                 for (let j=0; j<tilesX; j++) {
+                    ctx.clearRect(0, 0, tileBuffer.width, tileBuffer.height);
                     // draw the image
                     ctx.drawImage(img, j*TILE_W, i*TILE_H, TILE_W, TILE_H, 0, 0, TILE_W, TILE_H);
                     // extract the image from canvas
