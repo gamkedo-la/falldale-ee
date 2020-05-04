@@ -5251,9 +5251,12 @@ var animPics = [];
 var picsToLoad = 0;
 
 var canvas, canvasContext;
+var outText;
 
 window.onload = function() {
   canvas = document.getElementById('gameCanvas');
+  outText = document.getElementById('output');
+
   canvasContext = canvas.getContext('2d');
   
   loadImages();
@@ -5265,6 +5268,7 @@ function loadingDoneSoStartGame() {
   canvas.height = dimH*rows;
 
   //for(var i=0;i<animPics.length;i++) {
+  outText.innerHTML = "const tilesheetMap = {<br/>";
   for (var i in animPics) {
     // var value = animPics[i];
     /*if(Math.abs(dimW-animPics[i].width)>3 || Math.abs(dimH-animPics[i].height)>3) { // including ones that were off by 1 or 2 pixels
@@ -5276,7 +5280,27 @@ function loadingDoneSoStartGame() {
     canvasContext.drawImage(animPics[i],
       0,0,dimW,dimH,
       dimW*(tileCount%cols),dimH*Math.floor(tileCount/cols),dimW,dimH);
+    var filename = animPics[i].src;
+    var startAt;
+    var wasTree = false;
+    if(filename.indexOf("tiles/") != -1) {
+        startAt = filename.indexOf("tiles/")+"tiles/".length;
+    } else { // at the moment trees is the only other directory
+        startAt = filename.indexOf("Trees/")+"Trees/".length;
+        wasTree = true;
+    }
+    filename = filename.substring(
+                startAt, // cut off file path
+                filename.indexOf(".png")). // cut off file extension
+                replace(/%20/g, " "); // replace %20 with spaces
+    var idxAsKeyInt = parseInt(i)+1;
+    outText.innerHTML += idxAsKeyInt+": {name: \""+filename+"\", id: "+idxAsKeyInt+"},";
+    if(wasTree) {
+        outText.innerHTML += " // was in Trees/ folder, not tiles/ - does it matter here?";
+    }
+    outText.innerHTML += "<br/>";
   }
+  outText.innerHTML += "};";
 }
 
 function countLoadedImageAndLaunchIfReady(reportName) {
@@ -5312,8 +5336,13 @@ function loadImages() {
   }*/
   for(var i=0;i<tilesJSON.tiles.length; i++) {
     var filename = tilesJSON.tiles[i].image.substring(10);
-    // console.log(tilesJSON.tiles[i].id + ": " + filename);
+    var tilesheetOffW = Math.abs(tilesJSON.tiles[i].imagewidth - 50);
+    var tilesheetOffH = Math.abs(tilesJSON.tiles[i].imageheight - 50);
+    if(tilesheetOffW<3 && tilesheetOffH<3) {
       imageList.push({animType:tilesJSON.tiles[i].id, theFile:filename});
+    } else {
+        console.log("Skipping, too large: " + tilesJSON.tiles[i].id + ": " + filename);
+    }
   }
 
 
