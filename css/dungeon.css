@@ -28,9 +28,6 @@ div {
 }
 
 #gameCanvas {
-	position:absolute;
-	left: 25%;
-	margin: auto; 
 	height: 100%;
 	display: inline;
 	
