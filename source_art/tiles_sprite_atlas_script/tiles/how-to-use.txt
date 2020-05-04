@@ -1,0 +1,10 @@
+Copy any .png files into this directory
+
+Edit in ImageLoading.js:
+-the array of file names (can at terminal use:
+ls *.png > tileList.txt
+...or the same idea with dir in DOS to generate list of all files in the folder)
+-dimensions that ImageLoading is wording with, including margin of dimensions mismatch it'll accept (currently is +/- 3 to catch some that weren't exact matches)
+-rows and cols values to form sheet of whichever dimensions are needed
+
+console log will report which files were skipped due to not fitting
