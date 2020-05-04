@@ -249,7 +249,7 @@ const tilesheetMap = { // }; var testIgnore = {
 //472: {name: "castle_window1", id: 472},
 473: {name: "castle_wall_btr4", id: 473},
 474: {name: "castle_wall_ltb4", id: 474},
-//475: {name: "castle_wall_rtt5", id: 475},
+475: {name: "castle_wall_rtt5", id: 475},
 476: {name: "castle_wall_ttl5", id: 476},
 477: {name: "castle_battlement_b1", id: 477},
 478: {name: "castle_battlement_b2", id: 478},
