@@ -274,7 +274,7 @@ function enemyClass() {
             if (this.myRanged.isReady()) {
                 this.myRanged.shootFrom(this);
                 if (this.myRanged.hitTest(this, redWarrior)) {
-                    console.log("Ranged Damage Done");
+                    // console.log("Ranged Damage Done");
                 }
             }
         }
@@ -301,7 +301,7 @@ function enemyClass() {
             // is the player within our melee hitbox?
             if (this.myMelee && this.myMelee.collider && this.myMelee.collider.hit(redWarrior.collider)) {
                 this.currentPath = null;
-                if (this.speed) console.log(this.myName + this.scriptID + " stopping, in melee range");
+                // if (this.speed) console.log(this.myName + this.scriptID + " stopping, in melee range");
                 this.speed = 0;
 
             // check for out of AI range
@@ -310,13 +310,13 @@ function enemyClass() {
                 this.goToMode = GOTO_NONE;
                 this.speed = this.defaultSpeed;
                 //console.log("setting speed to: " + this.speed);
-                console.log(this.myName + this.scriptID + " is no longer tracking player");
+                // console.log(this.myName + this.scriptID + " is no longer tracking player");
                 return null;
             }
         } else if (this.goToMode == GOTO_NONE) {
             if (distToPlayer < this.aiVisionRange && !redWarrior.isInsideAnyBuilding) {
                 this.goToMode = GOTO_PLAYER;
-                console.log(this.myName + this.scriptID + " is tracking the player.");
+                // console.log(this.myName + this.scriptID + " is tracking the player.");
 			} else {
                 return null;
             }
@@ -325,7 +325,7 @@ function enemyClass() {
             if (distToGoal < TILE_W) {
                 this.GOTO_NONE;
 				if(this.scriptID == 316){
-					console.log("Mission Complete, reached my goal " + this.scriptID);
+					// console.log("Mission Complete, reached my goal " + this.scriptID);
 				}
 			}
         }
@@ -625,7 +625,7 @@ function enemyClass() {
         var chanceOnTreasure = Math.round(Math.random() * 10);
         if (chanceOnTreasure >= this.chanceToProvideTreasure) {
             var randomTreasureIndex = Math.round(Math.random() * this.treasure.length);
-            this.console.log(this.treasure[randomTreasureIndex]);
+            // this.console.log(this.treasure[randomTreasureIndex]);
         }
     };
 

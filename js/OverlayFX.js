@@ -85,7 +85,7 @@ var OverlayFX = new function () {
 
   // used by the debug mode click level editor
   this.addDecoration = function (x, y) {
-    console.log('new overlayFX decoration at ' + x + ',' + y);
+    // console.log('new overlayFX decoration at ' + x + ',' + y);
     decorationContext.drawImage(decorationsImg,
         this.currentEditingDecoration * decoW, 0, // src x,y
         decoW, decoH, // src w,h
@@ -186,7 +186,7 @@ var OverlayFX = new function () {
 
   this.init = function () {
 
-    console.log("Initializing OverlayFX...");
+    // console.log("Initializing OverlayFX...");
 
     needToInit = false;
 
