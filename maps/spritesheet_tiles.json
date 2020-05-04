@@ -1,0 +1,24 @@
+{ "columns":21,
+ "image":"..\/images\/tiles_sz50_only.png",
+ "imageheight":1000,
+ "imagewidth":1050,
+ "margin":0,
+ "name":"tiles_sz50_only",
+ "spacing":0,
+ "tilecount":420,
+ "tiledversion":"1.3.3",
+ "tileheight":50,
+ "tiles":[
+        {
+         "id":7,
+         "properties":[
+                {
+                 "name":"collider",
+                 "type":"string",
+                 "value":"topQtr"
+                }]
+        }],
+ "tilewidth":50,
+ "type":"tileset",
+ "version":1.2
+}
