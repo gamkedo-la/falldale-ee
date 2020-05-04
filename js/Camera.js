@@ -48,7 +48,7 @@ function Camera() {
   };
 
   this.canShow = function (x, y, width, height) {
-    if (x + width < this.x) {
+    if (x + width < this.x-TILE_W) { // adding in more left margin in attempt to address issue only seen on itch for tiles
       return false;
     }
     if (x > this.x + canvas.width) {
