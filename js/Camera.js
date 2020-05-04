@@ -54,7 +54,7 @@ function Camera() {
     if (x > this.x + canvas.width) {
       return false;
     }
-    if (y + height < this.y) {
+    if (y + height < this.y-TILE_H) { // adding in more top margin in attempt to address issue only seen on itch for tiles
       return false;
     }
     if (y > this.y + canvas.height) {

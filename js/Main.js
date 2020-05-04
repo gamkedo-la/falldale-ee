@@ -680,10 +680,10 @@ function drawAll() {
     miniMapDraw();
 
     if (muteInputCycle >= 1) {
-      canvasContext.drawImage(muteMusicPic, 10, 25);
+      canvasContext.drawImage(muteMusicPic, 6, 57);
     }
     if (muteInputCycle >= 2) {
-      canvasContext.drawImage(muteSFXPic, 10 + muteSFXPic.width, 25);
+      canvasContext.drawImage(muteSFXPic, 6 + muteSFXPic.width+5, 57);
     }
     if (inventoryScreen) {
       inventoryDraw();
