@@ -1635,7 +1635,7 @@ function drawOnlyTilesOnScreen() {
 			
 
 			if (drawTileX <= 32) {
-			canvasContext.drawImage(useImg, drawTileX, drawTileY);
+			//canvasContext.drawImage(useImg, drawTileX, drawTileY);
 			drawTileX += TILE_W;
 			arrayIndex++;
 			}

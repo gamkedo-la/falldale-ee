@@ -22,31 +22,31 @@
  "tiles":[
         {
          "id":0,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/1 grave.png",
+         "image":"..\/images\/tiles\/1 grave.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":1,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/2 graves.png",
+         "image":"..\/images\/tiles\/2 graves.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":3,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/alchemist.png",
+         "image":"..\/images\/tiles\/alchemist.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":4,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/alchemist1.png",
+         "image":"..\/images\/tiles\/alchemist1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":8,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/backwall.png",
+         "image":"..\/images\/tiles\/backwall.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -76,7 +76,7 @@
         }, 
         {
          "id":12,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/backwallrightside.png",
+         "image":"..\/images\/tiles\/backwallrightside.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -94,19 +94,19 @@
         }, 
         {
          "id":16,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/bedleftsidets.png",
+         "image":"..\/images\/tiles\/bedleftsidets.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":18,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/blacksmith.png",
+         "image":"..\/images\/tiles\/blacksmith.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":19,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/blacksmith1.png",
+         "image":"..\/images\/tiles\/blacksmith1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -168,7 +168,7 @@
         }, 
         {
          "id":22,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/bonfire_unlit_s.png",
+         "image":"..\/images\/tiles\/bonfire_unlit_s.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -196,7 +196,7 @@
         }, 
         {
          "id":25,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/brickwall_tl.png",
+         "image":"..\/images\/tiles\/brickwall_tl.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -224,7 +224,7 @@
         }, 
         {
          "id":26,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/brickWindow.png",
+         "image":"..\/images\/tiles\/brickWindow.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -355,7 +355,7 @@
         }, 
         {
          "id":33,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/campring_lg_l.png",
+         "image":"..\/images\/tiles\/campring_lg_l.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -383,7 +383,7 @@
         }, 
         {
          "id":34,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/campring_lg_r.png",
+         "image":"..\/images\/tiles\/campring_lg_r.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -411,7 +411,7 @@
         }, 
         {
          "id":35,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cart.png",
+         "image":"..\/images\/tiles\/cart.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -439,7 +439,7 @@
         }, 
         {
          "id":36,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cart_broken.png",
+         "image":"..\/images\/tiles\/cart_broken.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -467,7 +467,7 @@
         }, 
         {
          "id":52,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cave_lg_bl.png",
+         "image":"..\/images\/tiles\/cave_lg_bl.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -501,7 +501,7 @@
         }, 
         {
          "id":53,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cave_lg_br.png",
+         "image":"..\/images\/tiles\/cave_lg_br.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -535,7 +535,7 @@
         }, 
         {
          "id":54,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cave_lg_tl.png",
+         "image":"..\/images\/tiles\/cave_lg_tl.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -569,7 +569,7 @@
         }, 
         {
          "id":55,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cave_lg_tr.png",
+         "image":"..\/images\/tiles\/cave_lg_tr.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -603,7 +603,7 @@
         }, 
         {
          "id":56,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cave_sm.png",
+         "image":"..\/images\/tiles\/cave_sm.png",
          "imageheight":50,
          "imagewidth":50,
          "properties":[
@@ -615,7 +615,7 @@
         }, 
         {
          "id":57,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cave_smd.png",
+         "image":"..\/images\/tiles\/cave_smd.png",
          "imageheight":50,
          "imagewidth":50,
          "properties":[
@@ -627,7 +627,7 @@
         }, 
         {
          "id":58,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cliff.png",
+         "image":"..\/images\/tiles\/cliff.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1085,7 +1085,7 @@
         }, 
         {
          "id":71,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cliffBottomLeft.png",
+         "image":"..\/images\/tiles\/cliffBottomLeft.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1130,7 +1130,7 @@
         }, 
         {
          "id":72,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cliffFullShadow.png",
+         "image":"..\/images\/tiles\/cliffFullShadow.png",
          "imageheight":50,
          "imagewidth":50,
          "properties":[
@@ -1176,7 +1176,7 @@
         }, 
         {
          "id":74,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cliffRight.png",
+         "image":"..\/images\/tiles\/cliffRight.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1210,7 +1210,7 @@
         }, 
         {
          "id":75,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cliffRightCorner.png",
+         "image":"..\/images\/tiles\/cliffRightCorner.png",
          "imageheight":51,
          "imagewidth":50,
          "objectgroup":
@@ -1255,7 +1255,7 @@
         }, 
         {
          "id":76,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cliffShadow.png",
+         "image":"..\/images\/tiles\/cliffShadow.png",
          "imageheight":50,
          "imagewidth":50,
          "properties":[
@@ -1267,7 +1267,7 @@
         }, 
         {
          "id":77,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cliffTop.png",
+         "image":"..\/images\/tiles\/cliffTop.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1301,7 +1301,7 @@
         }, 
         {
          "id":78,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cliffTop1.png",
+         "image":"..\/images\/tiles\/cliffTop1.png",
          "imageheight":51,
          "imagewidth":50,
          "objectgroup":
@@ -1335,7 +1335,7 @@
         }, 
         {
          "id":79,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cliffTopLeft.png",
+         "image":"..\/images\/tiles\/cliffTopLeft.png",
          "imageheight":51,
          "imagewidth":50,
          "objectgroup":
@@ -1380,7 +1380,7 @@
         }, 
         {
          "id":80,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/cliffTopRightCorner.png",
+         "image":"..\/images\/tiles\/cliffTopRightCorner.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1425,7 +1425,7 @@
         }, 
         {
          "id":83,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/dcliff_bb.png",
+         "image":"..\/images\/tiles\/dcliff_bb.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1459,7 +1459,7 @@
         }, 
         {
          "id":84,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/dcliff_bt.png",
+         "image":"..\/images\/tiles\/dcliff_bt.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1493,7 +1493,7 @@
         }, 
         {
          "id":85,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/dcliff_c_btl.png",
+         "image":"..\/images\/tiles\/dcliff_c_btl.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1527,7 +1527,7 @@
         }, 
         {
          "id":86,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/dcliff_c_rtb.png",
+         "image":"..\/images\/tiles\/dcliff_c_rtb.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1561,7 +1561,7 @@
         }, 
         {
          "id":87,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/dcliff_j_double_bl.png",
+         "image":"..\/images\/tiles\/dcliff_j_double_bl.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1595,7 +1595,7 @@
         }, 
         {
          "id":88,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/dcliff_j_double_br.png",
+         "image":"..\/images\/tiles\/dcliff_j_double_br.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1629,7 +1629,7 @@
         }, 
         {
          "id":89,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/dcliff_j_double_tl.png",
+         "image":"..\/images\/tiles\/dcliff_j_double_tl.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1663,7 +1663,7 @@
         }, 
         {
          "id":90,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/dcliff_j_double_tr.png",
+         "image":"..\/images\/tiles\/dcliff_j_double_tr.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1697,7 +1697,7 @@
         }, 
         {
          "id":91,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/dcliff_j_single_l.png",
+         "image":"..\/images\/tiles\/dcliff_j_single_l.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1731,7 +1731,7 @@
         }, 
         {
          "id":92,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/dcliff_j_single_r.png",
+         "image":"..\/images\/tiles\/dcliff_j_single_r.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1765,7 +1765,7 @@
         }, 
         {
          "id":93,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/dcliff_lc_btr.png",
+         "image":"..\/images\/tiles\/dcliff_lc_btr.png",
          "imageheight":50,
          "imagewidth":50,
          "properties":[
@@ -1777,7 +1777,7 @@
         }, 
         {
          "id":94,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/dcliff_lc_ltb.png",
+         "image":"..\/images\/tiles\/dcliff_lc_ltb.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1811,7 +1811,7 @@
         }, 
         {
          "id":95,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/dcliff_uc_btr.png",
+         "image":"..\/images\/tiles\/dcliff_uc_btr.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1845,7 +1845,7 @@
         }, 
         {
          "id":96,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/dcliff_uc_ltb.png",
+         "image":"..\/images\/tiles\/dcliff_uc_ltb.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1879,7 +1879,7 @@
         }, 
         {
          "id":97,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/dressertop.png",
+         "image":"..\/images\/tiles\/dressertop.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -1907,103 +1907,103 @@
         }, 
         {
          "id":99,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/druidcircle1.png",
+         "image":"..\/images\/tiles\/druidcircle1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":100,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/druidcircle2.png",
+         "image":"..\/images\/tiles\/druidcircle2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":101,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/druidcircle3.png",
+         "image":"..\/images\/tiles\/druidcircle3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":102,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/druidcircle4.png",
+         "image":"..\/images\/tiles\/druidcircle4.png",
          "imageheight":52,
          "imagewidth":51
         }, 
         {
          "id":103,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/druidcircle5.png",
+         "image":"..\/images\/tiles\/druidcircle5.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":104,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/druidcircle6.png",
+         "image":"..\/images\/tiles\/druidcircle6.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":105,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/druidcircle7.png",
+         "image":"..\/images\/tiles\/druidcircle7.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":106,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/druidcircle8.png",
+         "image":"..\/images\/tiles\/druidcircle8.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":107,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/druidcircle9.png",
+         "image":"..\/images\/tiles\/druidcircle9.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":108,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/druidhouse_fl.png",
+         "image":"..\/images\/tiles\/druidhouse_fl.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":109,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/druidhouse_fm.png",
+         "image":"..\/images\/tiles\/druidhouse_fm.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":110,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/druidhouse_fr.png",
+         "image":"..\/images\/tiles\/druidhouse_fr.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":111,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/druidhouse_ml.png",
+         "image":"..\/images\/tiles\/druidhouse_ml.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":112,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/druidhouse_mr.png",
+         "image":"..\/images\/tiles\/druidhouse_mr.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":113,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/druidhouse_tl.png",
+         "image":"..\/images\/tiles\/druidhouse_tl.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":114,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/druidhouse_tm.png",
+         "image":"..\/images\/tiles\/druidhouse_tm.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":115,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/druidhouse_tr.png",
+         "image":"..\/images\/tiles\/druidhouse_tr.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -2278,61 +2278,61 @@
         }, 
         {
          "id":128,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/garden_1.png",
+         "image":"..\/images\/tiles\/garden_1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":129,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/garden_2.png",
+         "image":"..\/images\/tiles\/garden_2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":130,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/garden_3.png",
+         "image":"..\/images\/tiles\/garden_3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":131,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/garden_4.png",
+         "image":"..\/images\/tiles\/garden_4.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":132,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/garden_5.png",
+         "image":"..\/images\/tiles\/garden_5.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":133,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/garden_6.png",
+         "image":"..\/images\/tiles\/garden_6.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":134,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/garden_7.png",
+         "image":"..\/images\/tiles\/garden_7.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":135,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/garden_8.png",
+         "image":"..\/images\/tiles\/garden_8.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":136,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/garden_9.png",
+         "image":"..\/images\/tiles\/garden_9.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":138,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/grass.png",
+         "image":"..\/images\/tiles\/grass.png",
          "imageheight":50,
          "imagewidth":50,
          "properties":[
@@ -2372,7 +2372,7 @@
         }, 
         {
          "id":142,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/houseWall.png",
+         "image":"..\/images\/tiles\/houseWall.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -2400,7 +2400,7 @@
         }, 
         {
          "id":144,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/join_bar_wwall_l.png",
+         "image":"..\/images\/tiles\/join_bar_wwall_l.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -2439,7 +2439,7 @@
         }, 
         {
          "id":145,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/join_bar_wwall_r.png",
+         "image":"..\/images\/tiles\/join_bar_wwall_r.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -2478,13 +2478,13 @@
         }, 
         {
          "id":147,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/lflagstone1.png",
+         "image":"..\/images\/tiles\/lflagstone1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":148,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/lflagstone2.png",
+         "image":"..\/images\/tiles\/lflagstone2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -2518,13 +2518,13 @@
         }, 
         {
          "id":151,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/mausoleum_2.png",
+         "image":"..\/images\/tiles\/mausoleum_2.png",
          "imageheight":51,
          "imagewidth":50
         }, 
         {
          "id":152,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/mausoleum_3.png",
+         "image":"..\/images\/tiles\/mausoleum_3.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -2552,7 +2552,7 @@
         }, 
         {
          "id":153,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/mausoleum_4.png",
+         "image":"..\/images\/tiles\/mausoleum_4.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -2619,7 +2619,7 @@
         }, 
         {
          "id":155,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/mausoleumB_2.png",
+         "image":"..\/images\/tiles\/mausoleumB_2.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -2675,7 +2675,7 @@
         }, 
         {
          "id":157,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/mausoleumB_4.png",
+         "image":"..\/images\/tiles\/mausoleumB_4.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -2703,7 +2703,7 @@
         }, 
         {
          "id":158,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/oblisk grave.png",
+         "image":"..\/images\/tiles\/oblisk grave.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -2754,7 +2754,7 @@
         }, 
         {
          "id":160,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/orc_hut_bl.png",
+         "image":"..\/images\/tiles\/orc_hut_bl.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -2782,7 +2782,7 @@
         }, 
         {
          "id":161,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/orc_hut_br.png",
+         "image":"..\/images\/tiles\/orc_hut_br.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -2810,7 +2810,7 @@
         }, 
         {
          "id":162,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/orc_hut_tl.png",
+         "image":"..\/images\/tiles\/orc_hut_tl.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -2838,7 +2838,7 @@
         }, 
         {
          "id":163,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/orc_hut_tr.png",
+         "image":"..\/images\/tiles\/orc_hut_tr.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -2866,7 +2866,7 @@
         }, 
         {
          "id":164,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/pub.png",
+         "image":"..\/images\/tiles\/pub.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -2894,55 +2894,55 @@
         }, 
         {
          "id":166,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/roofbackleft.png",
+         "image":"..\/images\/tiles\/roofbackleft.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":167,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/roofbackright.png",
+         "image":"..\/images\/tiles\/roofbackright.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":168,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/roofbackside.png",
+         "image":"..\/images\/tiles\/roofbackside.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":169,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/roofbottomright.png",
+         "image":"..\/images\/tiles\/roofbottomright.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":170,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/roofcenter.png",
+         "image":"..\/images\/tiles\/roofcenter.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":171,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/rooffront.png",
+         "image":"..\/images\/tiles\/rooffront.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":172,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/rooffrontleft.png",
+         "image":"..\/images\/tiles\/rooffrontleft.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":173,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/roofFrontRight.png",
+         "image":"..\/images\/tiles\/roofFrontRight.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":174,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/roofleftside.png",
+         "image":"..\/images\/tiles\/roofleftside.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -2976,7 +2976,7 @@
         }, 
         {
          "id":176,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/table.png",
+         "image":"..\/images\/tiles\/table.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -2988,7 +2988,7 @@
         }, 
         {
          "id":178,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/treasure.png",
+         "image":"..\/images\/tiles\/treasure.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -3222,13 +3222,13 @@
         }, 
         {
          "id":188,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/tree2bottomhalf.png",
+         "image":"..\/images\/tiles\/tree2bottomhalf.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":189,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/tree2tophalf.png",
+         "image":"..\/images\/tiles\/tree2tophalf.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -3262,13 +3262,13 @@
         }, 
         {
          "id":191,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/tree3bottomhalf.png",
+         "image":"..\/images\/tiles\/tree3bottomhalf.png",
          "imageheight":48,
          "imagewidth":50
         }, 
         {
          "id":192,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/tree3tophalf.png",
+         "image":"..\/images\/tiles\/tree3tophalf.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -3302,13 +3302,13 @@
         }, 
         {
          "id":194,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/tree4bottomhalf.png",
+         "image":"..\/images\/tiles\/tree4bottomhalf.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":195,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/tree4tophalf.png",
+         "image":"..\/images\/tiles\/tree4tophalf.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -3620,7 +3620,7 @@
         }, 
         {
          "id":211,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/woodwall_tc.png",
+         "image":"..\/images\/tiles\/woodwall_tc.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -3648,13 +3648,13 @@
         }, 
         {
          "id":212,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/woodwall_tl.png",
+         "image":"..\/images\/tiles\/woodwall_tl.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":213,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/woodwall_tr.png",
+         "image":"..\/images\/tiles\/woodwall_tr.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -3682,7 +3682,7 @@
         }, 
         {
          "id":215,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/woodwall_wdw_tc.png",
+         "image":"..\/images\/tiles\/woodwall_wdw_tc.png",
          "imageheight":50,
          "imagewidth":50,
          "objectgroup":
@@ -3710,13 +3710,13 @@
         }, 
         {
          "id":216,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/worldRoad.png",
+         "image":"..\/images\/tiles\/worldRoad.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":217,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/frontdoor.png",
+         "image":"..\/images\/tiles\/frontdoor.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -3926,7 +3926,7 @@
         }, 
         {
          "id":423,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_door_t1.png",
+         "image":"..\/images\/tiles\/castle_door_t1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -3968,7 +3968,7 @@
         }, 
         {
          "id":427,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_b3.png",
+         "image":"..\/images\/tiles\/castle_wall_b3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -3986,43 +3986,43 @@
         }, 
         {
          "id":429,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_btl2.png",
+         "image":"..\/images\/tiles\/castle_wall_btl2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":430,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_btl3.png",
+         "image":"..\/images\/tiles\/castle_wall_btl3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":431,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_btl4.png",
+         "image":"..\/images\/tiles\/castle_wall_btl4.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":432,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_btl5.png",
+         "image":"..\/images\/tiles\/castle_wall_btl5.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":433,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_btr1.png",
+         "image":"..\/images\/tiles\/castle_wall_btr1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":434,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_btr2.png",
+         "image":"..\/images\/tiles\/castle_wall_btr2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":435,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_btr3.png",
+         "image":"..\/images\/tiles\/castle_wall_btr3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -4124,31 +4124,31 @@
         }, 
         {
          "id":444,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_ltb1.png",
+         "image":"..\/images\/tiles\/castle_wall_ltb1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":445,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_ltb2.png",
+         "image":"..\/images\/tiles\/castle_wall_ltb2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":446,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_ltb3.png",
+         "image":"..\/images\/tiles\/castle_wall_ltb3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":447,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_ltt1.png",
+         "image":"..\/images\/tiles\/castle_wall_ltt1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":448,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_ltt2.png",
+         "image":"..\/images\/tiles\/castle_wall_ltt2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -4166,67 +4166,67 @@
         }, 
         {
          "id":450,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_rtb2.png",
+         "image":"..\/images\/tiles\/castle_wall_rtb2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":451,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_rtb3.png",
+         "image":"..\/images\/tiles\/castle_wall_rtb3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":452,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_rtb4.png",
+         "image":"..\/images\/tiles\/castle_wall_rtb4.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":453,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_rtb5.png",
+         "image":"..\/images\/tiles\/castle_wall_rtb5.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":454,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_rtt1.png",
+         "image":"..\/images\/tiles\/castle_wall_rtt1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":455,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_rtt2.png",
+         "image":"..\/images\/tiles\/castle_wall_rtt2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":456,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_rtt3.png",
+         "image":"..\/images\/tiles\/castle_wall_rtt3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":457,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_rtt4.png",
+         "image":"..\/images\/tiles\/castle_wall_rtt4.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":458,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_tc1.png",
+         "image":"..\/images\/tiles\/castle_wall_tc1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":459,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_tc2.png",
+         "image":"..\/images\/tiles\/castle_wall_tc2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":460,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_tc3_b.png",
+         "image":"..\/images\/tiles\/castle_wall_tc3_b.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -4256,37 +4256,37 @@
         }, 
         {
          "id":463,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_tc4_t.png",
+         "image":"..\/images\/tiles\/castle_wall_tc4_t.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":464,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_tc5.png",
+         "image":"..\/images\/tiles\/castle_wall_tc5.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":465,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_ttl1.png",
+         "image":"..\/images\/tiles\/castle_wall_ttl1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":466,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_ttl2.png",
+         "image":"..\/images\/tiles\/castle_wall_ttl2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":467,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_ttl3.png",
+         "image":"..\/images\/tiles\/castle_wall_ttl3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":468,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_ttl4.png",
+         "image":"..\/images\/tiles\/castle_wall_ttl4.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -4316,55 +4316,55 @@
         }, 
         {
          "id":473,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_ltb4.png",
+         "image":"..\/images\/tiles\/castle_wall_ltb4.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":474,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_rtt5.png",
+         "image":"..\/images\/tiles\/castle_wall_rtt5.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":475,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_ttl5.png",
+         "image":"..\/images\/tiles\/castle_wall_ttl5.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":476,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_b1.png",
+         "image":"..\/images\/tiles\/castle_battlement_b1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":477,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_b2.png",
+         "image":"..\/images\/tiles\/castle_battlement_b2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":478,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_btl.png",
+         "image":"..\/images\/tiles\/castle_battlement_btl.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":479,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_btr.png",
+         "image":"..\/images\/tiles\/castle_battlement_btr.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":480,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_l1.png",
+         "image":"..\/images\/tiles\/castle_battlement_l1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":481,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_l2.png",
+         "image":"..\/images\/tiles\/castle_battlement_l2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -4376,91 +4376,91 @@
         }, 
         {
          "id":483,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_ltb.png",
+         "image":"..\/images\/tiles\/castle_battlement_ltb.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":484,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_ltt1.png",
+         "image":"..\/images\/tiles\/castle_battlement_ltt1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":485,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_ltt2.png",
+         "image":"..\/images\/tiles\/castle_battlement_ltt2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":486,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_mc1.png",
+         "image":"..\/images\/tiles\/castle_battlement_mc1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":487,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_mc2.png",
+         "image":"..\/images\/tiles\/castle_battlement_mc2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":488,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_mc3.png",
+         "image":"..\/images\/tiles\/castle_battlement_mc3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":489,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_mc4.png",
+         "image":"..\/images\/tiles\/castle_battlement_mc4.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":490,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_mc5.png",
+         "image":"..\/images\/tiles\/castle_battlement_mc5.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":491,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_mc6.png",
+         "image":"..\/images\/tiles\/castle_battlement_mc6.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":492,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_mc7.png",
+         "image":"..\/images\/tiles\/castle_battlement_mc7.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":493,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_mc8.png",
+         "image":"..\/images\/tiles\/castle_battlement_mc8.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":494,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_mc9.png",
+         "image":"..\/images\/tiles\/castle_battlement_mc9.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":495,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_mc10.png",
+         "image":"..\/images\/tiles\/castle_battlement_mc10.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":496,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_r1.png",
+         "image":"..\/images\/tiles\/castle_battlement_r1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":497,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_r2.png",
+         "image":"..\/images\/tiles\/castle_battlement_r2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -4472,7 +4472,7 @@
         }, 
         {
          "id":499,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_rtb.png",
+         "image":"..\/images\/tiles\/castle_battlement_rtb.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -4496,19 +4496,19 @@
         }, 
         {
          "id":503,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_ttr1.png",
+         "image":"..\/images\/tiles\/castle_battlement_ttr1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":504,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_ttr2.png",
+         "image":"..\/images\/tiles\/castle_battlement_ttr2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":505,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_door_b1.png",
+         "image":"..\/images\/tiles\/castle_door_b1.png",
          "imageheight":50,
          "imagewidth":50,
          "properties":[
@@ -4520,7 +4520,7 @@
         }, 
         {
          "id":506,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_door_b2.png",
+         "image":"..\/images\/tiles\/castle_door_b2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -4580,19 +4580,19 @@
         }, 
         {
          "id":514,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_gate2_tr.png",
+         "image":"..\/images\/tiles\/castle_gate2_tr.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":515,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_gate3_bl.png",
+         "image":"..\/images\/tiles\/castle_gate3_bl.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":516,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_gate3_br.png",
+         "image":"..\/images\/tiles\/castle_gate3_br.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -4604,13 +4604,13 @@
         }, 
         {
          "id":518,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_gate3_tr.png",
+         "image":"..\/images\/tiles\/castle_gate3_tr.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":519,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_gate4_bl.png",
+         "image":"..\/images\/tiles\/castle_gate4_bl.png",
          "imageheight":50,
          "imagewidth":50,
          "properties":[
@@ -4622,7 +4622,7 @@
         }, 
         {
          "id":520,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_gate4_br.png",
+         "image":"..\/images\/tiles\/castle_gate4_br.png",
          "imageheight":50,
          "imagewidth":50,
          "properties":[
@@ -4640,7 +4640,7 @@
         }, 
         {
          "id":522,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_gate4_tr.png",
+         "image":"..\/images\/tiles\/castle_gate4_tr.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -4652,7 +4652,7 @@
         }, 
         {
          "id":524,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_gate5_tr.png",
+         "image":"..\/images\/tiles\/castle_gate5_tr.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -4724,19 +4724,19 @@
         }, 
         {
          "id":534,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_l4.png",
+         "image":"..\/images\/tiles\/castle_wall_l4.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":535,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_l5.png",
+         "image":"..\/images\/tiles\/castle_wall_l5.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":536,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_mc1.png",
+         "image":"..\/images\/tiles\/castle_wall_mc1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -4754,91 +4754,91 @@
         }, 
         {
          "id":539,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_r3.png",
+         "image":"..\/images\/tiles\/castle_wall_r3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":540,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_r4.png",
+         "image":"..\/images\/tiles\/castle_wall_r4.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":541,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_wall_r5.png",
+         "image":"..\/images\/tiles\/castle_wall_r5.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":542,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_window2.png",
+         "image":"..\/images\/tiles\/castle_window2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":543,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg1.png",
+         "image":"..\/images\/tiles\/castle_bg1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":544,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg2.png",
+         "image":"..\/images\/tiles\/castle_bg2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":545,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg3.png",
+         "image":"..\/images\/tiles\/castle_bg3.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":546,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg4.png",
+         "image":"..\/images\/tiles\/castle_bg4.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":547,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg5.png",
+         "image":"..\/images\/tiles\/castle_bg5.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":548,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg6.png",
+         "image":"..\/images\/tiles\/castle_bg6.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":549,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg7.png",
+         "image":"..\/images\/tiles\/castle_bg7.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":550,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg8.png",
+         "image":"..\/images\/tiles\/castle_bg8.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":551,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg9.png",
+         "image":"..\/images\/tiles\/castle_bg9.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":552,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg10.png",
+         "image":"..\/images\/tiles\/castle_bg10.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":553,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg11.png",
+         "image":"..\/images\/tiles\/castle_bg11.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -4856,43 +4856,43 @@
         }, 
         {
          "id":556,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg14.png",
+         "image":"..\/images\/tiles\/castle_bg14.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":557,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg15.png",
+         "image":"..\/images\/tiles\/castle_bg15.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":558,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg16.png",
+         "image":"..\/images\/tiles\/castle_bg16.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":559,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg17.png",
+         "image":"..\/images\/tiles\/castle_bg17.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":560,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg18.png",
+         "image":"..\/images\/tiles\/castle_bg18.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":561,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg19.png",
+         "image":"..\/images\/tiles\/castle_bg19.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":562,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg20.png",
+         "image":"..\/images\/tiles\/castle_bg20.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -4910,7 +4910,7 @@
         }, 
         {
          "id":565,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_bg23.png",
+         "image":"..\/images\/tiles\/castle_bg23.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -4940,25 +4940,25 @@
         }, 
         {
          "id":570,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castleb_gate3_tl.png",
+         "image":"..\/images\/tiles\/castleb_gate3_tl.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":571,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castleb_gate3_tr.png",
+         "image":"..\/images\/tiles\/castleb_gate3_tr.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":572,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castleb_gate4_tl.png",
+         "image":"..\/images\/tiles\/castleb_gate4_tl.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":573,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castleb_gate4_tr.png",
+         "image":"..\/images\/tiles\/castleb_gate4_tr.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -4970,7 +4970,7 @@
         }, 
         {
          "id":575,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castleb_gate5_tr.png",
+         "image":"..\/images\/tiles\/castleb_gate5_tr.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -5006,7 +5006,7 @@
         }, 
         {
          "id":581,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castleb_wall_mc1.png",
+         "image":"..\/images\/tiles\/castleb_wall_mc1.png",
          "imageheight":50,
          "imagewidth":50
         }, 
@@ -5030,25 +5030,25 @@
         }, 
         {
          "id":585,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castleb_wall_r4.png",
+         "image":"..\/images\/tiles\/castleb_wall_r4.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":586,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castleb_wall_r5.png",
+         "image":"..\/images\/tiles\/castleb_wall_r5.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":587,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castleb_window2.png",
+         "image":"..\/images\/tiles\/castleb_window2.png",
          "imageheight":50,
          "imagewidth":50
         }, 
         {
          "id":588,
-         "image":"..\/images\/tiles\/grass.png","real_image":"..\/images\/tiles\/castle_battlement_mc11.png",
+         "image":"..\/images\/tiles\/castle_battlement_mc11.png",
          "imageheight":50,
          "imagewidth":50
         }, 
