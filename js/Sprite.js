@@ -469,9 +469,11 @@ class Sprites {
                     if (++loadCount >= records.length) doneCb();
                 });
                 sprite.speed = speed;
-                if (id == 506) console.log("assigning spritemap for images");
-				this.spriteMap[id] = sprite;
-                this.spriteNameMap[name] = sprite;
+                // only update sprite maps for tiles if sprite isn't coming from tilesheet
+                if (!tilesheetMap[id]) {
+                    this.spriteMap[id] = sprite;
+                    this.spriteNameMap[name] = sprite;
+                }
             });
         }
         xhr.open("GET", spriteJson, true);
@@ -490,7 +492,6 @@ class Sprites {
     }
 
     get(id) {
-        if (id == 506) console.log("getting sprite: " + this.spriteMap[id] + " collider: " + this.spriteMap[id].collider);
         return this.spriteMap[id];
     }
     getname(name) {
